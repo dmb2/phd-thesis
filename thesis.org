@@ -1,0 +1,53 @@
+#+TITLE:     A measurement of jet substructure variables in prompt J/\psi events at ATLAS
+#+AUTHOR:    David Bjergaard
+#+OPTIONS:   H:5 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:nil
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+
+#+LATEX_CLASS: dukedissertation
+#+LATEX_HEADER:\supervisor{Ayana T Arce}
+#+LATEX_HEADER:\department{Physics}
+#+DATE: 2016
+#+LATEX_HEADER:\member{Tom C. Mehen}
+#+LATEX_HEADER:\member{Mark C. Kruse}
+#+LATEX_HEADER:\member{Ashutosh V. Kotwal}
+#+LATEX_HEADER:\member{Glenn Edwards}
+
+
+#+LATEX_HEADER:\hypersetup{
+#+LATEX_HEADER:plainpages=false,
+#+LATEX_HEADER:bookmarksnumbered,
+#+LATEX_HEADER:colorlinks, linkcolor=black, citecolor=black,
+#+LATEX_HEADER:filecolor=black, urlcolor=black,
+#+LATEX_HEADER:}
+
+#+INCLUDE: abstract.org
+
+#+BEGIN_LaTeX
+\dedication{
+To my wife.
+}
+#+END_LaTeX
+#+BEGIN_LaTeX
+\tableofcontents
+\listoftables
+\listoffigures
+#+END_LaTeX
+
+#+INCLUDE: acknowledgements.org
+
+#+INCLUDE: introduction.org
+
+#+INCLUDE: theory.org
+
+#+INCLUDE: experiment.org
+
+#+INCLUDE: measurement.org
+
+#+BEGIN_LaTeX
+\cleardoublepage
+\normalbaselines %Fixes spacing of bibliography
+\addcontentsline{toc}{chapter}{Bibliography} %adds Bibliography to your table of contents
+\bibliography{thesis.bib}
+#+END_LaTeX
+
+#+INCLUDE: biography.org

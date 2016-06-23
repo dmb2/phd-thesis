@@ -1,0 +1,6 @@
+#+LaTeX: \begin{biography}
+David Bjergaard
+October 7, 1988, Dickinson North Dakota
+B.S. Physics, Johns Hopkins University (2011)
+Ph.D. Physics, Duke University (2016)
+#+LaTeX: \end{biography}
