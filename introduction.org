@@ -1,2 +1,100 @@
 #+LaTeX: \chapter{Introduction}
-Hello World
+
+The history of particle physics spans over a century of experimental
+and theoretical development that has lead to some of the deepest
+insights into nature. A comprehensive history of the subject is beyond
+the scope of this document, however a starting point is required.
+During the post-war period of the early 1950s a series of bubble
+chamber experiments led to the discovery of the $\Lambda$, $\Xi$ and
+$\Sigma$ baryons[fn::Baryons are bound states of three quarks. The
+name is derived from the greek word "heavy" or "barus" ].  This
+coupled with the discoveries of the $K$, $\pi$ and $\eta$
+mesons[fn:: Mesons are bound states of a quark and an anti-quark.
+The name is derived from the greek word "intermediate" or "mesos" ]
+lead to the proposal of the "eightfold way" \cite{PhysRev.125.1067}.
+The guiding principal of the eightfold way is to use the structure of
+a proposed $SU(3)\times SU(3)$ symmetry to explain the meson and
+baryon's known to date and to make strong predictions about new states
+that should be observed \cite{PhysRev.125.1067}.  This organization of
+the particles hints at the existence of fundamental particles called
+/quarks/.
+
+While the eightfold way provided an organizational scheme and strong
+predictions of the relationships between the members of the baryon
+octet, experimental evidence for the existence of quarks came later.
+In 1971, Feynman published what is now known as the
+parton[fn:: Parton so called for being a "part" of the hadron.
+Also rumored to be named after Dolly Parton, the country
+singer\cite{ashone}. ] model of the hadron \cite{PhysRevD.3.2706}.
+This model treated the components of the hadron as fundamental
+particles with physical properties.  This is in contrast with the
+quark model of the eightfold way which did not describe quarks as
+physical particles.  The parton model described many experimental
+results to a reasonable degree however there were some issues, namely
+a "fudge factor" to bring the calculations close enough to their
+experimental values to be compared \cite{PhysRevD.3.2706}.
+
+The eightfold way and the parton model provided two complementary
+views of the structure of the hadron.  The eightfold way provided a
+computational framework that was successful in describing many
+observed patterns in the quantum numbers of the known hadrons.  The
+parton model provided a physical picture for the structure of the
+hadron.  Neither model provided a precise description of the
+underlying dynamics of the strong interaction.  
+
+In November, 1973 Wilczek and Gross published their seminal paper on
+asymptotically free gauge theories \cite{PhysRevD.8.3633}.  This paper
+laid the groundwork for what would become quantum chromodynamics (QCD)
+the theory underpinning the subject of this thesis. A year later in
+1974 the discovery of a new particle was announced independently by a
+group at Brookhaven National Lab (named the $J$) and a group at the
+Stanford Linear Accelerator (named the $\psi$)
+\cite{PhysRevLett.33.1404}\cite{PhysRevLett.33.1406}. The joint
+discovery of the J/\psi lead to what is known colloquially as the
+"November revolution." The new particle provided a new piece of
+experimental evidence that confirmed the picture of quarks and helped
+to unravel the mysteries of the strong interaction.
+
+We now understand that hadrons are made up of quarks and gluons
+(partons in Feynman's parlance). In addition, the bound state of a
+quark and anti-quark of the same flavor are referred to as quarkonium.
+This name is reminiscent of positronium, the eletromagnetically bound
+state of a positron and electron.  Many of the salient features of
+quarkonium mass spectrum can be understood with non-relativistic
+quantum mechanics and emperical models of the QCD potential. Even with
+this deep understanding of nature's fundamental interactions, the
+J/\psi particle continues to perplex and confuse our understanding of
+QCD.  In 1992, the CDF collaboration at the Tevatron reported the
+first measurement of J/\psi and \psi(2S) production.  They found the
+rate of production to be an order of magnitude more than the
+expectation from theory \cite{Abe:1992ww}.  Two years later, Bodwin,
+Braaten and Lepage worked out many of the details of quarkonium
+production in QCD using effective field theory\cite{Bodwin:1994jh}.
+
+In 1997, the Tevatron updated its observation of the \psi system with
+more data. It reported the differential cross section of the J/\psi to
+be much higher than anticipated by the leading order theory
+calculation for singlet production \cite{PhysRevlett.79.572}. The
+details worked out by Bodwin et al positioned the theory community to
+quickly calculate the needed contributions from the non-relativistic
+expansion of QCD (NRQCD) in order to describe the data
+\cite{PhysRevD.55.R5269}.
+
+The extra NRQCD components that describe the observed p_T spectrum
+predicted that the spin alignment between the J/\psi and the decaying
+muons be strongly polarized.  Subsequent measurements of the
+polarization at CDF find no evidence of polarized spin-alignment in
+the J/\psi system \cite{PhysRevLett.85.2886}. This problem has been
+dubbed the "polarization puzzle" in literature and has no satisfying
+explanation nearly two decades after its first observation.
+
+The production of charm quark pairs which transition to the J/\psi
+state probes two complementary energy scales.  The origination of the
+pair happens during the primary interaction of two partons.  This is
+a high energy interaction, and can be calculated using perturbation
+theory.  After the pair of quarks is produced, their relative motion
+determines the dynamics of the bound state.  This is at a much lower
+energy scale and is non-perturbative. Handling these two scales is the
+major theoretical challenge to calculating a quantitative cross
+section for quarkonium production.
+

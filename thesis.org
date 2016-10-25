@@ -1,6 +1,6 @@
 #+TITLE:     A measurement of jet substructure variables in prompt J/\psi events at ATLAS
 #+AUTHOR:    David Bjergaard
-#+OPTIONS:   H:5 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:nil
+#+OPTIONS:   H:3 num:t toc:nil ':t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:nil
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
 
 #+LATEX_CLASS: dukedissertation
@@ -11,6 +11,7 @@
 #+LATEX_HEADER:\member{Mark C. Kruse}
 #+LATEX_HEADER:\member{Ashutosh V. Kotwal}
 #+LATEX_HEADER:\member{Glenn Edwards}
+#+LATEX_HEADER:\addbibresource{thesis.bib}
 
 
 #+LATEX_HEADER:\hypersetup{
@@ -23,6 +24,7 @@
 #+INCLUDE: abstract.org
 
 #+BEGIN_LaTeX
+
 \dedication{
 To my wife.
 }
@@ -47,7 +49,7 @@ To my wife.
 \cleardoublepage
 \normalbaselines %Fixes spacing of bibliography
 \addcontentsline{toc}{chapter}{Bibliography} %adds Bibliography to your table of contents
-\bibliography{thesis.bib}
+\printbibliography
 #+END_LaTeX
 
 #+INCLUDE: biography.org

@@ -1,5 +1,20 @@
 #+LaTeX: \begin{abstract}
 
-Hello World
+The lack of agreement between the measured polarization in prompt
+J/$\psi$ events when including color octet contributions is referred
+to as the ``polarization puzzle.''  The radiation environment around
+quarkonia production remains unstudied in an experimental setting.
+This work is the first exploration of the radiation surrounding
+charmonium events measured at ATLAS at $\sqrt{s}=8~\text{TeV}$. Recent
+theoretical developments in NRQCD calculations suggest that the
+fraction of momentum shared between a jet and the J/$\psi$ is
+sensitive to color singlet and color octet production of prompt
+J/$\psi$ events. This work presents the first measurement of the
+separation between the $J/\psi$ and a matched jet, the matched jet's
+N-subjettiness, and the momentum fraction shared between the jet and
+the $J/\psi$. These variables probe the radiation environment around
+the $J/\psi$, and provide a new ways to understand quarkonia
+production.
+
 
 #+LaTeX: \end{abstract}

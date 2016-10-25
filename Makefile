@@ -1,10 +1,9 @@
 .PHONY: all paper clean
 
 
-all: paper
-paper: thesis.pdf
+all: thesis.pdf thesis.bib
 
-%.pdf: paper-config.el %.org
+%.pdf: paper-config.el %.org *.org
 	/usr/bin/emacs $*.org --load $< --batch -f org-latex-export-to-pdf --kill
 clean:
 	-rm *-blx.bib *.run.xml 

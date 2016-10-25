@@ -1,2 +1,2 @@
-#+LaTeX: \chapter{Measurement of prompt J/\psi particles}
+#+LaTeX: \chapter{Measurement of prompt J/$\psi$ particles}
 Hello World
