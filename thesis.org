@@ -27,6 +27,13 @@
 
 \dedication{
 To my wife.
+
+``Life is short,\\ 
+and art long,\\
+opportunity fleeting,\\
+experimentations perilous,\\
+and judgement difficult''\\
+-- Hippocrates \emph{Aphorismi}
 }
 #+END_LaTeX
 #+BEGIN_LaTeX
