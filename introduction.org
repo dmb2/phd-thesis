@@ -105,14 +105,32 @@ charmonium is produced in a color singlet state, the surrounding
 radiation should be less than a charmonium state in a color octet
 state.  
 
-A useful phenomenological model[fn:: The same model Pythia uses in its
-simulation of octet J/\psi production \cite{Sjostrand:2007gs}] is to
+A useful phenomenological model employed by Pythia [fn:: A generic
+Monte Carlo simulation program used in High Energy Physics] is to
 consider the charmonium system as a color-charged particle which can
-couple to gluons using rules of QCD. As this particle propogates it
-emits co-linear gluon radiation in the same manner as a quark. When
-the composite particle falls below a certain threshold, it transitions
-to a color singlet J/\psi hadron and emits the remaining color charge
-as a soft gluon which is incorporated into the underlying event. This
-is in contrast to color singlet production which has the J/\psi
-produced directly and no net color charge.
+couple to gluons using rules of QCD \cite{Sjostrand:2007gs}. As this
+particle propogates it emits co-linear gluon radiation according to a
+splitting function for the process $q\rightarrow q g$. When the
+composite particle falls below a certain threshold, it transitions to
+a color singlet J/\psi hadron and emits the remaining color charge as
+a soft gluon which is incorporated into the underlying event. This is
+in contrast to color singlet production which has the J/\psi produced
+directly and no net color charge.
+
+An alternative view of charmonium production is the production of the
+charm quark pair during the fragmentation of partons into individual
+hadrons. In the fragmenting jet function (FJF)
+framework\cite{Procura:2009vm}, the total cross section is a product
+of the short distance partonic cross section with universal
+fragmentation functions which determine the evolution of individual
+partons to hadrons.
+
+The FJF framework differs from the Pythia model in how it treats the
+distribution of radiation around the charmonium system.  In the FJF
+approach, a high energy gluon splits according to a splitting function
+for $g\rightarrow g g$, which is very different from Pythia's model
+which allows the charmonium system to radiate according to a splitting
+function for $q \rightarrow q g$.  This leads to fundamentally
+different distributions of momentum between the surrounding radiation
+and the charmonium system \cite{Bain:2016clc}.  
 
