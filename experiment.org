@@ -1,4 +1,3 @@
-#+LaTeX: \chapter{The ATLAS detector}
 * The Large Hadron Collider
 * The ATLAS detector
 ** Inner Detector

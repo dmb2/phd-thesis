@@ -1,4 +1,3 @@
-#+LaTeX: \chapter{Theory}
 * Quantum Chromodynamics
 ** Quarks
 ** Lagrangian

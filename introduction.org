@@ -1,5 +1,3 @@
-#+LaTeX: \chapter{Introduction}
-
 The history of particle physics spans over a century of experimental
 and theoretical development that has lead to some of the deepest
 insights into nature. A comprehensive history of the subject is beyond

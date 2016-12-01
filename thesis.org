@@ -22,18 +22,17 @@
 #+LATEX_HEADER:}
 
 #+INCLUDE: abstract.org
+# ``Life is short,\\ 
+# and art long,\\
+# opportunity fleeting,\\
+# experimentations perilous,\\
+# and judgement difficult''\\
+# -- Hippocrates \emph{Aphorismi}
+
 
 #+BEGIN_LaTeX
-
 \dedication{
 To my wife.
-
-``Life is short,\\ 
-and art long,\\
-opportunity fleeting,\\
-experimentations perilous,\\
-and judgement difficult''\\
--- Hippocrates \emph{Aphorismi}
 }
 #+END_LaTeX
 #+BEGIN_LaTeX
@@ -44,13 +43,214 @@ and judgement difficult''\\
 
 #+INCLUDE: acknowledgements.org
 
-#+INCLUDE: introduction.org
+#+LaTeX: \chapter{Introduction}
+The history of particle physics spans over a century of experimental
+and theoretical development that has lead to some of the deepest
+insights into nature. A comprehensive history of the subject is beyond
+the scope of this document, however a starting point is required.
+During the post-war period of the early 1950s a series of bubble
+chamber experiments led to the discovery of the $\Lambda$, $\Xi$ and
+$\Sigma$ baryons[fn::Baryons are bound states of three quarks. The
+name is derived from the greek word "heavy" or "barus" ]. This coupled
+with the discoveries of the $K$, $\pi$ and $\eta$ mesons[fn:: Mesons
+are bound states of a quark and an anti-quark. The name is derived
+from the greek word "intermediate" or "mesos" ] lead to the proposal
+of the "eightfold way" \cite{PhysRev.125.1067}. The guiding principal
+of the eightfold way is to use the structure of a proposed
+$SU(3)\times SU(3)$ symmetry to explain the mesons and baryons known
+to date and to make strong predictions about new states that should be
+observed \cite{PhysRev.125.1067}. This organization of the particles
+hints at the existence of fundamental particles called /quarks/.
 
-#+INCLUDE: theory.org
+While the eightfold way provided an organizational scheme and strong
+predictions of the relationships between the members of the baryon
+octet, experimental evidence for the existence of quarks came later.
+In 1971, Feynman published what is now known as the parton[fn:: Parton
+so called for being a "part" of the hadron. Also rumored to be named
+after Dolly Parton, the country singer\cite{ashone}. ] model of the
+hadron \cite{PhysRevD.3.2706}. This model treated the components of
+the hadron as fundamental particles with physical properties. This is
+in contrast with the quark model of the eightfold way which did not
+describe quarks as physical particles. The parton model described many
+experimental results to a reasonable degree however there were some
+issues, namely a "fudge factor" to bring the calculations close enough
+to their experimental values to be compared \cite{PhysRevD.3.2706}.
 
-#+INCLUDE: experiment.org
+The eightfold way and the parton model provided two complementary
+views of the structure of the hadron. The eightfold way provided a
+computational framework that was successful in describing many
+observed patterns in the quantum numbers of the known hadrons. The
+parton model provided a physical picture for the structure of the
+hadron. Neither model provided a precise description of the underlying
+dynamics of the strong interaction.
 
-#+INCLUDE: measurement.org
+In November, 1973 Wilczek and Gross published their seminal paper on
+asymptotically free gauge theories \cite{PhysRevD.8.3633}. This paper
+laid the groundwork for what would become quantum chromodynamics (QCD)
+the theory underpinning the subject of this thesis. A year later in
+1974 the discovery of a new particle was announced independently by a
+group at Brookhaven National Lab (named the $J$) and a group at the
+Stanford Linear Accelerator (named the $\psi$)
+\cite{PhysRevLett.33.1404}\cite{PhysRevLett.33.1406}. The joint
+discovery of the J/\psi lead to what is known colloquially as the
+"November revolution." The new particle provided a new piece of
+experimental evidence that confirmed the picture of quarks and helped
+to unravel the mysteries of the strong interaction.
+
+We now understand that hadrons are made up of quarks and gluons
+(partons in Feynman's parlance). In addition, the bound state of a
+quark and anti-quark of the same flavor are referred to as quarkonium.
+This name is reminiscent of positronium, the eletromagnetically bound
+state of a positron and electron. Many of the salient features of
+quarkonium mass spectrum can be understood with non-relativistic
+quantum mechanics and emperical models of the QCD potential. Even with
+this deep understanding of nature's fundamental interactions, the
+J/\psi particle continues to perplex and confuse our understanding of
+QCD. In 1992, the CDF collaboration at the Tevatron reported the first
+measurement of J/\psi and \psi(2S) production. They found the rate of
+production to be an order of magnitude more than the expectation from
+theory \cite{Abe:1992ww}. Two years later, Bodwin, Braaten and Lepage
+worked out many of the details of quarkonium production in QCD using
+effective field theory\cite{Bodwin:1994jh}.
+
+In 1997, the Tevatron updated its observation of the \psi system with
+more data. It reported the differential cross section of the J/\psi to
+be much higher than anticipated by the leading order theory
+calculation for singlet production \cite{PhysRevlett.79.572}. The
+details worked out by Bodwin et al positioned the theory community to
+quickly calculate the needed contributions from the non-relativistic
+expansion of QCD (NRQCD) in order to describe the data
+\cite{PhysRevD.55.R5269}.
+
+The extra NRQCD components that describe the observed p_T spectrum
+predicted that the spin alignment between the J/\psi and the decaying
+muons be strongly polarized. Subsequent measurements of the
+polarization at CDF find no evidence of polarized spin-alignment in
+the J/\psi system \cite{PhysRevLett.85.2886}. This problem has been
+dubbed the "polarization puzzle" in literature and has no satisfying
+explanation nearly two decades after its first observation.
+
+The production of charm quark pairs which transition to the J/\psi
+state probes two complementary energy scales. The origination of the
+pair happens during the primary interaction of two partons. This is a
+high energy interaction, and can be calculated using perturbation
+theory. After the pair of quarks is produced, their relative motion
+determines the dynamics of the bound state. This is at a much lower
+energy scale and is non-perturbative. Handling these two scales is the
+major theoretical challenge to calculating a quantitative cross
+section for quarkonium production.
+
+While there has been much theoretical work to understand J/\psi
+production, experimental approaches have mainly focused on measuring
+the differential production cross section of isolated, directly
+produced J/\psi particles. Little to no attention has been paid to the
+hadronic environment surrounding the charmonium system. If the
+charmonium is produced in a color singlet state, the surrounding
+radiation should be less than a charmonium state in a color octet
+state.  
+
+A useful phenomenological model employed by Pythia [fn:: A generic
+Monte Carlo simulation program used in High Energy Physics] is to
+consider the charmonium system as a color-charged particle which can
+couple to gluons using rules of QCD \cite{Sjostrand:2007gs}. As this
+particle propogates it emits co-linear gluon radiation according to a
+splitting function for the process $q\rightarrow q g$. When the
+composite particle falls below a certain threshold, it transitions to
+a color singlet J/\psi hadron and emits the remaining color charge as
+a soft gluon which is incorporated into the underlying event. This is
+in contrast to color singlet production which has the J/\psi produced
+directly and no net color charge.
+
+An alternative view of charmonium production is the production of the
+charm quark pair during the fragmentation of partons into individual
+hadrons. In the fragmenting jet function (FJF)
+framework\cite{Procura:2009vm}, the total cross section is a product
+of the short distance partonic cross section with universal
+fragmentation functions which determine the evolution of individual
+partons to hadrons.
+
+The FJF framework differs from the Pythia model in how it treats the
+distribution of radiation around the charmonium system.  In the FJF
+approach, a high energy gluon splits according to a splitting function
+for $g\rightarrow g g$, which is very different from Pythia's model
+which allows the charmonium system to radiate according to a splitting
+function for $q \rightarrow q g$.  This leads to fundamentally
+different distributions of momentum between the surrounding radiation
+and the charmonium system \cite{Bain:2016clc}.  
+
+#+LaTeX: \chapter{Theory}
+* Quantum Chromodynamics
+Quantum chromodynamics describes the interactions between quarks and
+gluons. It is one of the fundamental pieces of the Standard Model of
+Physics, and has provided fertile ground for experimental and
+theoretical work. The interactions of QCD are determined by an SU(3)
+symmetry group. In order to organize which configurations are allowed
+by the symmetry a color charge ($a=1,2,3$) is assigned to each quark.
+It is useful to assign the colors red, green, and blue to the color
+index in order to provide intuition for the dynamics of the interaction.
+** Quarks
+Table \ref{tab:sm-quarks} shows the three generations of quarks. Each
+quark is spin 1/2. Each generation consists of a flavor doublet with
+charge 2/3 and charge -1/3. Quarks with charge 2/3(-1/3) are referred
+to as up(down)-type quarks. The particle which mediates the strong
+interaction is the spin 0 gluon.
+#+CAPTION: The three generations of quarks in the Standard Model 
+#+LABEL: tab:sm-quarks
+| Generation | I    | II      | III    |
+|------------+------+---------+--------|
+| /          | <    |         |        |
+| Charge     | 2/3  | 2/3     | 2/3    |
+| Symbol     | u    | s       | t      |
+| Name       | up   | strange | top    |
+|------------+------+---------+--------|
+| Charge     | -1/3 | -1/3    | -1/3   |
+| Symbol     | d    | c       | b      |
+| Name       | down | charm   | bottom |
+
+** Lagrangian
+** Feyman Rules
+** Asymptotic Freedom
+* Non-relativistic QCD
+** Lagrangian
+** Factorization Theorem
+** Color Octet States
+* Jet Fragmentation
+** Fragmentation Functions
+* Quarkonium
+** Positronium System
+** Empirical Models
+** Charmonium Spectrum
+
+#+LaTeX: \chapter{The ATLAS detector}
+* The Large Hadron Collider
+* The ATLAS detector
+** Inner Detector
+*** Pixel Detector
+*** Silicon Strip Detector
+*** Transition Radiation Tracker
+** Muon Spectrometer
+*** Monitored Drift Tube
+*** Cathode Strip Chambers
+** Track Reconstruction
+** Trigger
+
+#+LaTeX: \chapter{Analysis Methods}
+* Jet Definitions
+** Jet Reconstruction
+* Fitting the data
+* SPlot
+** Validating the Method
+* Unfolding
+** Iterative Bayesian Unfolding
+*** Determining Iterations
+*** Validating the Method
+*** Estimating the Response Matrix
+
+#+LaTeX: \chapter{Measurement of prompt J/$\psi$ particles}
+* Selection Criteria
+* Systematic Errors
+* Results
+* Discussion
 
 #+BEGIN_LaTeX
 \cleardoublepage
