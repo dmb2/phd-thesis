@@ -183,17 +183,30 @@ and the charmonium system \cite{Bain:2016clc}.
 Quantum chromodynamics describes the interactions between quarks and
 gluons. It is one of the fundamental pieces of the Standard Model of
 Physics, and has provided fertile ground for experimental and
-theoretical work. The interactions of QCD are determined by an SU(3)
-symmetry group. In order to organize which configurations are allowed
-by the symmetry a color charge ($a=1,2,3$) is assigned to each quark.
-It is useful to assign the colors red, green, and blue to the color
-index in order to provide intuition for the dynamics of the interaction.
-** Quarks
-Table \ref{tab:sm-quarks} shows the three generations of quarks. Each
-quark is spin 1/2. Each generation consists of a flavor doublet with
-charge 2/3 and charge -1/3. Quarks with charge 2/3(-1/3) are referred
-to as up(down)-type quarks. The particle which mediates the strong
-interaction is the spin 0 gluon.
+theoretical work. The interactions of QCD are determined by the SU(3)
+symmetry group. Under this symmetry quarks have a color charge
+($a=1,2,3$). While quarks carry a color charge, they must form color
+neutral particles. Therefore, it is useful to assign the colors red,
+green, and blue to the color index in order to provide intuition for
+which states are allowed. Quarks paired with color conjugated quarks
+(green with anti-green, red with anti-red etc) form the mesons.
+Triplet pairs of quarks with an anti-symmetric combination of red,
+green, and blue form color neutral baryons. Other more exotic
+combinations are allowed but they must follow the constraint that the
+state be color neutral.
+** Quark Flavor
+In addition to carrying color charge, quarks carry a flavor. Table
+\ref{tab:sm-quarks} shows the three generations of quarks. Each
+generation consists of a flavor doublet with charge 2/3 and charge
+-1/3. Quarks with charge 2/3(-1/3) are referred to as up(down)-type
+quarks. In each generation, the mass of the quarks are successively
+larger. In the first generation, the up and down quarks are a few MeV.
+The strange and charm quark masses differ by a factor of 10. The
+strange quark mass is approximately 100 MeV, while the charm quark
+mass is near 1 GeV. In the third and final generation, the bottom
+quark is 4 GeV, and the top quark is forty times larger at 173 GeV
+\cite{Agashe:2014kda}. The quantum numbers of the individual quarks
+determine the properties of the composite baryons and mesons.
 #+CAPTION: The three generations of quarks in the Standard Model 
 #+LABEL: tab:sm-quarks
 | Generation | I    | II      | III    |
@@ -206,10 +219,74 @@ interaction is the spin 0 gluon.
 | Charge     | -1/3 | -1/3    | -1/3   |
 | Symbol     | d    | c       | b      |
 | Name       | down | charm   | bottom |
-
 ** Lagrangian
+The formulation of a quantum theory for quark interactions requires a
+lagrangian which contains interaction terms which satisfy the SU(3)
+symmetry group. The following summarizes the results in chapter 1 of
+"QCD and Collider Physics" \cite{Ellis:1991qj}, for further details
+the reader is referred to that text.
+
+We begin by writing the QCD lagrangian in terms of a classical field
+plus a gauge fixing term, and a ghost term.  
+#+BEGIN_LaTeX
+  \begin{equation*}
+    \mathcal{L}_{\text{QCD}}=\mathcal{L}_{\text{Classical}}+\mathcal{L}_{\text{Gauge}} + \mathcal{L}_{\text{Ghost}}
+  \end{equation*}
+#+END_LaTeX
+In natural units ($\hbar=c=1$), the classical field lagrangian is:
+#+BEGIN_LaTeX
+  \begin{equation}
+    \mathcal{L}_{\text{Classical}} = -\frac{1}{4}F^A_{\alpha\beta}F^{\alpha\beta}_A + \sum_{\text{flavors}}\overline{q}_a(i\slashed{D}-m)_{ab}q_b
+  \end{equation}
+#+END_LaTeX
+Here $\slashed{D}\equiv\gamma_\mu D^\mu$, and $F_{\alpha\beta}^A$ is
+the gluon field strength tensor:
+#+BEGIN_LaTeX
+  \begin{equation}
+    F_{\alpha\beta}^A =
+    \partial_\alpha\mathcal{A}_\beta^A-\partial_\beta\mathcal{A}_\alpha^A - g f^{ABC}\mathcal{A}_\alpha^B\mathcal{A}_\beta^C
+  \end{equation}
+#+END_LaTeX
+the color indices $A,B,C$ run over the eight generators of the SU(3)
+group. The constant $g$ represents the coupling strength, and the
+constants $f^{ABC}$ are the structure constants of SU(3). It is this
+term which distinguishes QCD from quantum electrodynamics. In order to
+derive the Feynman rules for QCD, we must evaluate the path integral
+of the action. In the standard formulation of the action, the
+resulting integral is badly divergent because of the gauge invariance
+of the theory \cite{Peskin:1995ev} [fn:: See 9.4 Quantization of the
+Electromagnetic Field]. Following the Faddeev-Popov method of gauge
+fixing used in \cite{Ellis:1991qj} the following two terms are added
+to the lagrangian:
+#+BEGIN_LaTeX
+  \begin{align}
+    \mathcal{L}_{\text{Gauge}} &= -
+    \frac{1}{2\lambda}(\partial^\alpha\mathcal{A}_\alpha^A)^2 \\
+    \mathcal{L}_{\text{Ghost}} &= \partial_\alpha\eta^{A\dagger}(D^\alpha_{AB}\eta^B)
+  \end{align}
+#+END_LaTeX
+These terms serve to constrain the integral over the action to
+physical configurations exactly once \cite{Peskin:1995ev}. 
 ** Feyman Rules
-** Asymptotic Freedom
+The Feynman rules for QCD can be determined from the lagrangian by
+finding the action ($S = \int \mathcal{L} d^4x$)and writing it in
+terms of a free field lagrangian $S₀$ and an interacting term $S_I$:
+#+BEGIN_LaTeX
+  \begin{equation*}
+  S = S₀ + S_I
+  \end{equation*}
+#+END_LaTeX
+Further we identifying $∂ᵅ = -ipᵅ$ allows us to write down the two
+point function for the quarks and gluons, resulting in the Feynman
+rules shown in Figure \ref{fig:qcd-feyn-rules}. 
+#+CAPTION: Feynman rules for QCD, see \cite{Ellis:1991qj} for more details.
+#+NAME: fig:qcd-feyn-rules
+#+ATTR_LATEX: :width \linewidth
+[[file:figures/qcd_rules.eps]]
+
+Combined, these rules allow the creation of any relativistic quark
+interactions allowed by the theory of QCD.  
+** Asymptotic Freedom and Confinement
 * Non-relativistic QCD
 ** Lagrangian
 ** Factorization Theorem

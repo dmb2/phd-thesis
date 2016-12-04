@@ -2,8 +2,6 @@
 (require 'ox-latex)
 (setq org-latex-pdf-process
       '("latexmk -bibtex -pdflatex='pdflatex --shell-escape -interaction nonstopmode' -pdf -f %f"))
-;; (setf org-latex-default-packages-alist
-;;       (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
 
 (setf org-latex-default-packages-alist
       (remove '("" "fixltx2e" nil) org-latex-default-packages-alist))
