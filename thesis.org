@@ -44,6 +44,7 @@ To my wife.
 #+INCLUDE: acknowledgements.org
 
 #+LaTeX: \chapter{Introduction}
+* A brief history
 The history of particle physics spans over a century of experimental
 and theoretical development that has lead to some of the deepest
 insights into nature. A comprehensive history of the subject is beyond
@@ -116,7 +117,7 @@ effective field theory\cite{Bodwin:1994jh}.
 In 1997, the Tevatron updated its observation of the \psi system with
 more data. It reported the differential cross section of the J/\psi to
 be much higher than anticipated by the leading order theory
-calculation for singlet production \cite{PhysRevlett.79.572}. The
+calculation for singlet production \cite{PhysRevLett.79.572}. The
 details worked out by Bodwin et al positioned the theory community to
 quickly calculate the needed contributions from the non-relativistic
 expansion of QCD (NRQCD) in order to describe the data
@@ -195,8 +196,8 @@ green, and blue form color neutral baryons. Other more exotic
 combinations are allowed but they must follow the constraint that the
 state be color neutral.
 ** Quark Flavor
-In addition to carrying color charge, quarks carry a flavor. Table
-\ref{tab:sm-quarks} shows the three generations of quarks. Each
+In addition to carrying color charge, quarks carry a flavor. The
+Standard Model consists of three generations of quarks. Each
 generation consists of a flavor doublet with charge 2/3 and charge
 -1/3. Quarks with charge 2/3(-1/3) are referred to as up(down)-type
 quarks. In each generation, the mass of the quarks are successively
@@ -207,18 +208,6 @@ mass is near 1 GeV. In the third and final generation, the bottom
 quark is 4 GeV, and the top quark is forty times larger at 173 GeV
 \cite{Agashe:2014kda}. The quantum numbers of the individual quarks
 determine the properties of the composite baryons and mesons.
-#+CAPTION: The three generations of quarks in the Standard Model 
-#+LABEL: tab:sm-quarks
-| Generation | I    | II      | III    |
-|------------+------+---------+--------|
-| /          | <    |         |        |
-| Charge     | 2/3  | 2/3     | 2/3    |
-| Symbol     | u    | s       | t      |
-| Name       | up   | strange | top    |
-|------------+------+---------+--------|
-| Charge     | -1/3 | -1/3    | -1/3   |
-| Symbol     | d    | c       | b      |
-| Name       | down | charm   | bottom |
 ** Lagrangian
 The formulation of a quantum theory for quark interactions requires a
 lagrangian which contains interaction terms which satisfy the SU(3)
@@ -226,8 +215,9 @@ symmetry group. The following summarizes the results in chapter 1 of
 "QCD and Collider Physics" \cite{Ellis:1991qj}, for further details
 the reader is referred to that text.
 
-We begin by writing the QCD lagrangian in terms of a classical field
-plus a gauge fixing term, and a ghost term.  
+In order to derive a quantum theory, begin by writing the QCD
+lagrangian in terms of a classical field plus a gauge fixing term, and
+a ghost term.
 #+BEGIN_LaTeX
   \begin{equation*}
     \mathcal{L}_{\text{QCD}}=\mathcal{L}_{\text{Classical}}+\mathcal{L}_{\text{Gauge}} + \mathcal{L}_{\text{Ghost}}
@@ -247,17 +237,17 @@ the gluon field strength tensor:
     \partial_\alpha\mathcal{A}_\beta^A-\partial_\beta\mathcal{A}_\alpha^A - g f^{ABC}\mathcal{A}_\alpha^B\mathcal{A}_\beta^C
   \end{equation}
 #+END_LaTeX
-the color indices $A,B,C$ run over the eight generators of the SU(3)
+The color indices $A,B,C$ run over the eight generators of the SU(3)
 group. The constant $g$ represents the coupling strength, and the
 constants $f^{ABC}$ are the structure constants of SU(3). It is this
-term which distinguishes QCD from quantum electrodynamics. In order to
-derive the Feynman rules for QCD, we must evaluate the path integral
-of the action. In the standard formulation of the action, the
-resulting integral is badly divergent because of the gauge invariance
-of the theory \cite{Peskin:1995ev} [fn:: See 9.4 Quantization of the
-Electromagnetic Field]. Following the Faddeev-Popov method of gauge
-fixing used in \cite{Ellis:1991qj} the following two terms are added
-to the lagrangian:
+term which distinguishes QCD from quantum electrodynamics (QED). In
+order to derive the Feynman rules for QCD, the path integral of the
+action must be evaluated. In the standard formulation of the action,
+the resulting integral is badly divergent because of the gauge
+invariance of the theory \cite{Peskin:1995ev} [fn:: See 9.4
+Quantization of the Electromagnetic Field]. Following the
+Faddeev-Popov method of gauge fixing used in \cite{Ellis:1991qj} the
+following two terms are added to the lagrangian:
 #+BEGIN_LaTeX
   \begin{align}
     \mathcal{L}_{\text{Gauge}} &= -
@@ -270,34 +260,183 @@ physical configurations exactly once \cite{Peskin:1995ev}.
 ** Feyman Rules
 The Feynman rules for QCD can be determined from the lagrangian by
 finding the action ($S = \int \mathcal{L} d^4x$)and writing it in
-terms of a free field lagrangian $S₀$ and an interacting term $S_I$:
+terms of a free field lagrangian $S_0$ and an interacting term $S_I$:
 #+BEGIN_LaTeX
   \begin{equation*}
-  S = S₀ + S_I
+  S = S_0 + S_I
   \end{equation*}
 #+END_LaTeX
-Further we identifying $∂ᵅ = -ipᵅ$ allows us to write down the two
-point function for the quarks and gluons, resulting in the Feynman
-rules shown in Figure \ref{fig:qcd-feyn-rules}. 
+Further by identifying $\partial^\alpha = -ip^\alpha$ as the momentum
+it is possible to write down the two point function for the quarks and
+gluons. This results in the Feynman rules shown in Figure
+\ref{fig:qcd-feyn-rules}.
 #+CAPTION: Feynman rules for QCD, see \cite{Ellis:1991qj} for more details.
 #+NAME: fig:qcd-feyn-rules
 #+ATTR_LATEX: :width \linewidth
 [[file:figures/qcd_rules.eps]]
 
 Combined, these rules allow the creation of any relativistic quark
-interactions allowed by the theory of QCD.  
-** Asymptotic Freedom and Confinement
+interactions allowed by the theory of QCD.  There are two aspects of
+QCD which distinguish it from QED. 
+
+The first is the running of the coupling constant, $\alpha_S$. In QED,
+the coupling constant is higher at high energies. This running of the
+coupling constant can be understood by examining the state of the
+vacuum around the electric charge. At high energies, and short
+distances, there is less screening of the true charge of the electron
+due to vacuum polarization. This polarization arises due to dipole
+pairs of virtual electrons and positrons which screen the charge of
+the electron. This leads to a coupling constant which is larger than
+at low energies. In QCD, the coupling constant decreases at high
+energy.  This phenomenon is known as asymptotic freedom.  At very high
+energies, the coupling between quarks becomes so low that they become
+free particles.  It is difficult to understand this from the vacuum of
+QCD, but it is possible to make analogies to the paramagnetic
+properties of the vacuum \cite{Ellis:1991qj}. 
+
+The second feature is the self-interaction of the gluon.  In QED, the
+mediating photon has no electric charge, and thus does not couple to
+itself.  In QCD, the gluon carries color charge. This means that the
+field doesn't spread uniformly out from the quark, instead it forms
+tube-like structures.  At some point, the potential energy stored in
+the self-interacting gluon tubes becomes so high that it is
+energetically favorable to create a quark anti-quark pair from the
+vacuum than it is to increase the distance between two quarks further.
+This property of QCD is referred to as confinement. 
+* Quarkonium
+The bound states allowed by a theory and their properties are
+important to any theory. In QCD, bound states consist of mesons and
+baryons in accordance with the rules outlined in Section [[Feyman Rules]].
+When a meson forms a bound state with a quark and anti-quark of the
+same flavor it is referred to as a quarkonium state. This naming
+scheme is reminiscent of the positronium bound state from quantum
+mechanics in a coulomb potential. Quarkonium have a number of unique
+properties that make it an ideal system to study properties of QCD.
+The bound state consists of a quark and its charge-conjugate. This
+provides a degree of symmetry not present in other meson systems. In
+heavy quarkonium systems (charmonium and bottomonium), the mass scale
+is high enough that perturbation theory can provide useful answers
+relative to the cutoff energy scale $\Lambda_{\text{QCD}}\simeq
+450~\text{MeV}$. The strength of the coupling strength of QCD in the
+charmonium system is $\alpha_s(m_c)\approx0.24$ \cite{Bodwin:1994jh}. This
+is large enough that the perturbation series converges more slowly
+than one would hope. The higher mass of the bottom quark allows the
+bottomonium system a faster rate of convergence. At the bottom mass
+scale, $\alpha_s(m_b)\approx0.18$ \cite{Bodwin:1994jh}.  
+
+Before examining the consequences of a larger $\alpha_s$ in the
+charmonium system, it is useful to reproduce as much of the charmonium
+spectrum using quantum mechanics. An important aspect of quarkonium
+production at high energies in hadronic collisions is the interplay of
+multiple energy scales. At very high energies, production is dominated
+by the fragmentation of gluons into pairs of charm quarks. The gluon
+recoils from a primary interaction with a gluon or quark in the
+proton-proton collision. The energy scale which determines the
+production of the quark pair is the mass of the heavy quark $M$.
+
+In the rest frame of the quarkonia's constituent quarks the relative
+velocity ($v$) of the quarks is the important scale. This means their
+relative momentum ($Mv$) is important for the dynamics of the
+quarkonium's propagation and subsequent decay. The final quantity
+which determines the dynamics of the system is the kinetic energy
+($Mv^2$) of the quarks. The kinetic energy determines the size of the
+radial excitations in the system \cite{Bodwin:1994jh}. It is assumed
+that these scales are well separated in the sense that $(Mv^2)^2 <<
+(Mv)^2 << M^2$ \cite{Bodwin:1994jh}.
+
+** Positronium System
+A treatment of the positronium system can be found in any
+undergraduate treatment of bound states allowed by the Coulomb
+potential \cite{Townsend:2000modern} \cite{Griffiths:2008zz}. Rather
+than re-derive the entire system, a brief review of the important
+results are presented. The content of this section follows that of
+\cite{Ellis:1991qj}. The existence of a solution is due to the
+spherical symmetry of the coulomb potential. This allows the system to
+be solved by separation of variables and reduces the degrees of
+freedom to finding the one dimensional bound states due to the coulomb
+potential:
+#+BEGIN_LaTeX
+  \begin{equation*}
+    U(r) = - \alpha/r
+  \end{equation*}
+#+END_LaTeX
+Here $\alpha$ is the dimensionless fine structure constant, and takes
+a value of 1/137. The wavefunction is then written as:
+#+BEGIN_LaTeX
+\begin{equation}
+\psi(r,\theta,\phi) = R_{l,n}(r)Y^m_l(\theta,\phi)
+\end{equation}
+#+END_LaTeX
+Here $R_{l,n}(r)$ is the radial solution, and $Y^m_l(\theta,\phi)$ are
+the spherical harmonic functions. The spherical harmonics $Y^m_l$
+arise from requiring angular momentum conservation. The radial
+functions are determined by finding the solutions to the
+time-independent Shroedinger equation. The energy eigenvalues are the
+well known Bohr energy levels:
+#+BEGIN_LaTeX
+\begin{equation}
+E_n = - \frac{\mu\alpha^2}{2n^2}
+\end{equation}
+#+END_LaTeX
+Here $\mu$ is the reduced mass of the system[fn:: $\mu\equiv
+\frac{m_1m_2}{m_1+m_2}$, In the case of positronium this is $m_e/2$].
+The characteristic length scale of the system is the Bohr radius:
+#+BEGIN_LaTeX
+  \begin{equation}
+  a_0 = \frac{1}{\mu \alpha}
+  \end{equation}
+#+END_LaTeX
+The ground state wave function is ($n=1,l=0,m=0$) \cite{Townsend:2000modern}:
+#+BEGIN_LaTeX
+\begin{equation}
+\label{eq:1S1}
+\psi_{100}(r,\theta,\phi) = \frac{1}{\sqrt{\pi a_0^3}}e^{-r/a_0}
+\end{equation}
+#+END_LaTeX
+The first radial excited state is ($n=2,l=1,m=0$) \cite{Townsend:2000modern}:
+#+BEGIN_LaTeX
+  \begin{equation}
+  \label{eq:3P0}
+  \psi_{210}(r,\theta,\phi) = \frac{1}{4\sqrt{2\pi a_0^3}}\frac{r}{a_0}e^{-r/(2a_0)}\cos\theta
+  \end{equation}
+#+END_LaTeX
+These two states are important because they correspond to the first
+two excitations in the charmonium spectrum. At this point it is useful
+to introduce the spectroscopic notation used in quarkonia literature.
+The notation follows that of atomic spectroscopy: $^{2S+1}L_J$. Here
+$S$ is the total spin of the system, $L$ is the orbital quantum
+number, and $J$ is total angular momentum. In the case of positronium,
+and quarkonium, the constituent particles are spin-1/2. Therefore when
+they are combined $S$ can take the values of 0 or 1. The orbital
+angular quantum number $L$ follows the time-honored notation where
+$L=0,1,2,3,\ldots$ corresponds to the letters $S,P,D,F,\ldots$.
+Finally, $J$ takes the values $J=|L-S|,\ldots,L+S$.
+
+Up to this point the positronium system and the quarkonium system have
+been treated as interchangeable. In fact, if gluons did not
+self-interact, the QED potential and the QCD potential would be the
+same modulo coupling constants and a numerical factor for color. This
+similarity suggests that using the hydrogen-like wave-functions as a
+basis state and applying perturbation theory may prove fruitful.
+** Potential Models of QCD
+It is not an accident that the potential model of QCD works well to
+describe the distribution of bound states observed in quarkonium
+systems. First, the gluon interaction times are much shorter than the
+movement time scale of the quarks. This is due to the assumption that
+the kinetic energy, $Mv^2$ is much smaller than the momentum of the
+quarks, $Mv$\cite{Bodwin:1994jh}. This means that treating the quarks
+as though they exist in an instantaneous potential is a good
+approximation. The second reason potential models are successful is
+the fact that the probability of another gluon existing in the bound
+state is small \cite{Bodwin:1994jh}.  
+** Charmonium Spectrum
+
+* Jet fragmentation
+** Fragmentation Functions
 * Non-relativistic QCD
 ** Lagrangian
 ** Factorization Theorem
 ** Color Octet States
-* Jet Fragmentation
-** Fragmentation Functions
-* Quarkonium
-** Positronium System
-** Empirical Models
-** Charmonium Spectrum
-
 #+LaTeX: \chapter{The ATLAS detector}
 * The Large Hadron Collider
 * The ATLAS detector
@@ -312,7 +451,7 @@ interactions allowed by the theory of QCD.
 ** Trigger
 
 #+LaTeX: \chapter{Analysis Methods}
-* Jet Definitions
+* Jet definitions
 ** Jet Reconstruction
 * Fitting the data
 * SPlot

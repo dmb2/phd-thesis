@@ -1,6 +1,7 @@
 #+LaTeX: \begin{biography}
-David Bjergaard
-October 7, 1988, Dickinson North Dakota
-B.S. Physics, Johns Hopkins University (2011)
-Ph.D. Physics, Duke University (2016)
+David Bjergaard was born on October 7, 1988, in Dickinson North
+Dakota. He earned his B.S. Physics with honors from Johns Hopkins
+University in 2011. He completed his Ph.D. in Physics at Duke
+University in 2016. He enjoys digital photography, brewing beer, and
+writing and maintaining open source software projects.
 #+LaTeX: \end{biography}
