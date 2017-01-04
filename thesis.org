@@ -6,7 +6,7 @@
 #+LATEX_CLASS: dukedissertation
 #+LATEX_HEADER:\supervisor{Ayana T Arce}
 #+LATEX_HEADER:\department{Physics}
-#+DATE: 2016
+#+DATE: 2017
 #+LATEX_HEADER:\member{Tom C. Mehen}
 #+LATEX_HEADER:\member{Mark C. Kruse}
 #+LATEX_HEADER:\member{Ashutosh V. Kotwal}
@@ -347,14 +347,13 @@ that these scales are well separated in the sense that $(Mv^2)^2 <<
 ** Positronium System
 A treatment of the positronium system can be found in any
 undergraduate treatment of bound states allowed by the Coulomb
-potential \cite{Townsend:2000modern} \cite{Griffiths:2008zz}. Rather
-than re-derive the entire system, a brief review of the important
-results are presented. The content of this section follows that of
-\cite{Ellis:1991qj}. The existence of a solution is due to the
-spherical symmetry of the coulomb potential. This allows the system to
-be solved by separation of variables and reduces the degrees of
-freedom to finding the one dimensional bound states due to the coulomb
-potential:
+potential \cite{Townsend:2000modern} \cite{Griffiths:2008zz}. A brief
+review of the important results are presented. The content of this
+section follows that of \cite{Ellis:1991qj}. The existence of a
+solution is due to the spherical symmetry of the coulomb potential.
+This allows the system to be solved by separation of variables and
+reduces the degrees of freedom to finding the one dimensional bound
+states due to the coulomb potential:
 #+BEGIN_LaTeX
   \begin{equation*}
     U(r) = - \alpha/r
@@ -450,11 +449,14 @@ state is small \cite{Bodwin:1994jh}.
 ** Track Reconstruction
 ** Trigger
 
-#+LaTeX: \chapter{Analysis Methods}
+#+LaTeX: \chapter{Event Reconstruction and Selection}
+* J/\psi reconstruction
 * Jet definitions
 ** Jet Reconstruction
+#+LaTeX: \chapter{Analysis Methods}
 * Fitting the data
 * SPlot
+* Unfolding
 ** Validating the Method
 * Unfolding
 ** Iterative Bayesian Unfolding
