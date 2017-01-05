@@ -427,15 +427,52 @@ quarks, $Mv$\cite{Bodwin:1994jh}. This means that treating the quarks
 as though they exist in an instantaneous potential is a good
 approximation. The second reason potential models are successful is
 the fact that the probability of another gluon existing in the bound
-state is small \cite{Bodwin:1994jh}.  
-** Charmonium Spectrum
+state is small \cite{Bodwin:1994jh}.
 
-* Jet fragmentation
-** Fragmentation Functions
+Using a the coulomb eigenfunctions as a set of basis states and
+applying a perturbative potential provides a good description of the
+quarkonium spectrum. The perturbation used is due to the
+self-interaction of the gluons. 
+#+BEGIN_LaTeX
+\begin{equation*}
+V(r)=Kr
+\end{equation*}
+#+END_LaTeX 
+Here $K$ is the "string constant".  This term combined with the
+coulomb-like potential:
+#+BEGIN_LaTeX
+  \begin{equation*}
+    U(r) = - \frac{4}{3}\frac{\alpha_s}{r}
+  \end{equation*}
+#+END_LaTeX
+completes the model. The perturbation is confining at large distances
+and presents a constant force. The string analogy is apt, as the
+tension in a string is constant. When the force applied exceeds the
+tensile strength of the string, the string snaps. This analogy
+suggests the string model of fragmentation in which the gluon
+"strings" snap and quark anti-quark pairs form at the ends of the
+strings.
+#+CAPTION: Spectrum of charmonium and bottomonium bound states compared to potential theory. 
+#+NAME: fig:spectrum
+#+ATTR_LATEX: :width \linewidth :options angle=-90
+[[file:figures/quarkonium_spectrum.eps]] 
+
+Figure \ref{fig:spectrum} shows the result of applying a more
+sophisticated potential model as a perturbation on the coulomb-like
+eigenfunctions. This model has the asymptotic features of the string
+model and describes the data well \cite{Ellis:1991qj}.  The dashed
+lines are the theory prediction and the solid lines are the data.  The
+bottomonium spectrum is better described because the mass is higher,
+and hence the coupling constant is weaker making the assumptions
+behind the potential model stronger. 
 * Non-relativistic QCD
 ** Lagrangian
 ** Factorization Theorem
 ** Color Octet States
+
+* Jet fragmentation
+
+** Fragmentation Functions
 #+LaTeX: \chapter{The ATLAS detector}
 * The Large Hadron Collider
 * The ATLAS detector
