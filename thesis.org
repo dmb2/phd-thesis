@@ -226,6 +226,7 @@ a ghost term.
 In natural units ($\hbar=c=1$), the classical field lagrangian is:
 #+BEGIN_LaTeX
   \begin{equation}
+  \label{eq:qcd-classic}
     \mathcal{L}_{\text{Classical}} = -\frac{1}{4}F^A_{\alpha\beta}F^{\alpha\beta}_A + \sum_{\text{flavors}}\overline{q}_a(i\slashed{D}-m)_{ab}q_b
   \end{equation}
 #+END_LaTeX
@@ -233,6 +234,7 @@ Here $\slashed{D}\equiv\gamma_\mu D^\mu$, and $F_{\alpha\beta}^A$ is
 the gluon field strength tensor:
 #+BEGIN_LaTeX
   \begin{equation}
+  \label{eq:qcd-tensor}
     F_{\alpha\beta}^A =
     \partial_\alpha\mathcal{A}_\beta^A-\partial_\beta\mathcal{A}_\alpha^A - g f^{ABC}\mathcal{A}_\alpha^B\mathcal{A}_\beta^C
   \end{equation}
@@ -466,12 +468,78 @@ bottomonium spectrum is better described because the mass is higher,
 and hence the coupling constant is weaker making the assumptions
 behind the potential model stronger. 
 * Non-relativistic QCD
+While the potential model of QCD bound states does a good job of
+capturing the features of the spectrum it is not a complete
+description. Figure \ref{fig:spectrum} shows some disagreement in the
+numerical values for the mass eigenstates. Further, the potential
+model offers no way of calculating the differential cross section for
+production. This can be done using perturbation theory with the
+relativistic QCD lagrangian. The leading order cross sections for
+J/\psi production were calculated in the early 80s
+\cite{Baier:1983va}. After the measurement of the J/\psi and \psi(2S)
+by the Tevatron in the early 90s, the disparity between the leading
+order prediction and the measured data was large. This lead to the
+exploration of effective field theory descriptions of QCD in an
+attempt to bridge the gap between the non-perturbative parts of
+quarkonia processes which are difficult to calculate and the parts of
+quarkonia production amenable to perturbation theory
+\cite{Bodwin:1994jh}.
 ** Lagrangian
+Rather than take an explicit expansion of the QCD Lagrangian
+(\ref{eq:qcd-classic}), it is informative to build a Lagrangian which
+is equivalent to the fully relativistic version. In this case recall
+that the non-relativistic expansion for the energy of a particle is
+the classical kinetic energy:
+#+BEGIN_LaTeX
+\begin{equation}
+E = \sqrt{M^2+p^2} \simeq M + \frac{p^2}{2M}
+\end{equation}
+#+END_LaTeX
+The separation of short distance interactions of the light quarks and
+the long distance interactions of the heavy quarks suggest the
+following terms in the NRQCD lagrangian \cite{Bodwin:1994jh}:
+#+BEGIN_LaTeX
+\begin{equation}
+\mathcal{L}_{\text{NRQCD}} = \mathcal{L}_{\text{light}} + \mathcal{L}_{\text{heavy}} + \delta\mathcal{L}
+\end{equation}
+#+END_LaTeX
+The light quarks are expected to be adequately described by the QCD
+lagrangian, and so those terms are retained:
+#+BEGIN_LaTeX
+  \begin{equation}
+    \mathcal{L}_{\text{light}} = -\frac{1}{2}F^A_{\alpha\beta}F^{\alpha\beta}_A + \sum_{\text{light flavors}}\overline{q}_a(i\slashed{D}-m)_{ab}q_b
+  \end{equation}
+#+END_LaTeX
+The heavy quarks are explicitly inserted using the non-relativistic
+expansion of the gauge-covariant derivative:
+#+BEGIN_LaTeX
+\begin{equation}
+i\slashed{D} - m  = i D_t + \frac{\mathbf{D}^2}{2M}
+\end{equation}
+#+END_LaTeX
+This gives:
+#+BEGIN_LaTeX
+\begin{equation}
+\mathcal{L}_{\text{heavy}} = \psi^\dagger\left(iD_t + \frac{\mathbf{D}^2}{2M}\right)\psi + \chi^\dagger\left(iD_t - \frac{\mathbf{D}^2}{2m}\right)\chi 
+\end{equation}
+#+END_LaTeX
+Where the color and spin indices have now been supressed and $\psi$ is
+the Pauli spinor field responsible for annihilating a heavy quark.
+Conversely $\chi$ is the Pauli spinor field for creating a heavy
+anti-quark, $D_t$ and $\mathbf{D}$ are the space-time components of
+the gauge covariant derivative $D^\mu$.  
+
+These two terms together describe QCD coupled with a Schrödinger
+theory for the heavy quarks \cite{Bodwin:1994jh}.  Since the
+Schrödinger terms were added as a non-relativistic expansion of the
+gauge-covariant derivative additional terms in the expansion must be
+included in order to fully describe the relativistic effects of QCD.
+These terms are explained in detail in \cite{Bodwin:1994jh} and are
+contained in the $\delta\mathcal{L}$ term above.  
 ** Factorization Theorem
 ** Color Octet States
 
 * Jet fragmentation
-
 ** Fragmentation Functions
 #+LaTeX: \chapter{The ATLAS detector}
 * The Large Hadron Collider
