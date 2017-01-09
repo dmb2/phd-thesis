@@ -591,9 +591,36 @@ amplitudes and the $\langle 0 | O^{\psi_Q}_{8,1}(n) |0 \rangle$ term
 (abbreviated as $\mathcal{O}^H_{8,1}(n)$) is the known long distance
 matrix element (LDME).
 
-Equation \ref{eq:xs_total} makes the terms in the overall cross
-section 
+Equation \ref{eq:xs_total} explicitly separates the energy scales
+involved in production. The short distance amplitude is calculated by
+evaluating the relevant Feynman diagrams required to produce a
+$Q\bar{Q}$ pair with quantum numbers $n$. The LDME on the other hand
+represents the low energy, non-perturbative part of the calculation.
+
+This value cannot be calculated directly and must be inferred from
+experimental measurements. The extraction of LDMEs from globally
+measured data has been done many times \cite{sherpa-docs}, but the
+methodology is fraught with pitfalls and there is no definitive set
+available. Further, the LDMEs represent a large number of degrees of
+freedom. Some components have different momentum dependence, and thus
+it is possible to re-weight them to fit the subset of data judged
+valid by the person fitting the parameters.
+
+The LDME values extracted are validated using the only degree of
+freedom remaining in the quarkonium system: the spin alignment between
+the quarkonium and the measured decay products. Historically the
+disagreement between the measured spin-alignment and the amount
+required by the extracted LDMEs has been referred to as the
+"polarization puzzle[fn:: The alliteration seems to have contributed
+to the persistency of this name versus the more technically accurate
+"spin-alignment inconsistency"]." There have been many attempts at
+explaining the effect \cite{polarization-papers}, but none are
+completely satisfactory.
+
 * Jet fragmentation
+Having examined the bound states QCD is capable of producing, it is
+now useful examine aspect of QCD at a different energy scale: the
+propagation of a parton through space.  
 ** Fragmentation Functions
 #+LaTeX: \chapter{The ATLAS detector}
 * The Large Hadron Collider
