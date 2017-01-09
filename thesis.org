@@ -536,9 +536,63 @@ gauge-covariant derivative additional terms in the expansion must be
 included in order to fully describe the relativistic effects of QCD.
 These terms are explained in detail in \cite{Bodwin:1994jh} and are
 contained in the $\delta\mathcal{L}$ term above.  
-** Factorization Theorem
-** Color Octet States
 
+Organizing the lagrangian in this way allows cross section formulas to
+be written as a dual expansion in the relative velocities of the heavy
+quarks and the QCD coupling constant $\alpha_s$.  This gives insight
+into which effects dominate at what scale in the short and long
+distance interactions.  
+** Factorization Theorem
+Because this formulation of the lagrangian makes the Schroedinger
+states explicit, the quarkonium state can be interpreted as a sum of
+all possible Fock state configurations.  This can be written as
+\cite{Ellis:1991qj}:
+#+BEGIN_LaTeX
+\begin{equation}
+  \begin{aligned}
+  |\psi_Q\rangle &= O(1)|Q\bar{Q}[^3S_1^{(1)}]\rangle + O(v) |Q\bar{Q}[^3P_J^{(8)}]g\rangle \\
+  &+ O(v^2)|Q\bar{Q}[^1S_0^{(8)}]g\rangle + O(v^2)|Q\bar{Q}[^3S_1^{(1,8)}]gg\rangle \\
+  &+ O(v^2)|Q\bar{Q}[^3D_J^{(1,8)}]gg\rangle + \ldots \\
+  \end{aligned}
+\end{equation}
+#+END_LaTeX
+Here $\psi_Q$ is the quarkonium bound state.  The angular momentum
+quantum numbers of the Fock state are given in standard spectroscopic
+notation: $^{2S+1}L_J^{(1,8)}$ with an additional index to indicate singlet
+(1) or octet (8) color states.  In this notation $S$ is the spin of
+the system, $L$ is the orbital quantum number and $J$ is the total
+angular momentum. This formula also makes explicit the relative
+probability of finding a gluon in a $Q\bar{Q}$ state, which was one of
+the conditions necessary for the potential model of quarkonium.
+
+The leading order term corresponds to the wavefunction from the
+Schroedinger picture.  Higher order terms correspond to Fock states
+which provide a soft gluon.  The presence of this gluon in the state
+allows the quarkonium to be in a color octet state.  The inclusion of
+these terms in the expression for the overall cross section provides
+important contributions to the production of quarkonia in hadronic
+collisions.  
+
+The explicit formulation of the partonic cross section can be written
+as: 
+#+BEGIN_LaTeX
+  \begin{equation}
+  \label{eq:xs_total}
+  \frac{d\sigma}{d\hat{t}}(ab \rightarrow Q\overline{Q}[n] c \rightarrow
+  \psi_Q) = \frac{1}{16 \pi \hat{s}^2}
+  \overline{\sum}\left|\mathcal{A}(ab \rightarrow Q\overline{Q}[n] c)_{\text{short}}\right|^2\langle 0 | O^{\psi_Q}_{8,1}(n) |0 \rangle
+  \end{equation}
+#+END_LaTeX
+Here, $a,b$ and $c$ represent initial and final state partons, $n$ is
+shorthand for the spectroscopic term symbol introduced above, and
+$\psi_{Q}$ is the final state quarkonium. The sum is understood to be
+the average over initial spin and color states of the scattering
+amplitudes and the $\langle 0 | O^{\psi_Q}_{8,1}(n) |0 \rangle$ term
+(abbreviated as $\mathcal{O}^H_{8,1}(n)$) is the known long distance
+matrix element (LDME).
+
+Equation \ref{eq:xs_total} makes the terms in the overall cross
+section 
 * Jet fragmentation
 ** Fragmentation Functions
 #+LaTeX: \chapter{The ATLAS detector}
