@@ -20,6 +20,8 @@
 \\usepackage{amsfonts}
 \\usepackage{amsthm}
 \\usepackage{setspace}
+\\usepackage{subfig}
+\\usepackage{slashed}
 \\usepackage[version=3]{mhchem}
 " 
                    ("\\section{%s}" . "\\section{%s}") 

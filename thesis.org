@@ -165,7 +165,7 @@ directly and no net color charge.
 An alternative view of charmonium production is the production of the
 charm quark pair during the fragmentation of partons into individual
 hadrons. In the fragmenting jet function (FJF)
-framework\cite{Procura:2009vm}, the total cross section is a product
+framework \cite{Procura:2009vm}, the total cross section is a product
 of the short distance partonic cross section with universal
 fragmentation functions which determine the evolution of individual
 partons to hadrons.
@@ -425,7 +425,7 @@ describe the distribution of bound states observed in quarkonium
 systems. First, the gluon interaction times are much shorter than the
 movement time scale of the quarks. This is due to the assumption that
 the kinetic energy, $Mv^2$ is much smaller than the momentum of the
-quarks, $Mv$\cite{Bodwin:1994jh}. This means that treating the quarks
+quarks, $Mv$ \cite{Bodwin:1994jh}. This means that treating the quarks
 as though they exist in an instantaneous potential is a good
 approximation. The second reason potential models are successful is
 the fact that the probability of another gluon existing in the bound
@@ -454,7 +454,7 @@ tensile strength of the string, the string snaps. This analogy
 suggests the string model of fragmentation in which the gluon
 "strings" snap and quark anti-quark pairs form at the ends of the
 strings.
-#+CAPTION: Spectrum of charmonium and bottomonium bound states compared to potential theory. 
+#+CAPTION: Spectrum of charmonium and bottomonium bound states compared to potential theory \cite{Ellis:1991qj}.  
 #+NAME: fig:spectrum
 #+ATTR_LATEX: :width \linewidth :options angle=-90
 [[file:figures/quarkonium_spectrum.eps]] 
@@ -592,19 +592,27 @@ amplitudes and the $\langle 0 | O^{\psi_Q}_{8,1}(n) |0 \rangle$ term
 matrix element (LDME).
 
 Equation \ref{eq:xs_total} explicitly separates the energy scales
-involved in production. The short distance amplitude is calculated by
-evaluating the relevant Feynman diagrams required to produce a
-$Q\bar{Q}$ pair with quantum numbers $n$. The LDME on the other hand
-represents the low energy, non-perturbative part of the calculation.
+involved in production. Figure \ref{fig:nrqcd-ldme} shows a pictoral
+representation of this factorization. The short distance amplitude is
+calculated by evaluating the relevant Feynman diagrams required to
+produce a $Q\bar{Q}$ pair with quantum numbers $n$. The LDME
+(repesented by the grey blob) on the other hand represents the low
+energy, non-perturbative part of the calculation.
+
+#+CAPTION: Schematic representation of production of quarkonium in NRQCD, $a,b,c=g$ as in \ref{eq:xs_total}. 
+#+NAME: fig:nrqcd-ldme
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figures/nrqcd_ldme.eps]] 
 
 This value cannot be calculated directly and must be inferred from
 experimental measurements. The extraction of LDMEs from globally
-measured data has been done many times \cite{sherpa-docs}, but the
-methodology is fraught with pitfalls and there is no definitive set
-available. Further, the LDMEs represent a large number of degrees of
-freedom. Some components have different momentum dependence, and thus
-it is possible to re-weight them to fit the subset of data judged
-valid by the person fitting the parameters.
+measured data has been done many times \cite{Gong:2012ug}
+\cite{Butenschoen:2012qr} \cite{Faccioli:2014cqa}, but the methodology
+is fraught with pitfalls and there is no definitive set available.
+Further, the LDMEs represent a large number of degrees of freedom.
+Some components have different momentum dependence, and thus it is
+possible to re-weight them to fit the subset of data judged valid by
+the person fitting the parameters.
 
 The LDME values extracted are validated using the only degree of
 freedom remaining in the quarkonium system: the spin alignment between
@@ -614,14 +622,97 @@ required by the extracted LDMEs has been referred to as the
 "polarization puzzle[fn:: The alliteration seems to have contributed
 to the persistency of this name versus the more technically accurate
 "spin-alignment inconsistency"]." There have been many attempts at
-explaining the effect \cite{polarization-papers}, but none are
-completely satisfactory.
+explaining the effect \cite{Haberzettl:2007kj} \cite{Ma:2010yw}
+\cite{Chao:2012iv} \cite{Lansberg:2013wva}, but none are completely
+satisfactory.
 
 * Jet fragmentation
 Having examined the bound states QCD is capable of producing, it is
-now useful examine aspect of QCD at a different energy scale: the
-propagation of a parton through space.  
-** Fragmentation Functions
+now useful examine another aspect of QCD at a different energy scale:
+the fate of a recoiling parton in a hard[fn:: Hard here refers to high
+energy, conversely soft refers to low energy.] interaction.
+Confinement makes it impossible for a parton to propagate through
+space without forming a color singlet state. What is needed is a
+framework for discussing the transition between a single hard parton
+and the shower of hadrons ultimately measured in the detector. 
+
+As in the production of quarkonium states there are two energy scales
+which must be separated to make progress with the QCD processes.  The
+scale where perturbation theory can be applied is separated into what
+is called the parton shower.  The non-perturbative part of the process
+is the transition from partons into hadrons referred to as
+hadronization.  
+** Parton Shower
+#+BEGIN_LaTeX
+  \begin{figure}[htp]
+    \centering
+    \subfloat[$g\rightarrow gg$]{
+      \label{fig:g-to-gg}
+      \includegraphics[width=0.4\textwidth]{figures/g_to_gg.eps}
+    }\qquad
+    \subfloat[$g\rightarrow qg$]{
+      \label{fig:g-to-qg}
+      \includegraphics[width=0.4\textwidth]{figures/g_to_qg.eps}
+    }\\
+    \subfloat[$g\rightarrow q\overline{q}$]{
+      \label{fig:g-to-qqbar}
+      \includegraphics[width=0.4\textwidth]{figures/g_to_qqbar.eps}
+    }\qquad
+    \subfloat[$q\rightarrow qg$]{
+      \label{fig:g-to-qg}
+      \includegraphics[width=0.4\textwidth]{figures/q_to_qg.eps}
+    }
+
+    \caption{\label{fig:parton-splittings} Feynman vertices that contribute to a parton shower.}
+  \end{figure}
+#+END_LaTeX
+Figure \ref{fig:parton-splittings} shows the various initial and final
+state parton configurations which contribute to a parton shower. An
+entire shower consists of a series of splittings following different
+probability distributions depending on the outgoing partons at each
+splitting. The process is dissipative, in the sense that the energy is
+shared between the final state partons, and at each branching the
+energy of a given parton is less than the previous branching's
+daughters.  When the final state partons fall below a certain
+threshold the non-perturbative effects of hadronization take over and
+the partons form hadrons which are ultimately detected by the
+experimental apparatus. 
+
+Each parton splitting functions has characteristic differences that
+affect the outcome of the shower.  Following Chapter 5 of
+\cite{Ellis:1991qj}, the shower is assumed to follow timelike
+branching.  The energy fraction $z$ of branching is defined as:
+#+BEGIN_LaTeX
+\begin{equation}
+z = E_c/E_a = 1 - E_b/E_a
+\end{equation}
+#+END_LaTeX
+After averaging over the possible polarization states of the incoming
+and outgoing gluons the amplitude for splitting from $n$ partons to
+$n+1$ partons is given by:
+#+BEGIN_LaTeX
+\begin{equation}
+|\mathcal{M}_{n+1}|^2 \sim \frac{4g^2}{t}\hat{P}_{bc}(z)|\mathcal{M}_n|^2
+\end{equation}
+#+END_LaTeX
+Here $g$ is the QCD coupling constant, $t\equiv p_a^2$ and
+$\hat{P}_{bc}$ is the unregularized splitting function for the final
+state partons.  The gluon splitting function is:
+#+BEGIN_LaTeX
+\begin{equation}
+\label{eq:gg-split}
+\hat{P}_{gg}(z) = C_A\left[\frac{1-z}{z}+\frac{z}{1-z}+z(1-z)\right]
+\end{equation}
+#+END_LaTeX
+Here $C_A=3$, notice that when one of the gluons is soft either ($c$ soft)
+$z\rightarrow 0$ or ($b$ soft) $z\rightarrow 1$.  The first term of
+equation \ref{eq:gg-split} is divergent for $z\rightarrow 0$ as well
+as $z\rightarrow 1$ for the the second term.  These divergences favor
+soft emission of gluons.  
+
+
+** Hadronization
+
 #+LaTeX: \chapter{The ATLAS detector}
 * The Large Hadron Collider
 * The ATLAS detector
