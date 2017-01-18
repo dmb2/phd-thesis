@@ -47,21 +47,20 @@ To my wife.
 * A brief history
 The history of particle physics spans over a century of experimental
 and theoretical development that has lead to some of the deepest
-insights into nature. A comprehensive history of the subject is beyond
-the scope of this document, however a starting point is required.
-During the post-war period of the early 1950s a series of bubble
-chamber experiments led to the discovery of the $\Lambda$, $\Xi$ and
-$\Sigma$ baryons[fn::Baryons are bound states of three quarks. The
-name is derived from the greek word "heavy" or "barus" ]. This coupled
-with the discoveries of the $K$, $\pi$ and $\eta$ mesons[fn:: Mesons
-are bound states of a quark and an anti-quark. The name is derived
-from the greek word "intermediate" or "mesos" ] lead to the proposal
-of the "eightfold way" \cite{PhysRev.125.1067}. The guiding principal
-of the eightfold way is to use the structure of a proposed
-$SU(3)\times SU(3)$ symmetry to explain the mesons and baryons known
-to date and to make strong predictions about new states that should be
-observed \cite{PhysRev.125.1067}. This organization of the particles
-hints at the existence of fundamental particles called /quarks/.
+insights into nature. The starting point for this work began during
+the post-war period of the early 1950s. A series of bubble chamber
+experiments led to the discovery of the $\Lambda$, $\Xi$ and $\Sigma$
+baryons[fn::Baryons are bound states of three quarks. The name is
+derived from the greek word "heavy" or "barus" ]. This coupled with
+the discoveries of the $K$, $\pi$ and $\eta$ mesons[fn:: Mesons are
+bound states of a quark and an anti-quark. The name is derived from
+the greek word "intermediate" or "mesos" ] lead to the proposal of the
+"eightfold way" \cite{PhysRev.125.1067}. The guiding principal of the
+eightfold way is to use the structure of a proposed $SU(3)\times
+SU(3)$ symmetry to explain the mesons and baryons known to date and to
+make strong predictions about new states that should be observed
+\cite{PhysRev.125.1067}. This organization of the particles hints at
+the existence of fundamental particles called /quarks/.
 
 While the eightfold way provided an organizational scheme and strong
 predictions of the relationships between the members of the baryon
@@ -123,13 +122,14 @@ quickly calculate the needed contributions from the non-relativistic
 expansion of QCD (NRQCD) in order to describe the data
 \cite{PhysRevD.55.R5269}.
 
-The extra NRQCD components that describe the observed p_T spectrum
-predicted that the spin alignment between the J/\psi and the decaying
-muons be strongly polarized. Subsequent measurements of the
-polarization at CDF find no evidence of polarized spin-alignment in
-the J/\psi system \cite{PhysRevLett.85.2886}. This problem has been
-dubbed the "polarization puzzle" in literature and has no satisfying
-explanation nearly two decades after its first observation.
+The extra NRQCD components that describe the observed transverse
+momentum spectrum predicted that the spin alignment between the J/\psi
+and the decaying muons be strongly polarized. Subsequent measurements
+of the polarization at CDF find no evidence of polarized
+spin-alignment in the J/\psi system \cite{PhysRevLett.85.2886}. This
+problem has been dubbed the "polarization puzzle" in literature and
+has no satisfying explanation nearly two decades after its first
+observation.
 
 The production of charm quark pairs which transition to the J/\psi
 state probes two complementary energy scales. The origination of the
@@ -179,7 +179,21 @@ function for $q \rightarrow q g$.  This leads to fundamentally
 different distributions of momentum between the surrounding radiation
 and the charmonium system \cite{Bain:2016clc}.  
 
+The following is a birds-eye view of the remainder of the thesis. Chapter
+\ref{chap:theory} presents an overview of Quantum Chromodynamics, and
+the phenomena relevant for this work. Following that Chapter
+\ref{chap:detector} describes the LHC and ATLAS detector in detail.
+After describing the detecting apparatus, the methods of
+reconstructing jets and J/\psi candidates is described in
+\ref{chap:reconstruction}. With a firm grasp of the theory and
+physical measurement of the particles, the next step is a description
+of the data analysis methods used in Chapter \ref{chap:analysis}. In
+Chapter \ref{chap:measurement} the selection criteria, systematic
+errors, and final results are presented. A discussion of consequences
+and future work follows. 
+
 #+LaTeX: \chapter{Theory}
+#+LaTeX: \label{chap:theory}
 * Quantum Chromodynamics
 Quantum chromodynamics describes the interactions between quarks and
 gluons. It is one of the fundamental pieces of the Standard Model of
@@ -306,25 +320,25 @@ energetically favorable to create a quark anti-quark pair from the
 vacuum than it is to increase the distance between two quarks further.
 This property of QCD is referred to as confinement. 
 * Quarkonium
-The bound states allowed by a theory and their properties are
-important to any theory. In QCD, bound states consist of mesons and
-baryons in accordance with the rules outlined in Section [[Feyman Rules]].
-When a meson forms a bound state with a quark and anti-quark of the
-same flavor it is referred to as a quarkonium state. This naming
-scheme is reminiscent of the positronium bound state from quantum
-mechanics in a coulomb potential. Quarkonium have a number of unique
-properties that make it an ideal system to study properties of QCD.
-The bound state consists of a quark and its charge-conjugate. This
-provides a degree of symmetry not present in other meson systems. In
-heavy quarkonium systems (charmonium and bottomonium), the mass scale
-is high enough that perturbation theory can provide useful answers
-relative to the cutoff energy scale $\Lambda_{\text{QCD}}\simeq
-450~\text{MeV}$. The strength of the coupling strength of QCD in the
-charmonium system is $\alpha_s(m_c)\approx0.24$ \cite{Bodwin:1994jh}. This
-is large enough that the perturbation series converges more slowly
-than one would hope. The higher mass of the bottom quark allows the
-bottomonium system a faster rate of convergence. At the bottom mass
-scale, $\alpha_s(m_b)\approx0.18$ \cite{Bodwin:1994jh}.  
+The bound states and their properties are important to any theory of
+interactions. In QCD, bound states consist of mesons and baryons in
+accordance with the rules outlined in Section [[Feyman Rules]]. When a
+meson forms a bound state with a quark and anti-quark of the same
+flavor it is referred to as a quarkonium state. This naming scheme is
+reminiscent of the positronium bound state from quantum mechanics in a
+coulomb potential. Quarkonium have a number of unique properties that
+make it an ideal system to study properties of QCD. The bound state
+consists of a quark and its charge-conjugate. This provides a degree
+of symmetry not present in other meson systems. In heavy quarkonium
+systems (charmonium and bottomonium), the mass scale is high enough
+that perturbation theory can provide useful answers relative to the
+cutoff energy scale $\Lambda_{\text{QCD}}\simeq 450~\text{MeV}$. The
+strength of the coupling strength of QCD in the charmonium system is
+$\alpha_s(m_c)\approx0.24$ \cite{Bodwin:1994jh}. This is large enough
+that the perturbation series converges more slowly than one would
+hope. The higher mass of the bottom quark allows the bottomonium
+system a faster rate of convergence. At the bottom mass scale,
+$\alpha_s(m_b)\approx0.18$ \cite{Bodwin:1994jh}.
 
 Before examining the consequences of a larger $\alpha_s$ in the
 charmonium system, it is useful to reproduce as much of the charmonium
@@ -550,9 +564,9 @@ all possible Fock state configurations.  This can be written as
 #+BEGIN_LaTeX
 \begin{equation}
   \begin{aligned}
-  |\psi_Q\rangle &= O(1)|Q\bar{Q}[^3S_1^{(1)}]\rangle + O(v) |Q\bar{Q}[^3P_J^{(8)}]g\rangle \\
-  &+ O(v^2)|Q\bar{Q}[^1S_0^{(8)}]g\rangle + O(v^2)|Q\bar{Q}[^3S_1^{(1,8)}]gg\rangle \\
-  &+ O(v^2)|Q\bar{Q}[^3D_J^{(1,8)}]gg\rangle + \ldots \\
+  |\psi_Q\rangle &= O(1)|Q\overline{Q}[^3S_1^{(1)}]\rangle + O(v) |Q\overline{Q}[^3P_J^{(8)}]g\rangle \\
+  &+ O(v^2)|Q\overline{Q}[^1S_0^{(8)}]g\rangle + O(v^2)|Q\overline{Q}[^3S_1^{(1,8)}]gg\rangle \\
+  &+ O(v^2)|Q\overline{Q}[^3D_J^{(1,8)}]gg\rangle + \ldots \\
   \end{aligned}
 \end{equation}
 #+END_LaTeX
@@ -562,7 +576,7 @@ notation: $^{2S+1}L_J^{(1,8)}$ with an additional index to indicate singlet
 (1) or octet (8) color states.  In this notation $S$ is the spin of
 the system, $L$ is the orbital quantum number and $J$ is the total
 angular momentum. This formula also makes explicit the relative
-probability of finding a gluon in a $Q\bar{Q}$ state, which was one of
+probability of finding a gluon in a $Q\overline{Q}$ state, which was one of
 the conditions necessary for the potential model of quarkonium.
 
 The leading order term corresponds to the wavefunction from the
@@ -595,7 +609,7 @@ Equation \ref{eq:xs_total} explicitly separates the energy scales
 involved in production. Figure \ref{fig:nrqcd-ldme} shows a pictoral
 representation of this factorization. The short distance amplitude is
 calculated by evaluating the relevant Feynman diagrams required to
-produce a $Q\bar{Q}$ pair with quantum numbers $n$. The LDME
+produce a $Q\overline{Q}$ pair with quantum numbers $n$. The LDME
 (repesented by the grey blob) on the other hand represents the low
 energy, non-perturbative part of the calculation.
 
@@ -650,10 +664,6 @@ hadronization.
       \label{fig:g-to-gg}
       \includegraphics[width=0.4\textwidth]{figures/g_to_gg.eps}
     }\qquad
-    \subfloat[$g\rightarrow qg$]{
-      \label{fig:g-to-qg}
-      \includegraphics[width=0.4\textwidth]{figures/g_to_qg.eps}
-    }\\
     \subfloat[$g\rightarrow q\overline{q}$]{
       \label{fig:g-to-qqbar}
       \includegraphics[width=0.4\textwidth]{figures/g_to_qqbar.eps}
@@ -662,7 +672,6 @@ hadronization.
       \label{fig:g-to-qg}
       \includegraphics[width=0.4\textwidth]{figures/q_to_qg.eps}
     }
-
     \caption{\label{fig:parton-splittings} Feynman vertices that contribute to a parton shower.}
   \end{figure}
 #+END_LaTeX
@@ -697,24 +706,118 @@ $n+1$ partons is given by:
 #+END_LaTeX
 Here $g$ is the QCD coupling constant, $t\equiv p_a^2$ and
 $\hat{P}_{bc}$ is the unregularized splitting function for the final
-state partons.  The gluon splitting function is:
+state partons. The gluon splitting function corresponding to Figure
+\ref{fig:g-to-gg} is:
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:gg-split}
 \hat{P}_{gg}(z) = C_A\left[\frac{1-z}{z}+\frac{z}{1-z}+z(1-z)\right]
 \end{equation}
 #+END_LaTeX
-Here $C_A=3$, notice that when one of the gluons is soft either ($c$ soft)
-$z\rightarrow 0$ or ($b$ soft) $z\rightarrow 1$.  The first term of
-equation \ref{eq:gg-split} is divergent for $z\rightarrow 0$ as well
-as $z\rightarrow 1$ for the the second term.  These divergences favor
-soft emission of gluons.  
+Here the color factor is $C_A=3$. It is useful to take the various
+limits. Notice that when one of the partons is soft either ($c$ soft)
+$z\rightarrow 0$ or ($b$ soft) $z\rightarrow 1$. The first term of
+equation \ref{eq:gg-split} is divergent for $z\rightarrow 0$. The same
+is true for the second term as $z\rightarrow 1$. These divergences
+favor soft emission of gluons.
 
+Following the same prescription, the splitting function for gluon
+emission from a quark (see Figure \ref{fig:g-to-qg}):
+#+BEGIN_LaTeX
+\begin{equation}
+\hat{P}_{qg}(z) = T_R[z^2+(1-z)^2]
+\end{equation}
+#+END_LaTeX
+In this case the color factor $T_R=1/2$, taking $z\rightarrow 0$
+favors soft gluon emission whereas the $z\rightarrow 1$ limit favors
+hard emission of the gluon. The parabolic nature of the function
+favors one extreme or the other.
 
+The remaining case corresponds to Figure \ref{fig:g-to-qqbar} and is
+for a gluon splitting into a quark anti-quark pair.  The spin-averaged
+splitting function is:
+#+BEGIN_LaTeX
+\begin{equation}
+\hat{P}_{qq}(z) = C_F \frac{1+z^2}{1-z}
+\end{equation}
+#+END_LaTeX
+This function is unique among the splitting functions in that it
+favors one of the outgoing partons to be harder than the other. Figure
+\ref{fig:splitting-functions} shows the three splitting functions
+defined above.  An arbitrary normalization is applied to the $P_{qq}$
+and $P_gg$ functions in order to better compare the behavior of the
+shapes.
+#+CAPTION: The splitting functions required for a parton shower.  An arbitrary normalization is applied to $P_{qq}$ and $P_{gg}$ in order to allow better comparison of the shapes.
+#+NAME: fig:splitting-functions
+#+ATTR_LATEX: :width \linewidth
+[[file:figures/splitting_functions.pdf]] 
+
+The contributions from these individual diagrams and splitting
+functions can be used to simulate a parton shower. An example parton
+shower from an $e^+e^-$ annihilation event taken from
+\cite{Ellis:1991qj} is shown in Figure \ref{fig:parton-shower}.
+
+#+CAPTION: An example parton shower from an $e^+e^-$ annihilation event. Figure taken from \cite{Ellis:1991qj}. 
+#+NAME: fig:parton-shower
+#+ATTR_LATEX: :width 0.5\linewidth :options  angle=-90
+[[file:figures/parton-shower.eps]] 
 ** Hadronization
+The evolution of the partons created during the shower into hadrons is
+inherently non-perturbative.  The phenomenological model used by
+Pythia is the Lund string model \cite{Sjostrand:2007gs}.  This model
+extends the string analogy developed in Section [[Potential Models of
+QCD]].  The idea is that hadrons in the shower are connected via
+color-strings.  If the energy stored in the string rises above the
+threshold for $q\overline{q}$, the string snaps and the process is
+repeated until the energies of the remaining string segments fall
+below a threshold value.  Below this threshold, the string fragments
+form the final state hadrons.  If there are gluons present in the
+final state of the parton shower, they are connected to the
+color-strings as dynamical kinks in the string.  Figure
+\ref{fig:color-hadronization} shows an example of this process in an
+$e^+e^-$ event \cite{Ellis:1991qj}.
+#+CAPTION: String model of hadronization in an $e^+e^-$ event. Grey shaded region is the string. Figure taken from \cite{Ellis:1991qj}
+#+NAME: fig:color-hadronization
+#+ATTR_LATEX: :width 0.5\linewidth 
+[[file:figures/color_hadronization.eps]] 
+
+Notice that in Figure \ref{fig:color-hadronization} when a gluon is in
+the final shower it forms a kink in the string (see the upper part of
+the shower). When a gluon splits perturbatively into a pair of quarks
+it creates another string segment \cite{Ellis:1991qj}. The lines
+outgoing from the grey string segments represent the subsequent
+fragmentation of the string as described above.
+
+With a complete description of QCD bound states and the transition
+from a high energy parton to the hadrons ultimately measured by the
+detector it is time to discuss the actual measurement of particles at
+the Large Hadron Collider.
 
 #+LaTeX: \chapter{The ATLAS detector}
+#+LaTeX: \label{chap:detector}
 * The Large Hadron Collider
+The Large Hadron Collider (LHC) is the largest (in size and energy)
+circular hadron collider in existence. The circumference of the
+colliding rings is 26.7 km and is buried between 45 m and 170 m below
+parts of Switzerland and France \cite{lhc-machine}. The LHC was built
+based on infrastructure developed for the Large Electron Positron
+collider and utilizes the CERN accelerator complex in order to boost
+protons to the high energies required for circulating in the LHC
+tunnel. The LHC circulates beams of protons in opposite directions and
+steers them into each other at four points around the accelerator
+ring. These four points are the sites of the major LHC experiments,
+CMS, ATLAS, LHCb, and ALICE \cite{lhc-macine}. The data for this work
+was recorded in 2012 when the machine was configured to run each beam
+of protons at 4 TeV each for a center of mass energy $\sqrt{s}=8 TeV$.
+
+The LHC accelerates protons through a series of booster rings until
+they are injected into the main accelerator complex. Protons injected
+into the LHC are organized into bunches of 10^11 protons. The bunches
+are spaced according to frequency of the RF cavities which accelerate
+the particles. During the first run of the LHC, the bunches were
+spaced 50 ns apart which is twice the designed bunch spacing of 25 ns. 
+
+The
 * The ATLAS detector
 ** Inner Detector
 *** Pixel Detector
@@ -727,14 +830,15 @@ soft emission of gluons.
 ** Trigger
 
 #+LaTeX: \chapter{Event Reconstruction and Selection}
+#+LaTeX: \label{chap:reconstruction}
 * J/\psi reconstruction
 * Jet definitions
 ** Jet Reconstruction
 #+LaTeX: \chapter{Analysis Methods}
+#+LaTeX: \label{chap:analysis}
 * Fitting the data
-* SPlot
-* Unfolding
-** Validating the Method
+* Extracting the Signal
+** SPlot
 * Unfolding
 ** Iterative Bayesian Unfolding
 *** Determining Iterations
@@ -742,6 +846,7 @@ soft emission of gluons.
 *** Estimating the Response Matrix
 
 #+LaTeX: \chapter{Measurement of prompt J/$\psi$ particles}
+#+LaTeX: \label{chap:measurement}
 * Selection Criteria
 * Systematic Errors
 * Results
