@@ -806,18 +806,101 @@ protons to the high energies required for circulating in the LHC
 tunnel. The LHC circulates beams of protons in opposite directions and
 steers them into each other at four points around the accelerator
 ring. These four points are the sites of the major LHC experiments,
-CMS, ATLAS, LHCb, and ALICE \cite{lhc-macine}. The data for this work
+CMS, ATLAS, LHCb, and ALICE \cite{lhc-machine}. The data for this work
 was recorded in 2012 when the machine was configured to run each beam
 of protons at 4 TeV each for a center of mass energy $\sqrt{s}=8 TeV$.
 
-The LHC accelerates protons through a series of booster rings until
-they are injected into the main accelerator complex. Protons injected
-into the LHC are organized into bunches of 10^11 protons. The bunches
-are spaced according to frequency of the RF cavities which accelerate
-the particles. During the first run of the LHC, the bunches were
-spaced 50 ns apart which is twice the designed bunch spacing of 25 ns. 
+In order to collide protons, the LHC accelerates them through a series
+of booster rings until they are injected into the main accelerator
+complex. Protons injected into the LHC are organized into bunches of
+10^11 protons. The bunches are spaced according to frequency (400 MHz)
+of the RF cavities which accelerate the particles. During the first
+run of the LHC, the bunches were spaced 50 ns apart which is twice the
+designed bunch spacing of 25 ns.
 
-The
+In order to achieve this configuration of bunch crossings and precise
+control of the proton beams a number of problems must be addressed.
+Foremost is the bending the protons around the ring. This is achieved
+using 1,232 superconducting magnetic dipoles \cite{lhc-machine}. Each
+of these dipoles is operated at 1.9 K and produce a field strength of
+8 T. The operating temperature of the magnets has a tight margin above
+which the superconductivity is lost and the magnet ceases to conduct
+\cite{lhc-machine}. This transition is known as quenching, and when it
+occurs all of the energy stored in the field is released. An
+unintended quench in 2008 led to a massive helium explosion and
+delayed the experiment by a year.
+
+Another aspect that is important to the smooth operation of the LHC is
+the vacuum in the beam pipe. In order to maximize beam lifetime and
+minimize experimental backgrounds the beam pipe must be kept as
+pristine as possible. This equates to a vacuum pressure of 10^{-10}
+mbar. In the regions around the experiments the vacuum is designed to
+keep the density of hydrogen below 10^13 H_2 m^{-3}. As a point of
+reference the volume of beampipe contained by the ATLAS detector is
+roughly 0.008 m^3. This means that there is roughly $8\times 10^{10}$
+hydrogen atoms in the ATLAS beampipe at any given time. The same
+volume of hydrogen gas at STP results in $2.15\times 10^{24}$ atoms.
+This is a change in concentration of roughly 30 parts per quadrillion.
+
+** Luminosity
+Many of the measurements made at the LHC boil down to counting
+experiments answering the question: "How many particles with
+properties $x$, $y$, and $z$ do I see?" These properties may be the
+transverse momentum ($p_T$), invariant mass ($m$), or rapidity ($y$).
+The experimental physicist reconstructs events, selects those matching
+the required criteria and compares the number counted to a theoretical
+calculation.  
+
+Conversely, a theoretical physicist calculates the number of observed
+particles with given properties $x$, $y$ and $z$ by starting with
+incoming protons and working out the probability of observing the
+expected particles. The proton beams are characterized by a parameter
+called the luminosity $L$ of the beam which is the particles passing
+per second per unit area. When a theoretical physicist calculates the
+cross sectional area[fn:: This quantity has SI units of cm^2 but barns
+are most commonly used in the field. The name comes from the saying
+"you couldn't hit the broad side of a barn" and originated during
+research into the atomic bomb.] of a process ($\sigma(pp\rightarrow A
+B)$ where $A$ and $B$ are outgoing particle species), the rate of
+particles produced is given by the product of the luminosity and the
+cross section:
+#+BEGIN_LaTeX
+\begin{equation*}
+dN/dt = L(t) \sigma(pp \rightarrow A B)
+\end{equation*}
+#+END_LaTeX
+In order to predict the absolute number of events, this expression
+must be integrated over the time that data was collected:
+#+BEGIN_LaTeX
+\begin{equation*}
+N = \sigma \int L(t)dt
+\end{equation*}
+#+END_LaTeX
+The amount of data collected by the experiment is measured in the
+integrated luminosity. It has units of inverse barns which is
+convenient for back-of-the-envelope calculations of the expected
+number of events for a process: take the product of the data collected
+and the expected cross section to get the number of events.
+
+The instantaneous luminosity $L$ of the LHC is given by the following
+formula:
+#+BEGIN_LaTeX
+\begin{equation}
+L = \frac{N_b^2n_b f_{\text{rev}}\gamma_r}{4\pi \epsilon_n \beta^*}}F
+\end{equation}
+#+END_LaTeX
+The denominator of this equation is fairly straightforward, $N_b$ is
+the number of protons per bunch (typically $N_b\sim10^11$), $n_b$ is
+the number of bunches per beam, $f_{\text{rev}}$ is the revolution
+frequency of the machine, $\gamma_r$ is the relativistic gamma factor
+for the bunches and $F$ is a geometric factor to account for the
+geometry of the crossing angle at the interaction point (IP). The
+denominator must be a unit of area from dimensional analysis. The
+transverse beam emittance is given by $\epsilon_n$ and $\beta^*$ is
+the value of the $\beta$ function at the IP. The two parameters
+$\epsilon_n$ and $\beta$ describe the major and semi-major axes of an
+ellipse. Together they describe the effective area of the beam at the
+IP.
 * The ATLAS detector
 ** Inner Detector
 *** Pixel Detector
