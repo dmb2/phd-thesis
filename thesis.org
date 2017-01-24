@@ -860,10 +860,12 @@ per second per unit area. When a theoretical physicist calculates the
 cross sectional area[fn:: This quantity has SI units of cm^2 but barns
 are most commonly used in the field. The name comes from the saying
 "you couldn't hit the broad side of a barn" and originated during
-research into the atomic bomb.] of a process ($\sigma(pp\rightarrow A
-B)$ where $A$ and $B$ are outgoing particle species), the rate of
-particles produced is given by the product of the luminosity and the
-cross section:
+research into the atomic bomb \cite{unc-dict}. Another unit from this
+era is the "shake" as in "two shakes of a lamb's tail" which is 10 ns,
+a convenient unit of measure in nuclear reactions \cite{unc-dict}. ]
+of a process ($\sigma(pp\rightarrow A B)$ where $A$ and $B$ are
+outgoing particle species), the rate of particles produced is given by
+the product of the luminosity and the cross section:
 #+BEGIN_LaTeX
 \begin{equation*}
 dN/dt = L(t) \sigma(pp \rightarrow A B)
@@ -886,7 +888,7 @@ The instantaneous luminosity $L$ of the LHC is given by the following
 formula:
 #+BEGIN_LaTeX
 \begin{equation}
-L = \frac{N_b^2n_b f_{\text{rev}}\gamma_r}{4\pi \epsilon_n \beta^*}}F
+L = \frac{N_b^2n_b f_{\text{rev}}\gamma_r}{4\pi \epsilon_n \beta^*}F
 \end{equation}
 #+END_LaTeX
 The denominator of this equation is fairly straightforward, $N_b$ is
@@ -899,13 +901,80 @@ denominator must be a unit of area from dimensional analysis. The
 transverse beam emittance is given by $\epsilon_n$ and $\beta^*$ is
 the value of the $\beta$ function at the IP. The two parameters
 $\epsilon_n$ and $\beta$ describe the major and semi-major axes of an
-ellipse. Together they describe the effective area of the beam at the
-IP.
+ellipse which describes the transverse phase-space profile of the LHC
+beam. Together they describe the effective area of the beam at the IP
+\cite{lhc-machine}.
+
+The geometric factor $F$ can be worked out from small angle
+approximations as well as the RMS length and transverse width of the
+beam:
+#+BEGIN_LaTeX
+\begin{equation}
+F = \left(1 + \left(\frac{\theta_c\sigma_z}{2\sigma^*}\right)^2\right)^{-1/2}
+\end{equation}
+#+END_LaTeX
+Here $\theta_c$ is the crossing angle, $\sigma_z$ is the RMS length of
+a bunch crossing and $\sigma^*$ is the transverse RMS beam size for a
+gaussian beam.  
+
+When the beams cross, there is a high probability that multiple high
+energy interactions take place. The interaction which is selected for
+study is referred to as the primary interaction. Secondary
+interactions contribute to experimental background, they are called
+pileup. The degree of pileup can be measure by the average number of
+interactions per bunch crossing ($<\mu>$). For the data used in this
+thesis, the pileup was 20 interactions per bunch crossing on average.
+Pileup presents an experimental challenge because the particles
+produced in association with the events can confuse the reconstruction
+algorithms used. This analysis makes use of reconstructed quantities
+that are largely insensitive to pileup effects.
+
+
 * The ATLAS detector
+A Toroidal LHC AparatuS (ATLAS[fn:: ATLHCA doesn't have the same
+ring, or status as a greek titan]) is one of the general purpose
+detectors at the LHC. It is located at Point 1 on the LHC ring. Figure
+\ref{fig:atlas-detector} shows a high level drawing of the detector,
+the detector itself is 44m long and 25 m tall[fn:: The detector weighs
+approximately 7000 tonnes. If the volume the detector contains were
+hermetically sealed, the density of the detector would allow it to
+float if it were put in fresh water.]. The ATLAS detector contains
+many detector subsystems which allow it to detect and reconstruct
+particles which are created during collisions at the IP. The detectors
+all work on the principal that when a charged particle moves through
+matter it either radiates energy in the form of Brehmsstrahlung or it
+will ionize the surrounding matter. In the former case, the radiation
+can be detected directly, or it can produce a positron and electron
+pair (pair production) which can subsequently detected. Different
+parts of the detector exploit these two processes in different ways.
+The electromagnetic and hadronic calorimeters work to stop electrons
+and hadrons while accurately measuring the energy of the incident
+particle. Tracking elements aim to accurately detect the time and
+location where a charged particle passes and do so in different ways.
+
+#+CAPTION: A cutaway of the ATLAS detector.  Two small people are shown to scale.
+#+NAME: fig:atlas-detector
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/full_atlas_detector.jpeg]] 
+ATLAS uses a right-handed cylindrical coordinate system with the
+$z$-axis oriented along the beam line, see \ref{fig:coord-system} for
+details. In cartesian coordinates, the $x$ and $y$ axes are in the
+plane transverse to the beam line. The $x$ axis points to the center
+of the ring and the $y$ axis points to the Earth's surface. A useful
+quantity for describing angles in the detector is pseudorapidity
+($\eta$)[fn:: Differences in pseudorapidity are invariant in
+relativistic boosts along the beam axis which is very useful
+experimentally. ]  
+#+CAPTION: The ATLAS detector's coordinate system, see text for definition of pseudorapidity ($\eta$). 
+#+NAME: fig:coord-system
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/atlas_coord.pdf]] 
 ** Inner Detector
 *** Pixel Detector
 *** Silicon Strip Detector
 *** Transition Radiation Tracker
+** Electromagnetic Calorimeter
+** Hadronic Calorimeter
 ** Muon Spectrometer
 *** Monitored Drift Tube
 *** Cathode Strip Chambers
