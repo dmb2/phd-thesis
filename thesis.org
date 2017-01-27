@@ -931,9 +931,9 @@ that are largely insensitive to pileup effects.
 
 
 * The ATLAS detector
-A Toroidal LHC AparatuS (ATLAS[fn:: ATLHCA doesn't have the same
-ring, or status as a greek titan]) is one of the general purpose
-detectors at the LHC. It is located at Point 1 on the LHC ring. Figure
+A Toroidal LHC AparatuS (ATLAS[fn:: ATLHCA doesn't have the same ring,
+or status as a greek titan]) is one of the general purpose detectors
+at the LHC. It is located at Point 1 on the LHC ring. Figure
 \ref{fig:atlas-detector} shows a high level drawing of the detector,
 the detector itself is 44m long and 25 m tall[fn:: The detector weighs
 approximately 7000 tonnes. If the volume the detector contains were
@@ -943,19 +943,34 @@ many detector subsystems which allow it to detect and reconstruct
 particles which are created during collisions at the IP. The detectors
 all work on the principal that when a charged particle moves through
 matter it either radiates energy in the form of Brehmsstrahlung or it
-will ionize the surrounding matter. In the former case, the radiation
-can be detected directly, or it can produce a positron and electron
-pair (pair production) which can subsequently detected. Different
-parts of the detector exploit these two processes in different ways.
-The electromagnetic and hadronic calorimeters work to stop electrons
-and hadrons while accurately measuring the energy of the incident
+ionizes the surrounding matter. In the former case, the radiation can
+be detected directly, or it can produce a positron and electron pair
+(pair production) which can subsequently detected. Different parts of
+the detector exploit these two processes in different ways. The
+electromagnetic and hadronic calorimeters work to stop electrons and
+hadrons while accurately measuring the energy of the incident
 particle. Tracking elements aim to accurately detect the time and
-location where a charged particle passes and do so in different ways.
-
+location where a charged particle passes and do so in different ways. 
 #+CAPTION: A cutaway of the ATLAS detector.  Two small people are shown to scale.
 #+NAME: fig:atlas-detector
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/full_atlas_detector.jpeg]] 
+
+In order to accurately measure the charge and momentum of particles
+passing through the detector, a set of magnets is used to bend the
+charged particles. ATLAS uses a unique configuration of a 2.0 T
+solenoid covering the inner detector and a toroidal configuration of 8
+superconducting yokes which provide a field between 0.5 T and 0.5 T
+\cite{atlas-detector}. The central solenoid ensures that charged
+particles bend in the transverse plane of the inner detector. The
+toroidal configuration of the outer magnets bend the muons which exit
+the hadronic calorimeter, allowing for a precise measurement of the
+three spatial components of their momentum. Together these systems
+allow the measurement of the particles four momentum and charge. This
+analysis exclusively uses charged particle tracks in the form of muon
+identified tracks, and inner detector tracks. This was done in order
+to minimize various systematic effects that will be discussed.
+
 ATLAS uses a right-handed cylindrical coordinate system with the
 $z$-axis oriented along the beam line, see \ref{fig:coord-system} for
 details. In cartesian coordinates, the $x$ and $y$ axes are in the
@@ -970,6 +985,9 @@ experimentally. ]
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/atlas_coord.pdf]] 
 ** Inner Detector
+Working radially outward from the IP, the ATLAS inner detector is
+comprised of three main components: the pixel detector, the silicon
+strip detector, and the transition radiation tracker (TRT).  
 *** Pixel Detector
 *** Silicon Strip Detector
 *** Transition Radiation Tracker
