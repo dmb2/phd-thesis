@@ -985,10 +985,65 @@ experimentally. ]
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/atlas_coord.pdf]] 
 ** Inner Detector
-Working radially outward from the IP, the ATLAS inner detector is
-comprised of three main components: the pixel detector, the silicon
-strip detector, and the transition radiation tracker (TRT).  
+Figure \ref{fig:inner-detector} shows the inner detector at ATLAS with
+each subsystem labeled. Figure \ref{fig:inner-detector-slice} shows a
+view of the inner detector for a wedge of the detector. Working radially outward from the IP, the
+ATLAS inner detector is comprised of three main components: the pixel
+detector (extending 45.5 mm $< R <$ 242 mm), the silicon strip
+detector (SCT) (extending 255 mm $< R <$ 549 mm), and the transition
+radiation tracker (TRT) (extending 554 mm $< R <$ 1082 mm). The pixel
+detector and SCT function based on semi-conductor technologies that
+allow them to measure the location of charged particles with high
+precision. The TRT operates based on transition radiation, a
+phenomenon that occurs when charged particles traverse different
+materials. During the transition between materials particles are very
+likely to emit radiation which is subsequently detected.
+#+CAPTION: The ATLAS inner detector taken from \ref{pixel-detector} 
+#+NAME: fig:inner-detector
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/IDLabeled.eps]] 
+
+#+CAPTION: The ATLAS inner detector taken from \ref{atlas-detector}
+#+NAME: fig:inner-detector-slice
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/inner_detector_section.png]] 
+
+*** Semiconductor based detectors
+The pixel detector and the silicon strip tracker utilize the
+ionization of matter as charged particles pass through the active
+regions. The active region of the detectors is constructed by forming
+a layer of n-doped and p-doped semiconductor. These layers are held at
+a fixed voltage. When a charged particle traverses the active region,
+the ionized material becomes conducting allowing for the location of
+the particle to be determined. Figure \ref{fig:pixel-schematic} shows
+a schematic of a pixel. The bottom half of the schematic is the
+sensing region and the dark grey and lighter grey regions represent
+the doped semiconductor. The bump-bond indicates a fabrication
+technique utilized to provide uniform attachment of each
+micro-fabricated pixel to the readout electronics.
+#+CAPTION: Conceptual diagram of the pixel assembly with a charged particle traversing it \cite{pixel-detector}.
+#+NAME: fig:pixel-schematic
+#+ATTR_LATEX: :width 0.45\linewidth 
+[[file:figures/pixel-cartoon.eps]] 
+
 *** Pixel Detector
+The fundamental unit of the pixel detector is a module. Figure
+\ref{fig:module-overview} shows the various layers that go into the a
+pixel module. A module consists of readout electronics and active
+pixel sensors which detect the position of charged particles. Each
+module has a sensitive surface $6.08 \times 1.64 \text{cm}^2$
+\cite{pixel-detector}. Each module consists of 47232 pixels
+\cite{pixel-detector}. The entire pixel detector is constructed from
+1744 modules \cite{pixel-detector}. These modules are arranged in
+three concentric cylinders. The forward region of the detector is
+covered by three rings of end-cap modules on either end of the pixel
+barrel region. The geometric arrangement of the modules can be seen
+the green components in Figure \ref{fig:inner-detector-slice}.
+#+CAPTION: Schematic of the module assembly. 47232 pixels are read out from the sensor layer and each one is bump-bonded to the readout electronics \cite{pixel-detector}. 
+#+NAME: fig:module-overview
+#+ATTR_LATEX: :width 0.75\linewidth 
+[[file:figures/Module_overview.eps]] 
+
 *** Silicon Strip Detector
 *** Transition Radiation Tracker
 ** Electromagnetic Calorimeter
