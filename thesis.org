@@ -997,17 +997,34 @@ allow them to measure the location of charged particles with high
 precision. The TRT operates based on transition radiation, a
 phenomenon that occurs when charged particles traverse different
 materials. During the transition between materials particles are very
-likely to emit radiation which is subsequently detected.
-#+CAPTION: The ATLAS inner detector taken from \ref{pixel-detector} 
+likely to emit radiation which is subsequently detected. Table
+\ref{tab:nom-id-accuracy} shows the intrinsic accuracy of the inner
+detector subsystems and their alignment tolerances. 
+#+CAPTION: The ATLAS inner detector taken from \cite{pixel-detector}. 
 #+NAME: fig:inner-detector
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/IDLabeled.eps]] 
 
-#+CAPTION: The ATLAS inner detector taken from \ref{atlas-detector}
+#+CAPTION: A different view of the ATLAS inner detector taken from \cite{atlas-detector}. This shows the geometry of the pixel and SCT detectors focusing on the end caps and the TRT end cap.
 #+NAME: fig:inner-detector-slice
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/inner_detector_section.png]] 
 
+#+CAPTION: Intrinsic accuracy and alignment tolerances of the inner detector. The lower accuracy of the axial dimension in the SCT is due to the intrinsic pitch of the SCT modules. The axial accuracy of the pixel detector is driven by fabrication constraints \cite{atlas-detector}.
+|---------------+-------------------------+------------+-----------+------------------|
+|               | Intrinsic Accuracy      |  Alignment | Tolerance |        ($\mu m$) |
+| Subsystem     | ($\mu m$)               | Radial (R) | Axial (z) | Azimuth (R-\phi) |
+| /             | <                       |          < |           |                  |
+|---------------+-------------------------+------------+-----------+------------------|
+| *Pixel*       |                         |            |           |                  |
+| Layer-0       | 10 ($R-\phi$) 115 ($z$) |         10 |        20 |                7 |
+| Layer-1 and 2 | 10 ($R-\phi$) 115 ($z$) |         20 |        20 |                7 |
+| End cap       | 10 ($R-\phi$) 115 ($R$) |         20 |       100 |                7 |
+| *SCT*         |                         |            |           |                  |
+| Barrel        | 17 ($R-\phi$) 580 ($z$) |        100 |        50 |               12 |
+| End cap       | 17 ($R-\phi$) 580 ($R$) |         50 |       200 |               12 |
+| *TRT*         | 130                     |            |           |               30 |
+|---------------+-------------------------+------------+-----------+------------------|
 *** Semiconductor based detectors
 The pixel detector and the silicon strip tracker utilize the
 ionization of matter as charged particles pass through the active
@@ -1038,13 +1055,54 @@ module has a sensitive surface $6.08 \times 1.64 \text{cm}^2$
 three concentric cylinders. The forward region of the detector is
 covered by three rings of end-cap modules on either end of the pixel
 barrel region. The geometric arrangement of the modules can be seen
-the green components in Figure \ref{fig:inner-detector-slice}.
+the green components in Figure \ref{fig:inner-detector-slice}. Each
+module has three spatial degrees of freedom and two angles which
+determine its precise location in space.  Aligning these modules is
+critical to achieving an accurate measurement of the particles
+momentum when they pass through the inner detector.  Table
+\ref{tab:nom-id-accuracy} shows the alignment tolerances of the
+pixel detector.
 #+CAPTION: Schematic of the module assembly. 47232 pixels are read out from the sensor layer and each one is bump-bonded to the readout electronics \cite{pixel-detector}. 
 #+NAME: fig:module-overview
 #+ATTR_LATEX: :width 0.75\linewidth 
 [[file:figures/Module_overview.eps]] 
 
 *** Silicon Strip Detector
+Continuing radially outward is the Silicon Strip Detector (SCT). The
+SCT follows the modular design of the pixel detector but with less
+axial resolution than the pixel detector. Table
+\ref{tab:nom-id-accuracy} shows the nominal resolution and alignment
+tolerances of the SCT. Each SCT module has five degrees of freedom
+which must be corrected for during alignment and calibration. The SCT
+barrel module layout is shown in Figure \ref{fig:sct-module}. One
+barrel module has two layers of strips set at a 80 $\mu m$ pitch over
+6cm in order to give a trapezoidal geometry \cite{atlas-detector}. The
+end cap modules follow a similar construction but a slightly different
+geometry in how the strips are arranged. The strips in the end cap
+modules are set at various pitches, but have an inter-strip angle in
+order to cover the radial plane better \cite{atlas-detector}.
+#+CAPTION: Illustration of an SCT barrel module, note the two layers of silicon sensors and their relative pitch.  Each module is 6cm long. Figure taken from \cite{atlas-detector}. 
+#+NAME: fig:sct-module
+#+ATTR_LATEX: :width 0.75\linewidth 
+[[file:figures/sct_barrel_module.png]] 
+
+When charged particles pass through the SCT, they trigger the readout
+of various strips within the SCT. If only two strips are read out,
+then the approximate location of the particle can be inferred from the
+closest crossing of the two strips. If the charged particle passes the
+SCT module while another strip is active (which is possible in the
+high occupancy environment of ATLAS) an ambiguity arises as to where
+the charged particle passed. Figure \ref{fig:sct-strip-geometry} shows
+this situation. The trapezoidal geometry creates a large enough
+separation between the ambiguous hits that one can be rejected in
+favor of the other when information from the other SCT and pixel
+layers is taken into account.
+
+#+CAPTION: Illustration of a charged particle interacting with the SCT strips.  Black strips indicate they have been read out, grey are inactive.  When three or more strips are active, an ambiguity in the location of the charged particle arises. 
+#+NAME: fig:sct-strip-geometry
+#+ATTR_LATEX: :width 0.7\linewidth 
+[[file:figures/sct_strip_geometry.pdf]] 
+
 *** Transition Radiation Tracker
 ** Electromagnetic Calorimeter
 ** Hadronic Calorimeter
