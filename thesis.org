@@ -1011,6 +1011,7 @@ detector subsystems and their alignment tolerances.
 [[file:figures/inner_detector_section.png]] 
 
 #+CAPTION: Intrinsic accuracy and alignment tolerances of the inner detector. The lower accuracy of the axial dimension in the SCT is due to the intrinsic pitch of the SCT modules. The axial accuracy of the pixel detector is driven by fabrication constraints \cite{atlas-detector}.
+#+NAME: tab:nom-id-accuracy
 |---------------+-------------------------+------------+-----------+------------------|
 |               | Intrinsic Accuracy      |  Alignment | Tolerance |        ($\mu m$) |
 | Subsystem     | ($\mu m$)               | Radial (R) | Axial (z) | Azimuth (R-\phi) |
@@ -1104,6 +1105,14 @@ layers is taken into account.
 [[file:figures/sct_strip_geometry.pdf]] 
 
 *** Transition Radiation Tracker
+The final inner detector subsystem is the transition radiation tracker
+(TRT). While the pixel and SCT detectors rely on semiconductor
+technology, the TRT utilizes ionization that occurs when a charged
+particle traverses material of differing dielectric constants. This
+process depends on the species of the charged particle and can be used
+in particle identification \cite{Romaniouk:2021497}. For a thorough
+review of the physics of transition radiation see
+\cite{PhysRevD.12.1289}.  
 ** Electromagnetic Calorimeter
 ** Hadronic Calorimeter
 ** Muon Spectrometer
