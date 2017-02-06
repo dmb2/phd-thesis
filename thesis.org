@@ -1112,13 +1112,65 @@ particle traverses material of differing dielectric constants. This
 process depends on the species of the charged particle and can be used
 in particle identification \cite{Romaniouk:2021497}. For a thorough
 review of the physics of transition radiation see
-\cite{PhysRevD.12.1289}.  
+\cite{PhysRevD.12.1289}. Figure \ref{fig:inner-detector} shows the
+barrel and end cap TRT. The TRT is constructed from a series of
+densely packed 298,304 straw tubes, 4mm in diameter, which each
+contain an anode wire at the center \cite{alignment}\cite{trt-barrel}.
+The anode is a gold-plated tungsten wire. The gas circulated in the
+straw tubes is a gas consisting mostly of xenon. A noble gas is used
+in order to reduce the time that ionized particles recombine with
+atoms\cite{alignment}. This maximizes the ability to read out when a
+charged particle passes through the tube. The interstitial space
+between the straw tubes is a polypropylene foam which encourages
+charged particles to ionize when the pass through the TRT volume
+allowing for the identification of electrons. In the end caps, the
+interstitial volume contains foil for the same purpose
+\cite{alignment}.
+
+Figure \ref{fig:trt-illustration} shows the geometric lengths involved
+in detecting the location of a charged particle \cite{trt-thesis}. As
+the charged particle ionizes the gas the free charge flows to the
+anode creating a characteristic curve depending on the distance to the
+anode. When the collected charge rises above a threshold it is
+considered a hit and the time-over-threshold allows the determination
+of the radius R in figure \ref{fig:trt-illustration}. This information
+is then used for the overall reconstruction of charged particle tracks
+in conjunction with the information from the SCT and pixel detectors.
+#+CAPTION: As a charged particle ionizes the gas inside the straw tube, charge is collected over time as shown in the blue profiles.  When the particle passes closer to the anode the profile of the deposited charge changes \cite{trt-thesis}.
+#+NAME: fig:trt-illustration
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/trt_figure.pdf]] 
+
+During reconstruction the quality of the hits extracted from the
+time-over-threshold measurement of the radius must be assessed.
+Figure \ref{fig:trt-hit-defs} shows the definition of these hits. When
+the estimated drift radius corresponds to where a charged particle
+passed it is referred to as a precision hit.  When the charged
+particle passes through the tube, but not the estimated radius it is a
+tube hit.  When the particle passes outside the tube altogether it is
+an outlier and when the tube doesn't register a particle at all it is
+a hole \cite{trt-figs}.
+#+BEGIN_LaTeX
+  \begin{figure}[htp]
+    \centering
+    \subfloat[]{
+      \includegraphics[width=0.4\textwidth]{figures/strawDefs.pdf}
+    }\qquad
+    \subfloat[]{
+      \includegraphics[width=0.8\textwidth]{figures/trt_hit_def.pdf}
+    }\qquad \caption{\label{fig:trt-hit-defs} Definition of hit qualities
+    used by TRT reconstruction \cite{trt-figs}}
+  \end{figure}
+#+END_LaTeX
+
 ** Electromagnetic Calorimeter
 ** Hadronic Calorimeter
 ** Muon Spectrometer
 *** Monitored Drift Tube
 *** Cathode Strip Chambers
 ** Track Reconstruction
+*** Charged Particles
+*** Muons
 ** Trigger
 
 #+LaTeX: \chapter{Event Reconstruction and Selection}
