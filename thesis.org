@@ -1136,7 +1136,12 @@ considered a hit and the time-over-threshold allows the determination
 of the radius R in figure \ref{fig:trt-illustration}. This information
 is then used for the overall reconstruction of charged particle tracks
 in conjunction with the information from the SCT and pixel detectors.
-#+CAPTION: As a charged particle ionizes the gas inside the straw tube, charge is collected over time as shown in the blue profiles.  When the particle passes closer to the anode the profile of the deposited charge changes \cite{trt-thesis}.
+#+CAPTION: As a charged particle ionizes the gas inside the straw
+#+CAPTION: tube, charge is collected over time as shown in the blue profiles
+#+CAPTION: indicated by the numbers in the straw tubes. When the particle passes
+#+CAPTION: closer to the anode the profile of the deposited charge changes
+#+CAPTION: \cite{trt-thesis}. Low Treshold (LT) indicates the transition between
+#+CAPTION: signal and noise in the event readout.
 #+NAME: fig:trt-illustration
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/trt_figure.pdf]] 
@@ -1162,12 +1167,221 @@ a hole \cite{trt-figs}.
     used by TRT reconstruction \cite{trt-figs}}
   \end{figure}
 #+END_LaTeX
+** Calorimeter systems
+The calorimeter systems used at ATLAS are shown in Figure
+\ref{fig:calorimeter}. ATLAS utilizes various calorimeter technologies
+based on stopping particles and measuring the deposited energy.
+Calorimeters at ATLAS use an interleaved geometry of scintillation
+material and a dense absorbing material for stopping impinging
+particles. Scintillation light is collected along fiber optic cables
+and read out using photo multipliers. There are two main calorimeter
+systems, the electronic calorimeter (ECAL) and the hadronic
+calorimeter (HCAL). The ECAL is designed to fully stop and measure
+electrons and photons. Hadrons deposit some energy in the ECAL, but
+typically make it to the HCAL before fully stopping and depositing
+their entire energy.
 
-** Electromagnetic Calorimeter
-** Hadronic Calorimeter
+It is important to note the contrast between how the inner detector
+and the calorimeter measures the momentum of particles. The location a
+charged particle passes are precisely measured in the inner detector.
+This information coupled with the knowledge of the magnetic field the
+inner detector is immersed in allows for the measurement of the
+particle's three-momentum. In order to fully extract the relativistic
+four-momentum a mass hypothesis is assumed[fn:: For charged particles
+not associated with electrons, the pion mass is assumed. For tracks
+with muon spectrometer information, the muon mass is assumed.]. The
+calorimeter works to measure the energy of the impinging particle. For
+electrons, the associated inner detector track allows for the
+extraction of the four-momentum. For other particles, the energy and
+the location in the detector allow the measurement of the particle's
+three-momentum. The error on these two measurements is fundamentally
+different, and the calibration of the detector is performed in
+different ways. This leads to a difference in the energy measured by
+charged particles and is the motivation for only using the charged
+fraction of hadrons produced in events of interest to this analysis.
+
+#+CAPTION: The ATLAS calorimeter systems
+#+NAME: fig:calorimeter
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/calorimeter_labeled.pdf]] 
+
+As with other subsystems in ATLAS, the ECAL consists of separate
+barrel and end-cap detectors with slightly different geometries.
+Figure \ref{fig:ecal-barrel-module} shows a segment of the ECAL
+system. The ECAL utilizes an accordion geometry to ensure that more
+than one layer is actively scintillating when an electron or photon is
+depositing its energy in the calorimeter this provides full coverage
+in the $\phi$ direction. The ECAL is finely segmented in $\eta$
+($\Delta \eta = 0.0031$) close to the inner detector and less so in
+the bulk of the detector ($\Delta \eta = 0.025$). The end of the ECAL
+is covered with coarse "trigger towers" with a segmentation of $\Delta
+\eta=0.1$ \cite{atlas-detector}. These towers are used to trigger on
+events where a coarse estimate of the event's energy is needed to
+decide if the event should be recorded or not. The ECAL's
+scintillation material is liquid Argon (LAr), which is chosen for its
+intrinsic radiation hardness and its ability to scintillate
+\cite{atlas-detector}. Lead is used as the absorber in the ECAL. Lead
+is an ideal choice due to its high density and the compact nature of
+the ECAL compared to the HCAL.
+
+While the ECAL utilizes a accordion geometry, the HCAL utilizes a
+slightly different form. The absorption material in the HCAL is steel,
+the scintillation material is a plastic based on polystyrene doped
+with fluors \cite{atlas-detector}. The HCAL is separated into the
+barrel region referred to as the tile calorimeter, and the forward
+region covered by the hadronic end-cap calorimeters (HEC). The
+calorimeter is segmented into regions of $\Delta \phi \times \Delta
+\eta = 0.1 \times 0.1$ for $|\eta| < 2.5$ and $\Delta \phi \times
+\Delta \eta = 0.2 \times 0.2$ for larger values of $\eta$
+\cite{atlas-detector}. A tile module is shown in Figure
+\ref{fig:hcal-barrel-module}. The scintillation light is guided out to
+fiber optic cables which are directed to photomultipliers at the top
+of the tile unit. The fiber optic cable is 3mm thick and has an
+emission peak at 476 nm \cite{atlas-detector}. This means the light
+that is optimally transmitted by the cables is a blue-cyan color.
+Figure \ref{fig:hcal-endcap} shows the geometry and segmentation of
+the a HEC module.
+
+#+BEGIN_LaTeX
+  \begin{figure}[htp]
+    \centering
+    \subfloat[]{
+      \label{fig:hcal-barrel-module-phi}
+      \includegraphics[width=0.5\textwidth]{figures/hcal-barrel-module-azimuth.pdf}
+    }
+    \subfloat[]{
+     \includegraphics[width=0.4\textwidth]{figures/hcal-barrel-module.pdf}
+    }\qquad \caption{\label{fig:hcal-barrel-module} Illustration of the
+    HCAL module's scintillation and absorber geometry \cite{atlas-detector}. Figure
+    \ref{fig:hcal-barrel-module-phi} shows the layout of the tile
+    calorimeter from the azimuthal view. }
+  \end{figure}
+#+END_LaTeX
+
+#+CAPTION: Schematic of a hadronic end cap calorimeter module \cite{atlas-detector}.
+#+NAME: fig:hcal-endcap
+#+ATTR_LATEX: :width 0.5\linewidth 
+[[file:figures/hcal-endcap-module.pdf]] 
+
 ** Muon Spectrometer
+Many important Standard Model processes decay to two leptons. When
+these leptons are electrons, they are reconstructed in the ECAL and
+inner detector. When they are muons, they are detected and
+reconstructed using the Muon Spectrometer. These detector subsystems
+are the outer most portion of ATLAS. Portions of the spectrometer are
+immersed in ATLAS's signature toroid shaped magnetic field. The toroid
+causes the muons to bend along the $z$ axis allowing for a more
+precise measurement of the three-momentum of the particle. The mass of
+the muon, relative to the electron, makes it much less likely to
+initiate a bremsstrahlung cascade as it passes through the ECAL and
+HCAL \cite{Agashe:2014kda}. This allows it to reach the outer region
+of the detector where its location can be measured as precisely as
+possible. 
+#+CAPTION: The muon spectrometer at ATLAS \cite{atlas-detector}
+#+NAME: fig:muon-spec
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/muon_system_labeled.pdf]] 
+
+ATLAS utilizes a various detector technologies in order to measure the
+momentum of a 1 TeV muon within 10% of its nominal value
+\cite{atlas-detector}. To achieve this, the muon spectrometer consists
+of monitored drift tubes (MDTs), cathode strip chambers (CSCs),
+resistive plate chambers (RPCs) and thin gap chambers (TGCs). Each of
+these systems functions differently and serves slightly different
+purposes. Figure \ref{fig:muon-spec} shows the muon spectrometer.
+Table \ref{tab:muon-spec} lists the relevant numbers and coverage of
+the muon spectrometer \cite{atlas-detector}. 
+#+CAPTION: Summary of channels and chambers utilized for each subsystem of the Muon Spectrometer at ATLAS \cite{atlas-detector}
+#+NAME: tab:muon-spec
+|--------------------------+----------------------------------------------------------------|
+| *Monitored Drift Tubes*    |                                                                |
+| Coverage                 | $\vert\eta\vert < 2.7$ (innermost layer: $\vert\eta\vert~2.0$) |
+| Number of chambers       |                                                           1088 |
+| Number of channels       |                                                         354000 |
+| Function                 |                                             Precision Tracking |
+|--------------------------+----------------------------------------------------------------|
+| *Cathode Strip Chambers*   |                                                                |
+| Coverage                 |                                   $2.0 < \vert\eta\vert < 2.7$ |
+| Number of chambers       |                                                             32 |
+| Number of channels       |                                                          31000 |
+| Function                 |                                             Precision Tracking |
+|--------------------------+----------------------------------------------------------------|
+| *Resistive plate chambers* |                                                                |
+| Coverage                 |                                        $\vert\eta\vert < 1.05$ |
+| Number of chambers       |                                                            606 |
+| Number of channels       |                                                         373000 |
+| Function                 |                                  Triggering, second coordinate |
+|--------------------------+----------------------------------------------------------------|
+| *Thin Gap Chambers*        |                                                                |
+| Coverage                 |             $1.05 < \vert\eta\vert < 2.7$ (2.4 for triggering) |
+| Number of chambers       |                                                           3588 |
+| Number of channels       |                                                         318000 |
+| Function                 |                                  Triggering, second coordinate |
+|                          |                                                                | 
+ 
+#+BEGIN_LaTeX
+  \begin{figure}[htp]
+    \centering
+    \subfloat[]{
+      \label{fig:ms-transverse}
+      \includegraphics[width=0.3\textwidth]{figures/ms_transverse.pdf}
+    }
+    \subfloat[]{
+     \label{fig:ms-longitudinal}
+     \includegraphics[width=0.7\textwidth]{figures/ms_longitudinal.pdf}
+    }\qquad \caption{\label{fig:ms-layout} Layout of the muon chambers
+    in the muon spectrometer. See \cite{atlas-detector} for detailed
+    description of the naming scheme, roughly ``B'' stands for Barrel,
+    ``E'' for end cap, ``L'' for large, ``S'' for small, and ``I'',
+    ``M'', and ``O'' stand for inner, middle, and outer respectively
+    \cite{atlas-detector}. Infinite momentum muons would propagate along
+    the blue dashed lines. }
+  \end{figure}
+#+END_LaTeX
 *** Monitored Drift Tube
+The underlying physics driving the function of the monitored drift
+tube is the same as the straw tubes in the TRT. The diameter of the
+drift tube is significantly larger (29.970mm) and the gas used is a
+mix of CO_2 (7%) and Ar (93%). The central anode is a tungsten-rhenium
+wire and is held at 3080V \cite{atlas-detector}. Figure
+\ref{fig:ms-mdt} shows the front and side view of the MDT. Figure
+\ref{fig:ms-mdt-module} shows how the MDTs fit together to form a
+module.
+#+BEGIN_LaTeX
+  \begin{figure}[htp]
+    \centering
+    \subfloat[]{
+      \includegraphics[width=0.3\textwidth]{figures/MDT_tube_cross_section.pdf}
+    }
+    \subfloat[]{
+     \includegraphics[width=0.7\textwidth]{figures/MDT_tube_longitudinal.pdf}
+    }\qquad \caption{\label{fig:ms-mdt} Illustration of a MDT showing
+    the cross section and longitudinal views \cite{atlas-detector}. }
+  \end{figure}
+#+END_LaTeX
+
+#+CAPTION: A schematic of an MDT chamber utilized at atlas.  RO and HV correspond to read out and high voltage locations respectively \cite{atlas-detector}
+#+NAME: fig:ms-mdt-module
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/MDT_chamber_schematics.pdf]] 
+
+The green regions in Figure \ref{fig:ms-longitudinal} show the MDT
+chambers for the barrel region which are also illustrated in Figure
+\ref{fig:ms-mdt-module}. MDTs are also utilized in the light-blue
+regions of \ref{fig:ms-longitudinal} as the end-cap chambers. They
+utlizes a trapezoidal geometry in order to better measure the radial
+location the muon traverses in the forward region
+\cite{atlas-detector}.
+
 *** Cathode Strip Chambers
+Cathode Strip chambers are utilized in the very forward regions of the
+detector as illustrated in the yellow region of Figure
+\ref{fig:ms-longitudinal}. This was done because of the CSC's higher
+rate capability and time resolution \cite{atlas-detector}. 
+
+
+*** Resistive Plate Chambers
+*** Thin Gap Chambers
 ** Track Reconstruction
 *** Charged Particles
 *** Muons
