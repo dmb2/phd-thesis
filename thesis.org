@@ -1247,10 +1247,10 @@ the a HEC module.
     \centering
     \subfloat[]{
       \label{fig:hcal-barrel-module-phi}
-      \includegraphics[width=0.5\textwidth]{figures/hcal-barrel-module-azimuth.pdf}
+      \includegraphics[width=0.5\textwidth,angle=90]{figures/hcal-barrel-module-azimuth.pdf}
     }
     \subfloat[]{
-     \includegraphics[width=0.4\textwidth]{figures/hcal-barrel-module.pdf}
+     \includegraphics[width=0.5\textwidth]{figures/hcal-barrel-module.pdf}
     }\qquad \caption{\label{fig:hcal-barrel-module} Illustration of the
     HCAL module's scintillation and absorber geometry \cite{atlas-detector}. Figure
     \ref{fig:hcal-barrel-module-phi} shows the layout of the tile
@@ -1260,7 +1260,7 @@ the a HEC module.
 
 #+CAPTION: Schematic of a hadronic end cap calorimeter module \cite{atlas-detector}.
 #+NAME: fig:hcal-endcap
-#+ATTR_LATEX: :width 0.5\linewidth 
+#+ATTR_LATEX: :width 0.5\linewidth :options  angle=90
 [[file:figures/hcal-endcap-module.pdf]] 
 
 ** Muon Spectrometer
@@ -1324,11 +1324,11 @@ the muon spectrometer \cite{atlas-detector}.
     \centering
     \subfloat[]{
       \label{fig:ms-transverse}
-      \includegraphics[width=0.3\textwidth]{figures/ms_transverse.pdf}
+      \includegraphics[width=0.4\textwidth]{figures/ms-transverse.pdf}
     }
     \subfloat[]{
      \label{fig:ms-longitudinal}
-     \includegraphics[width=0.7\textwidth]{figures/ms_longitudinal.pdf}
+     \includegraphics[width=0.6\textwidth]{figures/ms-longitudinal.pdf}
     }\qquad \caption{\label{fig:ms-layout} Layout of the muon chambers
     in the muon spectrometer. See \cite{atlas-detector} for detailed
     description of the naming scheme, roughly ``B'' stands for Barrel,
@@ -1377,15 +1377,224 @@ location the muon traverses in the forward region
 Cathode Strip chambers are utilized in the very forward regions of the
 detector as illustrated in the yellow region of Figure
 \ref{fig:ms-longitudinal}. This was done because of the CSC's higher
-rate capability and time resolution \cite{atlas-detector}. 
+rate capability and time resolution \cite{atlas-detector}. The
+geometry of the CSC is shown in figure \ref{fig:csc-geometry}. The CSC
+is also required for tagging the time of the beam crossing. This
+requires that the time resolution of the detector be very precise.
+Integrating a measurement over the layers of the CSC allows the
+measurement of the time of arrival with an RMS of 3.6 ns
+\cite{atlas-detector}.
 
+#+CAPTION: The geometry of CSC chambers at ATLAS \ref{atlas-detector}.
+#+NAME: fig:csc-geometry
+#+ATTR_LATEX: :width 0.5\linewidth 
+[[file:figures/CSC_geometry.pdf]] 
+
+The name Cathode Strip Chamber implies the detector type used.
+Cathode Strip Chambers are a series of cathode strips and anode wires
+oriented ninety degrees to each other. The cathodes are segmented to
+provide precision measurements of the transverse and longitudinal
+directions.  The anode is held at 1900 V relative to the cathode.
+When a charged particle ionizes the Ar (80%) CO_2 (20%) mixture, it
+creates an avalanche of charge which is measured by the readout
+electronics.  Figure \ref{fig:csc-cell} shows the geometric layout of
+the anode and cathode strips in a chamber.  Figure
+\ref{fig:csc-readout} is an illustration of the charge collected along
+the anode and subsequently measured by the readout electronics on the
+cathode strips.
+#+BEGIN_LaTeX
+  \begin{figure}[htp]
+    \centering
+    \subfloat[]{
+    \label{fig:csc-cell}
+      \includegraphics[width=0.6\textwidth]{figures/CSC_cell.eps}
+    }
+    \subfloat[]{
+    \label{fig:csc-readout}
+     \includegraphics[width=0.4\textwidth]{figures/CSC_readout.eps}
+    }\caption{\label{fig:ms-csc-schematic} Left: Illustration of
+    CSC cathode and anode wires, The anode width $S$ is the same as the
+    anode to cathode distance $d$. Right: Cathode strip width is
+    $b=1.519$ mm. The readout pitch $a=5.308$ mm and 5.567 mm
+    \cite{atlas-detector}. }
+  \end{figure}
+#+END_LaTeX
 
 *** Resistive Plate Chambers
+While the CSC and MDT utilize technologies to precisely measure the
+location of muons passing in the muon spectrometer, resistive plate
+chambers (RPCs) and thin gap chambers (TGCs) are primarily used to
+trigger on muons by providing a coarse estimate of where and when a
+muon traversed the detector. The triggering system in ATLAS is covered
+in detail in Section [[Trigger]]. Figure \ref{fig:rpc-tgc-trigger} shows
+the RPC and TGC chambers that provide the readouts allowing fast
+triggering on muons. The RPC systems are able to trigger on muons with
+momentum between 9-35 GeV or 6-9 GeV depending on which system fires
+\cite{atlas-detector}. The RPC consists of two layers of dielectric
+separated by a 2mm gap filled with gas. When a particle impinges on
+the plates, the ionized charge flows between the dielectric plates
+which is subsequently read out by metal plates via capacitive coupling
+\cite{atlas-detector}. Figure \ref{fig:rpc-readout} shows the layout
+of the RPC readout strips in relation to the dielectric inserted
+between the copper grounding plates. The RPCs also provide an
+additional measurement in the non-bending $\phi$ direction to
+complement the MDT measurement \cite{atlas-detector}.
+
+#+CAPTION: Layout of TGC and RPC chambers at ATLAS used to reconstruct muons \cite{atlas-detector}. 
+#+NAME: fig:rpc-tgc-trigger
+#+ATTR_LATEX: :width 0.75\linewidth 
+[[file:figures/RPC_TGC_schematics.pdf]] 
+ 
+#+CAPTION: Schematic of the RPC readout strips \cite{atlas-detector}. 
+#+NAME: fig:rpc-readout
+#+ATTR_LATEX: :width 0.75\linewidth 
+[[file:figures/RPC_readout_strips_5.pdf]] 
 *** Thin Gap Chambers
-** Track Reconstruction
-*** Charged Particles
-*** Muons
+The TGC serves a similar purpose as the RPCs do. They are the magenta
+regions of Figure \ref{fig:rpc-tgc-trigger}. TGCs and RPCs operate
+using similar physical processes but differ in the materials used
+\cite{atlas-detector}.  The region of the TGC filled with gas is 2.8
+mm wide.  The gas mixture is CO_2 and n-pentane which results in a
+lower gas gain.  The anodes are held at a potential of 2.9 kV.  The
+operating parameters of the TGC allow it to read out signals within
+25ns \cite{atlas-detector}.  
+#+CAPTION: Schematic of the TGC layout. G-10 is a glass reinforced epoxy laminate \cite{atlas-detector}. 
+#+NAME: fig:rpc-readout
+#+ATTR_LATEX: :width 0.75\linewidth 
+[[file:figures/TGC_structure.pdf]] 
+** Track and Vertex Reconstruction
+Track reconstruction at ATLAS relies on a variety of strategies to
+determine the best set of track parameters to describe the momentum of
+the charged particles passing through the inner detector and muon
+spectrometer \cite{Cornelissen:2008zzc}. Broadly speaking, track
+reconstruction starts using an "inside-out" approach beginning with
+information from the pixel detector, ambiguity resolution of silicon
+hit information, extension to the TRT, and finally an "outside-in"
+approach beginning from the TRT working backwards
+\cite{Cornelissen:2008zzc}. This ensures that processes which leave
+tracks in the outer parts of the detector but not in the innermost
+silicon layers still get reconstructed. Such processes are long-lived
+decays (e.g. $K_s$ decays) or photon conversions (a photon
+pair-produces to $e^+e^-$ leaving two tracks in the outer detector
+volume) \cite{Cornelissen:2008zzc}.  Vertex reconstruction occurs by
+iteratively following tracks back to a common point and assigning
+spatial coordinates to this vertex. The procedure is repeated until no
+further vertices can be created. 
+
+The actual estimation of track parameters is determined using a Kalman
+filter \cite{Cornelissen:2008zzc}. The Kalman filter works by
+iteratively updating the best estimate of the track parameters based
+on the addition of new measurements of the track parameters. It
+rapidly converges to the true result in the presence of noise and
+uncertainty in the measurement parameters \cite{Fruhwirth:1987fm}.
+These properties make it ideally suited for track reconstruction in
+the high-occupancy environment of ATLAS.  
+
+*** Inside-out sequence
+#+CAPTION: Example reconstruction of three tracks *a* *b* and *c*, hits are scored to determine optimal association of hits to each track. \cite{Cornelissen:2008zzc}. 
+#+NAME: fig:ambiguity
+#+ATTR_LATEX: :width 0.75\linewidth 
+[[file:figures/ambiguity_resolution.pdf]] 
+
+The three dimensional information of the silicon hits are used to seed
+the track reconstruction. Track seeds are created by applying a window
+search through the seed directions which are then fed to a simplified
+Kalman filter that creates an initial list of track candidates
+\cite{Cornelissen:2008zzc}. Figure \ref{fig:ambiguity} shows three
+tracks reconstructed during track seeding. Hits associated to tracks
+that lead to better track quality are scored higher than those that do
+not. Similarly, poor quality hits are scored lower than high quality
+ones. After resolving ambiguous hits the resulting tracks are extended
+into the TRT volume. TRT hits which lie along the reconstructed tracks
+are associated with each track. The software requires that adding TRT
+hits to the track does not modify the tracks extracted by the silicon
+hits of the previous steps \cite{Cornelissen:2008zzc}. Figure
+\ref{fig:trt-ttbar} shows the TRT extension procedure for a simulated
+$t\bar{t}$ event at ATLAS, red TRT hits are associated with the tracks
+reconstructed in the silicon layers. After TRT hits are associated to
+the tracks, the inside-out sequence is halted.
+
+#+CAPTION: A simulated $t\bar{t}$ event illustrating the TRT extension procedure.  Red TRT hits are associated with tracks represented by red hits in the silicon layers \cite{Cornelissen:2008zzc}. 
+#+NAME: fig:ambiguity
+#+ATTR_LATEX: :width 0.75\linewidth 
+[[file:figures/ttbar_trt_extension.pdf]] 
+*** Outside-in sequence
+There are a number of physical processes which cause tracks which
+appear in the TRT to not be reconstructed during the inside-out
+reconstruction. These include long-lived decays as well as tracks that
+did not survive the ambiguity solving during the inside-out
+reconstruction. Hits not associated with tracks are considered in
+track finding and the resulting tracks are extended into the silicon
+to further associate hits to the tracks. Electrons lose significant
+amounts of energy in the TRT which makes the gaussian assumption
+underlying the performance of the Kalman filter fail. Different
+pattern recognition techniques are used to reconstruct these tracks
+with a high efficiency \cite{Cornelissen:2008zzc}.
+*** Track Parameters
+#+CAPTION: Perigee definition used by ATLAS \cite{Salzburger:1038100}. 
+#+NAME: fig:perigee
+#+ATTR_LATEX: :width 0.75\linewidth 
+[[file:figures/track_perigee.pdf]] 
+
+The track reconstruction algorithm as described does not make any
+reference to specific track parameters. The unique magnetic field that
+tracks traverse as they leave the detector makes a traditional helix
+parametrization difficult, therefore a generic set of parameters is
+defined at each measurement surface \cite{Salzburger:1038100}.
+#+BEGIN_LaTeX
+\begin{equation}
+\mathbf{x} = (l_1,l_2,\phi,\theta,q/p)^T
+\end{equation}
+#+END_LaTeX
+These local parameters are converted to the global kinematic
+parameters using ATLAS's definition of perigee parameters shown in
+Figure \ref{fig:perigee} \cite{Salzburger:1038100}. The azimuthal
+angle \phi and the polar angle \theta are measured from the
+interaction point. The ratio $q/p$ is measured based on the curvature
+of the track in the magnetic field. Figure \ref{fig:atlas-bfield}
+shows the magnetic field at ATLAS in the $r-z$ coordinates. The
+curvature of the track is determined by estimating the path a track
+takes as traverses the field using finite element analysis of the
+field \cite{Salzburger:1038100}.
+
+#+CAPTION: The magnetic field at ATLAS in the $r-z$ coordinate plane. The bottom plot shows a zoomed in view of the solenoidal field in the inner detector.  The toroidal field is shown in the upper plot. \cite{Salzburger:1038100}. 
+#+NAME: fig:ambiguity
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/atlas_bfield.pdf]] 
+
 ** Trigger
+At the design luminosity at the LHC, there are approximately 10^{18}
+interactions per second.  The information describing each event takes
+1.8 MB of disk space.  The hardware available at the time of the
+construction of the LHC means that only 200 events can be written per
+second (ie a bandwidth of 2.6 GB/s) \cite{atlas-detector}. A
+sophisticated system of hardware and software algorithms select events
+to be saved for further analysis. The entire system is referred to as
+the Trigger and Data Acquisition \cite{atlas-detector}. The trigger
+system drives the types of analyses that can be done as they are the
+first line of selection on the particles produced in collisions.
+
+The trigger is comprised of three levels, each considering more of the
+detector information than the last, and each refining the estimates of
+the physics objects in the event. The first level, (L1) is implemented
+at the hardware level. The L1 uses the RPC and TGC chambers of the
+muon spectrometer, and coarse information from the calorimeters for
+identification of $\tau$ leptons, electrons, jets, and missing
+transverse energy. The L1 accept rate is 75 kHz and the decision must
+reach the front end electronics in 2.5 $\mu$s.  The L1 trigger also
+creates regions of interest (RoI) which identify locations in
+$\eta-\phi$ space for further consideration by the level 2 (L2)
+trigger \cite{atlas-detector}.  
+
+The L2 trigger and the event filter (EF) constitute the high level
+trigger (HLT). The L2 trigger reduces the event rate to 2.5 kHz. The
+L2 trigger inspects the RoIs identified by the L1 trigger. The L2
+trigger consists of a processing farm which runs partial event
+reconstruction in order to further refine the event rate. The output
+of the L2 trigger is passed onto the EF. The EF runs the full atlas
+reconstruction software on the event. A final decision is made on the
+reconstructed physics objects and are written out to disk
+\cite{atlas-detector}.
 
 #+LaTeX: \chapter{Event Reconstruction and Selection}
 #+LaTeX: \label{chap:reconstruction}
