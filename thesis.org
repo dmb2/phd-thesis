@@ -1643,6 +1643,36 @@ algorithm.
 #+NAME: fig:vtx-refit
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/vtx_refit.pdf]] 
+
+When a meson containing a $b$ quark and a $c$ quark is produced, the
+$b$ quark may change flavor to a $c$ quark through the weak force in
+the Standard Model. The rate of this process is quite long which
+allows the experimental discrimination of events containing a $b$
+quark. The long lifetime of $b$ flavored mesons means that the decay
+vertex is displaced from the primary vertex. By measuring the distance
+between the refitted vertex and the primary vertex of the event, an
+estimate of the lifetime of the particle can be made. The lifetime can
+be estimated by measuring the displacement vector from the primary
+vertex ($\mathbf{L}$) and projecting it on the transverse momentum
+vector ($\mathbf{p}_T$). This quantity is referred to as $L_{xy}$.
+Determining the pseudo-proper lifetime is then a matter of scaling
+this quantity by the ratio of the mass and transverse momentum of the
+particle[fn:: In the high energy limit, the relativistic gamma factor
+is proportional to the ratio $p_T/m$]:
+#+BEGIN_LaTeX
+\begin{align}
+L_{xy} &= \frac{\mathbf{L}\cdot\mathbf{p}_T}{p_T} \\
+c\tau &= \frac{M_{J/\psi}}{p_T(\mu\mu)}L_{xy}
+\end{align}
+#+END_LaTeX
+Figure \ref{fig:pseudo-lifetime} shows the geometric definition of
+these quantities.
+
+#+CAPTION: The definition of the pseudo-proper lifetime is derived from the signed projection of the distance between the primary vertex and the secondary vertex.
+#+NAME: fig:pseudo-lifetime
+#+ATTR_LATEX: :width 0.75\linewidth 
+[[file:figures/pseudo_lifetime_def.pdf]] 
+ 
 * Jet definitions
 In Chapter \ref{chap:theory} the discussion of jets ended with the
 hadronization of partons to be reconstructed by the detector. This
@@ -1666,12 +1696,12 @@ pair, the reconstructed jets remain the same as illustrated in Figure
 
 #+CAPTION: Collinear safety means splitting one hard momentum vector into two does not change the jets reconstructed by the algorithm.
 #+NAME: fig:collinear-safe
-#+ATTR_LATEX: :width 1.0\linewidth 
+#+ATTR_LATEX: :width 0.75\linewidth 
 [[file:figures/collinear_safe.pdf]] 
 
 #+CAPTION: Infrared safety means adding a soft particle to the list of particles does not change the jets reconstructed by the algorithm.
 #+NAME: fig:infrared-safe
-#+ATTR_LATEX: :width 1.0\linewidth 
+#+ATTR_LATEX: :width 0.75\linewidth 
 [[file:figures/infrared_safe.pdf]] 
 ** Jet Reconstruction
 There are many reconstruction algorithms that satisfy the conditions
