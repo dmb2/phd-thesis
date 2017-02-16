@@ -6,7 +6,8 @@
 (setf org-latex-default-packages-alist
       (remove '("" "fixltx2e" nil) org-latex-default-packages-alist))
 (setq org-export-allow-bind-keywords t
-      org-latex-with-hyperref nil)
+      org-latex-with-hyperref nil
+      org-latex-table-caption-above nil)
 
 (unless (boundp 'org-latex-classes)
   (setq org-latex-classes nil))

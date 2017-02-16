@@ -164,7 +164,8 @@ directly and no net color charge.
 
 An alternative view of charmonium production is the production of the
 charm quark pair during the fragmentation of partons into individual
-hadrons. In the fragmenting jet function (FJF)
+hadrons. In the fragmenting jet[fn:: A jet is a collimated spray of
+particles resulting from high energy QCD processes] function (FJF)
 framework \cite{Procura:2009vm}, the total cross section is a product
 of the short distance partonic cross section with universal
 fragmentation functions which determine the evolution of individual
@@ -648,7 +649,8 @@ energy, conversely soft refers to low energy.] interaction.
 Confinement makes it impossible for a parton to propagate through
 space without forming a color singlet state. What is needed is a
 framework for discussing the transition between a single hard parton
-and the shower of hadrons ultimately measured in the detector. 
+and the shower of hadrons ultimately measured in the detector as a
+jet.
 
 As in the production of quarkonium states there are two energy scales
 which must be separated to make progress with the QCD processes.  The
@@ -808,7 +810,7 @@ steers them into each other at four points around the accelerator
 ring. These four points are the sites of the major LHC experiments,
 CMS, ATLAS, LHCb, and ALICE \cite{lhc-machine}. The data for this work
 was recorded in 2012 when the machine was configured to run each beam
-of protons at 4 TeV each for a center of mass energy $\sqrt{s}=8 TeV$.
+of protons at 4 TeV each for a center of mass energy $\sqrt{s}=8$ TeV.
 
 In order to collide protons, the LHC accelerates them through a series
 of booster rings until they are injected into the main accelerator
@@ -818,17 +820,17 @@ of the RF cavities which accelerate the particles. During the first
 run of the LHC, the bunches were spaced 50 ns apart which is twice the
 designed bunch spacing of 25 ns.
 
-In order to achieve this configuration of bunch crossings and precise
-control of the proton beams a number of problems must be addressed.
-Foremost is the bending the protons around the ring. This is achieved
-using 1,232 superconducting magnetic dipoles \cite{lhc-machine}. Each
-of these dipoles is operated at 1.9 K and produce a field strength of
-8 T. The operating temperature of the magnets has a tight margin above
-which the superconductivity is lost and the magnet ceases to conduct
-\cite{lhc-machine}. This transition is known as quenching, and when it
-occurs all of the energy stored in the field is released. An
-unintended quench in 2008 led to a massive helium explosion and
-delayed the experiment by a year.
+In order to achieve this configuration of bunch crossings as well as
+precise control of the proton beams a number of problems must be
+addressed. Foremost is the bending the protons around the ring. This
+is achieved using 1,232 superconducting magnetic dipoles
+\cite{lhc-machine}. Each of these dipoles is operated at 1.9 K and
+produce a field strength of 8 T. The operating temperature of the
+magnets has a tight margin above which the superconductivity is lost
+and the magnet ceases to conduct \cite{lhc-machine}. This transition
+is known as quenching, and when it occurs all of the energy stored in
+the field is released. An unintended quench in 2008 led to a massive
+helium explosion and delayed the experiment by a year.
 
 Another aspect that is important to the smooth operation of the LHC is
 the vacuum in the beam pipe. In order to maximize beam lifetime and
@@ -892,7 +894,7 @@ L = \frac{N_b^2n_b f_{\text{rev}}\gamma_r}{4\pi \epsilon_n \beta^*}F
 \end{equation}
 #+END_LaTeX
 The denominator of this equation is fairly straightforward, $N_b$ is
-the number of protons per bunch (typically $N_b\sim10^11$), $n_b$ is
+the number of protons per bunch (typically $N_b\sim10^{11}$), $n_b$ is
 the number of bunches per beam, $f_{\text{rev}}$ is the revolution
 frequency of the machine, $\gamma_r$ is the relativistic gamma factor
 for the bunches and $F$ is a geometric factor to account for the
@@ -920,15 +922,15 @@ gaussian beam.
 When the beams cross, there is a high probability that multiple high
 energy interactions take place. The interaction which is selected for
 study is referred to as the primary interaction. Secondary
-interactions contribute to experimental background, they are called
-pileup. The degree of pileup can be measure by the average number of
-interactions per bunch crossing ($<\mu>$). For the data used in this
-thesis, the pileup was 20 interactions per bunch crossing on average.
-Pileup presents an experimental challenge because the particles
-produced in association with the events can confuse the reconstruction
-algorithms used. This analysis makes use of reconstructed quantities
-that are largely insensitive to pileup effects.
-
+interactions contribute to experimental background which are referred
+to as pileup. The degree of pileup can be measure by the average
+number of interactions per bunch crossing ($\langle\mu\rangle$). For
+the data used in this thesis, the pileup was 20 interactions per bunch
+crossing on average. Pileup presents an experimental challenge because
+the particles produced in association with the events can confuse the
+reconstruction algorithms used. This analysis makes use of
+reconstructed quantities that are largely insensitive to pileup
+effects.
 
 * The ATLAS detector
 A Toroidal LHC AparatuS (ATLAS[fn:: ATLHCA doesn't have the same ring,
@@ -1385,7 +1387,7 @@ Integrating a measurement over the layers of the CSC allows the
 measurement of the time of arrival with an RMS of 3.6 ns
 \cite{atlas-detector}.
 
-#+CAPTION: The geometry of CSC chambers at ATLAS \ref{atlas-detector}.
+#+CAPTION: The geometry of CSC chambers at ATLAS \cite{atlas-detector}.
 #+NAME: fig:csc-geometry
 #+ATTR_LATEX: :width 0.5\linewidth 
 [[file:figures/CSC_geometry.pdf]] 
@@ -1476,10 +1478,13 @@ tracks in the outer parts of the detector but not in the innermost
 silicon layers still get reconstructed. Such processes are long-lived
 decays (e.g. $K_s$ decays) or photon conversions (a photon
 pair-produces to $e^+e^-$ leaving two tracks in the outer detector
-volume) \cite{Cornelissen:2008zzc}.  Vertex reconstruction occurs by
-iteratively following tracks back to a common point and assigning
-spatial coordinates to this vertex. The procedure is repeated until no
-further vertices can be created. 
+volume) \cite{Cornelissen:2008zzc}. Vertex reconstruction occurs by
+iteratively following high quality tracks back to a common point and
+assigning these tracks to a primary vertex. A \chi^2 is formed and
+remaining tracks that are displaced more than 7\sigma from the primary
+vertex are considered for the next iteration of vertex searching. The
+process is repeated until no additional vertices can be found
+\cite{stanecka:1529765}.
 
 The actual estimation of track parameters is determined using a Kalman
 filter \cite{Cornelissen:2008zzc}. The Kalman filter works by
@@ -1488,7 +1493,7 @@ on the addition of new measurements of the track parameters. It
 rapidly converges to the true result in the presence of noise and
 uncertainty in the measurement parameters \cite{Fruhwirth:1987fm}.
 These properties make it ideally suited for track reconstruction in
-the high-occupancy environment of ATLAS.  
+the high-occupancy environment of ATLAS.
 
 *** Inside-out sequence
 #+CAPTION: Example reconstruction of three tracks *a* *b* and *c*, hits are scored to determine optimal association of hits to each track. \cite{Cornelissen:2008zzc}. 
@@ -1599,8 +1604,113 @@ reconstructed physics objects and are written out to disk
 #+LaTeX: \chapter{Event Reconstruction and Selection}
 #+LaTeX: \label{chap:reconstruction}
 * J/\psi reconstruction
+In Chapter \ref{chap:theory} the J/\psi particle is understood as a
+quarkonium state consisting of a charm and anti-charm quark. After the
+pair is produced, it rapidly decays to either hadrons, a pair of
+electrons or a pair of muons (see Table \ref{tab:jpsi-decay})
+\cite{Agashe:2014kda}. In order to decay to pairs of leptons the
+quarks must decay through a virtual photon (electromagnetically). If
+the final state is a parton, the pair can decay through a gluon (via
+the strong interaction) or a virtual photon. This leads to the
+relative size of the electron and muon contribution to the decay
+modes.
+
+#+CAPTION: Summary of J/\psi decay modes \cite{Agashe:2014kda}
+#+NAME: tab:jpsi-decay
+| J/\psi Decay Mode | Fraction           |
+|-------------------+--------------------|
+| hadrons           | $87.7\pm 0.5$ %    |
+| $e^+ e^-$         | $5.971\pm 0.032$ % |
+| $\mu^+ \mu^-$     | $5.961\pm 0.033$ % |
+
+While the rate of J/\psi decaying to muons is around 6% of the total
+production, it represents a very clean experimental signal.  One of
+the major design requirements of ATLAS is the accurate reconstruction
+of muons across a wide momentum range.  
+
+Events which contain a high $p_T$ muon are inspected for J/\psi
+candidates by checking for additional muons in the event. If there are
+two oppositely charged muons in the event, they are considered as a
+J/\psi candidate by refitting the tracks to a common vertex. If the
+tracks are not already associated with the same vertex, this process
+modifies the track momentum slightly to more accurately reflect the
+hypothesis that the pair originated as a J/\psi. Figure
+\ref{fig:vtx-refit} illustrates this process. When a pair of muons is
+identified as a J/\psi candidate, those muons are removed from the
+inner detector track collection considered by the Jet reconstruction
+algorithm.
+#+CAPTION: Illustration of how refitting oppositely charged tracks to a common vertex changes the track.
+#+NAME: fig:vtx-refit
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/vtx_refit.pdf]] 
 * Jet definitions
+In Chapter \ref{chap:theory} the discussion of jets ended with the
+hadronization of partons to be reconstructed by the detector. This
+section describes how the detector level objects are grouped together
+to form candidates which represent the originating parton in those
+interactions. When a single hard parton showers and subsequently
+hadronizes, the QCD radiation emitted is typically collinear with the
+parton. This results in hadrons which are collimated in the detector.
+
+A rigorous jet definition simultaneously captures the momentum of the
+parton before the parton shower and has a well defined prescription
+for associating detector level objects to the jet \cite{Salam:2009jx}.
+Two critical properties of such an algorithm are infrared safety and
+collinear safety. Infrared safety means that adding soft (low
+momentum) radiation to the event doesn't change the reconstructed
+jets, this is illustrated in Figure \ref{fig:infrared-safe}. Collinear
+safety means that if a single hard particle is split into a collinear
+pair, the reconstructed jets remain the same as illustrated in Figure
+\ref{fig:collinear-safe} \cite{Salam:2009jx}.
+
+
+#+CAPTION: Collinear safety means splitting one hard momentum vector into two does not change the jets reconstructed by the algorithm.
+#+NAME: fig:collinear-safe
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/collinear_safe.pdf]] 
+
+#+CAPTION: Infrared safety means adding a soft particle to the list of particles does not change the jets reconstructed by the algorithm.
+#+NAME: fig:infrared-safe
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/infrared_safe.pdf]] 
 ** Jet Reconstruction
+There are many reconstruction algorithms that satisfy the conditions
+outlined above.  The algorithm used in this work is the anti-$k_t$
+algorithm, a sequential recombination algorithm widely used in modern
+high energy physics experiments. Sequential recombination algorithms
+operate in the following steps:
+1. A list of pseudo-jet's momentum are provided as input (on the first step this
+   is a list of reconstructed particle's momentum)
+2. For each pseudo-jet $i$ a quantity $d_{ij}$ and $d_{iB}$ is
+   calculated where $d_{ij}$ is a distance measure between the
+   pseudo-jet $i$ and another pseudo-jet $j$.  The quantity $d_{iB}$
+   is the distance between the pseudo-jet and the beam.
+3. The minimum of $d_{ij}$ and d_{iB} is determined.  If $d_{ij}$ is
+   smaller, the two momentum $i$ and $j$ are combined to form a new
+   pseudo-jet.  If $d_{iB}$ is smaller, this pseudo-jet is considered
+   as a jet and removed from the list of pseudo-jets
+4. Steps 1-3 are repeated until no pseudo-jets remain.
+
+In the anti-$k_t$ algorithm the distance measure is defined as:
+#+BEGIN_LaTeX
+\begin{align}
+ d_{ij} &= \min(k_{ti}^{-2},k_{tj}^{-2})\frac{\Delta_{ij}^2}{R^2} \\
+ d_{iB} &= k^{-2}_{ti}
+\end{align}
+#+END_LaTeX
+Here $\Delta_{ij}^2 = (y_i-y_j)^2 + (\phi_i - \phi_j)^2$, $k_t$,
+$\phi$, and $y$ being the transverse momentum, azimuthal angle and
+rapidity of the pseudo-jet four vector respectively
+\cite{1126-6708-2008-04-063}. The parameter $R$ is the predetermined
+radius of the jets. For this work $R=0.4$ is used. Anti-$k_t$ produces
+circular jets as opposed to other sequential recombination algorithms.
+Figure \ref{fig:anti-kt} shows the anti-$k_t$ clustering for a
+three-jet event. 
+#+CAPTION: Illustration of the anti-$k_t$ algorithm.  Each step clusters a new particle until a jet is formed and clustering continues until no pseudo-jets remain. 
+#+NAME: fig:anti-kt
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/antikt_algorithm.pdf]] 
+
 #+LaTeX: \chapter{Analysis Methods}
 #+LaTeX: \label{chap:analysis}
 * Fitting the data
