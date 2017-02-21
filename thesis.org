@@ -1743,7 +1743,56 @@ three-jet event.
 
 #+LaTeX: \chapter{Analysis Methods}
 #+LaTeX: \label{chap:analysis}
-* Fitting the data
+* Extended Maximum Likelihood Fit
+The maximum likelihood fit method is a statistical method for
+estimating parameters which describe the probability density function
+(PDF). The PDF can be motivated by physical first principles or
+empirically. The likelihood function is defined as the probability of
+a set of parameters given observed data. Maximizing the likelihood
+function with respect to these parameters provides a best estimate of
+the parameters. The likelihood function is constructed as a product
+over probability functions for observing a random variable $x$
+\cite{Barlow:1990vc}:
+#+BEGIN_LaTeX
+\begin{equation}
+\mathcal{L} = \prod_{i=1}^N p(x_i ; a_1 \cdots a_m)
+\end{equation}
+#+END_LaTeX
+Here $N$ is the number of observed events and $a_1 \cdots a_m$ are the
+parameters of the PDF which describe the data. Each probability
+function $p(x; a_1 \cdots a_m)$ is normalized \cite{Barlow:1990vc}:
+#+BEGIN_LaTeX
+\begin{equation}
+\int p(x; a_1 \cdots a_m) = 1
+\end{equation}
+#+END_LaTeX
+Rather than maximizing the likelihood directly, it is easier to
+maximize the logarithm of the likelihood.  It is also equivalent to
+minimizing the negative logarithm of the likelihood function:
+#+BEGIN_LaTeX
+\begin{equation}
+\label{eq:nll}
+- \log \mathcal{L} = - \sum_{i=1}^{N} \log(p(x_i; a_1 \cdots a_m))
+\end{equation}
+#+END_LaTeX
+Equation \ref{eq:nll} is minimized over the parameters $a_j$. This is
+done using RooFit, a computational framework that implements these
+mathematical functions in code directly \cite{Verkerke:2003ir}. The
+algorithm used by RooFit is a gradient descent called Minuit
+\cite{James:2004xla}. The method used to separate the signal and
+background events requires that the normalization condition be relaxed
+such that for a given component of the likelihood function
+\cite{Barlow:1990vc}:
+#+BEGIN_LaTeX
+\begin{equation}
+\int P(x; a_1 \cdots a_m) dx = N(a_1 \cdots a_m)
+\end{equation}
+#+END_LaTeX
+This allows the derivation of per event weights that describe the
+signal and background components for each variable of interest to this
+analysis. The details of this method are described in Section [[SPlot]].
+* Empirical Model
+
 * Extracting the Signal
 ** SPlot
 * Unfolding
