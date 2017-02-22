@@ -1226,6 +1226,11 @@ intrinsic radiation hardness and its ability to scintillate
 is an ideal choice due to its high density and the compact nature of
 the ECAL compared to the HCAL.
 
+#+CAPTION: Illustration of the ECAL granularity and geometry of a module \cite{atlas-detector}. 
+#+NAME: fig:ecal-barrel-module
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[file:figures/em_calorimeter_module.pdf]] 
+
 While the ECAL utilizes a accordion geometry, the HCAL utilizes a
 slightly different form. The absorption material in the HCAL is steel,
 the scintillation material is a plastic based on polystyrene doped
@@ -1520,7 +1525,7 @@ reconstructed in the silicon layers. After TRT hits are associated to
 the tracks, the inside-out sequence is halted.
 
 #+CAPTION: A simulated $t\bar{t}$ event illustrating the TRT extension procedure.  Red TRT hits are associated with tracks represented by red hits in the silicon layers \cite{Cornelissen:2008zzc}. 
-#+NAME: fig:ambiguity
+#+NAME: fig:trt-ttbar
 #+ATTR_LATEX: :width 0.75\linewidth 
 [[file:figures/ttbar_trt_extension.pdf]] 
 *** Outside-in sequence
@@ -1563,7 +1568,7 @@ takes as traverses the field using finite element analysis of the
 field \cite{Salzburger:1038100}.
 
 #+CAPTION: The magnetic field at ATLAS in the $r-z$ coordinate plane. The bottom plot shows a zoomed in view of the solenoidal field in the inner detector.  The toroidal field is shown in the upper plot. \cite{Salzburger:1038100}. 
-#+NAME: fig:ambiguity
+#+NAME: fig:atlas-bfield
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/atlas_bfield.pdf]] 
 
@@ -1746,29 +1751,32 @@ three-jet event.
 * Likelihood Formalism
 The maximum likelihood (ML) fit method is a statistical method for
 estimating parameters which describe the probability density function
-(PDF). The PDF can be motivated by physical first principles or
-empirically. The likelihood function is defined as the probability of
-a set of parameters given observed data. Maximizing the likelihood
-function with respect to these parameters provides a best estimate of
-the parameters. The likelihood function is constructed as a product
-over probability functions for observing a random variable $x$
+(PDF)[fn:: This section follows the notation in \ref{James:2006zz}
+which differs slightly from the notation used in literature.]. The PDF
+can be motivated by physical first principles or empirically. The
+likelihood function is defined as the probability of a set of
+parameters given observed data. Maximizing the likelihood function
+with respect to these parameters provides a best estimate of the
+parameters. The likelihood function is constructed as a product over
+probability functions for observing a random variable $x$
 \cite{Barlow:1990vc}:
 #+BEGIN_LaTeX
 \begin{equation}
-\mathcal{L} = \prod_{i=1}^N p(x_i ; a_1 \cdots a_m)
+\mathcal{L} = \prod_{i=1}^N p(x_i | \bm{\theta})
 \end{equation}
 #+END_LaTeX
-Here $N$ is the number of observed events and $a_1 \cdots a_m$ are the
-parameters of the PDF which describe the data. It is important to note
-that the parameters $a_i$ do not represent a conditional probability.
-Instead, they are parameters of a function describing the PDF[fn:: For
-example, in the function of a line $p(x; m, b)=mx+b$, the slope ($m$)
-and intercept of a line ($b$) are parameters of the variable $x$.],
-independent of the random variable observed ($x_i$). Each probability
-function $p(x; a_1 \cdots a_m)$ is normalized \cite{Barlow:1990vc}:
+Here $N$ is the number of observed events and $\bm{\theta}$ is a
+vector of parameters which describe the PDF[fn:: For example, in the
+function of a line $p(x| m, b)=mx+b$, the slope ($m$) and intercept of
+a line ($b$) are parameters of the variable $x$.]. It is important to
+note that the parameters $\theta_i$ do not represent a conditional
+probability. Instead, they are parameters of a function describing the
+PDF, independent of the random variable observed ($x_i$). Each
+probability function $p(x| \bm{\theta})$ is normalized
+\cite{Barlow:1990vc}:
 #+BEGIN_LaTeX
 \begin{equation}
-\int p(x; a_1 \cdots a_m) = 1
+\int p(x|\bm{\theta}) = 1
 \end{equation}
 #+END_LaTeX
 Rather than maximizing the likelihood directly, it is easier to
@@ -1776,17 +1784,17 @@ maximize (minimize) the (negative) logarithm of the likelihood:
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:nll}
-- \log \mathcal{L} = - \sum_{i=1}^{N} \log(p(x_i; a_1 \cdots a_m))
+- \log \mathcal{L} = - \sum_{i=1}^{N} \log(p(x_i|\bm{\theta}))
 \end{equation}
 #+END_LaTeX
-Equation \ref{eq:nll} is minimized over the parameters $a_j$. The
+Equation \ref{eq:nll} is minimized over the parameters $\theta_j$. The
 value of these parameters represent the estimation of the PDF that
 most likely describes the observed data, hence the name "maximum
 likelihood fit." The computational framework that allows the use of
 the ML fit is RooFit, a general purpose statistical tool for
 performing and evaluating fits to data \cite{Verkerke:2003ir}. The
 algorithm used by RooFit to perform the minimization is a gradient
-descent called Minuit \cite{James:2004xla}. 
+descent called Minuit \cite{James:2004xla}.
 
 ** Extracting the Signal
 The likelihood method provides a powerful tool for assessing the
@@ -1795,23 +1803,16 @@ on the parameters extracted from the fit. The technique used for this
 purpose is called sPlot \cite{Pivk:2004ty}. This method utilizes
 properties of the extended likelihood formalism to derive a set of
 weights representing categories parametrized by the PDFs used in the
-ML fit.   
-
-SPlot requires that the normalization condition be relaxed such that
-for a given component of the likelihood function \cite{Barlow:1990vc}:
+ML fit. SPlot requires that the normalization condition be relaxed
+such that for a given component of the likelihood function
+\cite{Barlow:1990vc}:
 #+BEGIN_LaTeX
 \begin{equation}
-\int P(x; a_1 \cdots a_m) dx = N(a_1 \cdots a_m)
+\int P(x|\bm{\theta}) dx = N(\bm{\theta})
 \end{equation}
 #+END_LaTeX
-In addition SPlot also requires the covariance matrix derived from the
-fit.  This also goes under the name "information matrix" in the
-literature and it is defined as:
-#+BEGIN_LaTeX
-\begin{equation}
-
-\end{equation}
-#+END_LaTeX
+SPlot also requires knowledge of the covariance matrix. This is
+estimated 
 * Empirical Model
 
 * Unfolding
