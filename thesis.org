@@ -1743,8 +1743,8 @@ three-jet event.
 
 #+LaTeX: \chapter{Analysis Methods}
 #+LaTeX: \label{chap:analysis}
-* Extended Maximum Likelihood Fit
-The maximum likelihood fit method is a statistical method for
+* Likelihood Formalism
+The maximum likelihood (ML) fit method is a statistical method for
 estimating parameters which describe the probability density function
 (PDF). The PDF can be motivated by physical first principles or
 empirically. The likelihood function is defined as the probability of
@@ -1759,7 +1759,12 @@ over probability functions for observing a random variable $x$
 \end{equation}
 #+END_LaTeX
 Here $N$ is the number of observed events and $a_1 \cdots a_m$ are the
-parameters of the PDF which describe the data. Each probability
+parameters of the PDF which describe the data. It is important to note
+that the parameters $a_i$ do not represent a conditional probability.
+Instead, they are parameters of a function describing the PDF[fn:: For
+example, in the function of a line $p(x; m, b)=mx+b$, the slope ($m$)
+and intercept of a line ($b$) are parameters of the variable $x$.],
+independent of the random variable observed ($x_i$). Each probability
 function $p(x; a_1 \cdots a_m)$ is normalized \cite{Barlow:1990vc}:
 #+BEGIN_LaTeX
 \begin{equation}
@@ -1767,34 +1772,48 @@ function $p(x; a_1 \cdots a_m)$ is normalized \cite{Barlow:1990vc}:
 \end{equation}
 #+END_LaTeX
 Rather than maximizing the likelihood directly, it is easier to
-maximize the logarithm of the likelihood.  It is also equivalent to
-minimizing the negative logarithm of the likelihood function:
+maximize (minimize) the (negative) logarithm of the likelihood:
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:nll}
 - \log \mathcal{L} = - \sum_{i=1}^{N} \log(p(x_i; a_1 \cdots a_m))
 \end{equation}
 #+END_LaTeX
-Equation \ref{eq:nll} is minimized over the parameters $a_j$. This is
-done using RooFit, a computational framework that implements these
-mathematical functions in code directly \cite{Verkerke:2003ir}. The
-algorithm used by RooFit is a gradient descent called Minuit
-\cite{James:2004xla}. The method used to separate the signal and
-background events requires that the normalization condition be relaxed
-such that for a given component of the likelihood function
-\cite{Barlow:1990vc}:
+Equation \ref{eq:nll} is minimized over the parameters $a_j$. The
+value of these parameters represent the estimation of the PDF that
+most likely describes the observed data, hence the name "maximum
+likelihood fit." The computational framework that allows the use of
+the ML fit is RooFit, a general purpose statistical tool for
+performing and evaluating fits to data \cite{Verkerke:2003ir}. The
+algorithm used by RooFit to perform the minimization is a gradient
+descent called Minuit \cite{James:2004xla}. 
+
+** Extracting the Signal
+The likelihood method provides a powerful tool for assessing the
+likelihood that a particular event is signal or background depending
+on the parameters extracted from the fit. The technique used for this
+purpose is called sPlot \cite{Pivk:2004ty}. This method utilizes
+properties of the extended likelihood formalism to derive a set of
+weights representing categories parametrized by the PDFs used in the
+ML fit.   
+
+SPlot requires that the normalization condition be relaxed such that
+for a given component of the likelihood function \cite{Barlow:1990vc}:
 #+BEGIN_LaTeX
 \begin{equation}
 \int P(x; a_1 \cdots a_m) dx = N(a_1 \cdots a_m)
 \end{equation}
 #+END_LaTeX
-This allows the derivation of per event weights that describe the
-signal and background components for each variable of interest to this
-analysis. The details of this method are described in Section [[SPlot]].
+In addition SPlot also requires the covariance matrix derived from the
+fit.  This also goes under the name "information matrix" in the
+literature and it is defined as:
+#+BEGIN_LaTeX
+\begin{equation}
+
+\end{equation}
+#+END_LaTeX
 * Empirical Model
 
-* Extracting the Signal
-** SPlot
 * Unfolding
 ** Iterative Bayesian Unfolding
 *** Determining Iterations
