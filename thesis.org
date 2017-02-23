@@ -1826,40 +1826,41 @@ covariance matrix. This is can be estimated from the likelihood
 function by \cite{Pivk:2004ty}:
 #+BEGIN_LaTeX
 \begin{equation}
+\label{eq:v-inverse}
 V^{-1}(\hat{\bm{\theta}})_{ij} = \frac{\partial^2(-\mathcal{L}(x|\bm{\theta}_0))}{\partial N_i\partial N_j}
 \end{equation}
 #+END_LaTeX
 Here $\bm{\theta}_0$ are the parameters estimated from the ML fit.
 With these ingredients it is possible to derive the weights required
-to reconstruct a histogram of the estimated signal. Define a histogram
-$\bm{H}$ as a vector of dimension $n$ corresponding to the number of
-bins, and $H_i$ is the $i^{\text{th}}$ bin. The sPlot method provides
-the following decomposition for the $i^{\text{th}}$ bin that is
-statistically independent of the discriminating variable $x$:
+to reconstruct a histogram of the estimated signal. The expression
+obtained is:
 #+BEGIN_LaTeX
 \begin{equation}
-H_i = (W_S + W_B)N
+W_S(x) = \frac{\sum_{j=1}^N_s V_{Sj}p_j(x)}{\sum_{k=1}^N_s N_k p_k(x)}
 \end{equation}
 #+END_LaTeX
-In this expression, $N$ is the number of entries in that bin.  From
-this it is easy to see that the histogram of the signal process will
-be:
+The matrix $V_{Sj}$ is obtained from the likelihood function by
+numerically inverting Eq. \ref{eq:v-inverse}.  It is informative to
+expand this expression for the case of two species, signal and
+background as used in this analysis. For the case of signal the
+weight is:
 #+BEGIN_LaTeX
 \begin{equation}
-H^S_i = W_S N
+W_S(x) = \frac{V_{SS} p_S(x) + V_{SB} p_B(x)}{N_Sp_S(x)+N_Bp_B(x)}
 \end{equation}
 #+END_LaTeX
-In order to derive this weight, introduce the probability that a
-signal(background) event occurs in bin $i$ as $p_{S(B)}$. If the
-number of signal (background) events from the overall fit is
-$N_{S(B)}$, then the expected number of signal events in bin $i$
-should be $p_S N_S$.  This can be written in terms of the weights
-above with the substitution $N_S = \int p_S(x) dx$:
+In this expression it is clear that the weight depends on the PDF for
+the signal and background and is weighted by the covariance of these
+two components.  In the extreme case where signal and background are
+perfectly separated the covariance matrix is diagonal and the weight
+reduces to:
 #+BEGIN_LaTeX
 \begin{equation}
-p_S N_S = \int W_S (p_S p_S(x) + p_B p_B(x)) dx
+W_S(x) = \frac{\sigma_S p_S(x)}{N_Sp_S(x)+N_Bp_B(x)}
+\end{equation}
 #+END_LaTeX
-
+Where $\sigma_S$ is the variance of the signal PDF.  This weight is
+applied per event.  
 * Empirical Model
 
 * Unfolding
@@ -1870,6 +1871,7 @@ p_S N_S = \int W_S (p_S p_S(x) + p_B p_B(x)) dx
 
 #+LaTeX: \chapter{Measurement of prompt J/$\psi$ particles}
 #+LaTeX: \label{chap:measurement}
+* Observables
 * Selection Criteria
 * Systematic Errors
 * Results
