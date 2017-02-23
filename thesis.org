@@ -1651,19 +1651,23 @@ algorithm.
 
 When a meson containing a $b$ quark and a $c$ quark is produced, the
 $b$ quark may change flavor to a $c$ quark through the weak force in
-the Standard Model. The rate of this process is quite long which
-allows the experimental discrimination of events containing a $b$
-quark. The long lifetime of $b$ flavored mesons means that the decay
-vertex is displaced from the primary vertex. By measuring the distance
-between the refitted vertex and the primary vertex of the event, an
-estimate of the lifetime of the particle can be made. The lifetime can
-be estimated by measuring the displacement vector from the primary
-vertex ($\mathbf{L}$) and projecting it on the transverse momentum
-vector ($\mathbf{p}_T$). This quantity is referred to as $L_{xy}$.
-Determining the pseudo-proper lifetime is then a matter of scaling
-this quantity by the ratio of the mass and transverse momentum of the
-particle[fn:: In the high energy limit, the relativistic gamma factor
-is proportional to the ratio $p_T/m$]:
+the Standard Model. The time it takes to complete this process is
+quite long which allows the experimental discrimination of events
+containing a $b$ quark. The long lifetime of $b$ flavored mesons means
+that the decay vertex is displaced from the primary vertex. By
+measuring the distance between the refitted vertex and the primary
+vertex of the event, an estimate of the lifetime of the particle can
+be made. Events which are displaced are referred to as non-prompt,
+while events which are not displaced are referred to as prompt. The
+lifetime can be estimated by measuring the displacement vector from
+the primary vertex ($\mathbf{L}$) and projecting it on the transverse
+momentum vector ($\mathbf{p}_T$). This quantity is referred to as
+$L_{xy}$[fn:: Recall the transverse plane (T) is the $x-y$ plane in
+the cartesian coordinates used by ATLAS where the beam line is the $z$
+axis.]. Determining the pseudo-proper lifetime is then a matter of
+scaling this quantity by the ratio of the mass and transverse momentum
+of the particle[fn:: In the high energy limit, the relativistic gamma
+factor is proportional to the ratio $p_T/m$]:
 #+BEGIN_LaTeX
 \begin{align}
 L_{xy} &= \frac{\mathbf{L}\cdot\mathbf{p}_T}{p_T} \\
@@ -1671,7 +1675,26 @@ c\tau &= \frac{M_{J/\psi}}{p_T(\mu\mu)}L_{xy}
 \end{align}
 #+END_LaTeX
 Figure \ref{fig:pseudo-lifetime} shows the geometric definition of
-these quantities.
+these quantities.  
+
+The lifetime distribution breaks down as follows:
+- A large fraction of signal events will be centered around $c\tau=0$
+- A small fraction of events will contribute to a non-coherent
+  component with an exponential decay positive and negative in $c\tau$
+- A large fraction of background events will follow an exponential
+  decay with lifetime equal to the geometric mean of the $B$ hadron
+  lifetimes that contribute to the overall background.  
+
+It is possible that two oppositely charged muons are produced near
+enough to each other that they are refit as a $J/\psi$ candidate
+without originating from a $c\bar{c}$ pair. Since these events come
+from the wrong combination of muons, they are referred to as the
+combinatoric background. The invariant mass of these muon pairs does
+not produce a resonance near the mass of the $J/\psi$ the way muons
+from $J/\psi$ decays do. This makes the invariant mass $M_{\mu\mu}$
+the variable which discriminates true $J/\psi$ candidates from the
+wrong combination of muons.
+
 
 #+CAPTION: The definition of the pseudo-proper lifetime is derived from the signed projection of the distance between the primary vertex and the secondary vertex.
 #+NAME: fig:pseudo-lifetime
@@ -1859,9 +1882,63 @@ reduces to:
 W_S(x) = \frac{\sigma_S p_S(x)}{N_Sp_S(x)+N_Bp_B(x)}
 \end{equation}
 #+END_LaTeX
-Where $\sigma_S$ is the variance of the signal PDF.  This weight is
-applied per event.  
+Where $\sigma_S$ is the variance of the signal PDF. This weight is
+applied per event and on average it reproduces the signal histogram.
 * Empirical Model
+In Section [[J/\psi reconstruction]] the two sources of background were
+introduced: non-prompt decays from $B$ hadrons distinguished by the
+$c\tau$ distribution and combinatoric events from the wrong pair of
+muons distinguished by the invariant mass of the di-muon pair
+$M_{\mu\mu}$. The fit to the data is parameterized by a joint PDF in
+$M_{\mu\mu}$ and $c\tau$. The specific parameterization  has been used
+previously to extract J/\psi events \cite{ATLAS-CONF-2015-024}.  It is
+defined as:
+#+BEGIN_LaTeX
+\begin{equation}
+PDF(m,t) = \sum_{i} f_{i}(m)\cdot h_{i}(t)\otimes g_{i}(t)
+\label{eq:pdf}
+\end{equation}
+#+END_LaTeX
+Here $\otimes$ is convolution while $\cdot$ is PDF multiplication. In
+the following $\oplus$ refers to a weighted sum of two PDF components
+such that the result remains properly normalized. The individual fit
+components are listed in Table \ref{tab:fit-comps}.
+#+CAPTION: Individual components of simultaneous fit to data. 
+#+CAPTION: Functions are notated as follows: $\delta(x)$, the dirac delta
+#+CAPTION: function; $CB_{k}(x)$, the \emph{k}th Crystal Ball function;
+#+CAPTION: $G_{k}(x)$ a Gaussian function; $E_{k}(x)$, the \emph{k}th exponential
+#+CAPTION: decay; $P^{n}(x)$ a polynomial of degree $n$. A function with the same
+#+CAPTION: $k$ index shares the same free parameters.
+#+LABEL: tab:fit-comps
+| $i$ | Source                  | $f_{i}(m)$                 | $h_{i}(t)$            |
+|-----+-------------------------+----------------------------+-----------------------|
+|   1 | Prompt $J/\psi$         | $CB_{1}(m)\oplus G_{1}(m)$ | $\delta(t)$           |
+|   2 | Non-prompt $J/\psi$     | $CB_{1}(m)\oplus G_{1}(m)$ | $E_{1}(t)$            |
+|   3 | Prompt Background       | $P^{0}(m)$                 | $\delta(t)$           |
+|   4 | Non-prompt Background   | $P^{1}(m)$                 | $E_{2}(t)$            |
+|   5 | Non-coherent Background | $E_{3}(m)$                 | $E_{4}(\vert t\vert)$ |
+|-----+-------------------------+----------------------------+-----------------------|
+Figure \ref{fig:fit-res-m} and Figure \ref{fig:fit-res-lt} shows the
+result of the simultaneous fit to the 2012 data set for the dimuon
+invariant mass distribution and pseudo-proper lifetime distribution
+respectively. Selected fitted values of the PDF are summarized in
+Table \ref{tab:fitres}.
+#+BEGIN_LaTeX
+    \begin{figure}
+      \centering
+      \subfloat[$M_{\mu\mu}$ fit result]{
+        \label{fig:fit-res-m}
+        \includegraphics[width=0.5\textwidth]{plots/mass_fit_final.pdf}
+      }
+      \subfloat[$c\tau$ fit result]{
+        \label{fig:fit-res-lt}
+        \includegraphics[width=0.5\textwidth]{plots/tau_fit_final.pdf}
+      } \caption{\label{fig:fitres} Result of unbinned likelihood fit to
+  invariant mass distribution of dimuon pairs in data and pseudo-proper
+  lifetime distribution. See \ref{tab:fit-comps} for a list of the fit
+  components.}
+    \end{figure}
+#+END_LaTeX
 
 * Unfolding
 ** Iterative Bayesian Unfolding
