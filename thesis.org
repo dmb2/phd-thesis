@@ -1460,13 +1460,14 @@ complement the MDT measurement \cite{atlas-detector}.
 The TGC serves a similar purpose as the RPCs do. They are the magenta
 regions of Figure \ref{fig:rpc-tgc-trigger}. TGCs and RPCs operate
 using similar physical processes but differ in the materials used
-\cite{atlas-detector}.  The region of the TGC filled with gas is 2.8
-mm wide.  The gas mixture is CO_2 and n-pentane which results in a
-lower gas gain.  The anodes are held at a potential of 2.9 kV.  The
-operating parameters of the TGC allow it to read out signals within
-25ns \cite{atlas-detector}.  
+\cite{atlas-detector}. The region of the TGC filled with gas is 2.8 mm
+wide. The gas mixture is CO_2 and n-pentane which results in a lower
+gas gain. The anodes are held at a potential of 2.9 kV. The operating
+parameters of the TGC allow it to read out signals within 25ns
+\cite{atlas-detector}. Figure \ref{fig:tgc-layout} shows a schematic
+of a TGC module at ATLAS.
 #+CAPTION: Schematic of the TGC layout. G-10 is a glass reinforced epoxy laminate \cite{atlas-detector}. 
-#+NAME: fig:rpc-readout
+#+NAME: fig:tgc-layout
 #+ATTR_LATEX: :width 0.75\linewidth 
 [[file:figures/TGC_structure.pdf]] 
 ** Track and Vertex Reconstruction
@@ -1774,7 +1775,7 @@ three-jet event.
 * Likelihood Formalism
 The maximum likelihood (ML) fit method is a statistical method for
 estimating parameters which describe the probability density function
-(PDF)[fn:: This section follows the notation in \ref{James:2006zz}
+(PDF)[fn:: This section follows the notation in \cite{James:2006zz}
 which differs slightly from the notation used in literature.]. The PDF
 can be motivated by physical first principles or empirically. The
 likelihood function is defined as the probability of a set of
@@ -1834,11 +1835,11 @@ such that for a given component of the likelihood function
 \int P(x|\bm{\theta}) dx = N(\bm{\theta})
 \end{equation}
 #+END_LaTeX
-This allows the re-expression of the negative log-likelihood function as\cite{pivk:2004ty}:
+This allows the re-expression of the negative log-likelihood function as\cite{Pivk:2004ty}:
 #+BEGIN_LaTeX
 \begin{equation}
-\label{eq:nll}
-- \log \mathcal{L} = - \sum_{i=1}^{N} \log(\sum_{j=1}^\mathcal{N}_{s} N_j p_j(x_i|\bm{\theta}))
+\label{eq:enll}
+- \log \mathcal{L} = - \sum_{i=1}^{N} \log(\sum_{j=1}^{\mathcal{N}_s} N_j p_j(x_i|\bm{\theta}))
 \end{equation}
 #+END_LaTeX
 In this expression $\mathcal{N}_{s}$ is the number of species (in this
@@ -1859,7 +1860,7 @@ to reconstruct a histogram of the estimated signal. The expression
 obtained is:
 #+BEGIN_LaTeX
 \begin{equation}
-W_S(x) = \frac{\sum_{j=1}^N_s V_{Sj}p_j(x)}{\sum_{k=1}^N_s N_k p_k(x)}
+W_S(x) = \frac{\sum_{j=1}^{N_s} V_{Sj}p_j(x)}{\sum_{k=1}^{N_s} N_k p_k(x)}
 \end{equation}
 #+END_LaTeX
 The matrix $V_{Sj}$ is obtained from the likelihood function by
@@ -1918,6 +1919,27 @@ components are listed in Table \ref{tab:fit-comps}.
 |   4 | Non-prompt Background   | $P^{1}(m)$                 | $E_{2}(t)$            |
 |   5 | Non-coherent Background | $E_{3}(m)$                 | $E_{4}(\vert t\vert)$ |
 |-----+-------------------------+----------------------------+-----------------------|
+The choice of these specific functions and the components they model
+deserve explanation. The constructed PDF is a joint PDF in
+$M_{\mu\mu}$ (denoted $m$ in the fit) and $c\tau$ (denoted $t$ in the
+fit). This means that each component must have a mass component and a
+lifetime component. The shape used for the $J/\psi$ resonance in $m$
+is the sum of a Gaussian and a Crystal Ball function.  The Crystal
+Ball has the shape of Gaussian, but is asymmetric and allows the
+correct modeling of losses that give the resonance a low mass tail.
+The function is defined as:
+#+BEGIN_LaTeX
+$$
+\label{eq:crystal-ball}
+f(m;\alpha,n,\mu,\sigma) = N\cdot 
+\begin{cases}
+\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) & \text{for}~\frac{x-\mu}{\sigma} > -\alpha \\
+A\cdot\left(B-\frac{x-\mu}{\sigma}\right)^{-n} & \text{for}~\frac{x-\mu}{\sigma} \leq -\alpha
+\end{cases}
+$$
+#+END_LaTeX
+
+
 Figure \ref{fig:fit-res-m} and Figure \ref{fig:fit-res-lt} shows the
 result of the simultaneous fit to the 2012 data set for the dimuon
 invariant mass distribution and pseudo-proper lifetime distribution
@@ -1939,6 +1961,20 @@ Table \ref{tab:fitres}.
   components.}
     \end{figure}
 #+END_LaTeX
+
+#+CAPTION: Summary of fit to dataset with nominal parameterization, Estimated Distance to Minimum: 0.84577\times 10^{-3}. See Appendix for full list of parameters and fitted values.
+#+LABEL: tab:fitres
+| Parameter Name          | Fitted Value                       |
+|-------------------------+------------------------------------|
+| $J/\psi$ Mass           | 3.0969 \pm 0.0002 GeV              |
+| $J/\psi$ Width          | (0.82 \pm 0.01)\times 10^{-1} GeV  |
+| Lifetime                | 0.313 \pm 0.001 ps                 |
+| Non-coherent Lifetime   | 0.161 \pm 0.003 ps                 |
+| Non-prompt Lifetime     | 0.344 \pm 0.002 ps                 |
+| Resolution Width        | (0.109 \pm 0.001)\times 10^{-1} ps |
+| Second Resolution Width | (0.308 \pm 0.005)\times 10^{-1} ps |
+| Non-Coherent Mass c_{1} | -0.2640 \pm 0.0004      1/GeV      |
+|-------------------------+------------------------------------|
 
 * Unfolding
 ** Iterative Bayesian Unfolding
