@@ -1891,19 +1891,21 @@ introduced: non-prompt decays from $B$ hadrons distinguished by the
 $c\tau$ distribution and combinatoric events from the wrong pair of
 muons distinguished by the invariant mass of the di-muon pair
 $M_{\mu\mu}$. The fit to the data is parameterized by a joint PDF in
-$M_{\mu\mu}$ and $c\tau$. The specific parameterization  has been used
-previously to extract J/\psi events \cite{ATLAS-CONF-2015-024}.  It is
+$M_{\mu\mu}$ and $c\tau$. The specific parameterization has been used
+previously to extract J/\psi events \cite{ATLAS-CONF-2015-024}. It is
 defined as:
 #+BEGIN_LaTeX
 \begin{equation}
-PDF(m,t) = \sum_{i} f_{i}(m)\cdot h_{i}(t)\otimes g_{i}(t)
+PDF(m,t) = \sum_{i} f_{i}(m)\cdot h_{i}(t)\otimes g(t)
 \label{eq:pdf}
 \end{equation}
 #+END_LaTeX
 Here $\otimes$ is convolution while $\cdot$ is PDF multiplication. In
 the following $\oplus$ refers to a weighted sum of two PDF components
 such that the result remains properly normalized. The individual fit
-components are listed in Table \ref{tab:fit-comps}.
+components are listed in Table \ref{tab:fit-comps}. The function
+$g(t)$ is resolution function of the lifetime distribution. It is a
+double-gaussian and is convolved with each lifetime component.
 #+CAPTION: Individual components of simultaneous fit to data. 
 #+CAPTION: Functions are notated as follows: $\delta(x)$, the dirac delta
 #+CAPTION: function; $CB_{k}(x)$, the \emph{k}th Crystal Ball function;
@@ -1929,16 +1931,35 @@ Ball has the shape of Gaussian, but is asymmetric and allows the
 correct modeling of losses that give the resonance a low mass tail.
 The function is defined as:
 #+BEGIN_LaTeX
-$$
+\begin{align}
 \label{eq:crystal-ball}
-f(m;\alpha,n,\mu,\sigma) = N\cdot 
+f(m;\alpha,n,\mu,\sigma) &= N\cdot 
 \begin{cases}
 \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) & \text{for}~\frac{x-\mu}{\sigma} > -\alpha \\
 A\cdot\left(B-\frac{x-\mu}{\sigma}\right)^{-n} & \text{for}~\frac{x-\mu}{\sigma} \leq -\alpha
-\end{cases}
-$$
+\end{cases}\\
+A &= \left(\frac{n}{|\alpha|}\right)^n \exp\left(-\frac{|\alpha|^2}{2}\right)\\
+B &= \frac{n}{|\alpha|} - |\alpha|
+\end{align}
 #+END_LaTeX
+Here $N$ is the normalization factor, $\mu$ is the mean and $\sigma$
+the width of the Gaussian portion. The parameters $n=1$ and
+$\alpha=10$ are fixed in the fit but varied in separate fits to assess
+their impact on the systematic uncertainty.
 
+The signal component is defined as the prompt $J/\psi$ component; the
+remainder is background. The non-prompt component shares the same mass
+signal PDF, but has an exponential distribution in $t$. The remaining
+components of the PDF do not contribute to the estimate of real
+$J/\psi$ events. The portion of events which appear prompt but are
+from the wrong combination of muons, a constant function in mass and a
+delta function in $t$ are used. There is a portion of events which
+appear to have a negative lifetime depending on the measurement of
+$L_{xy}$. This component is modeled as a double-sided exponential in
+$t$ and an exponential in $m$. The combinatoric background component
+is linear in $m$ and exponential in $t$. Including fractions which
+float to ensure the PDF is normalized, the fit includes fourteen free
+parameters.
 
 Figure \ref{fig:fit-res-m} and Figure \ref{fig:fit-res-lt} shows the
 result of the simultaneous fit to the 2012 data set for the dimuon
@@ -1962,25 +1983,177 @@ Table \ref{tab:fitres}.
     \end{figure}
 #+END_LaTeX
 
-#+CAPTION: Summary of fit to dataset with nominal parameterization, Estimated Distance to Minimum: 0.84577\times 10^{-3}. See Appendix for full list of parameters and fitted values.
+#+CAPTION: Summary of fit to dataset with nominal parameterization, Estimated Distance to Minimum: 0.84577\times 10^{-3}. 
 #+LABEL: tab:fitres
 | Parameter Name          | Fitted Value                       |
 |-------------------------+------------------------------------|
 | $J/\psi$ Mass           | 3.0969 \pm 0.0002 GeV              |
 | $J/\psi$ Width          | (0.82 \pm 0.01)\times 10^{-1} GeV  |
-| Lifetime                | 0.313 \pm 0.001 ps                 |
-| Non-coherent Lifetime   | 0.161 \pm 0.003 ps                 |
-| Non-prompt Lifetime     | 0.344 \pm 0.002 ps                 |
-| Resolution Width        | (0.109 \pm 0.001)\times 10^{-1} ps |
-| Second Resolution Width | (0.308 \pm 0.005)\times 10^{-1} ps |
+| Lifetime                | 0.313 \pm 0.001 mm                 |
+| Non-coherent Lifetime   | 0.161 \pm 0.003 mm                 |
+| Non-prompt Lifetime     | 0.344 \pm 0.002 mm                 |
+| Resolution Width        | (0.109 \pm 0.001)\times 10^{-1} mm |
+| Second Resolution Width | (0.308 \pm 0.005)\times 10^{-1} mm |
 | Non-Coherent Mass c_{1} | -0.2640 \pm 0.0004      1/GeV      |
 |-------------------------+------------------------------------|
 
 * Unfolding
+Implicit in the measurement of any quantity is the uncertainty
+associated with the measurement. There are systematic effects which
+may distort the true value of the quantity measured. The size of these
+effects is estimated through the assessment of systematic errors by
+varying the input and taking the difference from the nominal result.
+The finite resolution of the will distort the measured value relative
+to the true value in a random but consistent way \cite{Cowan:1998ji}.
+It is the goal of unfolding to remove these types of effects. This
+problem goes under different names in different fields such as
+deconvolution or unsmearing \cite{Cowan:1998ji}.
+
+In the case of a perfect detector, the number of events observed in a
+particular bin of a histogram will be given by a continuous
+probability distribution \cite{Cowan:1998ji}:
+#+BEGIN_LaTeX
+\begin{equation}
+\label{eq:truth-hist}
+T_{i} = N \int_{x\in \text{bin}(i)} f(x) dx
+\end{equation}
+#+END_LaTeX
+Here $T$ is referred to as the truth histogram and $f(x)$ as the true
+probability distribution function. The factor $N$ is the number of
+events observed in a particular experiment. The function
+$\text{bin}(i)$ is a function which gives the interval in $x$ for the
+given bin $i$. In reality the detector is not perfect, and the
+measurement will be distorted. If an event happens, but is not
+detected it is termed that the efficiency of detection is less than
+one. This efficiency may vary with the observable, and so it is
+assigned a function $\epsilon(x)$. In this form the efficiency
+represents the probability of detection. Incorporating the efficiency
+is a matter of multiplying the probability an event occurs by the
+probability of detecting it \cite{Cowan:1998ji}:
+#+BEGIN_LaTeX
+\begin{equation}
+H_{i} = N \int_{x\in \text{bin}(i)} \epsilon(x)f(x) dx
+\end{equation}
+#+END_LaTeX
+The label $H$ is used to refer to what is actually observed as a
+result of an experiment with an efficiency. One final possibility
+remains: an event has a true value $x$ and the detector measures its
+value to be $y$. This can be cast in terms of conditional probability
+as $P(y|x)$, which is read as "the probability of observing $y$ given
+the true value was $x$." The observed histogram becomes
+\cite{Cowan:1998ji}:
+#+BEGIN_LaTeX
+\begin{equation}
+\label{eq:hist-obs}
+H_{i} = N \int_{y\in \text{bin}(i)} \int P(y|x)\epsilon(x)f(x) dx dy
+\end{equation}
+#+END_LaTeX
+Note here the slight change in integration: the number of events
+observed in the $i^{\text{th}}$ bin is given by the integral over all
+possible truth values multiplied by the probability to detect them,
+and the conditional probability that they are miss-measured with a
+value $y$.
+
+It is useful to combine the detection efficiency and the probability
+the detector changes a measurement from its true value in one
+function, the response function \cite{Cowan:1998ji}:
+#+BEGIN_LaTeX
+\begin{equation}
+r(y|x) = P(y|x)\epsilon(x)
+\end{equation}
+#+END_LaTeX
+In practice the integral over $x$ in \ref{eq:hist-obs} is a sum over
+the bins in a truth histogram obtained from Monte Carlo simulations of
+the detector. In this case it is useful to consider the discrete case
+by applying the same method to determine the truth histogram as in
+\ref{eq:truth-hist}:
+#+BEGIN_LaTeX
+\begin{align}
+H_i &= \sum_{j=1}^M\frac{\int_{x\in \text{bin}(i)}\int_{y\in \text{bin}(j)}r(y|x)f(x)dydx}{T_j/N}T_j\\
+&= \sum_{j=1}^M R_{ij} T_j\\
+R_{ij} &= \frac{\int_{x\in \text{bin}(i)}\int_{y\in \text{bin}(j)}r(y|x)f(x)dydx}{T_j/N}
+\end{align}
+#+END_LaTeX
+The response[fn:: The name response is given in the sense of how the
+detector "responds" to a given truth input] matrix $R_{ij}$ is the
+conditional probability of observing an event in bin $i$ given the
+true value was in bin $j$. When a true value is modified by the
+response function, it is "folded" to give the expected result of the
+experiment. The inverse process of determining the true value given
+the result of the experiment is referred to as "unfolding."
+
+With the response matrix in hand, it is tempting to invert it and
+obtain a direct estimate of the truth:
+#+BEGIN_LaTeX
+\begin{align*}
+H_i &= R_{ij} T_j\\
+T_i &= R^{-1}_{ij} H_j
+\end{align*}
+#+END_LaTeX
+The issue with this approach lies in the fact that the response matrix
+is estimated from Monte Carlo simulation and applied to the result of
+a measurement.  The result of the measurement are subject to
+statistical fluctuations independent of those given in the estimate of
+the response.  When the inverse response matrix is applied, these
+fluctuations are enhanced and overwhelm any physically meaningful
+shape that is recovered from the inversion \cite{Cowan:1998ji}.  
+
+It is the goal of any unfolding method to estimate the inverse of
+$R_{ij}$ in a way that regularizes the fluctuations in the estimate of
+the truth caused by the statistical fluctuations in the experimental
+measurement.  Bayes' theorem provides one way of performing an
+iterative procedure that allows an estimate of the truth distribution
+before the fluctuations grow too large to make conclusions useless. 
 ** Iterative Bayesian Unfolding
-*** Determining Iterations
-*** Validating the Method
+Bayes' theorem provides a way of "inverting" the conditions for a
+conditional probability. Using the notation above and assuming
+$\epsilon(y)\equiv 1$ \cite{Armbruster:1694351}[fn:: This section
+follows the steps in \cite{Armbruster:1694351} which is internal to
+ATLAS. The references therein are included here as well to allow
+access to the primary sources without access to the internal
+document.]:
+#+BEGIN_LaTeX
+\begin{align}
+\label{eq:bayes}
+P(x|y) &= \frac{P(y|x)f(x)}{\int f(x) p(y|x) dx} = \frac{P(y|x)f(x)}{g(y)}\\
+g(y) &= \int f(x) p(y|x) dx
+\end{align}
+#+END_LaTeX
+Here the correspondence that $x$ is the true value and $y$ is the
+measured value is made more explicit.  This allows $f(y)$, the true
+distribution to be estimated as:
+#+BEGIN_LaTeX
+\begin{equation}
+f(x) = \int g(y) P(x|y) dx
+\end{equation}
+#+END_LaTeX
+The issue is that in plugging Eq. \ref{eq:bayes} into this definition
+of $f(x)$, shows the explicit dependence of $P(x|y)$ on $f(x)$. The
+way forward is to determine a first estimate of $f(x)$ and iteratively
+update it based on the estimate of $P(y|x)$ from simulations. If one
+starts after $k+1$ steps, the following can be written by iteratively
+applying Bayes' theorem:
+#+BEGIN_LaTeX
+\begin{equation}
+f^{k+1}(x) = \int f^k(x)\frac{g_{\text{exp}}(y)}{g^k(y)}P(y|x)dy
+\end{equation}
+#+END_LaTeX
+Here $g_{\text{exp}}(y)$ is the distribution obtained by the
+experiment.  The denominator, $g^k(y)$, is the result of folding the
+$k^{\text{th}}$ estimate of $f(x)$ with the response function
+$P(y|x)$.  On each successive iteration, $g^k(y)$ will approach
+$g_{\text{exp}}(y)$ as long as $f^k(x)$ approaches the true value
+$f(x)$.  
+
+The procedure can be stopped according to different criteria. In the
+case of this analysis, the number of iterations is determined ahead of
+time by unfolding a known truth distribution that has been folded with
+the estimated response matrix. When the value of Pearson's $\chi^2$
+between successive iterations reaches a minimum, the procedure is
+halted and that number of iterations is used to unfold the data.
 *** Estimating the Response Matrix
+
+*** Validating the Method
 
 #+LaTeX: \chapter{Measurement of prompt J/$\psi$ particles}
 #+LaTeX: \label{chap:measurement}
