@@ -1770,6 +1770,56 @@ three-jet event.
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/antikt_algorithm.pdf]] 
 
+Jets in this analysis are reconstructed with the anti-$k_t$ clustering
+scheme using inner detector tracks as the pseudo-jets.  In order to
+correctly capture the dynamics of the radiation environment around the
+$J/\psi$, the muons associated with the reconstructed $J/\psi$ are
+removed from list of tracks considered for jet reconstruction.  In
+place of these tracks, the $J/\psi$ four vector is added.  This
+provides as accurate a representation of the charmonium and the
+embedded radiation as possible.  
+
+* Observables
+At this point it is useful to introduce the observables used in this
+analysis. There are two: $z$ and $\Delta R$.  The first, $z$ is the
+momentum fraction shared between the $J/\psi$ and the reconstructed
+jet. The momentum fraction is defined as:
+#+BEGIN_LaTeX
+\begin{equation}
+z = \frac{p_T(J/\psi)}{p_T(\text{Jet})}
+\end{equation}
+#+END_LaTeX
+As a reminder, the jet is clustered to include the $J/\psi$
+four-vector.  As a result, the momentum fraction exists in $0 < z \leq
+1$.  This fraction directly probes the final splitting in the parton
+shower into the $c\bar{c}$ bound state that becomes the $J/\psi$
+relative to the energy scale of the initial interaction.  A value
+around $z=0.5$ indicates that the $p_T$ of the $J/\psi$ and the p_T of
+the surrounding radiation are equal.  A value of $z\simeq1$ indicate that
+all the momentum is carried by the $J/\psi$ and very little in
+surrounding radiation.  Similarly a $z$ value near zero indicates all
+the is momentum carried in the radiation within an $R=0.4$ cone of the
+reconstructed $J/\psi$[fn:: This is very unlikely to happen due to the
+high $p_T$ requirement of the $J/\psi$].  
+
+The second variable examined by this analysis is the angular
+separation between the $J/\psi$ and the reconstructed jet.  This
+quantity, denoted $\Delta R$ is defined as:
+#+BEGIN_LaTeX
+\begin{equation}
+\Delta R = \sqrt{\Delta phi^2 + \Delta \eta^2}
+\end{equation}
+#+END_LaTeX
+If the radiation emitted around the $J/\psi$ is isotropic in
+$\phi-\eta$, then the $\Delta R$ between the $J/\psi$ and the
+reconstructed jet should be $\Delta R=0$. The more the production of
+the $c\bar{c}$ system depends on the fragmentation of partons, the
+more likely the $\Delta R$ measurement will be peaked away from
+$\Delta R=0$. Put another way, no radiation activity around the
+$J/\psi$ will correspond to $\Delta R=0$, a large amount of radiation
+around the $J/\psi$ increases the chance that a hard emission changes
+the alignment of the $J/\psi$ to the surrounding radiation.
+
 #+LaTeX: \chapter{Analysis Methods}
 #+LaTeX: \label{chap:analysis}
 * Likelihood Formalism
@@ -2157,7 +2207,6 @@ halted and that number of iterations is used to unfold the data.
 
 #+LaTeX: \chapter{Measurement of prompt J/$\psi$ particles}
 #+LaTeX: \label{chap:measurement}
-* Observables
 * Selection Criteria
 * Systematic Errors
 * Results
