@@ -1605,7 +1605,13 @@ reconstruction in order to further refine the event rate. The output
 of the L2 trigger is passed onto the EF. The EF runs the full atlas
 reconstruction software on the event. A final decision is made on the
 reconstructed physics objects and are written out to disk
-\cite{atlas-detector}.
+\cite{atlas-detector}. This analysis uses the following trigger chain:
+=L1_MU15= $\rightarrow$ =L2_mu36_tight= $\rightarrow$ =EF_mu36_tight=. The
+L1 trigger requires a roughly identified muon with $p_T > 15 GeV$. The
+L2 and EF triggers require a muon with $p_T > 36 GeV$. There are low
+$p_T$ dimuon triggers available for $J/\psi$ reconstruction but they
+degrade in efficiency at the high $p_T$ explored by this analysis
+\cite{Picazio:1419765}.
 
 #+LaTeX: \chapter{Event Reconstruction and Selection}
 #+LaTeX: \label{chap:reconstruction}
@@ -1644,7 +1650,11 @@ hypothesis that the pair originated as a J/\psi. Figure
 \ref{fig:vtx-refit} illustrates this process. When a pair of muons is
 identified as a J/\psi candidate, those muons are removed from the
 inner detector track collection considered by the Jet reconstruction
-algorithm.
+algorithm. After event reconstruction, the $J/\psi$ candidate is
+required to have $p_T > 45$ GeV, and an absolute rapidity $|y| < 2.0$.
+Each muon must be central to the detector with $|\eta| < 2.5$.
+Finally, the invariant mass of the dimuon pair is required to be
+greater than 2.6 GeV and less than 4 GeV.
 #+CAPTION: Illustration of how refitting oppositely charged tracks to a common vertex changes the track.
 #+NAME: fig:vtx-refit
 #+ATTR_LATEX: :width 1.0\linewidth 
@@ -1663,7 +1673,7 @@ while events which are not displaced are referred to as prompt. The
 lifetime can be estimated by measuring the displacement vector from
 the primary vertex ($\mathbf{L}$) and projecting it on the transverse
 momentum vector ($\mathbf{p}_T$). This quantity is referred to as
-$L_{xy}$[fn:: Recall the transverse plane (T) is the $x-y$ plane in
+$L_{xy}$ [fn:: Recall the transverse plane (T) is the $x-y$ plane in
 the cartesian coordinates used by ATLAS where the beam line is the $z$
 axis.]. Determining the pseudo-proper lifetime is then a matter of
 scaling this quantity by the ratio of the mass and transverse momentum
@@ -1695,7 +1705,6 @@ not produce a resonance near the mass of the $J/\psi$ the way muons
 from $J/\psi$ decays do. This makes the invariant mass $M_{\mu\mu}$
 the variable which discriminates true $J/\psi$ candidates from the
 wrong combination of muons.
-
 
 #+CAPTION: The definition of the pseudo-proper lifetime is derived from the signed projection of the distance between the primary vertex and the secondary vertex.
 #+NAME: fig:pseudo-lifetime
@@ -1771,17 +1780,28 @@ three-jet event.
 [[file:figures/antikt_algorithm.pdf]] 
 
 Jets in this analysis are reconstructed with the anti-$k_t$ clustering
-scheme using inner detector tracks as the pseudo-jets.  In order to
+scheme using inner detector tracks as the pseudo-jets. In order to
 correctly capture the dynamics of the radiation environment around the
 $J/\psi$, the muons associated with the reconstructed $J/\psi$ are
-removed from list of tracks considered for jet reconstruction.  In
-place of these tracks, the $J/\psi$ four vector is added.  This
+removed from list of tracks considered for jet reconstruction. In
+place of these tracks, the $J/\psi$ four vector is added. This
 provides as accurate a representation of the charmonium and the
-embedded radiation as possible.  
+embedded radiation as possible. The tracks considered in
+reconstruction must be high quality. In order to achieve this, they
+must have a minimum $p_T$ of 500 MeV, a maximum absolute
+pseudo-rapidity, $|\eta| < 2.5$, at least one hit in the pixel
+detector and 6 SCT hits. Finally the fit $\chi^2$ must be at most 3.
+Impact parameter cuts (see Figure \ref{fig:perigee}) $z_0\sin(\theta)
+< 1.5$ and $d_0 < 1.0$ are also applied. The final set of jets that
+are reconstructed must be central to the detector $|\eta| < 2.5$ and
+must have high transverse momentum $p_T > 45$ GeV. Finally, the
+$J/\psi$ and the jet must be within $\Delta R < 0.4$ (the
+reconstructed jet radius).
+
 
 * Observables
 At this point it is useful to introduce the observables used in this
-analysis. There are two: $z$ and $\Delta R$.  The first, $z$ is the
+analysis. There are two: $z$ and $\Delta R$. The first, $z$ is the
 momentum fraction shared between the $J/\psi$ and the reconstructed
 jet. The momentum fraction is defined as:
 #+BEGIN_LaTeX
@@ -2234,7 +2254,7 @@ truth distribution falls outside the physical range of the response
 matrix it is truncated. Therefore, the range of validity of the
 unfolded pseudo-reconstructed distribution is the physical range
 covered by the response matrix. Figures \ref{fig:uc-gaus-jet_z} and
-\ref{fig:uc-dbl-gaus-delta_r} shows the estimated response matrix and
+\ref{fig:uc-gaus-delta_r} shows the estimated response matrix and
 the unfolding validation test for the $z$ and $\Delta R$ distributions
 respectively.
 #+CAPTION: Double gaussian unfolding test of $\Delta R$ response matrix
@@ -2248,19 +2268,53 @@ respectively.
 
 #+LaTeX: \chapter{Measurement of prompt J/$\psi$ particles}
 #+LaTeX: \label{chap:measurement}
-Up to this point, the discussion has been centered around explaining
-the details that go into this analysis. In this chapter, the selection
-criteria (the physical properties required by each event) are
-enumerated. A discussion of the systematic errors that goes into the
-measurement and how their impact on the various analysis steps is
-explained. The results are presented and a discussion and
-interpretation of the results follows. This chapter differs from the
-previous chapters in that it is more in line with a short note, or
-rapid communications than a pedagogical explanation for the choices
-that lead to specific decisions.
-* Selection Criteria
+* Data sets
+Monte Carlo samples are used to: validate the fit to data, estimate
+the response matrix, and derive the systematic errors for comparing to
+data. The samples used to model the signal and non-prompt background
+sources are listed in Table \ref{tab:monte-carlo}.
+#+CAPTION: Monte Carlo samples used and their simulated cross section. Each $c\bar{c}$ sample consists of 10^5 events. 
+#+LABEL: tab:monte-carlo
+| Process                                     |  Cross Section [fb] |
+|---------------------------------------------+---------------------|
+| $c\bar{c}(^3S_{1}^{(8)})\rightarrow J/\psi$ |                8260 |
+| $c\bar{c}(^3P_J^{(1)})\rightarrow J/\psi$   |                 587 |
+| $c\bar{c}(^3P_J^{(8)})\rightarrow J/\psi$   |                15.6 |
+| $c\bar{c}(^1S_0^{(8)})\rightarrow J/\psi$   |                12.5 |
+| $c\bar{c}(^3S_{1}^{(1)})\rightarrow J/\psi$ |               0.307 |
+|---------------------------------------------+---------------------|
 
-* Systematic Errors
+Data is collected at the LHC in units called periods. Each period is
+given an alphabetic designation. During the 2012 data taking there
+were ten distinct periods which amounted to a combined luminosity of
+$19.5\pm0.6~\text{fb}^{-1}$. The luminosity for each data period is
+summarized in \ref{tab:data-sets}.
+#+CAPTION: Dataset periods during 2012 data taking used in this analysis and their processed Luminosity
+#+LABEL: tab:data-sets
+| Period | Luminosity (pb^{-1}) |
+|--------+----------------------|
+| A      |              707.237 |
+| B      |              5000.60 |
+| C      |              1220.05 |
+| D      |              3219.76 |
+| E      |              2355.36 |
+| G      |              1278.50 |
+| H      |              1378.68 |
+| I      |              1012.50 |
+| J      |              2516.94 |
+| L      |              839.218 |
+|--------+----------------------|
+| Total  |            19528.845 |
+|--------+----------------------|
+#+TBLFM: @12$2=vsum(@2$2..@11$2)
+
+* Systematic Uncertainties
+A systematic error in an experiment is an error introduced by the
+method of measurement.  This is in contrast to a statistical error
+which arises due to the finite number of events 
+** Monte Carlo
+** Unfolding
+** Background Subtraction
 * Results
 * Discussion
 
