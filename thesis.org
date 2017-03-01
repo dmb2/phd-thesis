@@ -41,7 +41,7 @@ To my wife.
 \listoffigures
 #+END_LaTeX
 
-#+INCLUDE: acknowledgements.org
+# #+INCLUDE: acknowledgements.org
 
 #+LaTeX: \chapter{Introduction}
 * A brief history
@@ -1550,7 +1550,7 @@ with a high efficiency \cite{Cornelissen:2008zzc}.
 The track reconstruction algorithm as described does not make any
 reference to specific track parameters. The unique magnetic field that
 tracks traverse as they leave the detector makes a traditional helix
-parametrization difficult, therefore a generic set of parameters is
+parameterization difficult, therefore a generic set of parameters is
 defined at each measurement surface \cite{Salzburger:1038100}.
 #+BEGIN_LaTeX
 \begin{equation}
@@ -1797,7 +1797,6 @@ are reconstructed must be central to the detector $|\eta| < 2.5$ and
 must have high transverse momentum $p_T > 45$ GeV. Finally, the
 $J/\psi$ and the jet must be within $\Delta R < 0.4$ (the
 reconstructed jet radius).
-
 
 * Observables
 At this point it is useful to introduce the observables used in this
@@ -2381,18 +2380,120 @@ background subtraction technique is applied with this variation, and
 the difference from the nominal result is taken as the error for that
 part of the parametric model. 
 
-*Resolution:* the resolution of the lifetime distribution is modeled
- with a double-gaussian. This allows two widths to float as well as
- their relative normalization to better capture the distribution
- observed in data.  
-- Combinatoric Mass
-- Non-coherent mass
-- Symmetric lifetime background
-- Crystal ball parameters
+*Resolution:* The resolution of the lifetime distribution is modeled
+with a double-gaussian. This allows two widths to float as well as
+their relative normalization to better capture the distribution
+observed in data. In order to assess the impact of this choice, a
+single gaussian is used.
+
+*Combinatoric Mass:* The combinatoric component of the mass background
+is modeled as the sum of an exponential term and a first degree
+polynomial. The effect of this choice is assessed by separately making
+the exponential term a constant, and varying the degree of the
+polynomial between one and three.
+
+*Mismeasured $L_{xy}$ background:* There are a fraction of events
+whose $L_{xy}$ values are mismeasured. This is parametrized by
+symmetric exponential centered at $c\tau=0$. The choice of this
+parameterization is assessed by restricting the exponential to be
+one-sided for negative lifetimes.
+
+*Crystal ball parameters:* The crystal ball function (Equation
+\ref{eq:crystal-ball}) models radiative losses through asymmetric
+tails in the gaussian distribution. The parameters $\alpha$ and $n$
+control the strength of this effect. The $\alpha$ parameter is set to
+$\alpha=1$ from its nominal value of $\alpha=10$. The $n$ parameter is
+set to $n=5$ from its nominal value of $n=1$.
 
 * Results
-* Discussion
+This analysis produces three distributions: the inclusive distribution
+of signal and background (Figures \ref{fig:jet_z-splot} and
+\ref{fig:delta_r-splot}), the background subtracted detector level
+distribution, and the unfolded distributions (Figures
+\ref{fig:jet_z-unfolded} and \ref{fig:delta_r-unfolded}). The
+background subtracted distribution is compared to Pythia's prediction
+which also has event reconstruction applied (Figures
+\ref{fig:jet_z-sbs-p8} and \ref{fig:delta_r-sbs-p8}). The inclusive
+distributions and the unfolded distributions are presented on their
+own. 
+#+BEGIN_LaTeX
+  \begin{figure}
+    \centering
+    \subfloat[Signal vs Pythia 8, $z$]{
+      \label{fig:jet_z-sbs-p8}
+      \includegraphics[width=0.45\textwidth]{plots/jet_z_sbs_p8.pdf}
+    }\qquad
+    \subfloat[Signal and background vs data, $z$]{
+      \label{fig:jet_z-splot}
+      \includegraphics[width=0.45\textwidth]{plots/jet_z_splot.pdf}
+    }\\
+     \subfloat[Signal vs Pythia 8, $\Delta R$]{
+      \label{fig:delta_r-sbs-p8}
+      \includegraphics[width=0.45\textwidth]{plots/delta_r_sbs_p8.pdf}
+    } \qquad
+    \subfloat[Signal and background vs data, $\Delta R$]{
+      \label{fig:delta_r-splot}
+      \includegraphics[width=0.45\textwidth]{plots/delta_r_splot.pdf}
+    }\caption{\label{fig:sbs-p8} (left panel) Pythia's prediction
+    compared to subtracted data for $z$ and $\Delta R$ observables. The
+    stack shows each component of prompt $J/\psi$ production in Pythia,
+    the grey error band is the quadrature sum of all systematic error
+    sources across all MC samples. The dominant components are
+    $^3P_J^{(1)}$ and $^3S_1^{(8)}$ due to the relative size of their
+    cross sections based on the default parameters. (right panel) The
+    estimated signal and background components estimated from sPlot. The
+    signal is added to the background to show closure with the observed
+    data. Error bars are the statistical errors on the method.}
+  \end{figure}
+#+END_LaTeX
+#+BEGIN_LaTeX
+  \begin{figure}
+    \centering
+    \subfloat[$z$]{
+      \label{fig:jet_z-unfolded}
+      \includegraphics[width=0.45\textwidth]{plots/jet_z_unfolded.pdf}
+    }\qquad
+    \subfloat[$\Delta R$]{
+      \label{fig:delta_r-unfolded}
+      \includegraphics[width=0.45\textwidth]{plots/delta_r_unfolded.pdf}
+    } \caption{\label{fig:unfolded} Unfolded signal distributions for
+    $z$ and $\Delta R$ observables. The shaded error band is the
+    statistical (dark grey) and fit systematic (light grey). The error
+    on the data is the quadrature sum of all error sources. }
+\end{figure}
+#+END_LaTeX
 
+* Discussion
+This analysis has identified two variables for describing the
+production of $J/\psi$ particles in hadronic collisions that have
+previously been poorly explored. The $\Delta R$ distribution in
+\ref{fig:delta_r-sbs-p8} shows that the data peaks in a slightly
+different place and has longer tail than the combination of singlet
+and octet components provided by Pythia. The momentum fraction $z$
+(Figure \ref{fig:jet_z-sbs-p8}) has the most significant disagreement
+between the Pythia prediction and the observed data. The data seems to
+indicate that more momentum is carried by the jet than the $J/\psi$
+candidate.
+
+The momentum fraction $z$ directly probes the parton shower splitting
+leading up to the production of the $J/\psi$. Pythia models this
+process by allowing the $c\bar{c}$ state to radiate gluons until the
+state falls below a threshold at which point it emits as soft gluon
+and produces a $J/\psi$. The fact that the splitting function used is
+$q\rightarrow qg$ leads to a $z$ distribution that is sharply peaked
+at $z\simeq1$. If instead, the $J/\psi$ is produced during the
+fragmentation of an energetic gluon, the proper splitting function is
+$g\rightarrow gg$ until the gluon reaches an energy favorable for
+$J/\psi$ production. This would influence the $z$ distribution causing
+it to peak at lower values of $z$ as observed in the data. A recent
+measurement at the LHCb \cite{Aaij:2017fak} of the momentum fraction,
+$z$ at $|\eta| > 2.5$ and $\sqrt{s}=13$ TeV shows a similar
+discrepancy between Pythia's description and the observed data. A
+recent analysis of the data \cite{Bain:2017wvk} supports the gluon
+fragmentation interpretation of the data. If this is borne out by
+further analysis of the unfolded data presented in this work, a
+solution to the polarization puzzle may be found by examining the
+surrounding radiation in which $J/\psi$ production is embedded.
 #+BEGIN_LaTeX
 \cleardoublepage
 \normalbaselines %Fixes spacing of bibliography
