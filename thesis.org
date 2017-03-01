@@ -103,7 +103,7 @@ quark and anti-quark of the same flavor are referred to as quarkonium.
 This name is reminiscent of positronium, the eletromagnetically bound
 state of a positron and electron. Many of the salient features of
 quarkonium mass spectrum can be understood with non-relativistic
-quantum mechanics and emperical models of the QCD potential. Even with
+quantum mechanics and empirical models of the QCD potential. Even with
 this deep understanding of nature's fundamental interactions, the
 J/\psi particle continues to perplex and confuse our understanding of
 QCD. In 1992, the CDF collaboration at the Tevatron reported the first
@@ -2310,11 +2310,74 @@ summarized in \ref{tab:data-sets}.
 
 * Systematic Uncertainties
 A systematic error in an experiment is an error introduced by the
-method of measurement.  This is in contrast to a statistical error
-which arises due to the finite number of events 
+method of measurement. This is in contrast to a statistical error
+which arises due to the finite number of events in the analysis. In
+theory, statistical errors can be made arbitrarily small by collecting
+arbitrarily large amounts of data. Systematic errors, which are
+intrinsic to the measurement, cannot be made smaller by collecting
+more data. If a systematic error is found to be too large, more
+sophisticated methods must be used to reduce the error. In this
+analysis, the systematic errors are assessed on the Monte Carlo
+simulation, the unfolding procedure, and the background subtraction.
+In each case, the source of the systematic error is assessed by
+applying a change to the procedure and taking the difference from the
+nominal result as the symmetric error. These errors are added in
+quadrature with the statistical error to produce the final error band.
 ** Monte Carlo
+The Monte Carlo samples are used in the response matrix estimation, as
+well as in comparing the shape to data.  They contain the best
+description of the detector available.  There are three main effects
+that can systematically change the estimate of the four vector of the
+tract based observables: the scale of the track, the resolution of the
+track and the efficiency to reconstruct the track. Muons are further
+complicated by the fact that they are the estimate of two detector
+subsystems, the inner detector and the muon spectrometer.  Therefore
+there are systematic effects associated with each of these
+contributions to the momentum measurement.  
+
+Previous measurements of the inclusive tracking efficiency for muons
+using the tag-and-probe method allow an efficiency scale factor to be
+applied to simulated data\cite{Aad:2014rra}. The uncertainty on the
+energy scale of the muon is found by varying the energy up and down
+depending on the p_T and $\eta$ of the muon. As mentioned above, muons
+consist of a ID and MS track, leading to resolution terms from each
+part of the detector. These are assessed separately and added in
+quadrature with the rest of the systematic errors.
+
+Similar to muons, the track jets also have efficiency, scale, and
+resolution uncertainties. In order to assess their overall impact on
+substructure variables, the jet reconstruction is run on each
+variation. Previous measurements of the tracking efficiency allow
+tracks to be dropped randomly according to this distribution to assess
+the effect of missing a track during reconstruction \cite{Aad:2010ac}.
+This is the largest source of systematic error on the Monte Carlo
+samples used. Modifying the momentum scale of each track by 2% is
+shown to adequately cover this uncertainty \cite{Aad:2014xaa}. The
+resolution (how closely two tracks if slightly different momentum can
+be resolved) is found by varying the four vector of each track
+according to a gaussian with width 10% of the nominal momentum
+\cite{ATLAS-CONF-2012-141}.
+
 ** Unfolding
+The largest source of uncertainty in unfolding is the estimation of
+the response matrix. This is assessed by estimating a new response
+matrix for each variation described in the previous section on Monte
+Carlo uncertainties. The resulting matrix is used to unfold the data,
+and the difference from the nominal result is added in quadrature with
+the remaining errors. In addition to this source of error, there are
+the statistical errors which are propagated through the method as part
+of the algorithm. The final source of error is on the method itself.
+This is assessed by filling a pseudo-truth distribution, folding it
+with the response matrix, and unfolding the result. The error is the
+difference between the unfolded psuedo-truth and the pseudo-truth
+distribution.
 ** Background Subtraction
+Correct estimation of the background depends on the empirical
+parameterization of the signal and background processes.  In order to
+assess the effect that each component has on the overall estimate of
+the background, a different model is assumed for each component.  The
+background subtraction technique is applied with this variation, and
+the difference from the nominal result is 
 * Results
 * Discussion
 
