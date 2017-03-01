@@ -2325,15 +2325,16 @@ nominal result as the symmetric error. These errors are added in
 quadrature with the statistical error to produce the final error band.
 ** Monte Carlo
 The Monte Carlo samples are used in the response matrix estimation, as
-well as in comparing the shape to data.  They contain the best
-description of the detector available.  There are three main effects
+well as in comparing the shape to data. They contain the best
+description of the detector available. There are three main effects
 that can systematically change the estimate of the four vector of the
-tract based observables: the scale of the track, the resolution of the
-track and the efficiency to reconstruct the track. Muons are further
-complicated by the fact that they are the estimate of two detector
-subsystems, the inner detector and the muon spectrometer.  Therefore
-there are systematic effects associated with each of these
-contributions to the momentum measurement.  
+track based observables: the scale of the track (ie a shift in the
+mean of the distribution), the resolution of the track and the
+efficiency to reconstruct the track (ie a shift in the width of the
+distribution). Muons are further complicated by the fact that they are
+the estimate of two detector subsystems, the inner detector and the
+muon spectrometer. Therefore there are systematic effects associated
+with each of these contributions to the momentum measurement.
 
 Previous measurements of the inclusive tracking efficiency for muons
 using the tag-and-probe method allow an efficiency scale factor to be
@@ -2377,7 +2378,18 @@ parameterization of the signal and background processes.  In order to
 assess the effect that each component has on the overall estimate of
 the background, a different model is assumed for each component.  The
 background subtraction technique is applied with this variation, and
-the difference from the nominal result is 
+the difference from the nominal result is taken as the error for that
+part of the parametric model. 
+
+*Resolution:* the resolution of the lifetime distribution is modeled
+ with a double-gaussian. This allows two widths to float as well as
+ their relative normalization to better capture the distribution
+ observed in data.  
+- Combinatoric Mass
+- Non-coherent mass
+- Symmetric lifetime background
+- Crystal ball parameters
+
 * Results
 * Discussion
 
