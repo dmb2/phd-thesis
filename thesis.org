@@ -343,13 +343,14 @@ $\alpha_s(m_b)\approx0.18$ \cite{Bodwin:1994jh}.
 
 Before examining the consequences of a larger $\alpha_s$ in the
 charmonium system, it is useful to reproduce as much of the charmonium
-spectrum using quantum mechanics. An important aspect of quarkonium
-production at high energies in hadronic collisions is the interplay of
-multiple energy scales. At very high energies, production is dominated
-by the fragmentation of gluons into pairs of charm quarks. The gluon
-recoils from a primary interaction with a gluon or quark in the
-proton-proton collision. The energy scale which determines the
-production of the quark pair is the mass of the heavy quark $M$.
+spectrum as possible using quantum mechanics. An important aspect of
+quarkonium production at high energies in hadronic collisions is the
+interplay of multiple energy scales. At very high energies, production
+is dominated by the fragmentation of gluons into pairs of charm
+quarks. The gluon recoils from a primary interaction with a gluon or
+quark in the proton-proton collision. The energy scale which
+determines the production of the quark pair is the mass of the heavy
+quark $M$.
 
 In the rest frame of the quarkonia's constituent quarks the relative
 velocity ($v$) of the quarks is the important scale. This means their
@@ -366,11 +367,13 @@ A treatment of the positronium system can be found in any
 undergraduate treatment of bound states allowed by the Coulomb
 potential \cite{Townsend:2000modern} \cite{Griffiths:2008zz}. A brief
 review of the important results are presented. The content of this
-section follows that of \cite{Ellis:1991qj}. The existence of a
-solution is due to the spherical symmetry of the coulomb potential.
-This allows the system to be solved by separation of variables and
-reduces the degrees of freedom to finding the one dimensional bound
-states due to the coulomb potential:
+section follows that of \cite{Ellis:1991qj} and uses a notation that
+makes the analogies between the coulomb potential and the QCD
+potential manifest. The existence of a solution is due to the
+spherical symmetry of the coulomb potential. This allows the system to
+be solved by separation of variables and reduces the degrees of
+freedom to finding the one dimensional bound states due to the coulomb
+potential:
 #+BEGIN_LaTeX
   \begin{equation*}
     U(r) = - \alpha/r
@@ -558,7 +561,7 @@ quarks and the QCD coupling constant $\alpha_s$.  This gives insight
 into which effects dominate at what scale in the short and long
 distance interactions.  
 ** Factorization Theorem
-Because this formulation of the lagrangian makes the Schroedinger
+Because this formulation of the lagrangian makes the Schrödinger
 states explicit, the quarkonium state can be interpreted as a sum of
 all possible Fock state configurations.  This can be written as
 \cite{Ellis:1991qj}:
@@ -581,7 +584,7 @@ probability of finding a gluon in a $Q\overline{Q}$ state, which was one of
 the conditions necessary for the potential model of quarkonium.
 
 The leading order term corresponds to the wavefunction from the
-Schroedinger picture.  Higher order terms correspond to Fock states
+Schrödinger picture.  Higher order terms correspond to Fock states
 which provide a soft gluon.  The presence of this gluon in the state
 allows the quarkonium to be in a color octet state.  The inclusion of
 these terms in the expression for the overall cross section provides
@@ -602,7 +605,8 @@ Here, $a,b$ and $c$ represent initial and final state partons, $n$ is
 shorthand for the spectroscopic term symbol introduced above, and
 $\psi_{Q}$ is the final state quarkonium. The sum is understood to be
 the average over initial spin and color states of the scattering
-amplitudes and the $\langle 0 | O^{\psi_Q}_{8,1}(n) |0 \rangle$ term
+amplitudes[fn:: Amplitudes are related to the probability of a process
+occuring] and the $\langle 0 | O^{\psi_Q}_{8,1}(n) |0 \rangle$ term
 (abbreviated as $\mathcal{O}^H_{8,1}(n)$) is the known long distance
 matrix element (LDME).
 
@@ -689,10 +693,10 @@ threshold the non-perturbative effects of hadronization take over and
 the partons form hadrons which are ultimately detected by the
 experimental apparatus. 
 
-Each parton splitting functions has characteristic differences that
-affect the outcome of the shower.  Following Chapter 5 of
+The parton splitting functions have characteristic differences that
+affect the outcome of the shower. Following Chapter 5 of
 \cite{Ellis:1991qj}, the shower is assumed to follow timelike
-branching.  The energy fraction $z$ of branching is defined as:
+branching. The energy fraction $z$ of branching is defined as:
 #+BEGIN_LaTeX
 \begin{equation}
 z = E_c/E_a = 1 - E_b/E_a
@@ -747,7 +751,7 @@ This function is unique among the splitting functions in that it
 favors one of the outgoing partons to be harder than the other. Figure
 \ref{fig:splitting-functions} shows the three splitting functions
 defined above.  An arbitrary normalization is applied to the $P_{qq}$
-and $P_gg$ functions in order to better compare the behavior of the
+and $P_{gg}$ functions in order to better compare the behavior of the
 shapes.
 #+CAPTION: The splitting functions required for a parton shower.  An arbitrary normalization is applied to $P_{qq}$ and $P_{gg}$ in order to allow better comparison of the shapes.
 #+NAME: fig:splitting-functions
@@ -765,35 +769,34 @@ shower from an $e^+e^-$ annihilation event taken from
 [[file:figures/parton-shower.eps]] 
 ** Hadronization
 The evolution of the partons created during the shower into hadrons is
-inherently non-perturbative.  The phenomenological model used by
-Pythia is the Lund string model \cite{Sjostrand:2007gs}.  This model
-extends the string analogy developed in Section [[Potential Models of
-QCD]].  The idea is that hadrons in the shower are connected via
-color-strings.  If the energy stored in the string rises above the
-threshold for $q\overline{q}$, the string snaps and the process is
-repeated until the energies of the remaining string segments fall
-below a threshold value.  Below this threshold, the string fragments
-form the final state hadrons.  If there are gluons present in the
-final state of the parton shower, they are connected to the
-color-strings as dynamical kinks in the string.  Figure
-\ref{fig:color-hadronization} shows an example of this process in an
-$e^+e^-$ event \cite{Ellis:1991qj}.
+inherently non-perturbative. The phenomenological model used by Pythia
+is the Lund string model \cite{Sjostrand:2007gs}. This model extends
+the string analogy developed in Section [[Potential Models of QCD]]. The
+idea is that hadrons in the shower are connected via color-strings. If
+the energy stored in the string rises above the threshold to produce a
+$q\overline{q}$ pair, the string snaps and the process is repeated
+until the energies of the remaining string segments fall below a
+threshold value. Below this threshold, the string fragments form the
+final state hadrons.
+
+If there are gluons present in the final state of the parton shower,
+they are connected to the color-strings as dynamical kinks in the
+string (see the upper part of the shower in Figure
+\ref{fig:color-hadronization}). Figure \ref{fig:color-hadronization}
+shows an example of this process in an $e^+e^-$ event
+\cite{Ellis:1991qj}. When a gluon splits perturbatively into a pair of
+quarks it creates another string segment \cite{Ellis:1991qj}. The
+lines outgoing from the grey string segments represent the subsequent
+fragmentation of the string as described above. With a complete
+description of QCD, the allowed bound states, and the transition from
+a high energy parton to the hadrons ultimately measured by the
+detector it is time to discuss the actual measurement of particles at
+the Large Hadron Collider.
 #+CAPTION: String model of hadronization in an $e^+e^-$ event. Grey shaded region is the string. Figure taken from \cite{Ellis:1991qj}
 #+NAME: fig:color-hadronization
 #+ATTR_LATEX: :width 0.5\linewidth 
 [[file:figures/color_hadronization.eps]] 
 
-Notice that in Figure \ref{fig:color-hadronization} when a gluon is in
-the final shower it forms a kink in the string (see the upper part of
-the shower). When a gluon splits perturbatively into a pair of quarks
-it creates another string segment \cite{Ellis:1991qj}. The lines
-outgoing from the grey string segments represent the subsequent
-fragmentation of the string as described above.
-
-With a complete description of QCD bound states and the transition
-from a high energy parton to the hadrons ultimately measured by the
-detector it is time to discuss the actual measurement of particles at
-the Large Hadron Collider.
 
 #+LaTeX: \chapter{The ATLAS detector}
 #+LaTeX: \label{chap:detector}
