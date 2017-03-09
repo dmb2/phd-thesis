@@ -1831,7 +1831,7 @@ separation between the $J/\psi$ and the reconstructed jet.  This
 quantity, denoted $\Delta R$ is defined as:
 #+BEGIN_LaTeX
 \begin{equation}
-\Delta R = \sqrt{\Delta phi^2 + \Delta \eta^2}
+\Delta R = \sqrt{\Delta \phi^2 + \Delta \eta^2}
 \end{equation}
 #+END_LaTeX
 If the radiation emitted around the $J/\psi$ is isotropic in
@@ -1842,7 +1842,28 @@ more likely the $\Delta R$ measurement will be peaked away from
 $\Delta R=0$. Put another way, no radiation activity around the
 $J/\psi$ will correspond to $\Delta R=0$, a large amount of radiation
 around the $J/\psi$ increases the chance that a hard emission changes
-the alignment of the $J/\psi$ to the surrounding radiation.
+the alignment of the $J/\psi$ to the surrounding radiation. Figure
+\ref{fig:prod-mech} shows Pythia's prediction of $z$ and $\Delta R$
+for the singlet and octet components available for simulation
+\cite{Sjostrand:2007gs}.
+#+BEGIN_LaTeX
+  \begin{figure}
+    \centering
+    \subfloat[$z$]{
+      \label{fig:jet_z-prod-mech}
+      \includegraphics[width=0.45\textwidth]{plots/mech/jet_z.pdf}
+    }\qquad
+    \subfloat[$\Delta R$]{
+      \label{fig:delta_r-prod-mech}
+      \includegraphics[width=0.45\textwidth]{plots/mech/delta_r.pdf}
+    } \caption{\label{fig:prod-mech} Pythia 8 prediction of each
+    production mechanism for $z$ and $\Delta R$ observables. The lower
+    panel shows the ratio of each sample to the $^1S_0^{(8)}$ process in
+    order to show the similarity between the other octet processes and
+    the difference between the singlet processes. }
+  \end{figure}
+#+END_LaTeX
+
 
 #+LaTeX: \chapter{Analysis Methods}
 #+LaTeX: \label{chap:analysis}
@@ -2071,6 +2092,46 @@ Table \ref{tab:fitres}.
 | Non-Coherent Mass c_{1} | -0.2640 \pm 0.0004      1/GeV      |
 |-------------------------+------------------------------------|
 ** Validating signal extraction
+A fundamental assumption of sPlot is that the variable of interest
+($\Delta R$ and $z$) is uncorrelated with the discriminating variables
+($c\tau$ and $M_{\mu\mu}$). The 2D histograms of the interest
+variables versus the discriminating variables and their global
+correlation is shown in Figure \ref{fig:delta_r-splot-corr} and
+\ref{fig:jet_z-splot-corr}.
+#+BEGIN_LaTeX
+  \begin{figure}
+    \centering
+    \subfloat[$\Delta R$ vs lifetime]{
+      \label{fig:delta_r-tau-splot-corr}
+      \includegraphics[width=0.45\textwidth]{plots/correlation/delta_r_tau_corr.pdf}
+    }
+    \subfloat[$\Delta R$ vs $M_{\mu\mu}$]{
+      \label{fig:delta_r-m-splot-corr}
+      \includegraphics[width=0.45\textwidth]{plots/correlation/delta_r_m_corr.pdf}
+    } 
+    \caption{\label{fig:delta_r-splot-corr} Two-dimensional histogram of
+    $\Delta R$ vs discriminating variables used to extract background
+    component from sPlot method}
+  \end{figure}
+#+END_LaTeX
+
+#+BEGIN_LaTeX
+  \begin{figure}
+    \centering
+    \subfloat[Jet $z$ vs lifetime]{
+      \label{fig:jet_z-tau-splot-corr}
+      \includegraphics[width=0.45\textwidth]{plots/correlation/jet_z_tau_corr.pdf}
+    }
+    \subfloat[Jet $z$ vs $M_{\mu\mu}$]{
+      \label{fig:jet_z-m-splot-corr}
+      \includegraphics[width=0.45\textwidth]{plots/correlation/jet_z_m_corr.pdf}
+    }
+    \caption{\label{fig:jet_z-splot-corr} Two-dimensional histogram of
+    Jet $z$ vs discriminating variables used to extract background
+    component from sPlot method}
+  \end{figure}
+#+END_LaTeX
+
 In order to ensure the background extraction procedure is correctly
 estimating the shape, sideband regions are defined and compared to the
 sPlot estimate. Sideband regions are intervals of $c\tau$ and
@@ -2101,9 +2162,40 @@ where $\sigma_m$ is the width of the fitted mass peak. Figure
 While this gives confidence that the background shape is estimated
 properly, it is useful to compare the signal shape of the transverse
 momentum distribution to ensure that the Monte Carlo is correctly
-modeling this shape.  The comparison of the reconstructed Jet $p_T$
-and $J/\psi$ $p_T$ are shown in Figures \ref{fig:jet_pt-sbs-p8} and
-\ref{fig:jpsi_pt-sbs-p8}. 
+modeling this shape. The comparison of the reconstructed Jet $p_T$ and
+$J/\psi$ $p_T$ are shown in Figures \ref{fig:jet_pt-sbs-p8} and
+\ref{fig:jpsi_pt-sbs-p8}. In addition, Figure \ref{fig:jet_pt-splot}
+and \ref{fig:jpsi_pt-splot} show the sPlot estimations of the signal
+and background. It is expected that the non-prompt fraction increases
+with the $J/\psi\text{'s}$ $p_T$ \cite{ATLAS-CONF-2015-024} which is
+observed in Figure \ref{fig:jpsi_pt-splot}.
+
+#+BEGIN_LaTeX
+  \begin{figure}
+    \centering
+    \subfloat[Data vs Pythia Jet $p_T$]{
+      \label{fig:jet_pt-sbs-p8}
+      \includegraphics[width=0.45\textwidth]{plots/jet_pt_sbs_p8.pdf}
+    }
+    \subfloat[Signal and Background, Jet $p_T$]{
+      \label{fig:jet_pt-splot}
+      \includegraphics[width=0.45\textwidth]{plots/jet_pt_splot.pdf}
+    }\\
+     \subfloat[$J/\psi$ $p_T$]{
+      \label{fig:jpsi_pt-sbs-p8}
+      \includegraphics[width=0.45\textwidth]{plots/jpsi_pt_sbs_p8.pdf}
+    }
+    \subfloat[Signal and Background $J/\psi$ $p_T$]{
+      \label{fig:jpsi_pt-splot}
+      \includegraphics[width=0.45\textwidth]{plots/jpsi_pt_splot.pdf}
+    } 
+    
+    \caption{\label{fig:pt-comp} Transverse momentum distributions of
+    the $J/\psi$ and matched jet compared to the Pythia prediction (red
+    for singlet, blue for octet, left panel). Signal (orange) and
+    background (green) compared to data (right panel). }
+  \end{figure}
+#+END_LaTeX
 
 * Unfolding
 Implicit in the measurement of any quantity is the uncertainty
@@ -2361,6 +2453,35 @@ In each case, the source of the systematic error is assessed by
 applying a change to the procedure and taking the difference from the
 nominal result as the symmetric error. These errors are added in
 quadrature with the statistical error to produce the final error band.
+** Trigger shape
+As mentioned previously, the trigger choice presents the possibility
+of significantly biasing the result if care is not taken.  The
+standard trigger recommendations suggest taking either an isolated
+muon trigger, or the non-isolated trigger used by this analysis.  In
+the former case an isolation requirement is applied in order to
+increase the quality of the reconstructed muon.  An isolation
+requirement ensures that there is no extraneous radiation in the
+vicinity of the reconstructed muon. This is counterproductive to the
+goal of this analysis.  Figure \ref{fig:trigger-shapes} shoes the
+interest variables broken down by trigger choice and demonstrates the
+bias of using an isolated trigger.
+#+BEGIN_LaTeX
+    \begin{figure}
+      \centering
+      \subfloat[$z$]{
+        \label{fig:jet_z-trigger}
+        \includegraphics[width=0.45\textwidth]{plots/trigger/jet_z.pdf}
+      }\qquad
+      \subfloat[$\Delta R$]{
+        \label{fig:delta_r-trigger}
+        \includegraphics[width=0.45\textwidth]{plots/trigger/delta_r.pdf}
+      } \caption{\label{fig:trigger-shapes} Comparison of isolated an
+      non-isolated trigger for the variables of interest, $z$ and
+      $\Delta R$.}
+  \end{figure}
+#+END_LaTeX
+
+
 ** Monte Carlo
 The Monte Carlo samples are used in the response matrix estimation, as
 well as in comparing the shape to data. They contain the best
