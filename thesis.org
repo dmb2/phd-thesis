@@ -818,10 +818,10 @@ of protons at 4 TeV each for a center of mass energy $\sqrt{s}=8$ TeV.
 In order to collide protons, the LHC accelerates them through a series
 of booster rings until they are injected into the main accelerator
 complex. Protons injected into the LHC are organized into bunches of
-10^11 protons. The bunches are spaced according to frequency (400 MHz)
-of the RF cavities which accelerate the particles. During the first
-run of the LHC, the bunches were spaced 50 ns apart which is twice the
-designed bunch spacing of 25 ns.
+10^11 protons. The bunches are spaced according to the frequency (400
+MHz) of the RF cavities which accelerate the particles. During the
+first run of the LHC, the bunches were spaced 50 ns apart which is
+twice the designed bunch spacing of 25 ns.
 
 In order to achieve this configuration of bunch crossings as well as
 precise control of the proton beams a number of problems must be
@@ -950,7 +950,7 @@ all work on the principal that when a charged particle moves through
 matter it either radiates energy in the form of Brehmsstrahlung or it
 ionizes the surrounding matter. In the former case, the radiation can
 be detected directly, or it can produce a positron and electron pair
-(pair production) which can subsequently detected. Different parts of
+(pair production) which can be subsequently detected. Different parts of
 the detector exploit these two processes in different ways. The
 electromagnetic and hadronic calorimeters work to stop electrons and
 hadrons while accurately measuring the energy of the incident
@@ -965,7 +965,7 @@ In order to accurately measure the charge and momentum of particles
 passing through the detector, a set of magnets is used to bend the
 charged particles. ATLAS uses a unique configuration of a 2.0 T
 solenoid covering the inner detector and a toroidal configuration of 8
-superconducting yokes which provide a field between 0.5 T and 0.5 T
+superconducting yokes which provide a field between 0.5 T and 1.0 T
 \cite{atlas-detector}. The central solenoid ensures that charged
 particles bend in the transverse plane of the inner detector. The
 toroidal configuration of the outer magnets bend the muons which exit
@@ -984,7 +984,9 @@ of the ring and the $y$ axis points to the Earth's surface. A useful
 quantity for describing angles in the detector is pseudorapidity
 ($\eta$)[fn:: Differences in pseudorapidity are invariant in
 relativistic boosts along the beam axis which is very useful
-experimentally. ]  
+experimentally. ] defined as $\eta\equiv -\log(\tan(\theta/2))$.  In
+this variable, the beam line is $\eta\approx4.2$, while the $y$ axis
+corresponds to $\eta=0$. 
 #+CAPTION: The ATLAS detector's coordinate system, see text for definition of pseudorapidity ($\eta$). 
 #+NAME: fig:coord-system
 #+ATTR_LATEX: :width 1.0\linewidth 
