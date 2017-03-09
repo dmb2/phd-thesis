@@ -41,7 +41,7 @@ To my wife.
 \listoffigures
 #+END_LaTeX
 
-# #+INCLUDE: acknowledgements.org
+#+INCLUDE: acknowledgements.org
 
 #+LaTeX: \chapter{Introduction}
 * A brief history
@@ -67,7 +67,7 @@ predictions of the relationships between the members of the baryon
 octet, experimental evidence for the existence of quarks came later.
 In 1971, Feynman published what is now known as the parton[fn:: Parton
 so called for being a "part" of the hadron. Also rumored to be named
-after Dolly Parton, the country singer\cite{ashone}. ] model of the
+after Dolly Parton, the country singer \cite{ashone}. ] model of the
 hadron \cite{PhysRevD.3.2706}. This model treated the components of
 the hadron as fundamental particles with physical properties. This is
 in contrast with the quark model of the eightfold way which did not
@@ -111,7 +111,7 @@ measurement of J/\psi and \psi(2S) production. They found the rate of
 production to be an order of magnitude more than the expectation from
 theory \cite{Abe:1992ww}. Two years later, Bodwin, Braaten and Lepage
 worked out many of the details of quarkonium production in QCD using
-effective field theory\cite{Bodwin:1994jh}.
+effective field theory \cite{Bodwin:1994jh}.
 
 In 1997, the Tevatron updated its observation of the \psi system with
 more data. It reported the differential cross section of the J/\psi to
@@ -155,7 +155,7 @@ Monte Carlo simulation program used in High Energy Physics] is to
 consider the charmonium system as a color-charged particle which can
 couple to gluons using rules of QCD \cite{Sjostrand:2007gs}. As this
 particle propogates it emits co-linear gluon radiation according to a
-splitting function for the process $q\rightarrow q g$. When the
+splitting function for the process $q \rightarrow q g$. When the
 composite particle falls below a certain threshold, it transitions to
 a color singlet J/\psi hadron and emits the remaining color charge as
 a soft gluon which is incorporated into the underlying event. This is
@@ -174,24 +174,24 @@ partons to hadrons.
 The FJF framework differs from the Pythia model in how it treats the
 distribution of radiation around the charmonium system.  In the FJF
 approach, a high energy gluon splits according to a splitting function
-for $g\rightarrow g g$, which is very different from Pythia's model
+for $g \rightarrow g g$, which is very different from Pythia's model
 which allows the charmonium system to radiate according to a splitting
 function for $q \rightarrow q g$.  This leads to fundamentally
 different distributions of momentum between the surrounding radiation
 and the charmonium system \cite{Bain:2016clc}.  
 
-The following is a birds-eye view of the remainder of the thesis. Chapter
-\ref{chap:theory} presents an overview of Quantum Chromodynamics, and
-the phenomena relevant for this work. Following that Chapter
-\ref{chap:detector} describes the LHC and ATLAS detector in detail.
-After describing the detecting apparatus, the methods of
+The following is a birds-eye view of the remainder of the thesis.
+Chapter \ref{chap:theory} presents an overview of Quantum
+Chromodynamics, and the phenomena relevant for this work. Following
+that Chapter \ref{chap:detector} describes the LHC and ATLAS detector
+in detail. After describing the detecting apparatus, the methods of
 reconstructing jets and J/\psi candidates is described in
-\ref{chap:reconstruction}. With a firm grasp of the theory and
+Chapter \ref{chap:reconstruction}. With a firm grasp of the theory and
 physical measurement of the particles, the next step is a description
 of the data analysis methods used in Chapter \ref{chap:analysis}. In
 Chapter \ref{chap:measurement} the selection criteria, systematic
 errors, and final results are presented. A discussion of consequences
-and future work follows. 
+and future work follows in Chapter \ref{chap:conclusion}.
 
 #+LaTeX: \chapter{Theory}
 #+LaTeX: \label{chap:theory}
@@ -568,9 +568,9 @@ all possible Fock state configurations.  This can be written as
 #+BEGIN_LaTeX
 \begin{equation}
   \begin{aligned}
-  |\psi_Q\rangle &= O(1)|Q\overline{Q}[^3S_1^{(1)}]\rangle + O(v) |Q\overline{Q}[^3P_J^{(8)}]g\rangle \\
-  &+ O(v^2)|Q\overline{Q}[^1S_0^{(8)}]g\rangle + O(v^2)|Q\overline{Q}[^3S_1^{(1,8)}]gg\rangle \\
-  &+ O(v^2)|Q\overline{Q}[^3D_J^{(1,8)}]gg\rangle + \ldots \\
+  |\psi_Q \rangle &= O(1)|Q\overline{Q}[^3S_1^{(1)}]\rangle + O(v) |Q\overline{Q}[^3P_J^{(8)}]g \rangle \\
+  &+ O(v^2)|Q\overline{Q}[^1S_0^{(8)}]g \rangle + O(v^2)|Q\overline{Q}[^3S_1^{(1,8)}]gg \rangle \\
+  &+ O(v^2)|Q\overline{Q}[^3D_J^{(1,8)}]gg \rangle + \ldots \\
   \end{aligned}
 \end{equation}
 #+END_LaTeX
@@ -666,15 +666,15 @@ hadronization.
 #+BEGIN_LaTeX
   \begin{figure}[htp]
     \centering
-    \subfloat[$g\rightarrow gg$]{
+    \subfloat[$g \rightarrow gg$]{
       \label{fig:g-to-gg}
       \includegraphics[width=0.4\textwidth]{figures/g_to_gg.eps}
     }\qquad
-    \subfloat[$g\rightarrow q\overline{q}$]{
+    \subfloat[$g \rightarrow q\overline{q}$]{
       \label{fig:g-to-qqbar}
       \includegraphics[width=0.4\textwidth]{figures/g_to_qqbar.eps}
     }\qquad
-    \subfloat[$q\rightarrow qg$]{
+    \subfloat[$q \rightarrow qg$]{
       \label{fig:g-to-qg}
       \includegraphics[width=0.4\textwidth]{figures/q_to_qg.eps}
     }
@@ -722,9 +722,9 @@ state partons. The gluon splitting function corresponding to Figure
 #+END_LaTeX
 Here the color factor is $C_A=3$. It is useful to take the various
 limits. Notice that when one of the partons is soft either ($c$ soft)
-$z\rightarrow 0$ or ($b$ soft) $z\rightarrow 1$. The first term of
-equation \ref{eq:gg-split} is divergent for $z\rightarrow 0$. The same
-is true for the second term as $z\rightarrow 1$. These divergences
+$z \rightarrow 0$ or ($b$ soft) $z \rightarrow 1$. The first term of
+equation \ref{eq:gg-split} is divergent for $z \rightarrow 0$. The same
+is true for the second term as $z \rightarrow 1$. These divergences
 favor soft emission of gluons.
 
 Following the same prescription, the splitting function for gluon
@@ -734,8 +734,8 @@ emission from a quark (see Figure \ref{fig:g-to-qg}):
 \hat{P}_{qg}(z) = T_R[z^2+(1-z)^2]
 \end{equation}
 #+END_LaTeX
-In this case the color factor $T_R=1/2$, taking $z\rightarrow 0$
-favors soft gluon emission whereas the $z\rightarrow 1$ limit favors
+In this case the color factor $T_R=1/2$, taking $z \rightarrow 0$
+favors soft gluon emission whereas the $z \rightarrow 1$ limit favors
 hard emission of the gluon. The parabolic nature of the function
 favors one extreme or the other.
 
@@ -868,7 +868,7 @@ are most commonly used in the field. The name comes from the saying
 research into the atomic bomb \cite{unc-dict}. Another unit from this
 era is the "shake" as in "two shakes of a lamb's tail" which is 10 ns,
 a convenient unit of measure in nuclear reactions \cite{unc-dict}. ]
-of a process ($\sigma(pp\rightarrow A B)$ where $A$ and $B$ are
+of a process ($\sigma(pp \rightarrow A B)$ where $A$ and $B$ are
 outgoing particle species), the rate of particles produced is given by
 the product of the luminosity and the cross section:
 #+BEGIN_LaTeX
@@ -927,7 +927,7 @@ energy interactions take place. The interaction which is selected for
 study is referred to as the primary interaction. Secondary
 interactions contribute to experimental background which are referred
 to as pileup. The degree of pileup can be measure by the average
-number of interactions per bunch crossing ($\langle\mu\rangle$). For
+number of interactions per bunch crossing ($\langle\mu \rangle$). For
 the data used in this thesis, the pileup was 20 interactions per bunch
 crossing on average. Pileup presents an experimental challenge because
 the particles produced in association with the events can confuse the
@@ -1124,7 +1124,7 @@ contain an anode wire at the center \cite{alignment}\cite{trt-barrel}.
 The anode is a gold-plated tungsten wire. The gas circulated in the
 straw tubes is a gas consisting mostly of xenon. A noble gas is used
 in order to reduce the time that ionized particles recombine with
-atoms\cite{alignment}. This maximizes the ability to read out when a
+atoms \cite{alignment}. This maximizes the ability to read out when a
 charged particle passes through the tube. The interstitial space
 between the straw tubes is a polypropylene foam which encourages
 charged particles to ionize when the pass through the TRT volume
@@ -1907,7 +1907,7 @@ such that for a given component of the likelihood function
 \int P(x|\bm{\theta}) dx = N(\bm{\theta})
 \end{equation}
 #+END_LaTeX
-This allows the re-expression of the negative log-likelihood function as\cite{Pivk:2004ty}:
+This allows the re-expression of the negative log-likelihood function as \cite{Pivk:2004ty}:
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:enll}
@@ -2005,10 +2005,10 @@ The function is defined as:
 #+BEGIN_LaTeX
 \begin{align}
 \label{eq:crystal-ball}
-f(m;\alpha,n,\mu,\sigma) &= N\cdot 
+f(m;\alpha,n,\mu,\sigma) &= N \cdot 
 \begin{cases}
 \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) & \text{for}~\frac{x-\mu}{\sigma} > -\alpha \\
-A\cdot\left(B-\frac{x-\mu}{\sigma}\right)^{-n} & \text{for}~\frac{x-\mu}{\sigma} \leq -\alpha
+A \cdot\left(B-\frac{x-\mu}{\sigma}\right)^{-n} & \text{for}~\frac{x-\mu}{\sigma} \leq -\alpha
 \end{cases}\\
 A &= \left(\frac{n}{|\alpha|}\right)^n \exp\left(-\frac{|\alpha|^2}{2}\right)\\
 B &= \frac{n}{|\alpha|} - |\alpha|
@@ -2068,6 +2068,40 @@ Table \ref{tab:fitres}.
 | Second Resolution Width | (0.308 \pm 0.005)\times 10^{-1} mm |
 | Non-Coherent Mass c_{1} | -0.2640 \pm 0.0004      1/GeV      |
 |-------------------------+------------------------------------|
+** Validating signal extraction
+In order to ensure the background extraction procedure is correctly
+estimating the shape, sideband regions are defined and compared to the
+sPlot estimate. Sideband regions are intervals of $c\tau$ and
+$M_{\mu\mu}$ where the background is expected to dominate the
+distribution. If these shapes roughly agree, then there is confidence
+that sPlot is correctly estimating the shape in the signal region. The
+non-prompt background region is defined as $3 \sigma_{c\tau} < ct <$
+50 mm where $\sigma_{c\tau}$ is determined from the simultaneous fit.
+The combinatoric background region is defined as more than $3\sigma_m$
+where $\sigma_m$ is the width of the fitted mass peak. Figure
+\ref{fig:splot-bkg} shows the result of this comparison.
+#+BEGIN_LaTeX
+    \begin{figure}
+      \centering
+      \subfloat[$z$]{
+        \label{fig:jet_z-splot-bkg}
+        \includegraphics[width=0.45\textwidth]{plots/jet_z_splot_bkg.pdf}
+      }\qquad
+      \subfloat[$\Delta R$]{
+        \label{fig:delta_r-splot-bkg}
+        \includegraphics[width=0.45\textwidth]{plots/delta_r_splot_bkg.pdf}
+      } \caption{\label{fig:splot-bkg} Background extracted from the
+      sPlot method compared to the sideband regions for the jet momentum
+      fraction $z$ and the $J/\psi$ jet separation $\Delta R$}
+  \end{figure}
+#+END_LaTeX
+
+While this gives confidence that the background shape is estimated
+properly, it is useful to compare the signal shape of the transverse
+momentum distribution to ensure that the Monte Carlo is correctly
+modeling this shape.  The comparison of the reconstructed Jet $p_T$
+and $J/\psi$ $p_T$ are shown in Figures \ref{fig:jet_pt-sbs-p8} and
+\ref{fig:jpsi_pt-sbs-p8}. 
 
 * Unfolding
 Implicit in the measurement of any quantity is the uncertainty
@@ -2290,7 +2324,7 @@ Data is collected at the LHC in units called periods. Each period is
 given an alphabetic designation. During the 2012 data taking there
 were ten distinct periods which amounted to a combined luminosity of
 $19.5\pm0.6~\text{fb}^{-1}$. The luminosity for each data period is
-summarized in \ref{tab:data-sets}.
+summarized in Table \ref{tab:data-sets}.
 #+CAPTION: Dataset periods during 2012 data taking used in this analysis and their processed Luminosity
 #+LABEL: tab:data-sets
 | Period | Luminosity (pb^{-1}) |
@@ -2340,7 +2374,7 @@ with each of these contributions to the momentum measurement.
 
 Previous measurements of the inclusive tracking efficiency for muons
 using the tag-and-probe method allow an efficiency scale factor to be
-applied to simulated data\cite{Aad:2014rra}. The uncertainty on the
+applied to simulated data \cite{Aad:2014rra}. The uncertainty on the
 energy scale of the muon is found by varying the energy up and down
 depending on the p_T and $\eta$ of the muon. As mentioned above, muons
 consist of a ID and MS track, leading to resolution terms from each
@@ -2465,7 +2499,8 @@ own.
     on the data is the quadrature sum of all error sources. }
 \end{figure}
 #+END_LaTeX
-
+#+LaTeX: \chapter{Conclusion}
+#+LaTeX: \label{chap:conclusion}
 * Discussion
 This analysis has identified two variables for describing the
 production of $J/\psi$ particles in hadronic collisions that have
@@ -2483,10 +2518,10 @@ leading up to the production of the $J/\psi$. Pythia models this
 process by allowing the $c\bar{c}$ state to radiate gluons until the
 state falls below a threshold at which point it emits as soft gluon
 and produces a $J/\psi$. The fact that the splitting function used is
-$q\rightarrow qg$ leads to a $z$ distribution that is sharply peaked
+$q \rightarrow qg$ leads to a $z$ distribution that is sharply peaked
 at $z\simeq1$. If instead, the $J/\psi$ is produced during the
 fragmentation of an energetic gluon, the proper splitting function is
-$g\rightarrow gg$ until the gluon reaches an energy favorable for
+$g \rightarrow gg$ until the gluon reaches an energy favorable for
 $J/\psi$ production. This would influence the $z$ distribution causing
 it to peak at lower values of $z$ as observed in the data. A recent
 measurement at the LHCb \cite{Aaij:2017fak} of the momentum fraction,
@@ -2497,6 +2532,46 @@ fragmentation interpretation of the data. If this is borne out by
 further analysis of the unfolded data presented in this work, a
 solution to the polarization puzzle may be found by examining the
 surrounding radiation in which $J/\psi$ production is embedded.
+
+The shape of the data, and the differences between how the $J/\psi$ is
+produced in the Fragmenting Jet Function (FJF) framework compared to
+Pythia suggest that modifying Pythia's treatment of the octet state
+shower may reduce disagreement between the data and the simulation.
+Furthermore, Pythia is the only general purpose Monte Carlo generator
+available that produces $J/\psi$ using the NRQCD description of
+$J/\psi$ production. This work indicates the need for more robust
+Monte Carlo simulations which better describe $J/\psi$ production in
+hadronic collisions. Work has been done to implement the partonic
+cross sections for NRQCD quarkonium states in Sherpa. If this work is
+published, Sherpa may provide a valuable cross check to Pythia's
+prediction. In addition, Sherpa is well placed to modify its treatment
+of the parton shower of the quarkonium state from the outset.
+
+Finally, this work provides new observables that may constrain the
+predictions from NRQCD in interesting ways. It may be possible to use
+the $z$ distribution to extract new LDMEs and subsequently compare to
+the $p_T$ spectrum (or vice versa). In the original incarnation of
+this work, other substructure variables were shown to discriminate
+between the singlet and octet processes as simulated by Pythia. It may
+be possible to extend this work to include those and other
+substructure variables in a way that further illuminates the exact
+production mechanism. In addition, the $J/\psi$ system is used
+extensively in heavy ion collisions as a probe of the quark-gluon
+plasma produced in those interactions. Having a new understand of how
+the quarkonium bound state is produced may require reinterpreting many
+results that extend beyond $J/\psi$ production in hadron collisions.
+
+In closing, this work demonstrates the need to study the hadronic
+environment that a quarkonium state is embedded in. It is the first
+measurement of ultra-high $p_T$ J/\psi particles and has demonstrated
+techniques for robust background subtraction and the removal of
+non-linear detector effects. The resulting data will be immediately
+useful to theorists in further understanding how $J/\psi$ particles
+are produced in hadron collisions. Finally, this work may provide the
+first hints at a way to reinterpret $J/\psi$ production so that the
+spin-alignment problem, or polarization puzzle, can be solved
+definitively.
+
 #+BEGIN_LaTeX
 \cleardoublepage
 \normalbaselines %Fixes spacing of bibliography
