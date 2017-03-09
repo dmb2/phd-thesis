@@ -41,8 +41,8 @@ To my wife.
 \tableofcontents
 \listoftables
 \listoffigures
-\printglossary[type=\acronymtype]
-\addcontentsline{toc}{chapter}{Acronyms} 
+% \printglossary[type=\acronymtype]
+% \addcontentsline{toc}{chapter}{Acronyms} 
 #+END_LaTeX
 
 #+INCLUDE: acknowledgements.org

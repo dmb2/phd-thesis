@@ -2,7 +2,7 @@
 
 The $J/\psi$ particle has been the source of much research since its
 discovery in 1974. It provides an important probe of quantum
-chromodynamics and has lead to many important insides into the
+chromodynamics and has lead to many important insights into the
 interactions of quarks and gluons in bound states. The rate of
 production was found to be much higher than expected at hadron
 colliding experiments. Non-relativistic quantum chromodynamics was
