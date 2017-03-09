@@ -1,4 +1,4 @@
-#+TITLE:     A measurement of jet substructure variables in prompt J/\psi events at ATLAS
+#+TITLE:     A measurement of the radiation environment around prompt J/\psi events at ATLAS
 #+AUTHOR:    David Bjergaard
 #+OPTIONS:   H:3 num:t toc:nil ':t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:nil
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
@@ -13,6 +13,7 @@
 #+LATEX_HEADER:\member{Glenn Edwards}
 #+LATEX_HEADER:\addbibresource{thesis.bib}
 
+#+LATEX_HEADER:\input{acronyms.tex}
 
 #+LATEX_HEADER:\hypersetup{
 #+LATEX_HEADER:plainpages=false,
@@ -20,6 +21,7 @@
 #+LATEX_HEADER:colorlinks, linkcolor=black, citecolor=black,
 #+LATEX_HEADER:filecolor=black, urlcolor=black,
 #+LATEX_HEADER:}
+
 
 #+INCLUDE: abstract.org
 # ``Life is short,\\ 
@@ -39,6 +41,8 @@ To my wife.
 \tableofcontents
 \listoftables
 \listoffigures
+\printglossary[type=\acronymtype]
+\addcontentsline{toc}{chapter}{Acronyms} 
 #+END_LaTeX
 
 #+INCLUDE: acknowledgements.org
@@ -183,15 +187,16 @@ and the charmonium system \cite{Bain:2016clc}.
 The following is a birds-eye view of the remainder of the thesis.
 Chapter \ref{chap:theory} presents an overview of Quantum
 Chromodynamics, and the phenomena relevant for this work. Following
-that Chapter \ref{chap:detector} describes the LHC and ATLAS detector
-in detail. After describing the detecting apparatus, the methods of
-reconstructing jets and J/\psi candidates is described in
-Chapter \ref{chap:reconstruction}. With a firm grasp of the theory and
-physical measurement of the particles, the next step is a description
-of the data analysis methods used in Chapter \ref{chap:analysis}. In
-Chapter \ref{chap:measurement} the selection criteria, systematic
-errors, and final results are presented. A discussion of consequences
-and future work follows in Chapter \ref{chap:conclusion}.
+that Chapter \ref{chap:detector} describes the LHC and
+\acrshort{atlas} detector in detail. After describing the detecting
+apparatus, the methods of reconstructing jets and J/\psi candidates is
+described in Chapter \ref{chap:reconstruction}. With a firm grasp of
+the theory and physical measurement of the particles, the next step is
+a description of the data analysis methods used in Chapter
+\ref{chap:analysis}. In Chapter \ref{chap:measurement} the selection
+criteria, systematic errors, and final results are presented. A
+discussion of consequences and future work follows in Chapter
+\ref{chap:conclusion}.
 
 #+LaTeX: \chapter{Theory}
 #+LaTeX: \label{chap:theory}
@@ -936,7 +941,7 @@ reconstructed quantities that are largely insensitive to pileup
 effects.
 
 * The ATLAS detector
-A Toroidal LHC AparatuS (ATLAS[fn:: ATLHCA doesn't have the same ring,
+\acrlong{atlas} (\acrshort{atlas}[fn:: ATLHCA doesn't have the same ring,
 or status as a greek titan]) is one of the general purpose detectors
 at the LHC. It is located at Point 1 on the LHC ring. Figure
 \ref{fig:atlas-detector} shows a high level drawing of the detector,
@@ -2670,7 +2675,7 @@ published, Sherpa may provide a valuable cross check to Pythia's
 prediction. In addition, Sherpa is well placed to modify its treatment
 of the parton shower of the quarkonium state from the outset.
 
-Finally, this work provides new observables that may constrain the
+This work provides new observables that may constrain the
 predictions from NRQCD in interesting ways. It may be possible to use
 the $z$ distribution to extract new LDMEs and subsequently compare to
 the $p_T$ spectrum (or vice versa). In the original incarnation of
@@ -2680,9 +2685,10 @@ be possible to extend this work to include those and other
 substructure variables in a way that further illuminates the exact
 production mechanism. In addition, the $J/\psi$ system is used
 extensively in heavy ion collisions as a probe of the quark-gluon
-plasma produced in those interactions. Having a new understand of how
-the quarkonium bound state is produced may require reinterpreting many
-results that extend beyond $J/\psi$ production in hadron collisions.
+plasma produced in those interactions. Having a new understanding of
+how the quarkonium bound state is produced may require reinterpreting
+many results that extend beyond $J/\psi$ production in hadron
+collisions.
 
 In closing, this work demonstrates the need to study the hadronic
 environment that a quarkonium state is embedded in. It is the first

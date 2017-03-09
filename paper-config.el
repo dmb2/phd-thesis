@@ -16,6 +16,7 @@
                    "
 \\documentclass[]{dukedissertation}
 \\usepackage[backend=biber]{biblatex}
+\\usepackage[acronym]{glossaries}
 \\usepackage{color}
 \\usepackage{bm}
 \\usepackage{amsfonts}
