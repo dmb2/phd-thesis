@@ -1,4 +1,4 @@
-#+TITLE:     A measurement of the radiation environment around prompt J/\psi events at ATLAS
+#+TITLE:     A Measurement of the Radiation Environment Around Prompt J/\psi Events at ATLAS
 #+AUTHOR:    David Bjergaard
 #+OPTIONS:   H:3 num:t toc:nil ':t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:nil
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
@@ -33,9 +33,11 @@
 
 
 #+BEGIN_LaTeX
-\dedication{
-To my wife.
-}
+\addcontentsline{toc}{chapter}{Dedication} 
+\chapter*{Dedication}
+\begin{flushright}
+\emph{To my wife.}
+\end{flushright}
 #+END_LaTeX
 #+BEGIN_LaTeX
 \tableofcontents
