@@ -13,6 +13,7 @@
 #+LATEX_HEADER:\member{Glenn Edwards}
 #+LATEX_HEADER:\addbibresource{thesis.bib}
 
+#+LATEX_HEADER:\makeglossaries
 #+LATEX_HEADER:\input{acronyms.tex}
 
 #+LATEX_HEADER:\hypersetup{
@@ -44,7 +45,7 @@
 \listoftables
 \listoffigures
 % \printglossary[type=\acronymtype]
-% \addcontentsline{toc}{chapter}{Acronyms} 
+\printglossaries
 #+END_LaTeX
 
 #+INCLUDE: acknowledgements.org
@@ -92,7 +93,7 @@ dynamics of the strong interaction.
 
 In November, 1973 Wilczek and Gross published their seminal paper on
 asymptotically free gauge theories \cite{PhysRevD.8.3633}. This paper
-laid the groundwork for what would become quantum chromodynamics (QCD)
+laid the groundwork for what would become quantum chromodynamics (\acrshort{qcd})
 the theory underpinning the subject of this thesis. A year later in
 1974 the discovery of a new particle was announced independently by a
 group at Brookhaven National Lab (named the $J$) and a group at the
@@ -109,14 +110,14 @@ quark and anti-quark of the same flavor are referred to as quarkonium.
 This name is reminiscent of positronium, the eletromagnetically bound
 state of a positron and electron. Many of the salient features of
 quarkonium mass spectrum can be understood with non-relativistic
-quantum mechanics and empirical models of the QCD potential. Even with
+quantum mechanics and empirical models of the \acrshort{qcd} potential. Even with
 this deep understanding of nature's fundamental interactions, the
 J/\psi particle continues to perplex and confuse our understanding of
-QCD. In 1992, the CDF collaboration at the Tevatron reported the first
+\acrshort{qcd}. In 1992, the CDF collaboration at the Tevatron reported the first
 measurement of J/\psi and \psi(2S) production. They found the rate of
 production to be an order of magnitude more than the expectation from
 theory \cite{Abe:1992ww}. Two years later, Bodwin, Braaten and Lepage
-worked out many of the details of quarkonium production in QCD using
+worked out many of the details of quarkonium production in \acrshort{qcd} using
 effective field theory \cite{Bodwin:1994jh}.
 
 In 1997, the Tevatron updated its observation of the \psi system with
@@ -125,10 +126,10 @@ be much higher than anticipated by the leading order theory
 calculation for singlet production \cite{PhysRevLett.79.572}. The
 details worked out by Bodwin et al positioned the theory community to
 quickly calculate the needed contributions from the non-relativistic
-expansion of QCD (NRQCD) in order to describe the data
+expansion of \acrshort{qcd} (\acrshort{nrqcd}) in order to describe the data
 \cite{PhysRevD.55.R5269}.
 
-The extra NRQCD components that describe the observed transverse
+The extra \acrshort{nrqcd} components that describe the observed transverse
 momentum spectrum predicted that the spin alignment between the J/\psi
 and the decaying muons be strongly polarized. Subsequent measurements
 of the polarization at CDF find no evidence of polarized
@@ -159,7 +160,7 @@ state.
 A useful phenomenological model employed by Pythia [fn:: A generic
 Monte Carlo simulation program used in High Energy Physics] is to
 consider the charmonium system as a color-charged particle which can
-couple to gluons using rules of QCD \cite{Sjostrand:2007gs}. As this
+couple to gluons using rules of \acrshort{qcd} \cite{Sjostrand:2007gs}. As this
 particle propogates it emits co-linear gluon radiation according to a
 splitting function for the process $q \rightarrow q g$. When the
 composite particle falls below a certain threshold, it transitions to
@@ -171,14 +172,14 @@ directly and no net color charge.
 An alternative view of charmonium production is the production of the
 charm quark pair during the fragmentation of partons into individual
 hadrons. In the fragmenting jet[fn:: A jet is a collimated spray of
-particles resulting from high energy QCD processes] function (FJF)
+particles resulting from high energy \acrshort{qcd} processes] function (\acrshort{fjf})
 framework \cite{Procura:2009vm}, the total cross section is a product
 of the short distance partonic cross section with universal
 fragmentation functions which determine the evolution of individual
 partons to hadrons.
 
-The FJF framework differs from the Pythia model in how it treats the
-distribution of radiation around the charmonium system.  In the FJF
+The \acrshort{fjf} framework differs from the Pythia model in how it treats the
+distribution of radiation around the charmonium system.  In the \acrshort{fjf}
 approach, a high energy gluon splits according to a splitting function
 for $g \rightarrow g g$, which is very different from Pythia's model
 which allows the charmonium system to radiate according to a splitting
@@ -189,7 +190,7 @@ and the charmonium system \cite{Bain:2016clc}.
 The following is a birds-eye view of the remainder of the thesis.
 Chapter \ref{chap:theory} presents an overview of Quantum
 Chromodynamics, and the phenomena relevant for this work. Following
-that Chapter \ref{chap:detector} describes the LHC and
+that Chapter \ref{chap:detector} describes the \acrshort{lhc} and
 \acrshort{atlas} detector in detail. After describing the detecting
 apparatus, the methods of reconstructing jets and J/\psi candidates is
 described in Chapter \ref{chap:reconstruction}. With a firm grasp of
@@ -206,7 +207,7 @@ discussion of consequences and future work follows in Chapter
 Quantum chromodynamics describes the interactions between quarks and
 gluons. It is one of the fundamental pieces of the Standard Model of
 Physics, and has provided fertile ground for experimental and
-theoretical work. The interactions of QCD are determined by the SU(3)
+theoretical work. The interactions of \acrshort{qcd} are determined by the SU(3)
 symmetry group. Under this symmetry quarks have a color charge
 ($a=1,2,3$). While quarks carry a color charge, they must form color
 neutral particles. Therefore, it is useful to assign the colors red,
@@ -234,10 +235,10 @@ determine the properties of the composite baryons and mesons.
 The formulation of a quantum theory for quark interactions requires a
 lagrangian which contains interaction terms which satisfy the SU(3)
 symmetry group. The following summarizes the results in chapter 1 of
-"QCD and Collider Physics" \cite{Ellis:1991qj}, for further details
+"\acrshort{qcd} and Collider Physics" \cite{Ellis:1991qj}, for further details
 the reader is referred to that text.
 
-In order to derive a quantum theory, begin by writing the QCD
+In order to derive a quantum theory, begin by writing the \acrshort{qcd}
 lagrangian in terms of a classical field plus a gauge fixing term, and
 a ghost term.
 #+BEGIN_LaTeX
@@ -264,14 +265,15 @@ the gluon field strength tensor:
 The color indices $A,B,C$ run over the eight generators of the SU(3)
 group. The constant $g$ represents the coupling strength, and the
 constants $f^{ABC}$ are the structure constants of SU(3). It is this
-term which distinguishes QCD from quantum electrodynamics (QED). In
-order to derive the Feynman rules for QCD, the path integral of the
-action must be evaluated. In the standard formulation of the action,
-the resulting integral is badly divergent because of the gauge
-invariance of the theory \cite{Peskin:1995ev} [fn:: See 9.4
-Quantization of the Electromagnetic Field]. Following the
-Faddeev-Popov method of gauge fixing used in \cite{Ellis:1991qj} the
-following two terms are added to the lagrangian:
+term which distinguishes \acrshort{qcd} from quantum electrodynamics
+(\acrshort{qed}). In order to derive the Feynman rules for
+\acrshort{qcd}, the path integral of the action must be evaluated. In
+the standard formulation of the action, the resulting integral is
+badly divergent because of the gauge invariance of the theory
+\cite{Peskin:1995ev} [fn:: See 9.4 Quantization of the Electromagnetic
+Field]. Following the Faddeev-Popov method of gauge fixing used in
+\cite{Ellis:1991qj} the following two terms are added to the
+lagrangian:
 #+BEGIN_LaTeX
   \begin{align}
     \mathcal{L}_{\text{Gauge}} &= -
@@ -282,7 +284,7 @@ following two terms are added to the lagrangian:
 These terms serve to constrain the integral over the action to
 physical configurations exactly once \cite{Peskin:1995ev}. 
 ** Feyman Rules
-The Feynman rules for QCD can be determined from the lagrangian by
+The Feynman rules for \acrshort{qcd} can be determined from the lagrangian by
 finding the action ($S = \int \mathcal{L} d^4x$)and writing it in
 terms of a free field lagrangian $S_0$ and an interacting term $S_I$:
 #+BEGIN_LaTeX
@@ -294,16 +296,16 @@ Further by identifying $\partial^\alpha = -ip^\alpha$ as the momentum
 it is possible to write down the two point function for the quarks and
 gluons. This results in the Feynman rules shown in Figure
 \ref{fig:qcd-feyn-rules}.
-#+CAPTION: Feynman rules for QCD, see \cite{Ellis:1991qj} for more details.
+#+CAPTION: Feynman rules for \acrshort{qcd}, see \cite{Ellis:1991qj} for more details.
 #+NAME: fig:qcd-feyn-rules
 #+ATTR_LATEX: :width \linewidth
 [[file:figures/qcd_rules.eps]]
 
 Combined, these rules allow the creation of any relativistic quark
-interactions allowed by the theory of QCD.  There are two aspects of
-QCD which distinguish it from QED. 
+interactions allowed by the theory of \acrshort{qcd}.  There are two aspects of
+\acrshort{qcd} which distinguish it from \acrshort{qed}. 
 
-The first is the running of the coupling constant, $\alpha_S$. In QED,
+The first is the running of the coupling constant, $\alpha_S$. In \acrshort{qed},
 the coupling constant is higher at high energies. This running of the
 coupling constant can be understood by examining the state of the
 vacuum around the electric charge. At high energies, and short
@@ -311,37 +313,37 @@ distances, there is less screening of the true charge of the electron
 due to vacuum polarization. This polarization arises due to dipole
 pairs of virtual electrons and positrons which screen the charge of
 the electron. This leads to a coupling constant which is larger than
-at low energies. In QCD, the coupling constant decreases at high
+at low energies. In \acrshort{qcd}, the coupling constant decreases at high
 energy.  This phenomenon is known as asymptotic freedom.  At very high
 energies, the coupling between quarks becomes so low that they become
 free particles.  It is difficult to understand this from the vacuum of
-QCD, but it is possible to make analogies to the paramagnetic
+\acrshort{qcd}, but it is possible to make analogies to the paramagnetic
 properties of the vacuum \cite{Ellis:1991qj}. 
 
-The second feature is the self-interaction of the gluon.  In QED, the
+The second feature is the self-interaction of the gluon.  In \acrshort{qed}, the
 mediating photon has no electric charge, and thus does not couple to
-itself.  In QCD, the gluon carries color charge. This means that the
+itself.  In \acrshort{qcd}, the gluon carries color charge. This means that the
 field doesn't spread uniformly out from the quark, instead it forms
 tube-like structures.  At some point, the potential energy stored in
 the self-interacting gluon tubes becomes so high that it is
 energetically favorable to create a quark anti-quark pair from the
 vacuum than it is to increase the distance between two quarks further.
-This property of QCD is referred to as confinement. 
+This property of \acrshort{qcd} is referred to as confinement. 
 * Quarkonium
 The bound states and their properties are important to any theory of
-interactions. In QCD, bound states consist of mesons and baryons in
+interactions. In \acrshort{qcd}, bound states consist of mesons and baryons in
 accordance with the rules outlined in Section [[Feyman Rules]]. When a
 meson forms a bound state with a quark and anti-quark of the same
 flavor it is referred to as a quarkonium state. This naming scheme is
 reminiscent of the positronium bound state from quantum mechanics in a
 coulomb potential. Quarkonium have a number of unique properties that
-make it an ideal system to study properties of QCD. The bound state
+make it an ideal system to study properties of \acrshort{qcd}. The bound state
 consists of a quark and its charge-conjugate. This provides a degree
 of symmetry not present in other meson systems. In heavy quarkonium
 systems (charmonium and bottomonium), the mass scale is high enough
 that perturbation theory can provide useful answers relative to the
 cutoff energy scale $\Lambda_{\text{QCD}}\simeq 450~\text{MeV}$. The
-strength of the coupling strength of QCD in the charmonium system is
+strength of the coupling strength of \acrshort{qcd} in the charmonium system is
 $\alpha_s(m_c)\approx0.24$ \cite{Bodwin:1994jh}. This is large enough
 that the perturbation series converges more slowly than one would
 hope. The higher mass of the bottom quark allows the bottomonium
@@ -375,7 +377,7 @@ undergraduate treatment of bound states allowed by the Coulomb
 potential \cite{Townsend:2000modern} \cite{Griffiths:2008zz}. A brief
 review of the important results are presented. The content of this
 section follows that of \cite{Ellis:1991qj} and uses a notation that
-makes the analogies between the coulomb potential and the QCD
+makes the analogies between the coulomb potential and the \acrshort{qcd}
 potential manifest. The existence of a solution is due to the
 spherical symmetry of the coulomb potential. This allows the system to
 be solved by separation of variables and reduces the degrees of
@@ -440,12 +442,12 @@ Finally, $J$ takes the values $J=|L-S|,\ldots,L+S$.
 
 Up to this point the positronium system and the quarkonium system have
 been treated as interchangeable. In fact, if gluons did not
-self-interact, the QED potential and the QCD potential would be the
+self-interact, the \acrshort{qed} potential and the \acrshort{qcd} potential would be the
 same modulo coupling constants and a numerical factor for color. This
 similarity suggests that using the hydrogen-like wave-functions as a
 basis state and applying perturbation theory may prove fruitful.
 ** Potential Models of QCD
-It is not an accident that the potential model of QCD works well to
+It is not an accident that the potential model of \acrshort{qcd} works well to
 describe the distribution of bound states observed in quarkonium
 systems. First, the gluon interaction times are much shorter than the
 movement time scale of the quarks. This is due to the assumption that
@@ -493,24 +495,24 @@ bottomonium spectrum is better described because the mass is higher,
 and hence the coupling constant is weaker making the assumptions
 behind the potential model stronger. 
 * Non-relativistic QCD
-While the potential model of QCD bound states does a good job of
+While the potential model of \acrshort{qcd} bound states does a good job of
 capturing the features of the spectrum it is not a complete
 description. Figure \ref{fig:spectrum} shows some disagreement in the
 numerical values for the mass eigenstates. Further, the potential
 model offers no way of calculating the differential cross section for
 production. This can be done using perturbation theory with the
-relativistic QCD lagrangian. The leading order cross sections for
+relativistic \acrshort{qcd} lagrangian. The leading order cross sections for
 J/\psi production were calculated in the early 80s
 \cite{Baier:1983va}. After the measurement of the J/\psi and \psi(2S)
 by the Tevatron in the early 90s, the disparity between the leading
 order prediction and the measured data was large. This lead to the
-exploration of effective field theory descriptions of QCD in an
+exploration of effective field theory descriptions of \acrshort{qcd} in an
 attempt to bridge the gap between the non-perturbative parts of
 quarkonia processes which are difficult to calculate and the parts of
 quarkonia production amenable to perturbation theory
 \cite{Bodwin:1994jh}.
 ** Lagrangian
-Rather than take an explicit expansion of the QCD Lagrangian
+Rather than take an explicit expansion of the \acrshort{qcd} Lagrangian
 (\ref{eq:qcd-classic}), it is informative to build a Lagrangian which
 is equivalent to the fully relativistic version. In this case recall
 that the non-relativistic expansion for the energy of a particle is
@@ -522,13 +524,13 @@ E = \sqrt{M^2+p^2} \simeq M + \frac{p^2}{2M}
 #+END_LaTeX
 The separation of short distance interactions of the light quarks and
 the long distance interactions of the heavy quarks suggest the
-following terms in the NRQCD lagrangian \cite{Bodwin:1994jh}:
+following terms in the \acrshort{nrqcd} lagrangian \cite{Bodwin:1994jh}:
 #+BEGIN_LaTeX
 \begin{equation}
 \mathcal{L}_{\text{NRQCD}} = \mathcal{L}_{\text{light}} + \mathcal{L}_{\text{heavy}} + \delta\mathcal{L}
 \end{equation}
 #+END_LaTeX
-The light quarks are expected to be adequately described by the QCD
+The light quarks are expected to be adequately described by the \acrshort{qcd}
 lagrangian, and so those terms are retained:
 #+BEGIN_LaTeX
   \begin{equation}
@@ -554,17 +556,17 @@ Conversely $\chi$ is the Pauli spinor field for creating a heavy
 anti-quark, $D_t$ and $\mathbf{D}$ are the space-time components of
 the gauge covariant derivative $D^\mu$.  
 
-These two terms together describe QCD coupled with a Schrödinger
+These two terms together describe \acrshort{qcd} coupled with a Schrödinger
 theory for the heavy quarks \cite{Bodwin:1994jh}.  Since the
 Schrödinger terms were added as a non-relativistic expansion of the
 gauge-covariant derivative additional terms in the expansion must be
-included in order to fully describe the relativistic effects of QCD.
+included in order to fully describe the relativistic effects of \acrshort{qcd}.
 These terms are explained in detail in \cite{Bodwin:1994jh} and are
 contained in the $\delta\mathcal{L}$ term above.  
 
 Organizing the lagrangian in this way allows cross section formulas to
 be written as a dual expansion in the relative velocities of the heavy
-quarks and the QCD coupling constant $\alpha_s$.  This gives insight
+quarks and the \acrshort{qcd} coupling constant $\alpha_s$.  This gives insight
 into which effects dominate at what scale in the short and long
 distance interactions.  
 ** Factorization Theorem
@@ -653,8 +655,8 @@ explaining the effect \cite{Haberzettl:2007kj} \cite{Ma:2010yw}
 satisfactory.
 
 * Jet fragmentation
-Having examined the bound states QCD is capable of producing, it is
-now useful examine another aspect of QCD at a different energy scale:
+Having examined the bound states \acrshort{qcd} is capable of producing, it is
+now useful examine another aspect of \acrshort{qcd} at a different energy scale:
 the fate of a recoiling parton in a hard[fn:: Hard here refers to high
 energy, conversely soft refers to low energy.] interaction.
 Confinement makes it impossible for a parton to propagate through
@@ -664,7 +666,7 @@ and the shower of hadrons ultimately measured in the detector as a
 jet.
 
 As in the production of quarkonium states there are two energy scales
-which must be separated to make progress with the QCD processes.  The
+which must be separated to make progress with the \acrshort{qcd} processes.  The
 scale where perturbation theory can be applied is separated into what
 is called the parton shower.  The non-perturbative part of the process
 is the transition from partons into hadrons referred to as
@@ -717,7 +719,7 @@ $n+1$ partons is given by:
 |\mathcal{M}_{n+1}|^2 \sim \frac{4g^2}{t}\hat{P}_{bc}(z)|\mathcal{M}_n|^2
 \end{equation}
 #+END_LaTeX
-Here $g$ is the QCD coupling constant, $t\equiv p_a^2$ and
+Here $g$ is the \acrshort{qcd} coupling constant, $t\equiv p_a^2$ and
 $\hat{P}_{bc}$ is the unregularized splitting function for the final
 state partons. The gluon splitting function corresponding to Figure
 \ref{fig:g-to-gg} is:
@@ -795,7 +797,7 @@ shows an example of this process in an $e^+e^-$ event
 quarks it creates another string segment \cite{Ellis:1991qj}. The
 lines outgoing from the grey string segments represent the subsequent
 fragmentation of the string as described above. With a complete
-description of QCD, the allowed bound states, and the transition from
+description of \acrshort{qcd}, the allowed bound states, and the transition from
 a high energy parton to the hadrons ultimately measured by the
 detector it is time to discuss the actual measurement of particles at
 the Large Hadron Collider.
@@ -808,26 +810,26 @@ the Large Hadron Collider.
 #+LaTeX: \chapter{The ATLAS detector}
 #+LaTeX: \label{chap:detector}
 * The Large Hadron Collider
-The Large Hadron Collider (LHC) is the largest (in size and energy)
+The Large Hadron Collider (\acrshort{lhc}) is the largest (in size and energy)
 circular hadron collider in existence. The circumference of the
 colliding rings is 26.7 km and is buried between 45 m and 170 m below
-parts of Switzerland and France \cite{lhc-machine}. The LHC was built
+parts of Switzerland and France \cite{lhc-machine}. The \acrshort{lhc} was built
 based on infrastructure developed for the Large Electron Positron
 collider and utilizes the CERN accelerator complex in order to boost
-protons to the high energies required for circulating in the LHC
-tunnel. The LHC circulates beams of protons in opposite directions and
+protons to the high energies required for circulating in the \acrshort{lhc}
+tunnel. The \acrshort{lhc} circulates beams of protons in opposite directions and
 steers them into each other at four points around the accelerator
-ring. These four points are the sites of the major LHC experiments,
+ring. These four points are the sites of the major \acrshort{lhc} experiments,
 CMS, ATLAS, LHCb, and ALICE \cite{lhc-machine}. The data for this work
 was recorded in 2012 when the machine was configured to run each beam
 of protons at 4 TeV each for a center of mass energy $\sqrt{s}=8$ TeV.
 
-In order to collide protons, the LHC accelerates them through a series
+In order to collide protons, the \acrshort{lhc} accelerates them through a series
 of booster rings until they are injected into the main accelerator
-complex. Protons injected into the LHC are organized into bunches of
+complex. Protons injected into the \acrshort{lhc} are organized into bunches of
 10^11 protons. The bunches are spaced according to the frequency (400
 MHz) of the RF cavities which accelerate the particles. During the
-first run of the LHC, the bunches were spaced 50 ns apart which is
+first run of the \acrshort{lhc}, the bunches were spaced 50 ns apart which is
 twice the designed bunch spacing of 25 ns.
 
 In order to achieve this configuration of bunch crossings as well as
@@ -842,7 +844,7 @@ is known as quenching, and when it occurs all of the energy stored in
 the field is released. An unintended quench in 2008 led to a massive
 helium explosion and delayed the experiment by a year.
 
-Another aspect that is important to the smooth operation of the LHC is
+Another aspect that is important to the smooth operation of the \acrshort{lhc} is
 the vacuum in the beam pipe. In order to maximize beam lifetime and
 minimize experimental backgrounds the beam pipe must be kept as
 pristine as possible. This equates to a vacuum pressure of 10^{-10}
@@ -855,7 +857,7 @@ volume of hydrogen gas at STP results in $2.15\times 10^{24}$ atoms.
 This is a change in concentration of roughly 30 parts per quadrillion.
 
 ** Luminosity
-Many of the measurements made at the LHC boil down to counting
+Many of the measurements made at the \acrshort{lhc} boil down to counting
 experiments answering the question: "How many particles with
 properties $x$, $y$, and $z$ do I see?" These properties may be the
 transverse momentum ($p_T$), invariant mass ($m$), or rapidity ($y$).
@@ -896,7 +898,7 @@ convenient for back-of-the-envelope calculations of the expected
 number of events for a process: take the product of the data collected
 and the expected cross section to get the number of events.
 
-The instantaneous luminosity $L$ of the LHC is given by the following
+The instantaneous luminosity $L$ of the \acrshort{lhc} is given by the following
 formula:
 #+BEGIN_LaTeX
 \begin{equation}
@@ -913,7 +915,7 @@ denominator must be a unit of area from dimensional analysis. The
 transverse beam emittance is given by $\epsilon_n$ and $\beta^*$ is
 the value of the $\beta$ function at the IP. The two parameters
 $\epsilon_n$ and $\beta$ describe the major and semi-major axes of an
-ellipse which describes the transverse phase-space profile of the LHC
+ellipse which describes the transverse phase-space profile of the \acrshort{lhc}
 beam. Together they describe the effective area of the beam at the IP
 \cite{lhc-machine}.
 
@@ -943,9 +945,9 @@ reconstructed quantities that are largely insensitive to pileup
 effects.
 
 * The ATLAS detector
-\acrlong{atlas} (\acrshort{atlas}[fn:: ATLHCA doesn't have the same ring,
+\acrlong{atlas} (\acrshort{atlas}[fn:: AT\acrshort{lhc}A doesn't have the same ring,
 or status as a greek titan]) is one of the general purpose detectors
-at the LHC. It is located at Point 1 on the LHC ring. Figure
+at the \acrshort{lhc}. It is located at Point 1 on the \acrshort{lhc} ring. Figure
 \ref{fig:atlas-detector} shows a high level drawing of the detector,
 the detector itself is 44m long and 25 m tall[fn:: The detector weighs
 approximately 7000 tonnes. If the volume the detector contains were
@@ -1004,11 +1006,11 @@ each subsystem labeled. Figure \ref{fig:inner-detector-slice} shows a
 view of the inner detector for a wedge of the detector. Working radially outward from the IP, the
 ATLAS inner detector is comprised of three main components: the pixel
 detector (extending 45.5 mm $< R <$ 242 mm), the silicon strip
-detector (SCT) (extending 255 mm $< R <$ 549 mm), and the transition
-radiation tracker (TRT) (extending 554 mm $< R <$ 1082 mm). The pixel
-detector and SCT function based on semi-conductor technologies that
+detector (\acrshort{sct}) (extending 255 mm $< R <$ 549 mm), and the transition
+radiation tracker (\acrshort{trt}) (extending 554 mm $< R <$ 1082 mm). The pixel
+detector and \acrshort{sct} function based on semi-conductor technologies that
 allow them to measure the location of charged particles with high
-precision. The TRT operates based on transition radiation, a
+precision. The \acrshort{trt} operates based on transition radiation, a
 phenomenon that occurs when charged particles traverse different
 materials. During the transition between materials particles are very
 likely to emit radiation which is subsequently detected. Table
@@ -1019,12 +1021,12 @@ detector subsystems and their alignment tolerances.
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/IDLabeled.eps]] 
 
-#+CAPTION: A different view of the ATLAS inner detector taken from \cite{atlas-detector}. This shows the geometry of the pixel and SCT detectors focusing on the end caps and the TRT end cap.
+#+CAPTION: A different view of the ATLAS inner detector taken from \cite{atlas-detector}. This shows the geometry of the pixel and \acrshort{sct} detectors focusing on the end caps and the \acrshort{trt} end cap.
 #+NAME: fig:inner-detector-slice
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/inner_detector_section.png]] 
 
-#+CAPTION: Intrinsic accuracy and alignment tolerances of the inner detector. The lower accuracy of the axial dimension in the SCT is due to the intrinsic pitch of the SCT modules. The axial accuracy of the pixel detector is driven by fabrication constraints \cite{atlas-detector}.
+#+CAPTION: Intrinsic accuracy and alignment tolerances of the inner detector. The lower accuracy of the axial dimension in the \acrshort{sct} is due to the intrinsic pitch of the \acrshort{sct} modules. The axial accuracy of the pixel detector is driven by fabrication constraints \cite{atlas-detector}.
 #+NAME: tab:nom-id-accuracy
 |---------------+-------------------------+------------+-----------+------------------|
 |               | Intrinsic Accuracy      |  Alignment | Tolerance |        ($\mu m$) |
@@ -1035,10 +1037,10 @@ detector subsystems and their alignment tolerances.
 | Layer-0       | 10 ($R-\phi$) 115 ($z$) |         10 |        20 |                7 |
 | Layer-1 and 2 | 10 ($R-\phi$) 115 ($z$) |         20 |        20 |                7 |
 | End cap       | 10 ($R-\phi$) 115 ($R$) |         20 |       100 |                7 |
-| *SCT*         |                         |            |           |                  |
+| *\acrshort{sct}*         |                         |            |           |                  |
 | Barrel        | 17 ($R-\phi$) 580 ($z$) |        100 |        50 |               12 |
 | End cap       | 17 ($R-\phi$) 580 ($R$) |         50 |       200 |               12 |
-| *TRT*         | 130                     |            |           |               30 |
+| *\acrshort{trt}*         | 130                     |            |           |               30 |
 |---------------+-------------------------+------------+-----------+------------------|
 *** Semiconductor based detectors
 The pixel detector and the silicon strip tracker utilize the
@@ -1083,12 +1085,12 @@ pixel detector.
 [[file:figures/Module_overview.eps]] 
 
 *** Silicon Strip Detector
-Continuing radially outward is the Silicon Strip Detector (SCT). The
-SCT follows the modular design of the pixel detector but with less
+Continuing radially outward is the Silicon Strip Detector (\acrshort{sct}). The
+\acrshort{sct} follows the modular design of the pixel detector but with less
 axial resolution than the pixel detector. Table
 \ref{tab:nom-id-accuracy} shows the nominal resolution and alignment
-tolerances of the SCT. Each SCT module has five degrees of freedom
-which must be corrected for during alignment and calibration. The SCT
+tolerances of the \acrshort{sct}. Each \acrshort{sct} module has five degrees of freedom
+which must be corrected for during alignment and calibration. The \acrshort{sct}
 barrel module layout is shown in Figure \ref{fig:sct-module}. One
 barrel module has two layers of strips set at a 80 $\mu m$ pitch over
 6cm in order to give a trapezoidal geometry \cite{atlas-detector}. The
@@ -1096,38 +1098,38 @@ end cap modules follow a similar construction but a slightly different
 geometry in how the strips are arranged. The strips in the end cap
 modules are set at various pitches, but have an inter-strip angle in
 order to cover the radial plane better \cite{atlas-detector}.
-#+CAPTION: Illustration of an SCT barrel module, note the two layers of silicon sensors and their relative pitch.  Each module is 6cm long. Figure taken from \cite{atlas-detector}. 
+#+CAPTION: Illustration of an \acrshort{sct} barrel module, note the two layers of silicon sensors and their relative pitch.  Each module is 6cm long. Figure taken from \cite{atlas-detector}. 
 #+NAME: fig:sct-module
 #+ATTR_LATEX: :width 0.75\linewidth 
 [[file:figures/sct_barrel_module.png]] 
 
-When charged particles pass through the SCT, they trigger the readout
-of various strips within the SCT. If only two strips are read out,
+When charged particles pass through the \acrshort{sct}, they trigger the readout
+of various strips within the \acrshort{sct}. If only two strips are read out,
 then the approximate location of the particle can be inferred from the
 closest crossing of the two strips. If the charged particle passes the
-SCT module while another strip is active (which is possible in the
+\acrshort{sct} module while another strip is active (which is possible in the
 high occupancy environment of ATLAS) an ambiguity arises as to where
 the charged particle passed. Figure \ref{fig:sct-strip-geometry} shows
 this situation. The trapezoidal geometry creates a large enough
 separation between the ambiguous hits that one can be rejected in
-favor of the other when information from the other SCT and pixel
+favor of the other when information from the other \acrshort{sct} and pixel
 layers is taken into account.
 
-#+CAPTION: Illustration of a charged particle interacting with the SCT strips.  Black strips indicate they have been read out, grey are inactive.  When three or more strips are active, an ambiguity in the location of the charged particle arises. 
+#+CAPTION: Illustration of a charged particle interacting with the \acrshort{sct} strips.  Black strips indicate they have been read out, grey are inactive.  When three or more strips are active, an ambiguity in the location of the charged particle arises. 
 #+NAME: fig:sct-strip-geometry
 #+ATTR_LATEX: :width 0.7\linewidth 
 [[file:figures/sct_strip_geometry.pdf]] 
 
 *** Transition Radiation Tracker
 The final inner detector subsystem is the transition radiation tracker
-(TRT). While the pixel and SCT detectors rely on semiconductor
-technology, the TRT utilizes ionization that occurs when a charged
+(\acrshort{trt}). While the pixel and \acrshort{sct} detectors rely on semiconductor
+technology, the \acrshort{trt} utilizes ionization that occurs when a charged
 particle traverses material of differing dielectric constants. This
 process depends on the species of the charged particle and can be used
 in particle identification \cite{Romaniouk:2021497}. For a thorough
 review of the physics of transition radiation see
 \cite{PhysRevD.12.1289}. Figure \ref{fig:inner-detector} shows the
-barrel and end cap TRT. The TRT is constructed from a series of
+barrel and end cap \acrshort{trt}. The \acrshort{trt} is constructed from a series of
 densely packed 298,304 straw tubes, 4mm in diameter, which each
 contain an anode wire at the center \cite{alignment}\cite{trt-barrel}.
 The anode is a gold-plated tungsten wire. The gas circulated in the
@@ -1136,7 +1138,7 @@ in order to reduce the time that ionized particles recombine with
 atoms \cite{alignment}. This maximizes the ability to read out when a
 charged particle passes through the tube. The interstitial space
 between the straw tubes is a polypropylene foam which encourages
-charged particles to ionize when the pass through the TRT volume
+charged particles to ionize when the pass through the \acrshort{trt} volume
 allowing for the identification of electrons. In the end caps, the
 interstitial volume contains foil for the same purpose
 \cite{alignment}.
@@ -1149,7 +1151,7 @@ anode. When the collected charge rises above a threshold it is
 considered a hit and the time-over-threshold allows the determination
 of the radius R in figure \ref{fig:trt-illustration}. This information
 is then used for the overall reconstruction of charged particle tracks
-in conjunction with the information from the SCT and pixel detectors.
+in conjunction with the information from the \acrshort{sct} and pixel detectors.
 #+CAPTION: As a charged particle ionizes the gas inside the straw
 #+CAPTION: tube, charge is collected over time as shown in the blue profiles
 #+CAPTION: indicated by the numbers in the straw tubes. When the particle passes
@@ -1178,7 +1180,7 @@ a hole \cite{trt-figs}.
     \subfloat[]{
       \includegraphics[width=0.8\textwidth]{figures/trt_hit_def.pdf}
     }\qquad \caption{\label{fig:trt-hit-defs} Definition of hit qualities
-    used by TRT reconstruction \cite{trt-figs}}
+    used by \acrshort{trt} reconstruction \cite{trt-figs}}
   \end{figure}
 #+END_LaTeX
 ** Calorimeter systems
@@ -1189,10 +1191,10 @@ Calorimeters at ATLAS use an interleaved geometry of scintillation
 material and a dense absorbing material for stopping impinging
 particles. Scintillation light is collected along fiber optic cables
 and read out using photo multipliers. There are two main calorimeter
-systems, the electronic calorimeter (ECAL) and the hadronic
-calorimeter (HCAL). The ECAL is designed to fully stop and measure
-electrons and photons. Hadrons deposit some energy in the ECAL, but
-typically make it to the HCAL before fully stopping and depositing
+systems, the electronic calorimeter (\acrshort{ecal}) and the hadronic
+calorimeter (\acrshort{hcal}). The \acrshort{ecal} is designed to fully stop and measure
+electrons and photons. Hadrons deposit some energy in the \acrshort{ecal}, but
+typically make it to the \acrshort{hcal} before fully stopping and depositing
 their entire energy.
 
 It is important to note the contrast between how the inner detector
@@ -1219,36 +1221,36 @@ fraction of hadrons produced in events of interest to this analysis.
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/calorimeter_labeled.pdf]] 
 
-As with other subsystems in ATLAS, the ECAL consists of separate
+As with other subsystems in ATLAS, the \acrshort{ecal} consists of separate
 barrel and end-cap detectors with slightly different geometries.
-Figure \ref{fig:ecal-barrel-module} shows a segment of the ECAL
-system. The ECAL utilizes an accordion geometry to ensure that more
+Figure \ref{fig:ecal-barrel-module} shows a segment of the \acrshort{ecal}
+system. The \acrshort{ecal} utilizes an accordion geometry to ensure that more
 than one layer is actively scintillating when an electron or photon is
 depositing its energy in the calorimeter this provides full coverage
-in the $\phi$ direction. The ECAL is finely segmented in $\eta$
+in the $\phi$ direction. The \acrshort{ecal} is finely segmented in $\eta$
 ($\Delta \eta = 0.0031$) close to the inner detector and less so in
-the bulk of the detector ($\Delta \eta = 0.025$). The end of the ECAL
+the bulk of the detector ($\Delta \eta = 0.025$). The end of the \acrshort{ecal}
 is covered with coarse "trigger towers" with a segmentation of $\Delta
 \eta=0.1$ \cite{atlas-detector}. These towers are used to trigger on
 events where a coarse estimate of the event's energy is needed to
-decide if the event should be recorded or not. The ECAL's
+decide if the event should be recorded or not. The \acrshort{ecal}'s
 scintillation material is liquid Argon (LAr), which is chosen for its
 intrinsic radiation hardness and its ability to scintillate
-\cite{atlas-detector}. Lead is used as the absorber in the ECAL. Lead
+\cite{atlas-detector}. Lead is used as the absorber in the \acrshort{ecal}. Lead
 is an ideal choice due to its high density and the compact nature of
-the ECAL compared to the HCAL.
+the \acrshort{ecal} compared to the \acrshort{hcal}.
 
-#+CAPTION: Illustration of the ECAL granularity and geometry of a module \cite{atlas-detector}. 
+#+CAPTION: Illustration of the \acrshort{ecal} granularity and geometry of a module \cite{atlas-detector}. 
 #+NAME: fig:ecal-barrel-module
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/em_calorimeter_module.pdf]] 
 
-While the ECAL utilizes a accordion geometry, the HCAL utilizes a
-slightly different form. The absorption material in the HCAL is steel,
+While the \acrshort{ecal} utilizes a accordion geometry, the \acrshort{hcal} utilizes a
+slightly different form. The absorption material in the \acrshort{hcal} is steel,
 the scintillation material is a plastic based on polystyrene doped
-with fluors \cite{atlas-detector}. The HCAL is separated into the
+with fluors \cite{atlas-detector}. The \acrshort{hcal} is separated into the
 barrel region referred to as the tile calorimeter, and the forward
-region covered by the hadronic end-cap calorimeters (HEC). The
+region covered by the hadronic end-cap calorimeters (\acrshort{hec}). The
 calorimeter is segmented into regions of $\Delta \phi \times \Delta
 \eta = 0.1 \times 0.1$ for $|\eta| < 2.5$ and $\Delta \phi \times
 \Delta \eta = 0.2 \times 0.2$ for larger values of $\eta$
@@ -1259,7 +1261,7 @@ of the tile unit. The fiber optic cable is 3mm thick and has an
 emission peak at 476 nm \cite{atlas-detector}. This means the light
 that is optimally transmitted by the cables is a blue-cyan color.
 Figure \ref{fig:hcal-endcap} shows the geometry and segmentation of
-the a HEC module.
+the a \acrshort{hec} module.
 
 #+BEGIN_LaTeX
   \begin{figure}[htp]
@@ -1271,7 +1273,7 @@ the a HEC module.
     \subfloat[]{
      \includegraphics[width=0.5\textwidth]{figures/hcal-barrel-module.pdf}
     }\qquad \caption{\label{fig:hcal-barrel-module} Illustration of the
-    HCAL module's scintillation and absorber geometry \cite{atlas-detector}. Figure
+    \acrshort{hcal} module's scintillation and absorber geometry \cite{atlas-detector}. Figure
     \ref{fig:hcal-barrel-module-phi} shows the layout of the tile
     calorimeter from the azimuthal view. }
   \end{figure}
@@ -1284,7 +1286,7 @@ the a HEC module.
 
 ** Muon Spectrometer
 Many important Standard Model processes decay to two leptons. When
-these leptons are electrons, they are reconstructed in the ECAL and
+these leptons are electrons, they are reconstructed in the \acrshort{ecal} and
 inner detector. When they are muons, they are detected and
 reconstructed using the Muon Spectrometer. These detector subsystems
 are the outer most portion of ATLAS. Portions of the spectrometer are
@@ -1292,8 +1294,8 @@ immersed in ATLAS's signature toroid shaped magnetic field. The toroid
 causes the muons to bend along the $z$ axis allowing for a more
 precise measurement of the three-momentum of the particle. The mass of
 the muon, relative to the electron, makes it much less likely to
-initiate a bremsstrahlung cascade as it passes through the ECAL and
-HCAL \cite{Agashe:2014kda}. This allows it to reach the outer region
+initiate a bremsstrahlung cascade as it passes through the \acrshort{ecal} and
+\acrshort{hcal} \cite{Agashe:2014kda}. This allows it to reach the outer region
 of the detector where its location can be measured as precisely as
 possible. 
 #+CAPTION: The muon spectrometer at ATLAS \cite{atlas-detector}
@@ -1304,8 +1306,8 @@ possible.
 ATLAS utilizes a various detector technologies in order to measure the
 momentum of a 1 TeV muon within 10% of its nominal value
 \cite{atlas-detector}. To achieve this, the muon spectrometer consists
-of monitored drift tubes (MDTs), cathode strip chambers (CSCs),
-resistive plate chambers (RPCs) and thin gap chambers (TGCs). Each of
+of monitored drift tubes (\acrshort{mdt}s), cathode strip chambers (\acrshort{csc}s),
+resistive plate chambers (\acrshort{rpc}s) and thin gap chambers (\acrshort{tgc}s). Each of
 these systems functions differently and serves slightly different
 purposes. Figure \ref{fig:muon-spec} shows the muon spectrometer.
 Table \ref{tab:muon-spec} lists the relevant numbers and coverage of
@@ -1359,12 +1361,12 @@ the muon spectrometer \cite{atlas-detector}.
 #+END_LaTeX
 *** Monitored Drift Tube
 The underlying physics driving the function of the monitored drift
-tube is the same as the straw tubes in the TRT. The diameter of the
+tube is the same as the straw tubes in the \acrshort{trt}. The diameter of the
 drift tube is significantly larger (29.970mm) and the gas used is a
 mix of CO_2 (7%) and Ar (93%). The central anode is a tungsten-rhenium
 wire and is held at 3080V \cite{atlas-detector}. Figure
-\ref{fig:ms-mdt} shows the front and side view of the MDT. Figure
-\ref{fig:ms-mdt-module} shows how the MDTs fit together to form a
+\ref{fig:ms-mdt} shows the front and side view of the \acrshort{mdt}. Figure
+\ref{fig:ms-mdt-module} shows how the \acrshort{mdt}s fit together to form a
 module.
 #+BEGIN_LaTeX
   \begin{figure}[htp]
@@ -1374,37 +1376,37 @@ module.
     }
     \subfloat[]{
      \includegraphics[width=0.7\textwidth]{figures/MDT_tube_longitudinal.pdf}
-    }\qquad \caption{\label{fig:ms-mdt} Illustration of a MDT showing
+    }\qquad \caption{\label{fig:ms-mdt} Illustration of a \acrshort{mdt} showing
     the cross section and longitudinal views \cite{atlas-detector}. }
   \end{figure}
 #+END_LaTeX
 
-#+CAPTION: A schematic of an MDT chamber utilized at atlas.  RO and HV correspond to read out and high voltage locations respectively \cite{atlas-detector}
+#+CAPTION: A schematic of an \acrshort{mdt} chamber utilized at atlas.  RO and HV correspond to read out and high voltage locations respectively \cite{atlas-detector}
 #+NAME: fig:ms-mdt-module
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/MDT_chamber_schematics.pdf]] 
 
-The green regions in Figure \ref{fig:ms-longitudinal} show the MDT
+The green regions in Figure \ref{fig:ms-longitudinal} show the \acrshort{mdt}
 chambers for the barrel region which are also illustrated in Figure
-\ref{fig:ms-mdt-module}. MDTs are also utilized in the light-blue
+\ref{fig:ms-mdt-module}. \acrshort{mdt}s are also utilized in the light-blue
 regions of \ref{fig:ms-longitudinal} as the end-cap chambers. They
 utlizes a trapezoidal geometry in order to better measure the radial
 location the muon traverses in the forward region
 \cite{atlas-detector}.
 
 *** Cathode Strip Chambers
-Cathode Strip chambers are utilized in the very forward regions of the
+Cathode Strip chambers (\acrshort{csc}s) are utilized in the very forward regions of the
 detector as illustrated in the yellow region of Figure
-\ref{fig:ms-longitudinal}. This was done because of the CSC's higher
+\ref{fig:ms-longitudinal}. This was done because of the \acrshort{csc}'s higher
 rate capability and time resolution \cite{atlas-detector}. The
-geometry of the CSC is shown in figure \ref{fig:csc-geometry}. The CSC
+geometry of the \acrshort{csc} is shown in figure \ref{fig:csc-geometry}. The \acrshort{csc}
 is also required for tagging the time of the beam crossing. This
 requires that the time resolution of the detector be very precise.
-Integrating a measurement over the layers of the CSC allows the
+Integrating a measurement over the layers of the \acrshort{csc} allows the
 measurement of the time of arrival with an RMS of 3.6 ns
 \cite{atlas-detector}.
 
-#+CAPTION: The geometry of CSC chambers at ATLAS \cite{atlas-detector}.
+#+CAPTION: The geometry of \acrshort{csc} chambers at ATLAS \cite{atlas-detector}.
 #+NAME: fig:csc-geometry
 #+ATTR_LATEX: :width 0.5\linewidth 
 [[file:figures/CSC_geometry.pdf]] 
@@ -1432,7 +1434,7 @@ cathode strips.
     \label{fig:csc-readout}
      \includegraphics[width=0.4\textwidth]{figures/CSC_readout.eps}
     }\caption{\label{fig:ms-csc-schematic} Left: Illustration of
-    CSC cathode and anode wires, The anode width $S$ is the same as the
+    \acrshort{csc} cathode and anode wires, The anode width $S$ is the same as the
     anode to cathode distance $d$. Right: Cathode strip width is
     $b=1.519$ mm. The readout pitch $a=5.308$ mm and 5.567 mm
     \cite{atlas-detector}. }
@@ -1440,45 +1442,45 @@ cathode strips.
 #+END_LaTeX
 
 *** Resistive Plate Chambers
-While the CSC and MDT utilize technologies to precisely measure the
+While the \acrshort{csc} and \acrshort{mdt} utilize technologies to precisely measure the
 location of muons passing in the muon spectrometer, resistive plate
-chambers (RPCs) and thin gap chambers (TGCs) are primarily used to
+chambers (\acrshort{rpc}s) and thin gap chambers (\acrshort{tgc}s) are primarily used to
 trigger on muons by providing a coarse estimate of where and when a
 muon traversed the detector. The triggering system in ATLAS is covered
 in detail in Section [[Trigger]]. Figure \ref{fig:rpc-tgc-trigger} shows
-the RPC and TGC chambers that provide the readouts allowing fast
-triggering on muons. The RPC systems are able to trigger on muons with
+the \acrshort{rpc} and \acrshort{tgc} chambers that provide the readouts allowing fast
+triggering on muons. The \acrshort{rpc} systems are able to trigger on muons with
 momentum between 9-35 GeV or 6-9 GeV depending on which system fires
-\cite{atlas-detector}. The RPC consists of two layers of dielectric
+\cite{atlas-detector}. The \acrshort{rpc} consists of two layers of dielectric
 separated by a 2mm gap filled with gas. When a particle impinges on
 the plates, the ionized charge flows between the dielectric plates
 which is subsequently read out by metal plates via capacitive coupling
 \cite{atlas-detector}. Figure \ref{fig:rpc-readout} shows the layout
-of the RPC readout strips in relation to the dielectric inserted
-between the copper grounding plates. The RPCs also provide an
+of the \acrshort{rpc} readout strips in relation to the dielectric inserted
+between the copper grounding plates. The \acrshort{rpc}s also provide an
 additional measurement in the non-bending $\phi$ direction to
-complement the MDT measurement \cite{atlas-detector}.
+complement the \acrshort{mdt} measurement \cite{atlas-detector}.
 
-#+CAPTION: Layout of TGC and RPC chambers at ATLAS used to reconstruct muons \cite{atlas-detector}. 
+#+CAPTION: Layout of \acrshort{tgc} and \acrshort{rpc} chambers at ATLAS used to reconstruct muons \cite{atlas-detector}. 
 #+NAME: fig:rpc-tgc-trigger
 #+ATTR_LATEX: :width 0.75\linewidth 
 [[file:figures/RPC_TGC_schematics.pdf]] 
  
-#+CAPTION: Schematic of the RPC readout strips \cite{atlas-detector}. 
+#+CAPTION: Schematic of the \acrshort{rpc} readout strips \cite{atlas-detector}. 
 #+NAME: fig:rpc-readout
 #+ATTR_LATEX: :width 0.75\linewidth 
 [[file:figures/RPC_readout_strips_5.pdf]] 
 *** Thin Gap Chambers
-The TGC serves a similar purpose as the RPCs do. They are the magenta
-regions of Figure \ref{fig:rpc-tgc-trigger}. TGCs and RPCs operate
+The \acrshort{tgc} serves a similar purpose as the \acrshort{rpc}s do. They are the magenta
+regions of Figure \ref{fig:rpc-tgc-trigger}. \acrshort{tgc}s and \acrshort{rpc}s operate
 using similar physical processes but differ in the materials used
-\cite{atlas-detector}. The region of the TGC filled with gas is 2.8 mm
+\cite{atlas-detector}. The region of the \acrshort{tgc} filled with gas is 2.8 mm
 wide. The gas mixture is CO_2 and n-pentane which results in a lower
 gas gain. The anodes are held at a potential of 2.9 kV. The operating
-parameters of the TGC allow it to read out signals within 25ns
+parameters of the \acrshort{tgc} allow it to read out signals within 25ns
 \cite{atlas-detector}. Figure \ref{fig:tgc-layout} shows a schematic
-of a TGC module at ATLAS.
-#+CAPTION: Schematic of the TGC layout. G-10 is a glass reinforced epoxy laminate \cite{atlas-detector}. 
+of a \acrshort{tgc} module at ATLAS.
+#+CAPTION: Schematic of the \acrshort{tgc} layout. G-10 is a glass reinforced epoxy laminate \cite{atlas-detector}. 
 #+NAME: fig:tgc-layout
 #+ATTR_LATEX: :width 0.75\linewidth 
 [[file:figures/TGC_structure.pdf]] 
@@ -1489,8 +1491,8 @@ the charged particles passing through the inner detector and muon
 spectrometer \cite{Cornelissen:2008zzc}. Broadly speaking, track
 reconstruction starts using an "inside-out" approach beginning with
 information from the pixel detector, ambiguity resolution of silicon
-hit information, extension to the TRT, and finally an "outside-in"
-approach beginning from the TRT working backwards
+hit information, extension to the \acrshort{trt}, and finally an "outside-in"
+approach beginning from the \acrshort{trt} working backwards
 \cite{Cornelissen:2008zzc}. This ensures that processes which leave
 tracks in the outer parts of the detector but not in the innermost
 silicon layers still get reconstructed. Such processes are long-lived
@@ -1528,28 +1530,28 @@ tracks reconstructed during track seeding. Hits associated to tracks
 that lead to better track quality are scored higher than those that do
 not. Similarly, poor quality hits are scored lower than high quality
 ones. After resolving ambiguous hits the resulting tracks are extended
-into the TRT volume. TRT hits which lie along the reconstructed tracks
-are associated with each track. The software requires that adding TRT
+into the \acrshort{trt} volume. \acrshort{trt} hits which lie along the reconstructed tracks
+are associated with each track. The software requires that adding \acrshort{trt}
 hits to the track does not modify the tracks extracted by the silicon
 hits of the previous steps \cite{Cornelissen:2008zzc}. Figure
-\ref{fig:trt-ttbar} shows the TRT extension procedure for a simulated
-$t\bar{t}$ event at ATLAS, red TRT hits are associated with the tracks
-reconstructed in the silicon layers. After TRT hits are associated to
+\ref{fig:trt-ttbar} shows the \acrshort{trt} extension procedure for a simulated
+$t\bar{t}$ event at ATLAS, red \acrshort{trt} hits are associated with the tracks
+reconstructed in the silicon layers. After \acrshort{trt} hits are associated to
 the tracks, the inside-out sequence is halted.
 
-#+CAPTION: A simulated $t\bar{t}$ event illustrating the TRT extension procedure.  Red TRT hits are associated with tracks represented by red hits in the silicon layers \cite{Cornelissen:2008zzc}. 
+#+CAPTION: A simulated $t\bar{t}$ event illustrating the \acrshort{trt} extension procedure.  Red \acrshort{trt} hits are associated with tracks represented by red hits in the silicon layers \cite{Cornelissen:2008zzc}. 
 #+NAME: fig:trt-ttbar
 #+ATTR_LATEX: :width 0.75\linewidth 
 [[file:figures/ttbar_trt_extension.pdf]] 
 *** Outside-in sequence
 There are a number of physical processes which cause tracks which
-appear in the TRT to not be reconstructed during the inside-out
+appear in the \acrshort{trt} to not be reconstructed during the inside-out
 reconstruction. These include long-lived decays as well as tracks that
 did not survive the ambiguity solving during the inside-out
 reconstruction. Hits not associated with tracks are considered in
 track finding and the resulting tracks are extended into the silicon
 to further associate hits to the tracks. Electrons lose significant
-amounts of energy in the TRT which makes the gaussian assumption
+amounts of energy in the \acrshort{trt} which makes the gaussian assumption
 underlying the performance of the Kalman filter fail. Different
 pattern recognition techniques are used to reconstruct these tracks
 with a high efficiency \cite{Cornelissen:2008zzc}.
@@ -1586,10 +1588,10 @@ field \cite{Salzburger:1038100}.
 [[file:figures/atlas_bfield.pdf]] 
 
 ** Trigger
-At the design luminosity at the LHC, there are approximately 10^{18}
+At the design luminosity at the \acrshort{lhc}, there are approximately 10^{18}
 interactions per second.  The information describing each event takes
 1.8 MB of disk space.  The hardware available at the time of the
-construction of the LHC means that only 200 events can be written per
+construction of the \acrshort{lhc} means that only 200 events can be written per
 second (ie a bandwidth of 2.6 GB/s) \cite{atlas-detector}. A
 sophisticated system of hardware and software algorithms select events
 to be saved for further analysis. The entire system is referred to as
@@ -1600,29 +1602,31 @@ first line of selection on the particles produced in collisions.
 The trigger is comprised of three levels, each considering more of the
 detector information than the last, and each refining the estimates of
 the physics objects in the event. The first level, (L1) is implemented
-at the hardware level. The L1 uses the RPC and TGC chambers of the
-muon spectrometer, and coarse information from the calorimeters for
-identification of $\tau$ leptons, electrons, jets, and missing
-transverse energy. The L1 accept rate is 75 kHz and the decision must
-reach the front end electronics in 2.5 $\mu$s.  The L1 trigger also
-creates regions of interest (RoI) which identify locations in
-$\eta-\phi$ space for further consideration by the level 2 (L2)
-trigger \cite{atlas-detector}.  
+at the hardware level. The L1 uses the \acrshort{rpc} and
+\acrshort{tgc} chambers of the muon spectrometer, and coarse
+information from the calorimeters for identification of $\tau$
+leptons, electrons, jets, and missing transverse energy. The L1 accept
+rate is 75 kHz and the decision must reach the front end electronics
+in 2.5 $\mu$s. The L1 trigger also creates regions of interest
+(\acrshort{roi}) which identify locations in $\eta-\phi$ space for
+further consideration by the level 2 (L2) trigger
+\cite{atlas-detector}.
 
-The L2 trigger and the event filter (EF) constitute the high level
-trigger (HLT). The L2 trigger reduces the event rate to 2.5 kHz. The
-L2 trigger inspects the RoIs identified by the L1 trigger. The L2
-trigger consists of a processing farm which runs partial event
-reconstruction in order to further refine the event rate. The output
-of the L2 trigger is passed onto the EF. The EF runs the full atlas
-reconstruction software on the event. A final decision is made on the
-reconstructed physics objects and are written out to disk
-\cite{atlas-detector}. This analysis uses the following trigger chain:
-=L1_MU15= $\rightarrow$ =L2_mu36_tight= $\rightarrow$ =EF_mu36_tight=. The
-L1 trigger requires a roughly identified muon with $p_T > 15 GeV$. The
-L2 and EF triggers require a muon with $p_T > 36 GeV$. There are low
-$p_T$ dimuon triggers available for $J/\psi$ reconstruction but they
-degrade in efficiency at the high $p_T$ explored by this analysis
+The L2 trigger and the event filter (\acrshort{ef}) constitute the
+high level trigger (HLT). The L2 trigger reduces the event rate to 2.5
+kHz. The L2 trigger inspects the \acrshort{roi}s identified by the L1
+trigger. The L2 trigger consists of a processing farm which runs
+partial event reconstruction in order to further refine the event
+rate. The output of the L2 trigger is passed onto the \acrshort{ef}.
+The \acrshort{ef} runs the full atlas reconstruction software on the
+event. A final decision is made on the reconstructed physics objects
+and are written out to disk \cite{atlas-detector}. This analysis uses
+the following trigger chain: =L1_MU15= $\rightarrow$ =L2_mu36_tight=
+$\rightarrow$ =EF_mu36_tight=. The L1 trigger requires a roughly
+identified muon with $p_T > 15 GeV$. The L2 and \acrshort{ef} triggers
+require a muon with $p_T > 36 GeV$. There are low $p_T$ dimuon
+triggers available for $J/\psi$ reconstruction but they degrade in
+efficiency at the high $p_T$ explored by this analysis
 \cite{Picazio:1419765}.
 
 #+LaTeX: \chapter{Event Reconstruction and Selection}
@@ -1729,7 +1733,7 @@ hadronization of partons to be reconstructed by the detector. This
 section describes how the detector level objects are grouped together
 to form candidates which represent the originating parton in those
 interactions. When a single hard parton showers and subsequently
-hadronizes, the QCD radiation emitted is typically collinear with the
+hadronizes, the \acrshort{qcd} radiation emitted is typically collinear with the
 parton. This results in hadrons which are collimated in the detector.
 
 A rigorous jet definition simultaneously captures the momentum of the
@@ -1802,12 +1806,12 @@ embedded radiation as possible. The tracks considered in
 reconstruction must be high quality. In order to achieve this, they
 must have a minimum $p_T$ of 500 MeV, a maximum absolute
 pseudo-rapidity, $|\eta| < 2.5$, at least one hit in the pixel
-detector and 6 SCT hits. Finally the fit $\chi^2$ must be at most 3.
-Impact parameter cuts (see Figure \ref{fig:perigee}) $z_0\sin(\theta)
-< 1.5$ and $d_0 < 1.0$ are also applied. The final set of jets that
-are reconstructed must be central to the detector $|\eta| < 2.5$ and
-must have high transverse momentum $p_T > 45$ GeV. Finally, the
-$J/\psi$ and the jet must be within $\Delta R < 0.4$ (the
+detector and 6 \acrshort{sct} hits. Finally the fit $\chi^2$ must be
+at most 3. Impact parameter cuts (see Figure \ref{fig:perigee})
+$z_0\sin(\theta) < 1.5$ and $d_0 < 1.0$ are also applied. The final
+set of jets that are reconstructed must be central to the detector
+$|\eta| < 2.5$ and must have high transverse momentum $p_T > 45$ GeV.
+Finally, the $J/\psi$ and the jet must be within $\Delta R < 0.4$ (the
 reconstructed jet radius).
 
 * Observables
@@ -1875,10 +1879,10 @@ for the singlet and octet components available for simulation
 #+LaTeX: \chapter{Analysis Methods}
 #+LaTeX: \label{chap:analysis}
 * Likelihood Formalism
-The maximum likelihood (ML) fit method is a statistical method for
+The maximum likelihood (\acrshort{ml}) fit method is a statistical method for
 estimating parameters which describe the probability density function
-(PDF)[fn:: This section follows the notation in \cite{James:2006zz}
-which differs slightly from the notation used in literature.]. The PDF
+(\acrshort{pdf})[fn:: This section follows the notation in \cite{James:2006zz}
+which differs slightly from the notation used in literature.]. The \acrshort{pdf}
 can be motivated by physical first principles or empirically. The
 likelihood function is defined as the probability of a set of
 parameters given observed data. Maximizing the likelihood function
@@ -1892,12 +1896,12 @@ probability functions for observing a random variable $x$
 \end{equation}
 #+END_LaTeX
 Here $N$ is the number of observed events and $\bm{\theta}$ is a
-vector of parameters which describe the PDF[fn:: For example, in the
+vector of parameters which describe the \acrshort{pdf}[fn:: For example, in the
 function of a line $p(x| m, b)=mx+b$, the slope ($m$) and intercept of
 a line ($b$) are parameters of the variable $x$.]. It is important to
 note that the parameters $\theta_i$ do not represent a conditional
 probability. Instead, they are parameters of a function describing the
-PDF, independent of the random variable observed ($x_i$). Each
+\acrshort{pdf}, independent of the random variable observed ($x_i$). Each
 probability function $p(x| \bm{\theta})$ is normalized
 \cite{Barlow:1990vc}:
 #+BEGIN_LaTeX
@@ -1914,10 +1918,10 @@ maximize (minimize) the (negative) logarithm of the likelihood:
 \end{equation}
 #+END_LaTeX
 Equation \ref{eq:nll} is minimized over the parameters $\theta_j$. The
-value of these parameters represent the estimation of the PDF that
+value of these parameters represent the estimation of the \acrshort{pdf} that
 most likely describes the observed data, hence the name "maximum
 likelihood fit." The computational framework that allows the use of
-the ML fit is RooFit, a general purpose statistical tool for
+the \acrshort{ml} fit is RooFit, a general purpose statistical tool for
 performing and evaluating fits to data \cite{Verkerke:2003ir}. The
 algorithm used by RooFit to perform the minimization is a gradient
 descent called Minuit \cite{James:2004xla}.
@@ -1928,8 +1932,8 @@ likelihood that a particular event is signal or background depending
 on the parameters extracted from the fit. The technique used for this
 purpose is called sPlot \cite{Pivk:2004ty}. This method utilizes
 properties of the extended likelihood formalism to derive a set of
-weights representing categories parametrized by the PDFs used in the
-ML fit. SPlot requires that the normalization condition be relaxed
+weights representing categories parametrized by the \acrshort{pdf}s used in the
+\acrshort{ml} fit. SPlot requires that the normalization condition be relaxed
 such that for a given component of the likelihood function
 \cite{Barlow:1990vc}:
 #+BEGIN_LaTeX
@@ -1946,7 +1950,7 @@ This allows the re-expression of the negative log-likelihood function as \cite{P
 #+END_LaTeX
 In this expression $\mathcal{N}_{s}$ is the number of species (in this
 case, signal or background) to be separated, $N_j$ is the number of
-the $j^{\text{th}}$ species and $p_j$ is the PDF describing the
+the $j^{\text{th}}$ species and $p_j$ is the \acrshort{pdf} describing the
 $j^{\text{th}}$ species. SPlot also requires knowledge of the
 covariance matrix. This is can be estimated from the likelihood
 function by \cite{Pivk:2004ty}:
@@ -1956,7 +1960,7 @@ function by \cite{Pivk:2004ty}:
 V^{-1}(\hat{\bm{\theta}})_{ij} = \frac{\partial^2(-\mathcal{L}(x|\bm{\theta}_0))}{\partial N_i\partial N_j}
 \end{equation}
 #+END_LaTeX
-Here $\bm{\theta}_0$ are the parameters estimated from the ML fit.
+Here $\bm{\theta}_0$ are the parameters estimated from the \acrshort{ml} fit.
 With these ingredients it is possible to derive the weights required
 to reconstruct a histogram of the estimated signal. The expression
 obtained is:
@@ -1975,7 +1979,7 @@ weight is:
 W_S(x) = \frac{V_{SS} p_S(x) + V_{SB} p_B(x)}{N_Sp_S(x)+N_Bp_B(x)}
 \end{equation}
 #+END_LaTeX
-In this expression it is clear that the weight depends on the PDF for
+In this expression it is clear that the weight depends on the \acrshort{pdf} for
 the signal and background and is weighted by the covariance of these
 two components.  In the extreme case where signal and background are
 perfectly separated the covariance matrix is diagonal and the weight
@@ -1985,25 +1989,25 @@ reduces to:
 W_S(x) = \frac{\sigma_S p_S(x)}{N_Sp_S(x)+N_Bp_B(x)}
 \end{equation}
 #+END_LaTeX
-Where $\sigma_S$ is the variance of the signal PDF. This weight is
+Where $\sigma_S$ is the variance of the signal \acrshort{pdf}. This weight is
 applied per event and on average it reproduces the signal histogram.
 * Empirical Model
 In Section [[J/\psi reconstruction]] the two sources of background were
 introduced: non-prompt decays from $B$ hadrons distinguished by the
 $c\tau$ distribution and combinatoric events from the wrong pair of
 muons distinguished by the invariant mass of the di-muon pair
-$M_{\mu\mu}$. The fit to the data is parameterized by a joint PDF in
+$M_{\mu\mu}$. The fit to the data is parameterized by a joint \acrshort{pdf} in
 $M_{\mu\mu}$ and $c\tau$. The specific parameterization has been used
 previously to extract J/\psi events \cite{ATLAS-CONF-2015-024}. It is
 defined as:
 #+BEGIN_LaTeX
 \begin{equation}
-PDF(m,t) = \sum_{i} f_{i}(m)\cdot h_{i}(t)\otimes g(t)
+\acrshort{pdf}(m,t) = \sum_{i} f_{i}(m)\cdot h_{i}(t)\otimes g(t)
 \label{eq:pdf}
 \end{equation}
 #+END_LaTeX
-Here $\otimes$ is convolution while $\cdot$ is PDF multiplication. In
-the following $\oplus$ refers to a weighted sum of two PDF components
+Here $\otimes$ is convolution while $\cdot$ is \acrshort{pdf} multiplication. In
+the following $\oplus$ refers to a weighted sum of two \acrshort{pdf} components
 such that the result remains properly normalized. The individual fit
 components are listed in Table \ref{tab:fit-comps}. The function
 $g(t)$ is resolution function of the lifetime distribution. It is a
@@ -2024,7 +2028,7 @@ double-gaussian and is convolved with each lifetime component.
 |   5 | Non-coherent Background | $E_{3}(m)$                 | $E_{4}(\vert t\vert)$ |
 |-----+-------------------------+----------------------------+-----------------------|
 The choice of these specific functions and the components they model
-deserve explanation. The constructed PDF is a joint PDF in
+deserve explanation. The constructed \acrshort{pdf} is a joint \acrshort{pdf} in
 $M_{\mu\mu}$ (denoted $m$ in the fit) and $c\tau$ (denoted $t$ in the
 fit). This means that each component must have a mass component and a
 lifetime component. The shape used for the $J/\psi$ resonance in $m$
@@ -2051,8 +2055,8 @@ their impact on the systematic uncertainty.
 
 The signal component is defined as the prompt $J/\psi$ component; the
 remainder is background. The non-prompt component shares the same mass
-signal PDF, but has an exponential distribution in $t$. The remaining
-components of the PDF do not contribute to the estimate of real
+signal \acrshort{pdf}, but has an exponential distribution in $t$. The remaining
+components of the \acrshort{pdf} do not contribute to the estimate of real
 $J/\psi$ events. The portion of events which appear prompt but are
 from the wrong combination of muons, a constant function in mass and a
 delta function in $t$ are used. There is a portion of events which
@@ -2060,13 +2064,13 @@ appear to have a negative lifetime depending on the measurement of
 $L_{xy}$. This component is modeled as a double-sided exponential in
 $t$ and an exponential in $m$. The combinatoric background component
 is linear in $m$ and exponential in $t$. Including fractions which
-float to ensure the PDF is normalized, the fit includes fourteen free
+float to ensure the \acrshort{pdf} is normalized, the fit includes fourteen free
 parameters.
 
 Figure \ref{fig:fit-res-m} and Figure \ref{fig:fit-res-lt} shows the
 result of the simultaneous fit to the 2012 data set for the dimuon
 invariant mass distribution and pseudo-proper lifetime distribution
-respectively. Selected fitted values of the PDF are summarized in
+respectively. Selected fitted values of the \acrshort{pdf} are summarized in
 Table \ref{tab:fitres}.
 #+BEGIN_LaTeX
     \begin{figure}
@@ -2371,11 +2375,11 @@ of the measured value by the simulated detector (referred to as
 that were input to the detector simulation (referred to as "truth").
 The result is a two dimensional histogram whose axes range across the
 physical range of the variable. The ordered pair
-(truth,recoonstructed) are plotted and the histogram bin these values
+(truth, reconstructed) are plotted and the histogram bin these values
 fall into are accumulated. The resulting distribution is an estimate
 of the response matrix as defined in Equation \ref{eq:response-def}.
 In the limit of infinite simulated events, this histogram will
-converge to the PDF in equation \ref{eq:response-def}.
+converge to the \acrshort{pdf} in equation \ref{eq:response-def}.
 
 *** Validating the Method
 The crux of unfolding is to estimate an unknown truth distribution as
@@ -2421,7 +2425,7 @@ sources are listed in Table \ref{tab:monte-carlo}.
 | $c\bar{c}(^3S_{1}^{(1)})\rightarrow J/\psi$ |               0.307 |
 |---------------------------------------------+---------------------|
 
-Data is collected at the LHC in units called periods. Each period is
+Data is collected at the \acrshort{lhc} in units called periods. Each period is
 given an alphabetic designation. During the 2012 data taking there
 were ten distinct periods which amounted to a combined luminosity of
 $19.5\pm0.6~\text{fb}^{-1}$. The luminosity for each data period is
@@ -2547,6 +2551,33 @@ background subtraction technique is applied with this variation, and
 the difference from the nominal result is taken as the error for that
 part of the parametric model. 
 
+#+BEGIN_LaTeX
+      \begin{figure}
+        \centering
+        \subfloat[Resolution]{
+          \label{fig:tau-resolution}
+          \includegraphics[width=0.45\textwidth]{plots/tau_resolution_fit_final.pdf}
+        }\qquad
+        \subfloat[Combinatoric Mass]{
+          \label{fig:comb-mass}
+          \includegraphics[width=0.45\textwidth]{plots/mass_mass3_fit_final.pdf}
+        }\\
+        \subfloat[Mismeasured $L_{xy}$]{
+          \label{fig:tau-lifetime}
+          \includegraphics[width=0.45\textwidth]{plots/tau_lifetime_fit_final.pdf}
+        }\qquad
+        \subfloat[Crystal Ball]{
+          \label{fig:tau-lifetime}
+          \includegraphics[width=0.45\textwidth]{plots/mass_crystal_ball_alpha1_n1_fit_final.pdf}
+        } 
+        \caption{\label{fig:pdf-shapes} Fit variations for each source
+        of parameterization in the ML fit. The resolution function is
+        switched with a gaussian. The mass background polynomial is
+        varied. The symmetric lifetime component is made asymmetric. The
+        crystal ball parameters that are fixed are varied.} 
+    \end{figure}
+#+END_LaTeX
+
 *Resolution:* The resolution of the lifetime distribution is modeled
 with a double-gaussian. This allows two widths to float as well as
 their relative normalization to better capture the distribution
@@ -2664,21 +2695,21 @@ solution to the polarization puzzle may be found by examining the
 surrounding radiation in which $J/\psi$ production is embedded.
 
 The shape of the data, and the differences between how the $J/\psi$ is
-produced in the Fragmenting Jet Function (FJF) framework compared to
+produced in the Fragmenting Jet Function (\acrshort{fjf}) framework compared to
 Pythia suggest that modifying Pythia's treatment of the octet state
 shower may reduce disagreement between the data and the simulation.
 Furthermore, Pythia is the only general purpose Monte Carlo generator
-available that produces $J/\psi$ using the NRQCD description of
+available that produces $J/\psi$ using the \acrshort{nrqcd} description of
 $J/\psi$ production. This work indicates the need for more robust
 Monte Carlo simulations which better describe $J/\psi$ production in
 hadronic collisions. Work has been done to implement the partonic
-cross sections for NRQCD quarkonium states in Sherpa. If this work is
+cross sections for \acrshort{nrqcd} quarkonium states in Sherpa. If this work is
 published, Sherpa may provide a valuable cross check to Pythia's
 prediction. In addition, Sherpa is well placed to modify its treatment
 of the parton shower of the quarkonium state from the outset.
 
 This work provides new observables that may constrain the
-predictions from NRQCD in interesting ways. It may be possible to use
+predictions from \acrshort{nrqcd} in interesting ways. It may be possible to use
 the $z$ distribution to extract new LDMEs and subsequently compare to
 the $p_T$ spectrum (or vice versa). In the original incarnation of
 this work, other substructure variables were shown to discriminate
