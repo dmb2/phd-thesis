@@ -1,7 +1,8 @@
 (require 'org)
 (require 'ox-latex)
 (setq org-latex-pdf-process
-      '("latexmk -bibtex -pdflatex='pdflatex --shell-escape -interaction nonstopmode' -pdf -f %f"))
+      '("latexmk -bibtex -pdflatex='pdflatex --shell-escape -interaction nonstopmode' -pdf -f %f"
+	"makeglossaries %f"))
 
 (setf org-latex-default-packages-alist
       (remove '("" "fixltx2e" nil) org-latex-default-packages-alist))
@@ -16,7 +17,6 @@
                    "
 \\documentclass[]{dukedissertation}
 \\usepackage[backend=biber]{biblatex}
-\\usepackage[acronym]{glossaries}
 \\usepackage{color}
 \\usepackage{bm}
 \\usepackage{amsfonts}
@@ -25,6 +25,7 @@
 \\usepackage{subfig}
 \\usepackage{slashed}
 \\usepackage[version=3]{mhchem}
+\\usepackage[nomain,acronym,symbols,toc,automake]{glossaries}
 " 
                    ("\\section{%s}" . "\\section{%s}") 
                    ("\\subsection{%s}" . "\\subsection{%s}") 
