@@ -1,4 +1,4 @@
-#+TITLE:     A measurement of the radiation environment around prompt J/\psi events at ATLAS
+#+TITLE:     A Measurement of the Radiation Environment Around Prompt J/\psi Events at ATLAS
 #+AUTHOR:    David Bjergaard
 #+OPTIONS:   H:3 num:t toc:nil ':t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:nil
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
@@ -34,9 +34,11 @@
 
 
 #+BEGIN_LaTeX
-\dedication{
-To my wife.
-}
+\addcontentsline{toc}{chapter}{Dedication} 
+\chapter*{Dedication}
+\begin{flushright}
+\emph{To my wife.}
+\end{flushright}
 #+END_LaTeX
 #+BEGIN_LaTeX
 \tableofcontents
@@ -62,12 +64,12 @@ bound states of a quark and an anti-quark. The name is derived from
 the greek word "intermediate" or "mesos" ] lead to the proposal of the
 "eightfold way" \cite{PhysRev.125.1067}. The guiding principal of the
 eightfold way is to use the structure of a proposed $SU(3)\times
-SU(3)$ symmetry to explain the mesons and baryons known to date and to
-make strong predictions about new states that should be observed
-\cite{PhysRev.125.1067}. This organization of the particles hints at
-the existence of fundamental particles called /quarks/.
+SU(3)$ flavor symmetry to explain the mesons and baryons known to date
+and to make strong predictions about new states that should be
+observed \cite{PhysRev.125.1067}. This organization of the particles
+hints at the existence of fundamental particles called /quarks/.
 
-While the eightfold way provided an organizational scheme and strong
+While the eightfold way provided an organizational scheme and robust
 predictions of the relationships between the members of the baryon
 octet, experimental evidence for the existence of quarks came later.
 In 1971, Feynman published what is now known as the parton[fn:: Parton
@@ -78,8 +80,9 @@ the hadron as fundamental particles with physical properties. This is
 in contrast with the quark model of the eightfold way which did not
 describe quarks as physical particles. The parton model described many
 experimental results to a reasonable degree however there were some
-issues, namely a "fudge factor" to bring the calculations close enough
-to their experimental values to be compared \cite{PhysRevD.3.2706}.
+issues, namely a "fudge factor" to scale the numerical calculations
+close enough to their experimental values to be compared
+\cite{PhysRevD.3.2706}.
 
 The eightfold way and the parton model provided two complementary
 views of the structure of the hadron. The eightfold way provided a
@@ -89,13 +92,16 @@ parton model provided a physical picture for the structure of the
 hadron. Neither model provided a precise description of the underlying
 dynamics of the strong interaction.
 
-In November, 1973 Wilczek and Gross published their seminal paper on
-asymptotically free gauge theories \cite{PhysRevD.8.3633}. This paper
-laid the groundwork for what would become quantum chromodynamics (\acrshort{qcd})
-the theory underpinning the subject of this thesis. A year later in
-1974 the discovery of a new particle was announced independently by a
-group at Brookhaven National Lab (named the $J$) and a group at the
-Stanford Linear Accelerator (named the $\psi$)
+In November 1973, Wilczek and Gross published their seminal paper on
+asymptotically free gauge theories[fn:: H. David Politzer published a
+similar result in May of that year \cite{PhysRevLett.30.1346}, the
+three authors shared the Nobel Prize for Physics in 2004.]
+\cite{PhysRevD.8.3633}. This paper laid the groundwork for what would
+become quantum chromodynamics (\acrshort{qcd}) the theory underpinning
+the subject of this thesis. A year later in 1974 the discovery of a
+new particle was announced independently by a group at Brookhaven
+National Lab (named the $J$) and a group at the Stanford Linear
+Accelerator (named the $\psi$)
 \cite{PhysRevLett.33.1404}\cite{PhysRevLett.33.1406}. The joint
 discovery of the J/\psi lead to what is known colloquially as the
 "November revolution." The new particle provided a new piece of
@@ -104,19 +110,20 @@ to unravel the mysteries of the strong interaction.
 
 We now understand that hadrons are made up of quarks and gluons
 (partons in Feynman's parlance). In addition, the bound state of a
-quark and anti-quark of the same flavor are referred to as quarkonium.
-This name is reminiscent of positronium, the eletromagnetically bound
-state of a positron and electron. Many of the salient features of
-quarkonium mass spectrum can be understood with non-relativistic
-quantum mechanics and empirical models of the \acrshort{qcd} potential. Even with
-this deep understanding of nature's fundamental interactions, the
-J/\psi particle continues to perplex and confuse our understanding of
-\acrshort{qcd}. In 1992, the CDF collaboration at the Tevatron reported the first
-measurement of J/\psi and \psi(2S) production. They found the rate of
+heavy quark and anti-quark of the same flavor are referred to as
+quarkonium. This name is reminiscent of positronium, the
+eletromagnetically bound state of a positron and electron. Many of the
+salient features of the quarkonium mass spectrum can be understood
+with non-relativistic quantum mechanics and empirical models of the
+\acrshort{qcd} potential. Even with this deep understanding of
+nature's fundamental interactions, the J/\psi particle continues to
+perplex and confuse our understanding of \acrshort{qcd}. In 1992, the
+CDF collaboration at the Tevatron reported the first measurement of
+direct J/\psi and \psi(2S) production. They found the rate of
 production to be an order of magnitude more than the expectation from
 theory \cite{Abe:1992ww}. Two years later, Bodwin, Braaten and Lepage
-worked out many of the details of quarkonium production in \acrshort{qcd} using
-effective field theory \cite{Bodwin:1994jh}.
+worked out many of the details of quarkonium production in
+\acrshort{qcd} using effective field theory \cite{Bodwin:1994jh}.
 
 In 1997, the Tevatron updated its observation of the \psi system with
 more data. It reported the differential cross section of the J/\psi to
@@ -152,10 +159,10 @@ the differential production cross section of isolated, directly
 produced J/\psi particles. Little to no attention has been paid to the
 hadronic environment surrounding the charmonium system. If the
 charmonium is produced in a color singlet state, the surrounding
-radiation should be less than a charmonium state in a color octet
+radiation should be less than a $c\overline{c}$ pair in a color octet
 state.  
 
-A useful phenomenological model employed by Pythia [fn:: A generic
+A useful phenomenological model employed by Pythia[fn:: A generic
 Monte Carlo simulation program used in High Energy Physics] is to
 consider the charmonium system as a color-charged particle which can
 couple to gluons using rules of \acrshort{qcd} \cite{Sjostrand:2007gs}. As this
@@ -190,7 +197,7 @@ Chapter \ref{chap:theory} presents an overview of Quantum
 Chromodynamics, and the phenomena relevant for this work. Following
 that Chapter \ref{chap:detector} describes the \acrshort{lhc} and
 \acrshort{atlas} detector in detail. After describing the detecting
-apparatus, the methods of reconstructing jets and J/\psi candidates is
+apparatus, the methods of reconstructing jets and J/\psi candidates are 
 described in Chapter \ref{chap:reconstruction}. With a firm grasp of
 the theory and physical measurement of the particles, the next step is
 a description of the data analysis methods used in Chapter
@@ -231,33 +238,33 @@ quark is 4 GeV, and the top quark is forty times larger at 173 GeV
 determine the properties of the composite baryons and mesons.
 ** Lagrangian
 The formulation of a quantum theory for quark interactions requires a
-lagrangian which contains interaction terms which satisfy the SU(3)
+Lagrangian which contains interaction terms which satisfy the SU(3)
 symmetry group. The following summarizes the results in chapter 1 of
 "\acrshort{qcd} and Collider Physics" \cite{Ellis:1991qj}, for further details
 the reader is referred to that text.
 
 In order to derive a quantum theory, begin by writing the \acrshort{qcd}
-lagrangian in terms of a classical field plus a gauge fixing term, and
-a ghost term.
+Lagrangian in terms of a classical field plus a gauge fixing term, and
+a ghost term:
 #+BEGIN_LaTeX
   \begin{equation*}
-    \mathcal{L}_{\text{QCD}}=\mathcal{L}_{\text{Classical}}+\mathcal{L}_{\text{Gauge}} + \mathcal{L}_{\text{Ghost}}
+    \mathcal{L}_{\text{QCD}}=\mathcal{L}_{\text{Classical}}+\mathcal{L}_{\text{Gauge}} + \mathcal{L}_{\text{Ghost}}.
   \end{equation*}
 #+END_LaTeX
-In natural units ($\hbar=c=1$), the classical field lagrangian is:
+In natural units ($\hbar=c=1$), the classical field Lagrangian is
 #+BEGIN_LaTeX
   \begin{equation}
   \label{eq:qcd-classic}
-    \mathcal{L}_{\text{Classical}} = -\frac{1}{4}F^A_{\alpha\beta}F^{\alpha\beta}_A + \sum_{\text{flavors}}\overline{q}_a(i\slashed{D}-m)_{ab}q_b
+    \mathcal{L}_{\text{Classical}} = -\frac{1}{4}F^A_{\alpha\beta}F^{\alpha\beta}_A + \sum_{\text{flavors}}\overline{q}_a(i\slashed{D}-m)_{ab}q_b .
   \end{equation}
 #+END_LaTeX
 Here $\slashed{D}\equiv\gamma_\mu D^\mu$, and $F_{\alpha\beta}^A$ is
-the gluon field strength tensor:
+the gluon field strength tensor,
 #+BEGIN_LaTeX
   \begin{equation}
   \label{eq:qcd-tensor}
     F_{\alpha\beta}^A =
-    \partial_\alpha\mathcal{A}_\beta^A-\partial_\beta\mathcal{A}_\alpha^A - g f^{ABC}\mathcal{A}_\alpha^B\mathcal{A}_\beta^C
+    \partial_\alpha\mathcal{A}_\beta^A-\partial_\beta\mathcal{A}_\alpha^A - g f^{ABC}\mathcal{A}_\alpha^B\mathcal{A}_\beta^C .
   \end{equation}
 #+END_LaTeX
 The color indices $A,B,C$ run over the eight generators of the SU(3)
@@ -271,7 +278,7 @@ badly divergent because of the gauge invariance of the theory
 \cite{Peskin:1995ev} [fn:: See 9.4 Quantization of the Electromagnetic
 Field]. Following the Faddeev-Popov method of gauge fixing used in
 \cite{Ellis:1991qj} the following two terms are added to the
-lagrangian:
+Lagrangian:
 #+BEGIN_LaTeX
   \begin{align}
     \mathcal{L}_{\text{Gauge}} &= -
@@ -282,19 +289,19 @@ lagrangian:
 These terms serve to constrain the integral over the action to
 physical configurations exactly once \cite{Peskin:1995ev}. 
 ** Feyman Rules
-The Feynman rules for \acrshort{qcd} can be determined from the lagrangian by
+The Feynman rules for \acrshort{qcd} can be determined from the Lagrangian by
 finding the action ($S = \int \mathcal{L} d^4x$)and writing it in
-terms of a free field lagrangian $S_0$ and an interacting term $S_I$:
+terms of a free field Lagrangian $S_0$ and an interacting term $S_I$,
 #+BEGIN_LaTeX
   \begin{equation*}
-  S = S_0 + S_I
+  S = S_0 + S_I .
   \end{equation*}
 #+END_LaTeX
 Further by identifying $\partial^\alpha = -ip^\alpha$ as the momentum
 it is possible to write down the two point function for the quarks and
 gluons. This results in the Feynman rules shown in Figure
 \ref{fig:qcd-feyn-rules}.
-#+CAPTION: Feynman rules for \acrshort{qcd}, see \cite{Ellis:1991qj} for more details.
+#+CAPTION: Feynman rules for \acrshort{qcd}. The ghost terms have been excluded, see \cite{Ellis:1991qj} for more details.
 #+NAME: fig:qcd-feyn-rules
 #+ATTR_LATEX: :width \linewidth
 [[file:figures/qcd_rules.eps]]
@@ -329,24 +336,21 @@ vacuum than it is to increase the distance between two quarks further.
 This property of \acrshort{qcd} is referred to as confinement. 
 * Quarkonium
 The bound states and their properties are important to any theory of
-interactions. In \acrshort{qcd}, bound states consist of mesons and baryons in
-accordance with the rules outlined in Section [[Feyman Rules]]. When a
-meson forms a bound state with a quark and anti-quark of the same
-flavor it is referred to as a quarkonium state. This naming scheme is
-reminiscent of the positronium bound state from quantum mechanics in a
-coulomb potential. Quarkonium have a number of unique properties that
-make it an ideal system to study properties of \acrshort{qcd}. The bound state
-consists of a quark and its charge-conjugate. This provides a degree
-of symmetry not present in other meson systems. In heavy quarkonium
+interactions. In \acrshort{qcd}, bound states consist of mesons and
+baryons in accordance with the rules outlined in Section [[Feyman Rules]].
+Quarkonium have a number of unique properties that make it an ideal
+system to study properties of \acrshort{qcd}. The bound state consists
+of a quark and its charge-conjugate. This provides a degree of
+symmetry not present in other meson systems. In heavy quarkonium
 systems (charmonium and bottomonium), the mass scale is high enough
 that perturbation theory can provide useful answers relative to the
 cutoff energy scale $\Lambda_{\text{QCD}}\simeq 450~\text{MeV}$. The
-strength of the coupling strength of \acrshort{qcd} in the charmonium system is
-$\alpha_s(m_c)\approx0.24$ \cite{Bodwin:1994jh}. This is large enough
-that the perturbation series converges more slowly than one would
-hope. The higher mass of the bottom quark allows the bottomonium
-system a faster rate of convergence. At the bottom mass scale,
-$\alpha_s(m_b)\approx0.18$ \cite{Bodwin:1994jh}.
+strength of the coupling strength of \acrshort{qcd} in the charmonium
+system is $\alpha_s(m_c)\approx0.24$ \cite{Bodwin:1994jh}. This is
+large enough that the perturbation series converges more slowly than
+one would hope. The higher mass of the bottom quark allows the
+bottomonium system a faster rate of convergence. At the bottom mass
+scale, $\alpha_s(m_b)\approx0.18$ \cite{Bodwin:1994jh}.
 
 Before examining the consequences of a larger $\alpha_s$ in the
 charmonium system, it is useful to reproduce as much of the charmonium
@@ -375,55 +379,55 @@ undergraduate treatment of bound states allowed by the Coulomb
 potential \cite{Townsend:2000modern} \cite{Griffiths:2008zz}. A brief
 review of the important results are presented. The content of this
 section follows that of \cite{Ellis:1991qj} and uses a notation that
-makes the analogies between the coulomb potential and the \acrshort{qcd}
+makes the analogies between the Coulomb potential and the \acrshort{qcd}
 potential manifest. The existence of a solution is due to the
-spherical symmetry of the coulomb potential. This allows the system to
+spherical symmetry of the Coulomb potential. This allows the system to
 be solved by separation of variables and reduces the degrees of
-freedom to finding the one dimensional bound states due to the coulomb
-potential:
+freedom to finding the one dimensional bound states due to the Coulomb
+potential,
 #+BEGIN_LaTeX
   \begin{equation*}
-    U(r) = - \alpha/r
+    U(r) = - \alpha/r .
   \end{equation*}
 #+END_LaTeX
 Here $\alpha$ is the dimensionless fine structure constant, and takes
-a value of 1/137. The wavefunction is then written as:
+a value of 1/137. The wavefunction is then written as
 #+BEGIN_LaTeX
 \begin{equation}
-\psi(r,\theta,\phi) = R_{l,n}(r)Y^m_l(\theta,\phi)
+\psi(r,\theta,\phi) = R_{l,n}(r)Y^m_l(\theta,\phi) ,
 \end{equation}
 #+END_LaTeX
-Here $R_{l,n}(r)$ is the radial solution, and $Y^m_l(\theta,\phi)$ are
+here $R_{l,n}(r)$ is the radial solution, and $Y^m_l(\theta,\phi)$ are
 the spherical harmonic functions. The spherical harmonics $Y^m_l$
 arise from requiring angular momentum conservation. The radial
 functions are determined by finding the solutions to the
 time-independent Shroedinger equation. The energy eigenvalues are the
-well known Bohr energy levels:
+well known Bohr energy levels,
 #+BEGIN_LaTeX
 \begin{equation}
-E_n = - \frac{\mu\alpha^2}{2n^2}
+E_n = - \frac{\mu\alpha^2}{2n^2} . 
 \end{equation}
 #+END_LaTeX
 Here $\mu$ is the reduced mass of the system[fn:: $\mu\equiv
-\frac{m_1m_2}{m_1+m_2}$, In the case of positronium this is $m_e/2$].
-The characteristic length scale of the system is the Bohr radius:
+\frac{m_1m_2}{m_1+m_2}$, in the case of positronium this is $m_e/2$].
+The characteristic length scale of the system is the Bohr radius,
 #+BEGIN_LaTeX
   \begin{equation}
-  a_0 = \frac{1}{\mu \alpha}
+  a_0 = \frac{1}{\mu \alpha}. 
   \end{equation}
 #+END_LaTeX
 The ground state wave function is ($n=1,l=0,m=0$) \cite{Townsend:2000modern}:
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:1S1}
-\psi_{100}(r,\theta,\phi) = \frac{1}{\sqrt{\pi a_0^3}}e^{-r/a_0}
+\psi_{100}(r,\theta,\phi) = \frac{1}{\sqrt{\pi a_0^3}}e^{-r/a_0} .
 \end{equation}
 #+END_LaTeX
 The first radial excited state is ($n=2,l=1,m=0$) \cite{Townsend:2000modern}:
 #+BEGIN_LaTeX
   \begin{equation}
   \label{eq:3P0}
-  \psi_{210}(r,\theta,\phi) = \frac{1}{4\sqrt{2\pi a_0^3}}\frac{r}{a_0}e^{-r/(2a_0)}\cos\theta
+  \psi_{210}(r,\theta,\phi) = \frac{1}{4\sqrt{2\pi a_0^3}}\frac{r}{a_0}e^{-r/(2a_0)}\cos\theta .
   \end{equation}
 #+END_LaTeX
 These two states are important because they correspond to the first
@@ -456,20 +460,20 @@ approximation. The second reason potential models are successful is
 the fact that the probability of another gluon existing in the bound
 state is small \cite{Bodwin:1994jh}.
 
-Using a the coulomb eigenfunctions as a set of basis states and
+Using a the Coulomb eigenfunctions as a set of basis states and
 applying a perturbative potential provides a good description of the
 quarkonium spectrum. The perturbation used is due to the
-self-interaction of the gluons. 
+self-interaction of the gluons,
 #+BEGIN_LaTeX
 \begin{equation*}
-V(r)=Kr
+V(r)=Kr,
 \end{equation*}
 #+END_LaTeX 
-Here $K$ is the "string constant".  This term combined with the
-coulomb-like potential:
+here $K$ is the "string constant".  This term combined with the
+Coulomb-like potential, 
 #+BEGIN_LaTeX
   \begin{equation*}
-    U(r) = - \frac{4}{3}\frac{\alpha_s}{r}
+    U(r) = - \frac{4}{3}\frac{\alpha_s}{r}, 
   \end{equation*}
 #+END_LaTeX
 completes the model. The perturbation is confining at large distances
@@ -485,7 +489,7 @@ strings.
 [[file:figures/quarkonium_spectrum.eps]] 
 
 Figure \ref{fig:spectrum} shows the result of applying a more
-sophisticated potential model as a perturbation on the coulomb-like
+sophisticated potential model as a perturbation on the Coulomb-like
 eigenfunctions. This model has the asymptotic features of the string
 model and describes the data well \cite{Ellis:1991qj}.  The dashed
 lines are the theory prediction and the solid lines are the data.  The
@@ -499,7 +503,7 @@ description. Figure \ref{fig:spectrum} shows some disagreement in the
 numerical values for the mass eigenstates. Further, the potential
 model offers no way of calculating the differential cross section for
 production. This can be done using perturbation theory with the
-relativistic \acrshort{qcd} lagrangian. The leading order cross sections for
+relativistic \acrshort{qcd} Lagrangian. The leading order cross sections for
 J/\psi production were calculated in the early 80s
 \cite{Baier:1983va}. After the measurement of the J/\psi and \psi(2S)
 by the Tevatron in the early 90s, the disparity between the leading
@@ -514,41 +518,41 @@ Rather than take an explicit expansion of the \acrshort{qcd} Lagrangian
 (\ref{eq:qcd-classic}), it is informative to build a Lagrangian which
 is equivalent to the fully relativistic version. In this case recall
 that the non-relativistic expansion for the energy of a particle is
-the classical kinetic energy:
+the classical kinetic energy,
 #+BEGIN_LaTeX
 \begin{equation}
-E = \sqrt{M^2+p^2} \simeq M + \frac{p^2}{2M}
+E = \sqrt{M^2+p^2} \simeq M + \frac{p^2}{2M}.
 \end{equation}
 #+END_LaTeX
 The separation of short distance interactions of the light quarks and
 the long distance interactions of the heavy quarks suggest the
-following terms in the \acrshort{nrqcd} lagrangian \cite{Bodwin:1994jh}:
+following terms in the \acrshort{nrqcd} Lagrangian \cite{Bodwin:1994jh}:
 #+BEGIN_LaTeX
 \begin{equation}
 \mathcal{L}_{\text{NRQCD}} = \mathcal{L}_{\text{light}} + \mathcal{L}_{\text{heavy}} + \delta\mathcal{L}
 \end{equation}
 #+END_LaTeX
 The light quarks are expected to be adequately described by the \acrshort{qcd}
-lagrangian, and so those terms are retained:
+Lagrangian, and so those terms are retained
 #+BEGIN_LaTeX
   \begin{equation}
-    \mathcal{L}_{\text{light}} = -\frac{1}{2}F^A_{\alpha\beta}F^{\alpha\beta}_A + \sum_{\text{light flavors}}\overline{q}_a(i\slashed{D}-m)_{ab}q_b
+    \mathcal{L}_{\text{light}} = -\frac{1}{2}F^A_{\alpha\beta}F^{\alpha\beta}_A + \sum_{\text{light flavors}}\overline{q}_a(i\slashed{D}-m)_{ab}q_b .
   \end{equation}
 #+END_LaTeX
 The heavy quarks are explicitly inserted using the non-relativistic
-expansion of the gauge-covariant derivative:
+expansion of the gauge-covariant derivative,
 #+BEGIN_LaTeX
 \begin{equation}
-i\slashed{D} - m  = i D_t + \frac{\mathbf{D}^2}{2M}
+i\slashed{D} - m  = i D_t + \frac{\mathbf{D}^2}{2M}.
 \end{equation}
 #+END_LaTeX
-This gives:
+This gives
 #+BEGIN_LaTeX
 \begin{equation}
 \mathcal{L}_{\text{heavy}} = \psi^\dagger\left(iD_t + \frac{\mathbf{D}^2}{2M}\right)\psi + \chi^\dagger\left(iD_t - \frac{\mathbf{D}^2}{2m}\right)\chi 
 \end{equation}
 #+END_LaTeX
-Where the color and spin indices have now been supressed and $\psi$ is
+where the color and spin indices have now been supressed and $\psi$ is
 the Pauli spinor field responsible for annihilating a heavy quark.
 Conversely $\chi$ is the Pauli spinor field for creating a heavy
 anti-quark, $D_t$ and $\mathbf{D}$ are the space-time components of
@@ -562,44 +566,45 @@ included in order to fully describe the relativistic effects of \acrshort{qcd}.
 These terms are explained in detail in \cite{Bodwin:1994jh} and are
 contained in the $\delta\mathcal{L}$ term above.  
 
-Organizing the lagrangian in this way allows cross section formulas to
+Organizing the Lagrangian in this way allows cross section formulas to
 be written as a dual expansion in the relative velocities of the heavy
 quarks and the \acrshort{qcd} coupling constant $\alpha_s$.  This gives insight
 into which effects dominate at what scale in the short and long
 distance interactions.  
 ** Factorization Theorem
-Because this formulation of the lagrangian makes the Schrödinger
+Because this formulation of the Lagrangian makes the Schrödinger
 states explicit, the quarkonium state can be interpreted as a sum of
 all possible Fock state configurations.  This can be written as
-\cite{Ellis:1991qj}:
+\cite{Ellis:1991qj},
 #+BEGIN_LaTeX
 \begin{equation}
   \begin{aligned}
   |\psi_Q \rangle &= O(1)|Q\overline{Q}[^3S_1^{(1)}]\rangle + O(v) |Q\overline{Q}[^3P_J^{(8)}]g \rangle \\
   &+ O(v^2)|Q\overline{Q}[^1S_0^{(8)}]g \rangle + O(v^2)|Q\overline{Q}[^3S_1^{(1,8)}]gg \rangle \\
-  &+ O(v^2)|Q\overline{Q}[^3D_J^{(1,8)}]gg \rangle + \ldots \\
+  &+ O(v^2)|Q\overline{Q}[^3D_J^{(1,8)}]gg \rangle + \ldots \\,
   \end{aligned}
 \end{equation}
 #+END_LaTeX
-Here $\psi_Q$ is the quarkonium bound state.  The angular momentum
+here $\psi_Q$ is the quarkonium bound state. The angular momentum
 quantum numbers of the Fock state are given in standard spectroscopic
-notation: $^{2S+1}L_J^{(1,8)}$ with an additional index to indicate singlet
-(1) or octet (8) color states.  In this notation $S$ is the spin of
-the system, $L$ is the orbital quantum number and $J$ is the total
-angular momentum. This formula also makes explicit the relative
-probability of finding a gluon in a $Q\overline{Q}$ state, which was one of
-the conditions necessary for the potential model of quarkonium.
+notation:[fn:: referred to as a term symbol] $^{2S+1}L_J^{(1,8)}$ with
+an additional index to indicate singlet (1) or octet (8) color states.
+In this notation $S$ is the spin of the $Q\bar{Q}$ pair, $L$ is the
+orbital quantum number and $J$ is the total angular momentum. This
+formula also makes explicit the relative probability of finding a
+gluon in a $Q\overline{Q}$ state, which was one of the conditions
+necessary for the potential model of quarkonium.
 
 The leading order term corresponds to the wavefunction from the
 Schrödinger picture.  Higher order terms correspond to Fock states
 which provide a soft gluon.  The presence of this gluon in the state
-allows the quarkonium to be in a color octet state.  The inclusion of
+allows the $Q\bar{Q}$ pair to be in a color octet state.  The inclusion of
 these terms in the expression for the overall cross section provides
 important contributions to the production of quarkonia in hadronic
 collisions.  
 
-The explicit formulation of the partonic cross section can be written
-as: 
+The explicit formulation for the partonic cross section can be written
+as 
 #+BEGIN_LaTeX
   \begin{equation}
   \label{eq:xs_total}
@@ -608,14 +613,15 @@ as:
   \overline{\sum}\left|\mathcal{A}(ab \rightarrow Q\overline{Q}[n] c)_{\text{short}}\right|^2\langle 0 | O^{\psi_Q}_{8,1}(n) |0 \rangle
   \end{equation}
 #+END_LaTeX
-Here, $a,b$ and $c$ represent initial and final state partons, $n$ is
+here $a,b$ and $c$ represent initial and final state partons, $n$ is
 shorthand for the spectroscopic term symbol introduced above, and
 $\psi_{Q}$ is the final state quarkonium. The sum is understood to be
 the average over initial spin and color states of the scattering
-amplitudes[fn:: Amplitudes are related to the probability of a process
-occuring] and the $\langle 0 | O^{\psi_Q}_{8,1}(n) |0 \rangle$ term
-(abbreviated as $\mathcal{O}^H_{8,1}(n)$) is the known long distance
-matrix element (LDME).
+amplitudes[fn:: The square of the amplitude is proportional to the
+probability of a process occuring. ] and the $\langle 0 |
+O^{\psi_Q}_{8,1}(n) |0 \rangle$ term (abbreviated as
+$\mathcal{O}^H_{8,1}(n)$) is the known long distance matrix element
+(LDME).
 
 Equation \ref{eq:xs_total} explicitly separates the energy scales
 involved in production. Figure \ref{fig:nrqcd-ldme} shows a pictoral
@@ -646,11 +652,12 @@ the quarkonium and the measured decay products. Historically the
 disagreement between the measured spin-alignment and the amount
 required by the extracted LDMEs has been referred to as the
 "polarization puzzle[fn:: The alliteration seems to have contributed
-to the persistency of this name versus the more technically accurate
-"spin-alignment inconsistency"]." There have been many attempts at
-explaining the effect \cite{Haberzettl:2007kj} \cite{Ma:2010yw}
-\cite{Chao:2012iv} \cite{Lansberg:2013wva}, but none are completely
-satisfactory.
+to the persistency of this name versus the "spin-alignment
+inconsistency." It appears that LHCb uses J/\psi polarization, while
+other experiments use "spin-alignment." Theory papers use each
+interchangably. ]." There have been many attempts at explaining the
+effect \cite{Haberzettl:2007kj} \cite{Ma:2010yw} \cite{Chao:2012iv}
+\cite{Lansberg:2013wva}, but none are completely satisfactory.
 
 * Jet fragmentation
 Having examined the bound states \acrshort{qcd} is capable of producing, it is
@@ -706,25 +713,25 @@ affect the outcome of the shower. Following Chapter 5 of
 branching. The energy fraction $z$ of branching is defined as:
 #+BEGIN_LaTeX
 \begin{equation}
-z = E_c/E_a = 1 - E_b/E_a
+z = E_c/E_a = 1 - E_b/E_a.
 \end{equation}
 #+END_LaTeX
 After averaging over the possible polarization states of the incoming
 and outgoing gluons the amplitude for splitting from $n$ partons to
-$n+1$ partons is given by:
+$n+1$ partons is given by
 #+BEGIN_LaTeX
 \begin{equation}
-|\mathcal{M}_{n+1}|^2 \sim \frac{4g^2}{t}\hat{P}_{bc}(z)|\mathcal{M}_n|^2
+|\mathcal{M}_{n+1}|^2 \sim \frac{4g^2}{t}\hat{P}_{bc}(z)|\mathcal{M}_n|^2.
 \end{equation}
 #+END_LaTeX
 Here $g$ is the \acrshort{qcd} coupling constant, $t\equiv p_a^2$ and
 $\hat{P}_{bc}$ is the unregularized splitting function for the final
 state partons. The gluon splitting function corresponding to Figure
-\ref{fig:g-to-gg} is:
+\ref{fig:g-to-gg} is
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:gg-split}
-\hat{P}_{gg}(z) = C_A\left[\frac{1-z}{z}+\frac{z}{1-z}+z(1-z)\right]
+\hat{P}_{gg}(z) = C_A\left[\frac{1-z}{z}+\frac{z}{1-z}+z(1-z)\right].
 \end{equation}
 #+END_LaTeX
 Here the color factor is $C_A=3$. It is useful to take the various
@@ -735,23 +742,23 @@ is true for the second term as $z \rightarrow 1$. These divergences
 favor soft emission of gluons.
 
 Following the same prescription, the splitting function for gluon
-emission from a quark (see Figure \ref{fig:g-to-qg}):
+emission from a quark (see Figure \ref{fig:g-to-qg}) is
 #+BEGIN_LaTeX
 \begin{equation}
 \hat{P}_{qg}(z) = T_R[z^2+(1-z)^2]
 \end{equation}
 #+END_LaTeX
-In this case the color factor $T_R=1/2$, taking $z \rightarrow 0$
+in this case the color factor is $T_R=1/2$, taking $z \rightarrow 0$
 favors soft gluon emission whereas the $z \rightarrow 1$ limit favors
 hard emission of the gluon. The parabolic nature of the function
 favors one extreme or the other.
 
 The remaining case corresponds to Figure \ref{fig:g-to-qqbar} and is
 for a gluon splitting into a quark anti-quark pair.  The spin-averaged
-splitting function is:
+splitting function is
 #+BEGIN_LaTeX
 \begin{equation}
-\hat{P}_{qq}(z) = C_F \frac{1+z^2}{1-z}
+\hat{P}_{qq}(z) = C_F \frac{1+z^2}{1-z}.
 \end{equation}
 #+END_LaTeX
 This function is unique among the splitting functions in that it
@@ -775,16 +782,16 @@ shower from an $e^+e^-$ annihilation event taken from
 #+ATTR_LATEX: :width 0.5\linewidth :options  angle=-90
 [[file:figures/parton-shower.eps]] 
 ** Hadronization
-The evolution of the partons created during the shower into hadrons is
-inherently non-perturbative. The phenomenological model used by Pythia
-is the Lund string model \cite{Sjostrand:2007gs}. This model extends
-the string analogy developed in Section [[Potential Models of QCD]]. The
-idea is that hadrons in the shower are connected via color-strings. If
-the energy stored in the string rises above the threshold to produce a
-$q\overline{q}$ pair, the string snaps and the process is repeated
-until the energies of the remaining string segments fall below a
-threshold value. Below this threshold, the string fragments form the
-final state hadrons.
+The partons produced during the shower must form hadrons which is an
+inherently non-perturbative process. The phenomenological model used
+by Pythia is the Lund string model \cite{Sjostrand:2007gs}. This model
+extends the string analogy developed in Section [[Potential Models of
+QCD]]. The idea is that hadrons in the shower are connected via
+color-strings. If the energy stored in the string rises above the
+threshold to produce a $q\overline{q}$ pair, the string snaps and the
+process is repeated until the energies of the remaining string
+segments fall below a threshold value. Below this threshold, the
+string fragments form the final state hadrons.
 
 If there are gluons present in the final state of the parton shower,
 they are connected to the color-strings as dynamical kinks in the
@@ -840,7 +847,7 @@ magnets has a tight margin above which the superconductivity is lost
 and the magnet ceases to conduct \cite{lhc-machine}. This transition
 is known as quenching, and when it occurs all of the energy stored in
 the field is released. An unintended quench in 2008 led to a massive
-helium explosion and delayed the experiment by a year.
+helium explosion and delayed the experiment by a year \cite{lhc-quench}.
 
 Another aspect that is important to the smooth operation of the \acrshort{lhc} is
 the vacuum in the beam pipe. In order to maximize beam lifetime and
@@ -867,7 +874,7 @@ Conversely, a theoretical physicist calculates the number of observed
 particles with given properties $x$, $y$ and $z$ by starting with
 incoming protons and working out the probability of observing the
 expected particles. The proton beams are characterized by a parameter
-called the luminosity $L$ of the beam which is the particles passing
+called the luminosity $L$ of the beam which is the number of particles passing
 per second per unit area. When a theoretical physicist calculates the
 cross sectional area[fn:: This quantity has SI units of cm^2 but barns
 are most commonly used in the field. The name comes from the saying
@@ -877,17 +884,17 @@ era is the "shake" as in "two shakes of a lamb's tail" which is 10 ns,
 a convenient unit of measure in nuclear reactions \cite{unc-dict}. ]
 of a process ($\sigma(pp \rightarrow A B)$ where $A$ and $B$ are
 outgoing particle species), the rate of particles produced is given by
-the product of the luminosity and the cross section:
+the product of the luminosity and the cross section,
 #+BEGIN_LaTeX
 \begin{equation*}
-dN/dt = L(t) \sigma(pp \rightarrow A B)
+dN/dt = L(t) \sigma(pp \rightarrow A B).
 \end{equation*}
 #+END_LaTeX
 In order to predict the absolute number of events, this expression
-must be integrated over the time that data was collected:
+must be integrated over the time that data was collected
 #+BEGIN_LaTeX
 \begin{equation*}
-N = \sigma \int L(t)dt
+N = \sigma \int L(t)dt.
 \end{equation*}
 #+END_LaTeX
 The amount of data collected by the experiment is measured in the
@@ -896,11 +903,11 @@ convenient for back-of-the-envelope calculations of the expected
 number of events for a process: take the product of the data collected
 and the expected cross section to get the number of events.
 
-The instantaneous luminosity $L$ of the \acrshort{lhc} is given by the following
-formula:
+The instantaneous luminosity $L$ of the \acrshort{lhc} is given by the
+following formula:
 #+BEGIN_LaTeX
 \begin{equation}
-L = \frac{N_b^2n_b f_{\text{rev}}\gamma_r}{4\pi \epsilon_n \beta^*}F
+L = \frac{N_b^2n_b f_{\text{rev}}\gamma_r}{4\pi \epsilon_n \beta^*}F.
 \end{equation}
 #+END_LaTeX
 The denominator of this equation is fairly straightforward, $N_b$ is
@@ -919,10 +926,10 @@ beam. Together they describe the effective area of the beam at the IP
 
 The geometric factor $F$ can be worked out from small angle
 approximations as well as the RMS length and transverse width of the
-beam:
+beam,
 #+BEGIN_LaTeX
 \begin{equation}
-F = \left(1 + \left(\frac{\theta_c\sigma_z}{2\sigma^*}\right)^2\right)^{-1/2}
+F = \left(1 + \left(\frac{\theta_c\sigma_z}{2\sigma^*}\right)^2\right)^{-1/2}.
 \end{equation}
 #+END_LaTeX
 Here $\theta_c$ is the crossing angle, $\sigma_z$ is the RMS length of
@@ -944,7 +951,7 @@ effects.
 
 * The ATLAS detector
 \acrlong{atlas} (\acrshort{atlas}[fn:: AT\acrshort{lhc}A doesn't have the same ring,
-or status as a greek titan]) is one of the general purpose detectors
+or status as a greek titan.]) is one of the general purpose detectors
 at the \acrshort{lhc}. It is located at Point 1 on the \acrshort{lhc} ring. Figure
 \ref{fig:atlas-detector} shows a high level drawing of the detector,
 the detector itself is 44m long and 25 m tall[fn:: The detector weighs
@@ -953,7 +960,7 @@ hermetically sealed, the density of the detector would allow it to
 float if it were put in fresh water.]. The ATLAS detector contains
 many detector subsystems which allow it to detect and reconstruct
 particles which are created during collisions at the IP. The detectors
-all work on the principal that when a charged particle moves through
+all work on the principle that when a charged particle moves through
 matter it either radiates energy in the form of Brehmsstrahlung or it
 ionizes the surrounding matter. In the former case, the radiation can
 be detected directly, or it can produce a positron and electron pair
@@ -1161,12 +1168,12 @@ in conjunction with the information from the \acrshort{sct} and pixel detectors.
 [[file:figures/trt_figure.pdf]] 
 
 During reconstruction the quality of the hits extracted from the
-time-over-threshold measurement of the radius must be assessed.
-Figure \ref{fig:trt-hit-defs} shows the definition of these hits. When
-the estimated drift radius corresponds to where a charged particle
-passed it is referred to as a precision hit.  When the charged
-particle passes through the tube, but not the estimated radius it is a
-tube hit.  When the particle passes outside the tube altogether it is
+time-over-threshold measurement of the radius must be assessed. Figure
+\ref{fig:trt-hit-defs} shows the definition of these hits. When the
+estimated drift radius corresponds to where a charged particle passed
+it is referred to as a precision hit. When the charged particle passes
+through the tube, but the estimated radius is incorrect it is called a
+tube hit. When the particle passes outside the tube altogether it is
 an outlier and when the tube doesn't register a particle at all it is
 a hole \cite{trt-figs}.
 #+BEGIN_LaTeX
@@ -1196,8 +1203,8 @@ typically make it to the \acrshort{hcal} before fully stopping and depositing
 their entire energy.
 
 It is important to note the contrast between how the inner detector
-and the calorimeter measures the momentum of particles. The location a
-charged particle passes are precisely measured in the inner detector.
+and the calorimeter measures the momentum of particles. The location
+charged particles pass are precisely measured in the inner detector.
 This information coupled with the knowledge of the magnetic field the
 inner detector is immersed in allows for the measurement of the
 particle's three-momentum. In order to fully extract the relativistic
@@ -1219,24 +1226,26 @@ fraction of hadrons produced in events of interest to this analysis.
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/calorimeter_labeled.pdf]] 
 
-As with other subsystems in ATLAS, the \acrshort{ecal} consists of separate
-barrel and end-cap detectors with slightly different geometries.
-Figure \ref{fig:ecal-barrel-module} shows a segment of the \acrshort{ecal}
-system. The \acrshort{ecal} utilizes an accordion geometry to ensure that more
-than one layer is actively scintillating when an electron or photon is
-depositing its energy in the calorimeter this provides full coverage
-in the $\phi$ direction. The \acrshort{ecal} is finely segmented in $\eta$
-($\Delta \eta = 0.0031$) close to the inner detector and less so in
-the bulk of the detector ($\Delta \eta = 0.025$). The end of the \acrshort{ecal}
-is covered with coarse "trigger towers" with a segmentation of $\Delta
-\eta=0.1$ \cite{atlas-detector}. These towers are used to trigger on
-events where a coarse estimate of the event's energy is needed to
-decide if the event should be recorded or not. The \acrshort{ecal}'s
-scintillation material is liquid Argon (LAr), which is chosen for its
-intrinsic radiation hardness and its ability to scintillate
-\cite{atlas-detector}. Lead is used as the absorber in the \acrshort{ecal}. Lead
-is an ideal choice due to its high density and the compact nature of
-the \acrshort{ecal} compared to the \acrshort{hcal}.
+As with other subsystems in ATLAS, the \acrshort{ecal} consists of
+separate barrel and end-cap detectors with slightly different
+geometries. Figure \ref{fig:ecal-barrel-module} shows a segment of the
+\acrshort{ecal} system. The \acrshort{ecal} utilizes an accordion
+geometry to ensure that more than one layer is active when an electron
+or photon is depositing its energy in the calorimeter, this provides
+full coverage in the $\phi$ direction. The \acrshort{ecal} is finely
+segmented in $\eta$ ($\Delta \eta = 0.0031$) close to the inner
+detector and less so in the bulk of the detector ($\Delta \eta =
+0.025$). The end of the \acrshort{ecal} is covered with coarse
+"trigger towers" with a segmentation of $\Delta \eta=0.1$
+\cite{atlas-detector}. These towers are used to trigger on events
+where a coarse estimate of the event's energy is needed to decide if
+the event should be recorded or not. The \acrshort{ecal}'s active
+material is liquid Argon (LAr), which is chosen for its intrinsic
+radiation hardness and its linear response to charged particles
+\cite{atlas-detector}. Lead is used as the absorber in the
+\acrshort{ecal}. Lead is an ideal choice due to its high density and
+the compact nature of the \acrshort{ecal} compared to the
+\acrshort{hcal}.
 
 #+CAPTION: Illustration of the \acrshort{ecal} granularity and geometry of a module \cite{atlas-detector}. 
 #+NAME: fig:ecal-barrel-module
@@ -1301,7 +1310,7 @@ possible.
 #+ATTR_LATEX: :width 1.0\linewidth 
 [[file:figures/muon_system_labeled.pdf]] 
 
-ATLAS utilizes a various detector technologies in order to measure the
+ATLAS utilizes various detector technologies in order to measure the
 momentum of a 1 TeV muon within 10% of its nominal value
 \cite{atlas-detector}. To achieve this, the muon spectrometer consists
 of monitored drift tubes (\acrshort{mdt}s), cathode strip chambers (\acrshort{csc}s),
@@ -1563,22 +1572,23 @@ The track reconstruction algorithm as described does not make any
 reference to specific track parameters. The unique magnetic field that
 tracks traverse as they leave the detector makes a traditional helix
 parameterization difficult, therefore a generic set of parameters is
-defined at each measurement surface \cite{Salzburger:1038100}.
+defined at each measurement surface \cite{Salzburger:1038100}
 #+BEGIN_LaTeX
 \begin{equation}
-\mathbf{x} = (l_1,l_2,\phi,\theta,q/p)^T
+\mathbf{x} = (l_1,l_2,\phi,\theta,q/p)^T .
 \end{equation}
 #+END_LaTeX
-These local parameters are converted to the global kinematic
-parameters using ATLAS's definition of perigee parameters shown in
-Figure \ref{fig:perigee} \cite{Salzburger:1038100}. The azimuthal
-angle \phi and the polar angle \theta are measured from the
-interaction point. The ratio $q/p$ is measured based on the curvature
-of the track in the magnetic field. Figure \ref{fig:atlas-bfield}
-shows the magnetic field at ATLAS in the $r-z$ coordinates. The
-curvature of the track is determined by estimating the path a track
-takes as traverses the field using finite element analysis of the
-field \cite{Salzburger:1038100}.
+The parameters $l_1$ and $l_2$ are local coordinates that depend on
+the surface in question. These local parameters are converted to the
+global kinematic parameters using ATLAS's definition of perigee
+parameters shown in Figure \ref{fig:perigee}
+\cite{Salzburger:1038100}. The azimuthal angle \phi and the polar
+angle \theta are measured from the interaction point. The ratio $q/p$
+is measured based on the curvature of the track in the magnetic field.
+Figure \ref{fig:atlas-bfield} shows the magnetic field at ATLAS in the
+$r-z$ coordinates. The curvature of the track is determined by
+estimating the path a track takes as it traverses the field using
+finite element analysis of the field \cite{Salzburger:1038100}.
 
 #+CAPTION: The magnetic field at ATLAS in the $r-z$ coordinate plane. The bottom plot shows a zoomed in view of the solenoidal field in the inner detector.  The toroidal field is shown in the upper plot. \cite{Salzburger:1038100}. 
 #+NAME: fig:atlas-bfield
@@ -1605,7 +1615,7 @@ at the hardware level. The L1 uses the \acrshort{rpc} and
 information from the calorimeters for identification of $\tau$
 leptons, electrons, jets, and missing transverse energy. The L1 accept
 rate is 75 kHz and the decision must reach the front end electronics
-in 2.5 $\mu$s. The L1 trigger also creates regions of interest
+in 2.5 $\mu\text{s}$. The L1 trigger also creates regions of interest
 (\acrshort{roi}) which identify locations in $\eta-\phi$ space for
 further consideration by the level 2 (L2) trigger
 \cite{atlas-detector}.
@@ -1616,13 +1626,13 @@ kHz. The L2 trigger inspects the \acrshort{roi}s identified by the L1
 trigger. The L2 trigger consists of a processing farm which runs
 partial event reconstruction in order to further refine the event
 rate. The output of the L2 trigger is passed onto the \acrshort{ef}.
-The \acrshort{ef} runs the full atlas reconstruction software on the
+The \acrshort{ef} runs the full ATLAS reconstruction software on the
 event. A final decision is made on the reconstructed physics objects
 and are written out to disk \cite{atlas-detector}. This analysis uses
 the following trigger chain: =L1_MU15= $\rightarrow$ =L2_mu36_tight=
 $\rightarrow$ =EF_mu36_tight=. The L1 trigger requires a roughly
-identified muon with $p_T > 15 GeV$. The L2 and \acrshort{ef} triggers
-require a muon with $p_T > 36 GeV$. There are low $p_T$ dimuon
+identified muon with $p_T > 15$ GeV. The L2 and \acrshort{ef} triggers
+require a muon with $p_T > 36$ GeV. There are low $p_T$ dimuon
 triggers available for $J/\psi$ reconstruction but they degrade in
 efficiency at the high $p_T$ explored by this analysis
 \cite{Picazio:1419765}.
@@ -1663,7 +1673,7 @@ modifies the track momentum slightly to more accurately reflect the
 hypothesis that the pair originated as a J/\psi. Figure
 \ref{fig:vtx-refit} illustrates this process. When a pair of muons is
 identified as a J/\psi candidate, those muons are removed from the
-inner detector track collection considered by the Jet reconstruction
+inner detector track collection considered by the jet reconstruction
 algorithm. After event reconstruction, the $J/\psi$ candidate is
 required to have $p_T > 45$ GeV, and an absolute rapidity $|y| < 2.0$.
 Each muon must be central to the detector with $|\eta| < 2.5$.
@@ -1692,7 +1702,7 @@ the cartesian coordinates used by ATLAS where the beam line is the $z$
 axis.]. Determining the pseudo-proper lifetime is then a matter of
 scaling this quantity by the ratio of the mass and transverse momentum
 of the particle[fn:: In the high energy limit, the relativistic gamma
-factor is proportional to the ratio $p_T/m$]:
+factor is proportional to the ratio $p_T/m$.]:
 #+BEGIN_LaTeX
 \begin{align}
 L_{xy} &= \frac{\mathbf{L}\cdot\mathbf{p}_T}{p_T} \\
@@ -1806,10 +1816,11 @@ must have a minimum $p_T$ of 500 MeV, a maximum absolute
 pseudo-rapidity, $|\eta| < 2.5$, at least one hit in the pixel
 detector and 6 \acrshort{sct} hits. Finally the fit $\chi^2$ must be
 at most 3. Impact parameter cuts (see Figure \ref{fig:perigee})
-$z_0\sin(\theta) < 1.5$ and $d_0 < 1.0$ are also applied. The final
-set of jets that are reconstructed must be central to the detector
-$|\eta| < 2.5$ and must have high transverse momentum $p_T > 45$ GeV.
-Finally, the $J/\psi$ and the jet must be within $\Delta R < 0.4$ (the
+$z_0\sin(\theta) < 1.5$ mm and $d_0 < 1.0$ mm are also applied. These
+cuts increase the quality of the selected tracks. The final set of
+jets that are reconstructed must be central to the detector $|\eta| <
+2.5$ and must have high transverse momentum $p_T > 45$ GeV. Finally,
+the $J/\psi$ and the jet must be within $\Delta R < 0.4$ (the
 reconstructed jet radius).
 
 * Observables
@@ -1819,28 +1830,27 @@ momentum fraction shared between the $J/\psi$ and the reconstructed
 jet. The momentum fraction is defined as:
 #+BEGIN_LaTeX
 \begin{equation}
-z = \frac{p_T(J/\psi)}{p_T(\text{Jet})}
+z = \frac{p_T(J/\psi)}{p_T(\text{Jet})}.
 \end{equation}
 #+END_LaTeX
 As a reminder, the jet is clustered to include the $J/\psi$
-four-vector.  As a result, the momentum fraction exists in $0 < z \leq
-1$.  This fraction directly probes the final splitting in the parton
-shower into the $c\bar{c}$ bound state that becomes the $J/\psi$
-relative to the energy scale of the initial interaction.  A value
-around $z=0.5$ indicates that the $p_T$ of the $J/\psi$ and the p_T of
-the surrounding radiation are equal.  A value of $z\simeq1$ indicate that
-all the momentum is carried by the $J/\psi$ and very little in
-surrounding radiation.  Similarly a $z$ value near zero indicates all
-the is momentum carried in the radiation within an $R=0.4$ cone of the
-reconstructed $J/\psi$[fn:: This is very unlikely to happen due to the
-high $p_T$ requirement of the $J/\psi$].  
+four-vector. As a result, the momentum fraction exists in $0 < z \leq
+1$. This fraction directly probes the energy carried by the $J/\psi$
+compared to the surrounding radiation which is assumed to result from
+the parton shower. A value around $z=0.5$ indicates that the $p_T$ of
+the $J/\psi$ and the p_T of the surrounding radiation are equal. A
+value of $z\simeq1$ indicate that all the momentum is carried by the
+$J/\psi$ and very little in surrounding radiation. Similarly a $z$
+value near zero indicates all the is momentum carried in the radiation
+within an $R=0.4$ cone of the reconstructed J/\psi[fn:: This is very
+unlikely to happen due to the high $p_T$ requirement of the $J/\psi$].
 
 The second variable examined by this analysis is the angular
 separation between the $J/\psi$ and the reconstructed jet.  This
 quantity, denoted $\Delta R$ is defined as:
 #+BEGIN_LaTeX
 \begin{equation}
-\Delta R = \sqrt{\Delta \phi^2 + \Delta \eta^2}
+\Delta R = \sqrt{\Delta \phi^2 + \Delta \eta^2}.
 \end{equation}
 #+END_LaTeX
 If the radiation emitted around the $J/\psi$ is isotropic in
@@ -1887,10 +1897,10 @@ parameters given observed data. Maximizing the likelihood function
 with respect to these parameters provides a best estimate of the
 parameters. The likelihood function is constructed as a product over
 probability functions for observing a random variable $x$
-\cite{Barlow:1990vc}:
+\cite{Barlow:1990vc}
 #+BEGIN_LaTeX
 \begin{equation}
-\mathcal{L} = \prod_{i=1}^N p(x_i | \bm{\theta})
+\mathcal{L} = \prod_{i=1}^N p(x_i | \bm{\theta}).
 \end{equation}
 #+END_LaTeX
 Here $N$ is the number of observed events and $\bm{\theta}$ is a
@@ -1904,15 +1914,15 @@ probability function $p(x| \bm{\theta})$ is normalized
 \cite{Barlow:1990vc}:
 #+BEGIN_LaTeX
 \begin{equation}
-\int p(x|\bm{\theta}) = 1
+\int p(x|\bm{\theta}) = 1.
 \end{equation}
 #+END_LaTeX
 Rather than maximizing the likelihood directly, it is easier to
-maximize (minimize) the (negative) logarithm of the likelihood:
+maximize (minimize) the (negative) logarithm of the likelihood,
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:nll}
-- \log \mathcal{L} = - \sum_{i=1}^{N} \log(p(x_i|\bm{\theta}))
+- \log \mathcal{L} = - \sum_{i=1}^{N} \log(p(x_i|\bm{\theta})).
 \end{equation}
 #+END_LaTeX
 Equation \ref{eq:nll} is minimized over the parameters $\theta_j$. The
@@ -1930,20 +1940,21 @@ likelihood that a particular event is signal or background depending
 on the parameters extracted from the fit. The technique used for this
 purpose is called sPlot \cite{Pivk:2004ty}. This method utilizes
 properties of the extended likelihood formalism to derive a set of
-weights representing categories parametrized by the \acrshort{pdf}s used in the
-\acrshort{ml} fit. SPlot requires that the normalization condition be relaxed
-such that for a given component of the likelihood function
-\cite{Barlow:1990vc}:
+weights representing categories parametrized by the \acrshort{pdf}s
+used in the \acrshort{ml} fit. SPlot requires that the normalization
+condition be relaxed such that for a given component of the likelihood
+function \cite{Barlow:1990vc},
 #+BEGIN_LaTeX
 \begin{equation}
-\int P(x|\bm{\theta}) dx = N(\bm{\theta})
+\int P(x|\bm{\theta}) dx = N(\bm{\theta}).
 \end{equation}
 #+END_LaTeX
-This allows the re-expression of the negative log-likelihood function as \cite{Pivk:2004ty}:
+This allows the re-expression of the negative log-likelihood function
+as \cite{Pivk:2004ty}
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:enll}
-- \log \mathcal{L} = - \sum_{i=1}^{N} \log(\sum_{j=1}^{\mathcal{N}_s} N_j p_j(x_i|\bm{\theta}))
+- \log \mathcal{L} = - \sum_{i=1}^{N} \log(\sum_{j=1}^{\mathcal{N}_s} N_j p_j(x_i|\bm{\theta})).
 \end{equation}
 #+END_LaTeX
 In this expression $\mathcal{N}_{s}$ is the number of species (in this
@@ -1951,44 +1962,47 @@ case, signal or background) to be separated, $N_j$ is the number of
 the $j^{\text{th}}$ species and $p_j$ is the \acrshort{pdf} describing the
 $j^{\text{th}}$ species. SPlot also requires knowledge of the
 covariance matrix. This is can be estimated from the likelihood
-function by \cite{Pivk:2004ty}:
+function by \cite{Pivk:2004ty}
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:v-inverse}
-V^{-1}(\hat{\bm{\theta}})_{ij} = \frac{\partial^2(-\mathcal{L}(x|\bm{\theta}_0))}{\partial N_i\partial N_j}
+V^{-1}(\hat{\bm{\theta}})_{ij} = \frac{\partial^2(-\mathcal{L}(x|\bm{\theta}_0))}{\partial N_i\partial N_j},
 \end{equation}
 #+END_LaTeX
-Here $\bm{\theta}_0$ are the parameters estimated from the \acrshort{ml} fit.
+here $\bm{\theta}_0$ are the parameters estimated from the \acrshort{ml} fit.
 With these ingredients it is possible to derive the weights required
 to reconstruct a histogram of the estimated signal. The expression
-obtained is:
+obtained is
 #+BEGIN_LaTeX
 \begin{equation}
-W_S(x) = \frac{\sum_{j=1}^{N_s} V_{Sj}p_j(x)}{\sum_{k=1}^{N_s} N_k p_k(x)}
+W_S(x) = \frac{\sum_{j=1}^{N_s} V_{Sj}p_j(x)}{\sum_{k=1}^{N_s} N_k p_k(x)}.
 \end{equation}
 #+END_LaTeX
 The matrix $V_{Sj}$ is obtained from the likelihood function by
 numerically inverting Eq. \ref{eq:v-inverse}.  It is informative to
 expand this expression for the case of two species, signal and
 background as used in this analysis. For the case of signal the
-weight is:
+weight is
 #+BEGIN_LaTeX
 \begin{equation}
-W_S(x) = \frac{V_{SS} p_S(x) + V_{SB} p_B(x)}{N_Sp_S(x)+N_Bp_B(x)}
+W_S(x) = \frac{V_{SS} p_S(x) + V_{SB} p_B(x)}{N_Sp_S(x)+N_Bp_B(x)}.
 \end{equation}
 #+END_LaTeX
 In this expression it is clear that the weight depends on the \acrshort{pdf} for
 the signal and background and is weighted by the covariance of these
 two components.  In the extreme case where signal and background are
 perfectly separated the covariance matrix is diagonal and the weight
-reduces to:
+reduces to
 #+BEGIN_LaTeX
 \begin{equation}
-W_S(x) = \frac{\sigma_S p_S(x)}{N_Sp_S(x)+N_Bp_B(x)}
+W_S(x) = \frac{\sigma_S}{N_Sp_S(x)+N_B\frac{p_B(x)}{p_S(x)}},
 \end{equation}
 #+END_LaTeX
-Where $\sigma_S$ is the variance of the signal \acrshort{pdf}. This weight is
-applied per event and on average it reproduces the signal histogram.
+where $\sigma_S$ is the variance of the signal \acrshort{pdf}. In this
+reduced case, a small probability of signal leads to a small weight.
+Conversely, a large probability of being signal (and small probability
+of being background) gives a large weight. This weight is applied per
+event and on average it reproduces the signal histogram.
 * Empirical Model
 In Section [[J/\psi reconstruction]] the two sources of background were
 introduced: non-prompt decays from $B$ hadrons distinguished by the
@@ -2000,7 +2014,7 @@ previously to extract J/\psi events \cite{ATLAS-CONF-2015-024}. It is
 defined as:
 #+BEGIN_LaTeX
 \begin{equation}
-\acrshort{pdf}(m,t) = \sum_{i} f_{i}(m)\cdot h_{i}(t)\otimes g(t)
+\acrshort{pdf}(m,t) = \sum_{i} f_{i}(m)\cdot h_{i}(t)\otimes g(t).
 \label{eq:pdf}
 \end{equation}
 #+END_LaTeX
@@ -2041,9 +2055,9 @@ f(m;\alpha,n,\mu,\sigma) &= N \cdot
 \begin{cases}
 \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) & \text{for}~\frac{x-\mu}{\sigma} > -\alpha \\
 A \cdot\left(B-\frac{x-\mu}{\sigma}\right)^{-n} & \text{for}~\frac{x-\mu}{\sigma} \leq -\alpha
-\end{cases}\\
-A &= \left(\frac{n}{|\alpha|}\right)^n \exp\left(-\frac{|\alpha|^2}{2}\right)\\
-B &= \frac{n}{|\alpha|} - |\alpha|
+\end{cases},\\
+A &= \left(\frac{n}{|\alpha|}\right)^n \exp\left(-\frac{|\alpha|^2}{2}\right),\\
+B &= \frac{n}{|\alpha|} - |\alpha|.
 \end{align}
 #+END_LaTeX
 Here $N$ is the normalization factor, $\mu$ is the mean and $\sigma$
@@ -2212,19 +2226,19 @@ associated with the measurement. There are systematic effects which
 may distort the true value of the quantity measured. The size of these
 effects is estimated through the assessment of systematic errors by
 varying the input and taking the difference from the nominal result.
-The finite resolution of the will distort the measured value relative
-to the true value in a random but consistent way \cite{Cowan:1998ji}.
-It is the goal of unfolding to remove these types of effects. This
-problem goes under different names in different fields such as
-deconvolution or unsmearing \cite{Cowan:1998ji}.
+The finite resolution of the detector will distort the measured value
+relative to the true value in a random but consistent way
+\cite{Cowan:1998ji}. It is the goal of unfolding to remove these types
+of effects. This problem goes under different names in different
+fields such as deconvolution or unsmearing \cite{Cowan:1998ji}.
 
 In the case of a perfect detector, the number of events observed in a
 particular bin of a histogram will be given by a continuous
-probability distribution \cite{Cowan:1998ji}:
+probability distribution \cite{Cowan:1998ji}
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:truth-hist}
-T_{i} = N \int_{x\in \text{bin}(i)} f(x) dx
+T_{i} = N \int_{x\in \text{bin}(i)} f(x) dx.
 \end{equation}
 #+END_LaTeX
 Here $T$ is referred to as the truth histogram and $f(x)$ as the true
@@ -2238,10 +2252,10 @@ one. This efficiency may vary with the observable, and so it is
 assigned a function $\epsilon(x)$. In this form the efficiency
 represents the probability of detection. Incorporating the efficiency
 is a matter of multiplying the probability an event occurs by the
-probability of detecting it \cite{Cowan:1998ji}:
+probability of detecting it \cite{Cowan:1998ji}
 #+BEGIN_LaTeX
 \begin{equation}
-H_{i} = N \int_{x\in \text{bin}(i)} \epsilon(x)f(x) dx
+H_{i} = N \int_{x\in \text{bin}(i)} \epsilon(x)f(x) dx.
 \end{equation}
 #+END_LaTeX
 The label $H$ is used to refer to what is actually observed as a
@@ -2250,11 +2264,11 @@ remains: an event has a true value $x$ and the detector measures its
 value to be $y$. This can be cast in terms of conditional probability
 as $P(y|x)$, which is read as "the probability of observing $y$ given
 the true value was $x$." The observed histogram becomes
-\cite{Cowan:1998ji}:
+\cite{Cowan:1998ji}
 #+BEGIN_LaTeX
 \begin{equation}
 \label{eq:hist-obs}
-H_{i} = N \int_{y\in \text{bin}(i)} \int P(y|x)\epsilon(x)f(x) dx dy
+H_{i} = N \int_{y\in \text{bin}(i)} \int P(y|x)\epsilon(x)f(x) dx dy.
 \end{equation}
 #+END_LaTeX
 Note here the slight change in integration: the number of events
@@ -2265,22 +2279,22 @@ value $y$.
 
 It is useful to combine the detection efficiency and the probability
 the detector changes a measurement from its true value in one
-function, the response function \cite{Cowan:1998ji}:
+function, the response function \cite{Cowan:1998ji},
 #+BEGIN_LaTeX
 \begin{equation}
-r(y|x) = P(y|x)\epsilon(x)
+r(y|x) = P(y|x)\epsilon(x).
 \end{equation}
 #+END_LaTeX
-In practice the integral over $x$ in \ref{eq:hist-obs} is a sum over
-the bins in a truth histogram obtained from Monte Carlo simulations of
-the detector. In this case it is useful to consider the discrete case
-by applying the same method to determine the truth histogram as in
-\ref{eq:truth-hist}:
+In practice the integral over $x$ in Equation \ref{eq:hist-obs} is a
+sum over the bins in a truth histogram obtained from Monte Carlo
+simulations of the detector. In this case it is useful to consider the
+discrete case by applying the same method to determine the truth
+histogram as in Equation \ref{eq:truth-hist}
 #+BEGIN_LaTeX
 \begin{align}
-H_i &= \sum_{j=1}^M\frac{\int_{x\in \text{bin}(i)}\int_{y\in \text{bin}(j)}r(y|x)f(x)dydx}{T_j/N}T_j\\
-&= \sum_{j=1}^M R_{ij} T_j\\
-R_{ij} &= \frac{\int_{x\in \text{bin}(i)}\int_{y\in \text{bin}(j)}r(y|x)f(x)dydx}{T_j/N}
+H_i &= \sum_{j=1}^M\frac{\int_{x\in \text{bin}(i)}\int_{y\in \text{bin}(j)}r(y|x)f(x)dydx}{T_j/N}T_j,\\
+&= \sum_{j=1}^M R_{ij} T_j,\\
+R_{ij} &= \frac{\int_{x\in \text{bin}(i)}\int_{y\in \text{bin}(j)}r(y|x)f(x)dydx}{T_j/N}.
 \label{eq:response-def}
 \end{align}
 #+END_LaTeX
@@ -2293,11 +2307,11 @@ experiment. The inverse process of determining the true value given
 the result of the experiment is referred to as "unfolding."
 
 With the response matrix in hand, it is tempting to invert it and
-obtain a direct estimate of the truth:
+obtain a direct estimate of the truth
 #+BEGIN_LaTeX
 \begin{align*}
-H_i &= R_{ij} T_j\\
-T_i &= R^{-1}_{ij} H_j
+H_i &= R_{ij} T_j,\\
+T_i &= R^{-1}_{ij} H_j.
 \end{align*}
 #+END_LaTeX
 The issue with this approach lies in the fact that the response matrix
@@ -2321,31 +2335,31 @@ $\epsilon(y)\equiv 1$ \cite{Armbruster:1694351}[fn:: This section
 follows the steps in \cite{Armbruster:1694351} which is internal to
 ATLAS. The references therein are included here as well to allow
 access to the primary sources without access to the internal
-document.]:
+document.], Bayes theorem is given as
 #+BEGIN_LaTeX
 \begin{align}
 \label{eq:bayes}
-P(x|y) &= \frac{P(y|x)f(x)}{\int f(x) p(y|x) dx} = \frac{P(y|x)f(x)}{g(y)}\\
-g(y) &= \int f(x) p(y|x) dx
+P(x|y) &= \frac{P(y|x)f(x)}{\int f(x) p(y|x) dx} = \frac{P(y|x)f(x)}{g(y)},\\
+g(y) &= \int f(x) p(y|x) dx.
 \end{align}
 #+END_LaTeX
 Here the correspondence that $x$ is the true value and $y$ is the
 measured value is made more explicit.  This allows $f(y)$, the true
-distribution to be estimated as:
+distribution to be estimated as
 #+BEGIN_LaTeX
 \begin{equation}
-f(x) = \int g(y) P(x|y) dx
+f(x) = \int g(y) P(x|y) dx.
 \end{equation}
 #+END_LaTeX
-The issue is that in plugging Eq. \ref{eq:bayes} into this definition
+The issue is that in plugging Equation \ref{eq:bayes} into this definition
 of $f(x)$, shows the explicit dependence of $P(x|y)$ on $f(x)$. The
 way forward is to determine a first estimate of $f(x)$ and iteratively
 update it based on the estimate of $P(y|x)$ from simulations. If one
 starts after $k+1$ steps, the following can be written by iteratively
-applying Bayes' theorem:
+applying Bayes' theorem,
 #+BEGIN_LaTeX
 \begin{equation}
-f^{k+1}(x) = \int f^k(x)\frac{g_{\text{exp}}(y)}{g^k(y)}P(y|x)dy
+f^{k+1}(x) = \int f^k(x)\frac{g_{\text{exp}}(y)}{g^k(y)}P(y|x)dy.
 \end{equation}
 #+END_LaTeX
 Here $g_{\text{exp}}(y)$ is the distribution obtained by the
@@ -2496,9 +2510,9 @@ The Monte Carlo samples are used in the response matrix estimation, as
 well as in comparing the shape to data. They contain the best
 description of the detector available. There are three main effects
 that can systematically change the estimate of the four vector of the
-track based observables: the scale of the track (ie a shift in the
+track based observables: the scale of the track (i.e. a shift in the
 mean of the distribution), the resolution of the track and the
-efficiency to reconstruct the track (ie a shift in the width of the
+efficiency to reconstruct the track (i.e. a shift in the width of the
 distribution). Muons are further complicated by the fact that they are
 the estimate of two detector subsystems, the inner detector and the
 muon spectrometer. Therefore there are systematic effects associated
@@ -2522,9 +2536,9 @@ the effect of missing a track during reconstruction \cite{Aad:2010ac}.
 This is the largest source of systematic error on the Monte Carlo
 samples used. Modifying the momentum scale of each track by 2% is
 shown to adequately cover this uncertainty \cite{Aad:2014xaa}. The
-resolution (how closely two tracks if slightly different momentum can
-be resolved) is found by varying the four vector of each track
-according to a gaussian with width 10% of the nominal momentum
+resolution (how well two tracks of slightly different momentum can be
+resolved) is found by varying the four vector of each track according
+to a gaussian with width 10% of the nominal momentum
 \cite{ATLAS-CONF-2012-141}.
 
 ** Unfolding
@@ -2706,11 +2720,12 @@ published, Sherpa may provide a valuable cross check to Pythia's
 prediction. In addition, Sherpa is well placed to modify its treatment
 of the parton shower of the quarkonium state from the outset.
 
-This work provides new observables that may constrain the
-predictions from \acrshort{nrqcd} in interesting ways. It may be possible to use
+This work provides new observables that may constrain the predictions
+from \acrshort{nrqcd} in interesting ways. It may be possible to use
 the $z$ distribution to extract new LDMEs and subsequently compare to
 the $p_T$ spectrum (or vice versa). In the original incarnation of
-this work, other substructure variables were shown to discriminate
+this work, other substructure variables[fn:: N-subjettiness moments
+and their ratios \cite{Thaler:2010tr}.] were shown to discriminate
 between the singlet and octet processes as simulated by Pythia. It may
 be possible to extend this work to include those and other
 substructure variables in a way that further illuminates the exact
