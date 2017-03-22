@@ -8,10 +8,10 @@ production was found to be much higher than expected at hadron
 colliding experiments. Non-relativistic quantum chromodynamics was
 developed in order to address these issues. This theory predicts a
 strong spin-alignment not observed in data. All previous measurements
-of $J/\psi$ production have overlooked the hadronic environment the
-$J/\psi$ is produced in. This work is the first exploration of the
-radiation surrounding $J/\psi$ events measured at ATLAS at
-$\sqrt{s}=8~\text{TeV}$. This is the first measurement of the
+of $J/\psi$ production have overlooked the hadronic environment of the
+$J/\psi$. This work is the first exploration of the radiation
+surrounding $J/\psi$ events measured at ATLAS at
+$\sqrt{s}=8~\text{TeV}$. It represents the first measurement of the
 separation between the $J/\psi$ and a matched jet and the second
 measurement of the momentum fraction shared between the jet and the
 $J/\psi$. These variables probe the radiation environment around the
